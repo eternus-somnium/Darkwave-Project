@@ -1,0 +1,20 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NPC.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Entity.cs" Line="22" Column="2" />
+      <File FileName="Assets\Scripts\Character.cs" Line="18" Column="2" />
+      <File FileName="Assets\Scripts\RangedWeapon.cs" Line="50" Column="90" />
+      <File FileName="Assets\Scripts\Weapon.cs" Line="54" Column="3" />
+      <File FileName="Assets\Scripts\MeleeWeapon.cs" Line="26" Column="5" />
+      <File FileName="Assets\Scripts\ETurret.cs" Line="44" Column="1" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="15" Column="3" />
+      <File FileName="Assets\Scripts\NPC.cs" Line="75" Column="87" />
+      <File FileName="c:\Users\Clive\Documents\GitHub\SIGGRAPH-Kraken\Darkwave\Darkwave Demo\Assets\Scripts\GameController.cs" Line="29" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
