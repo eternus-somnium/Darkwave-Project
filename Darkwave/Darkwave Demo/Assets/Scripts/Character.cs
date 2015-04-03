@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Character : Entity 
 {
+	//Used in OnTriggerEnter()
+	bool inLitArea=true;
+	float outsideLitAreaTimer=0;
 	//Used for MoveController()
 	float jumpCounter = 0.0F;
 	//Used in CameraController()
@@ -30,12 +33,30 @@ public class Character : Entity
 		EntityUpdate();
 		CameraController();
 
+		MoveController();
+
 		if(health>0)
 		{
-			MoveController();
+			if(!inLitArea) 
+				InvokeRepeating("litAreaController",0,1);
 			WeaponController();
 		}
 		else DeathController();
+	}
+
+	void litAreaController()
+	{
+		if(health <= 0 || inLitArea)
+		{
+			outsideLitAreaTimer = 0;
+			CancelInvoke("litAreaController");
+		}
+		else
+		{
+			outsideLitAreaTimer+=Time.deltaTime;
+			health-= Mathf.RoundToInt(outsideLitAreaTimer);
+		}
+
 	}
 
 	void MoveController()
@@ -46,21 +67,22 @@ public class Character : Entity
 		Vector3 moveDirection = Vector3.zero;
 
 		CharacterController controller = GetComponent<CharacterController>();
-
-		moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-		moveDirection = transform.TransformDirection(moveDirection);
-		moveDirection *= baseSpeed;
-
-		if (controller.isGrounded) 
+		if(health > 0)
 		{
-			jumpCounter = jumpPower;
-			moveDirection *= 2;
-		}
-		else if(!controller.isGrounded && !Input.GetButton("Jump")) jumpCounter = 0;
-		else if(jumpCounter > 0) jumpCounter -= 1*Time.deltaTime;
+			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			moveDirection = transform.TransformDirection(moveDirection);// makes input directions camera relative
+			moveDirection *= baseSpeed;
 
-		if (Input.GetButton("Jump") && jumpCounter > 0) moveDirection.y = jumpSpeed;
-			
+			if (controller.isGrounded) 
+			{
+				jumpCounter = jumpPower;
+				moveDirection *= 2;
+			}
+			else if(!controller.isGrounded && !Input.GetButton("Jump")) jumpCounter = 0;
+			else if(jumpCounter > 0) jumpCounter -= 1*Time.deltaTime;
+
+			if (Input.GetButton("Jump") && jumpCounter > 0) moveDirection.y = jumpSpeed;
+		}
 		moveDirection.y += Physics.gravity.y;
 		controller.Move(moveDirection * Time.deltaTime);
 		
@@ -129,5 +151,14 @@ public class Character : Entity
 			this.transform.position = respawnPoint;
 			health = maxHealth;
 		}
+	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		inLitArea=true;
+	}
+	void OnTriggerExit(Collider col)
+	{
+		inLitArea=false;
 	}
 }

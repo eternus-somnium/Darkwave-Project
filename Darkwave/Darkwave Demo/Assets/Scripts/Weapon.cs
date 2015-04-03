@@ -5,8 +5,8 @@ public class Weapon : MonoBehaviour
 {
 
 	public bool mainActionFlag, SecondaryActionFlag;
-	public int cooldown = 50;
-	public int currentCooldown = 0;
+	bool ready;
+	public int cooldown, currentCooldown=0;//Measured in half seconds
 	public int energy = 100;
 	public int currentEnergy;
 	public int energyDrain = 0;
@@ -21,12 +21,14 @@ public class Weapon : MonoBehaviour
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		currentEnergy = energy;
+		InvokeRepeating("WeaponTime",0,.5f);
 	}
 
-	void FixedUpdate()
+	void WeaponTime()
 	{
 		if(currentEnergy < energy) currentEnergy++;
-		if(currentCooldown > 0) currentCooldown--;
+		if(currentCooldown == 0) ready=true;
+		else currentCooldown--;
 	}
 
 	public void AttackAnimation()
@@ -50,6 +52,15 @@ public class Weapon : MonoBehaviour
 		}
 		set {
 			defaultPosition = value;
+		}
+	}
+
+	public bool Ready {
+		get {
+			return ready;
+		}
+		set {
+			ready = value;
 		}
 	}
 }

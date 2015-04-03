@@ -5,6 +5,8 @@ using System.Collections;
  */
 public class Shot : Entity 
 {
+	bool inLitArea=true;
+
 	public void ShotStart()
 	{
 		EntityStart();
@@ -15,5 +17,16 @@ public class Shot : Entity
 		EntityUpdate();
 		if(health < 1) Destroy(gameObject);
 		//if(health < 1) Stub for destruction animation control
+		if(!inLitArea) Destroy(gameObject);
+	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		inLitArea=true;
+	}
+
+	void OnTriggerExit(Collider col)
+	{
+		inLitArea=false;
 	}
 }

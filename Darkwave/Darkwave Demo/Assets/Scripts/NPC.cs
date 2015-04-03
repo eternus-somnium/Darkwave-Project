@@ -25,22 +25,22 @@ public class NPC : Entity
 	//Attack variables
 	int weaponChoice  = 1;
 	
-	public int cooldown1 = 50;
+	public int cooldown1 = 1;
 	public int energyDrain1 = 0;
 	public int currentCooldown1 = 0;
 	public GameObject attack1;
 	
-	public int cooldown2 = 50;
+	public int cooldown2 = 1;
 	public int energyDrain2 = 5;
 	public int currentCooldown2 = 0;
 	public GameObject attack2;
 	
-	public int cooldown3 = 50;
+	public int cooldown3 = 1;
 	public int energyDrain3 = 5;
 	public int currentCooldown3 = 0;
 	public GameObject attack3;
 	
-	public int cooldown4 = 50;
+	public int cooldown4 = 1;
 	public int energyDrain4 = 5;
 	public int currentCooldown4 = 0;
 	public GameObject attack4;
@@ -52,6 +52,8 @@ public class NPC : Entity
 	public void NPCStart () 
 	{
 		EntityStart();
+		InvokeRepeating("AttackCooldowns",0,.5f);
+		InvokeRepeating("ChooseTarget",0,1f);
 	}
 
 	// Update is called once per frame
@@ -62,7 +64,7 @@ public class NPC : Entity
 		if(gameObject.tag == "Allies")
 			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
 		else targetList = GameObject.Find("Game Controller").GetComponent<GameController>().enemyTargets;
-		ChooseTarget();
+
 
 		if(health < 1)
 		{
@@ -71,11 +73,15 @@ public class NPC : Entity
 			Destroy(gameObject);
 			//Stub for destruction animation control
 		}
+	}
 
+	void AttackCooldowns()
+	{
 		if(currentCooldown1 > 0) currentCooldown1--;
 		if(currentCooldown2 > 0) currentCooldown2--;
 		if(currentCooldown3 > 0) currentCooldown3--;
 		if(currentCooldown4 > 0) currentCooldown4--;
+		if(energy < maxEnergy) energy++;
 	}
 
 	void ChooseTarget()

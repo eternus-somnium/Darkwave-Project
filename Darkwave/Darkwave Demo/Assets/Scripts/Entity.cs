@@ -16,12 +16,11 @@ public class Entity : MonoBehaviour
 	public int aggroValue=1;
 	public int stun=0;
 
-
 	//Movement variables
 	public float baseSpeed;	//set in editor
 	
 	internal float yMove = 0;
-
+	
 	public void EntityStart()
 	{
 		health = maxHealth;
@@ -39,10 +38,9 @@ public class Entity : MonoBehaviour
 		//if(stun) this.gameObject.
 	}
 
-	/*Function designed to track if an entity is touching the ground (terrainTouch) in order to control jump commands, 
-	 * falling, and being affected by terrain movement.  Also recognizes if an entity hits a Death object
-	 * Collisions don't occur between objects if they are both on the player or enemy layers.
-	 * There may be a better way to implement entities being affected by terrain movement
+	/*Function recognizes if an entity hits a Death object. Collisions don't occur between objects if they 
+	 * are both on the player or enemy layers. There may be a better way to implement entities being affected 
+	 * by terrain movement
 	*/
 	void OnCollisionStay(Collision col)
 	{

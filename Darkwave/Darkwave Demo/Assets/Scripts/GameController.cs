@@ -26,6 +26,6 @@ public class GameController : MonoBehaviour
 		allyTargets = GameObject.FindGameObjectsWithTag("Enemy");
 		enemyTargets = GameObject.FindGameObjectsWithTag("Ally");
 		if(crystal.GetComponent<Crystal>().health <=0)
-			;//gameover
+			Debug.Log("GAME OVER");//gameover
 	}
 }

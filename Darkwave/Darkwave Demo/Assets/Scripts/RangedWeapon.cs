@@ -26,7 +26,7 @@ public class RangedWeapon : Weapon
 		if(mainActionFlag)
 		{
 			AttackAnimation();
-			if(currentCooldown == 0)
+			if(Ready)
 			{
 				//Shot spawn position temporarily changed until correct model can be imported
 				//Vector3 shotSpawnPosition = gameObject.transform.position;
@@ -38,7 +38,8 @@ public class RangedWeapon : Weapon
 				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 				
 				Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
-				currentCooldown = cooldown;
+				Ready=false;
+				currentCooldown=cooldown;
 				energy -= energyDrain;
 			}
 		}
