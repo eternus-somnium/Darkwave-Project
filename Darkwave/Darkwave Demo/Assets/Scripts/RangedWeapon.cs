@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class RangedWeapon : Weapon 
@@ -30,10 +30,9 @@ public class RangedWeapon : Weapon
 			{
 				//Shot spawn position temporarily changed until correct model can be imported
 				//Vector3 shotSpawnPosition = gameObject.transform.position;
-				Vector3 shotSpawnPosition = new Vector3(
-					gameObject.transform.position.x, 
-					gameObject.transform.position.y+.4f,
-					gameObject.transform.position.z);
+				Vector3 shotSpawnPosition = new Vector3(gameObject.transform.position.x, 
+				                                        gameObject.transform.position.y+.4f,
+				                                        gameObject.transform.position.z);
 
 				Vector3 bulletSpread = new Vector3(Random.Range(-1f,1f)*(10-accuracy),Random.Range(-1f,1f)*(10-accuracy),0);
 				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);

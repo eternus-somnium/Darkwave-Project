@@ -39,8 +39,6 @@ public class Turret : NPC
 			shotSpawnRotation = newRotation;
 
 			Attack();
-			
-			startPosition = transform.position;
 		}
 	}
 }

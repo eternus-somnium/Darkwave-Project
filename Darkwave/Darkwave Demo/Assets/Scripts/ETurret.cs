@@ -36,8 +36,6 @@ public class ETurret : Enemy
 			shotSpawnRotation = newRotation;
 
 			Attack();
-			
-			startPosition = transform.position;
 		}
 	}
 }

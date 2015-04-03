@@ -77,7 +77,7 @@ public class Character : Entity
 		
 		//Rotates Player on "Y" Axis Acording to Mouse Input
 		vRotation = Mathf.Clamp(vRotation - verticalSpeed * Input.GetAxis("Mouse Y"), -90,90);
-		Camera.mainCamera.transform.localEulerAngles = new Vector3(vRotation, 0, 0);
+		Camera.main.transform.localEulerAngles = new Vector3(vRotation, 0, 0);
 
 	}
 

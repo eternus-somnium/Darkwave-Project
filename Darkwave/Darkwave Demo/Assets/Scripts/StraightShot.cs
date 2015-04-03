@@ -22,7 +22,7 @@ public class StraightShot : Shot
 	// FixedUpdate is called at a set time interval
 	void FixedUpdate () 
 	{
-		transform.Translate(new Vector3(0,0,baseSpeed*Time.deltaTime));
+		transform.Translate(new Vector3(baseSpeed*Time.deltaTime,0,0));
 	}
 
 	//Controls the shot's behavior when it hits something

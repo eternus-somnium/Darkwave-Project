@@ -4,21 +4,19 @@ using System.Collections;
 public class NPC : Entity 
 {
 	//Behavior variables (set in editor)
+	public GameObject[] targetList;
+	public GameObject target = null;
+	public float targetDistance;
 	public int behavior;
-	public int patrolSize;
+
 	public int sensorRange;
 	public int engagementRange;
 	public bool inSight;
-	public int interest;
-	public int attentionSpan;
-	public int distance;
+
 	public int energy;
+	public int maxEnergy;
 	public GameObject treasure;
-	public GameObject target;
-	public Vector2 targetLastPosition;
-
-	public Vector2 startPosition;
-
+	
 	//Movement
 	public float jumpHeight;// set in editor
 	public Vector3 direction;
@@ -54,20 +52,17 @@ public class NPC : Entity
 	public void NPCStart () 
 	{
 		EntityStart();
-		startPosition = transform.position;
-
-		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, sensorRange))
-		{
-			targetLastPosition = target.transform.position;
-			inSight = true;
-		}
-		else inSight = false;
 	}
 
 	// Update is called once per frame
 	public void NPCUpdate () 
 	{
 		EntityUpdate();
+
+		if(gameObject.tag == "Allies")
+			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
+		else targetList = GameObject.Find("Game Controller").GetComponent<GameController>().enemyTargets;
+		ChooseTarget();
 
 		if(health < 1)
 		{
@@ -82,6 +77,26 @@ public class NPC : Entity
 		if(currentCooldown3 > 0) currentCooldown3--;
 		if(currentCooldown4 > 0) currentCooldown4--;
 	}
+
+	void ChooseTarget()
+	{
+		if(target == null)
+		{
+			target = targetList[0];
+		}
+
+		targetDistance = Vector3.Distance(gameObject.transform.position, target.transform.position);
+
+		foreach (GameObject possibleTarget in targetList) 
+		{
+			if(
+				(possibleTarget.GetComponent<Entity>().aggroValue / 
+				Vector3.Distance(gameObject.transform.position, possibleTarget.transform.position)) > 
+				(target.GetComponent<Entity>().aggroValue / targetDistance))
+				target = possibleTarget;
+		}
+	}
+
 
 	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
 	//Called by the child function when the conditions have been.
