@@ -4,12 +4,6 @@ using System.Collections;
 */
 public class Enemy : NPC 
 {
-	public double agroDistance;
-	public float speed;
-	private int agroHoldCount = 0;
-
-	
-
 	// Use this for initialization
 	public void EnemyStart () 
 	{
@@ -19,40 +13,14 @@ public class Enemy : NPC
 	public void EnemyUpdate()
 	{
 		NPCUpdate();
-	}
+		shotSpawnPosition = transform.position;
 
-	bool IsAgro(GameObject target) //Does the entity Agro?
-	{
-		//Debug.Log ("Run IsAgro");
-		double agroDistanceMod;
-		double targetNoise = 1;  // <-- Increases or decreases agro area.
-		double targetDistance = Vector3.Distance (target.transform.position, this.transform.position);
-
-		agroDistanceMod = agroDistance * targetNoise; // Modifies agro distance to account for "factors" (noise)
-
-		if (targetDistance < agroDistanceMod) 
+		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, sensorRange))
 		{
-			agroHoldCount = 100;
-			//Debug.Log ("In Distance");
-			return true;
-		} 
-		else if ((targetDistance < (agroDistanceMod * 2)) && (agroHoldCount > 0))
-		{ // Enemy will stay agroed still for an amount of time or until an enemy leaves a larger radius
-			agroHoldCount--;
-			//Debug.Log (agroHoldCount);
-			return true;
-		} 
-		else 
-		{
-			return false;
+			inSight = true;
 		}
-
-		//TODO Add a player noise level based on player speed to determine agro
-
-		//TODO Add accounting for agro-from-hits and other agro sources.
+		else inSight = false;
 	}
-
-
 
 	//Controls reactions to collisions
 	void OnCollisionEnter(Collision col)

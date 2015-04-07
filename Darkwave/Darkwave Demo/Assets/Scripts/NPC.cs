@@ -52,8 +52,9 @@ public class NPC : Entity
 	public void NPCStart () 
 	{
 		EntityStart();
+		energy=maxEnergy;
 		InvokeRepeating("AttackCooldowns",0,.5f);
-		InvokeRepeating("ChooseTarget",0,1f);
+		InvokeRepeating("ChooseTarget",1,1f);
 	}
 
 	// Update is called once per frame
@@ -61,7 +62,7 @@ public class NPC : Entity
 	{
 		EntityUpdate();
 
-		if(gameObject.tag == "Allies")
+		if(gameObject.tag == "Ally")
 			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
 		else targetList = GameObject.Find("Game Controller").GetComponent<GameController>().enemyTargets;
 

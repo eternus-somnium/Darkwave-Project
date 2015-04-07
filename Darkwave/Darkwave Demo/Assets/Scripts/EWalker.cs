@@ -19,7 +19,7 @@ public class EWalker : Enemy
 	void Update () 
 	{
 		EnemyUpdate();
-		agent.SetDestination (target.gameObject.transform.position);
-		agent.speed = speed;
+		if(target != null)
+			agent.SetDestination (target.gameObject.transform.position);
 	}
 }
