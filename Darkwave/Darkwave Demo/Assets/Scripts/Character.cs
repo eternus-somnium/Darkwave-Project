@@ -143,6 +143,7 @@ public class Character : Entity
 
 	void DeathController()
 	{
+		aggroValue = 0;
 		if(respawnTimer == 0) respawnTimer = ++deathCounter * 10f;
 		else if( respawnTimer > 0) respawnTimer-=Time.deltaTime;
 		else
