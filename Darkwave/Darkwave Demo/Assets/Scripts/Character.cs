@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Character : Entity 
 {
-	//Used in OnTriggerEnter()
+	//Used in OnTriggerEnter() and healthController()
 	bool inLitArea=true;
-	float outsideLitAreaTimer=0;
+	float counter;
 	//Used for MoveController()
 	float jumpCounter = 0.0F;
 	//Used in CameraController()
@@ -26,6 +26,7 @@ public class Character : Entity
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.x+Random.Range(-1,1)*5,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
+		InvokeRepeating("healthRegenController",1,1);
 	}
 
 	void Update() 
@@ -36,27 +37,10 @@ public class Character : Entity
 		MoveController();
 
 		if(health>0)
-		{
-			if(!inLitArea) 
-				InvokeRepeating("litAreaController",0,1);
+		{ 
 			WeaponController();
 		}
 		else DeathController();
-	}
-
-	void litAreaController()
-	{
-		if(health <= 0 || inLitArea)
-		{
-			outsideLitAreaTimer = 0;
-			CancelInvoke("litAreaController");
-		}
-		else
-		{
-			outsideLitAreaTimer+=Time.deltaTime;
-			health-= Mathf.RoundToInt(outsideLitAreaTimer);
-		}
-
 	}
 
 	void MoveController()
@@ -141,6 +125,17 @@ public class Character : Entity
 		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
 	}
 
+	void healthRegenController()
+	{
+		counter = (GameObject.Find("Game Controller").GetComponent<GameController>().sphereScale/2)-
+					Vector3.Distance(gameObject.transform.position, 
+			                 GameObject.Find("Game Controller").GetComponentInChildren<Crystal>().transform.position);
+
+		if(inLitArea && health > 0 && health < maxHealth)
+			health += counter / 1000;
+		else if (!inLitArea && health > 0)
+			health += counter / 100;
+	}
 	void DeathController()
 	{
 		aggroValue = 0;

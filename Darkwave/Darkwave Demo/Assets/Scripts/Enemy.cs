@@ -27,11 +27,7 @@ public class Enemy : NPC
 	{
 		if((stun == 0) && (col.gameObject.layer == 8))
 		{
-			Debug.Log ("Read Collision");
-			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
 			col.gameObject.GetComponent<Entity>().health -= gameObject.GetComponent<Entity>().touchDamage;
-			print ("hit");
-			stun = 5;
 		}
 	}
 	

@@ -9,14 +9,14 @@ public class StraightShot : Shot
 	void Start () 
 	{
 		ShotStart();
-		touchDamage = health;
+		touchDamage = Mathf.RoundToInt(health);
 		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*50);
 	}
 
 	void Update()
 	{
 		ShotUpdate();
-		touchDamage = health;
+		touchDamage = Mathf.RoundToInt(health);
 	}
 
 	//Controls the shot's behavior when it hits something

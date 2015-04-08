@@ -10,8 +10,8 @@ using System.Collections;
 public class Entity : MonoBehaviour 
 {
 	//Status Variables
-	public int health;
-	public int maxHealth;	//set in editor
+	public float health;
+	public float maxHealth;	//set in editor
 	public int touchDamage;	//set in editor
 	public int aggroValue=1;
 	public int stun=0;
