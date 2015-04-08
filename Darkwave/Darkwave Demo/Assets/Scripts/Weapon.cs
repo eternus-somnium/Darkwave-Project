@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 
 	public bool mainActionFlag, SecondaryActionFlag;
 	bool ready;
-	public int cooldown, currentCooldown=0;//Measured in half seconds
+	public int cooldown, currentCooldown=0;//Measured in quarter seconds
 	public int energy = 100;
 	public int currentEnergy;
 	public int energyDrain = 0;
@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		currentEnergy = energy;
-		InvokeRepeating("WeaponTime",0,.5f);
+		InvokeRepeating("WeaponTime",0,.25f);
 	}
 
 	void WeaponTime()

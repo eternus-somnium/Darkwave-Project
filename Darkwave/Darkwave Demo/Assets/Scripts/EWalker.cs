@@ -19,11 +19,8 @@ public class EWalker : Enemy
 	void Update () 
 	{
 		EnemyUpdate();
-		if(target != null)
+		if(target != null && agent.isActiveAndEnabled)
 			agent.SetDestination (target.gameObject.transform.position);
-		if(targetDistance < .5f)
-			agent.speed = 0;
-		else agent.speed = baseSpeed;
 	}
 
 }

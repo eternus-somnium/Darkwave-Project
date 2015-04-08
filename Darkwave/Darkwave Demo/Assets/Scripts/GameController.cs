@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GameController : MonoBehaviour 
 {
@@ -24,7 +25,7 @@ public class GameController : MonoBehaviour
 		sphereScale = 100 + (roundTimer-timeLeft)*0.5f;
 		litSphere.transform.localScale = new Vector3(sphereScale,sphereScale,sphereScale);
 		allyTargets = GameObject.FindGameObjectsWithTag("Enemy");
-		enemyTargets = GameObject.FindGameObjectsWithTag("Ally");
+		enemyTargets = GameObject.FindGameObjectsWithTag("Ally").Concat(GameObject.FindGameObjectsWithTag("Player")).ToArray();
 		if(crystal.GetComponent<Crystal>().health <=0)
 			Debug.Log("GAME OVER");//gameover
 	}

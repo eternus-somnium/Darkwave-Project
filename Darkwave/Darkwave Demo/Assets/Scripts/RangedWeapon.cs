@@ -11,7 +11,7 @@ public class RangedWeapon : Weapon
 	void Start ()
 	{
 		WeaponStart();
-		secondaryPosition= new Vector3(0,-0.7f,0);
+		secondaryPosition= new Vector3(0,-0.2f,0);
 	}
 	
 	// Update is called once per frame
@@ -29,10 +29,10 @@ public class RangedWeapon : Weapon
 			if(Ready)
 			{
 				//Shot spawn position temporarily changed until correct model can be imported
-				//Vector3 shotSpawnPosition = gameObject.transform.position;
-				Vector3 shotSpawnPosition = new Vector3(gameObject.transform.position.x, 
+				Vector3 shotSpawnPosition = gameObject.transform.position;
+				/*Vector3 shotSpawnPosition = new Vector3(gameObject.transform.position.x, 
 				                                        gameObject.transform.position.y,
-				                                        gameObject.transform.position.z+.4f);
+				                                        gameObject.transform.position.z+.4f);*/
 
 				Vector3 bulletSpread = new Vector3(Random.Range(-1f,1f)*(10-accuracy),Random.Range(-1f,1f)*(10-accuracy),0);
 				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);

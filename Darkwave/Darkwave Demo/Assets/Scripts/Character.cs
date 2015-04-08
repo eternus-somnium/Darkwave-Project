@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Character : Entity 
 {
+	public int treasures=0;
 	//Used in OnTriggerEnter() and healthController()
-	bool inLitArea=true;
+	bool inLitArea = true;
 	float counter;
 	//Used for MoveController()
 	float jumpCounter = 0.0F;
@@ -14,7 +15,6 @@ public class Character : Entity
 	int deathCounter = 0;
 	float respawnTimer = 0;
 	Vector3 respawnPoint;
-
 	//Used in WeaponController()
 	int weaponChoice = 0;
 	public GameObject[] weapons;
@@ -151,10 +151,21 @@ public class Character : Entity
 
 	void OnTriggerEnter(Collider col)
 	{
-		inLitArea=true;
+		if(col.gameObject.tag == "LitArea")
+		{
+			inLitArea=true;
+		}
+		if(col.gameObject.tag == "Treasure")
+		{
+			treasures++;
+			Destroy(col.gameObject);
+		}
 	}
 	void OnTriggerExit(Collider col)
 	{
-		inLitArea=false;
+		if(col.gameObject.tag == "LitArea")
+		{
+			inLitArea=false;
+		}
 	}
 }

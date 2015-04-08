@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\ETurret.cs" />
      <Compile Include="Assets\Scripts\EWalker.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Entity.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\MeleeWeapon.cs" />
