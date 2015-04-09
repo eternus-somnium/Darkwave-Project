@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour 
 {
+	bool inLitArea = false;
 	public GameObject[] enemies;
 	public int enemyChoice, timeBetweenSpawns;
 	Vector3 enemySpawnPosition;
@@ -16,15 +17,28 @@ public class EnemySpawner : MonoBehaviour
 		enemySpawnRotation = this.transform.rotation;
 		InvokeRepeating("SpawnEnemies", 1, timeBetweenSpawns);
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-
-	}
 
 	void SpawnEnemies()
 	{
-		Instantiate(enemies[enemyChoice], enemySpawnPosition, enemySpawnRotation);
+		if(gameObject.GetComponentInParent<GameController>().enemiesLeft > 0  && !inLitArea)
+		{
+			gameObject.GetComponentInParent<GameController>().enemiesLeft--;
+			Instantiate(enemies[enemyChoice], enemySpawnPosition, enemySpawnRotation);
+		}
+	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		if(col.gameObject.tag == "LitArea")
+		{
+			inLitArea=true;
+		}
+	}
+	void OnTriggerExit(Collider col)
+	{
+		if(col.gameObject.tag == "LitArea")
+		{
+			inLitArea=false;
+		}
 	}
 }

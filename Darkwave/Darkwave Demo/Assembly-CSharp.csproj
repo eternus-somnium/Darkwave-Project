@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\Shot.cs" />
      <Compile Include="Assets\Scripts\StraightShot.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
-     <Compile Include="Assets\Scripts\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\Inside Sphere.shader" />
  <Reference Include="UnityEngine.UI">
