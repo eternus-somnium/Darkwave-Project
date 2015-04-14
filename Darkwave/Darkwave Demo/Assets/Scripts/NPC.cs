@@ -66,6 +66,13 @@ public class NPC : Entity
 			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
 		else targetList = GameObject.Find("Game Controller").GetComponent<GameController>().enemyTargets;
 
+		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, sensorRange))
+		{
+			inSight = true;
+		}
+		else inSight = false;
+
+		shotSpawnPosition = transform.position;
 
 		if(health < 1)
 		{
@@ -143,6 +150,17 @@ public class NPC : Entity
 				energy -= energyDrain4;
 			}
 			break;
+		}
+	}
+
+	//Controls reactions to collisions
+	void OnCollisionEnter(Collision col)
+	{
+		if((stun == 0) && 
+		   ((gameObject.layer == 8 && col.gameObject.layer == 9) || 
+		 	(gameObject.layer == 9 && col.gameObject.layer == 8)))
+		{
+			col.gameObject.GetComponent<Entity>().health -= gameObject.GetComponent<Entity>().touchDamage;
 		}
 	}
 

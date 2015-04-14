@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EWalker : Enemy
+public class EWalker : NPC
 {
 
 	private NavMeshAgent agent;
@@ -9,7 +9,7 @@ public class EWalker : Enemy
 	// Use this for initialization
 	void Start () 
 	{
-		EnemyStart ();
+		NPCStart ();
 
 		agent = gameObject.GetComponent<NavMeshAgent> ();
 		agent.speed = baseSpeed;
@@ -18,7 +18,7 @@ public class EWalker : Enemy
 	// Update is called once per frame
 	void Update () 
 	{
-		EnemyUpdate();
+		NPCUpdate();
 		if(target != null && agent.isActiveAndEnabled)
 			agent.SetDestination (target.gameObject.transform.position);
 	}
