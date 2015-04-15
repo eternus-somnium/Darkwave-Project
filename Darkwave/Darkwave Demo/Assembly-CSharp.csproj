@@ -46,19 +46,27 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BuildDevice.cs" />
+     <Compile Include="Assets\Scripts\BuildableObject.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\Crystal.cs" />
-     <Compile Include="Assets\Scripts\ETurret.cs" />
      <Compile Include="Assets\Scripts\EWalker.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Entity.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Grid.cs" />
+     <Compile Include="Assets\Scripts\Helper Classes\Wall.cs" />
      <Compile Include="Assets\Scripts\MeleeWeapon.cs" />
      <Compile Include="Assets\Scripts\NPC.cs" />
+     <Compile Include="Assets\Scripts\PlacementWall.cs" />
      <Compile Include="Assets\Scripts\RangedWeapon.cs" />
      <Compile Include="Assets\Scripts\Shot.cs" />
      <Compile Include="Assets\Scripts\StraightShot.cs" />
      <Compile Include="Assets\Scripts\Turret.cs" />
+     <Compile Include="Assets\Scripts\TurretBehavior.cs" />
+     <Compile Include="Assets\Scripts\Walker.cs" />
+     <Compile Include="Assets\Scripts\WallConnector.cs" />
+     <Compile Include="Assets\Scripts\WallNode.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <None Include="Assets\Inside Sphere.shader" />
  <Reference Include="UnityEngine.UI">

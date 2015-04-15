@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MeleeWeapon : Weapon 
@@ -31,7 +31,7 @@ public class MeleeWeapon : Weapon
 	
 	public void SecondaryAction()
 	{
-		if(SecondaryActionFlag)
+		if(secondaryActionFlag)
 		{
 			if(!mainActionFlag)
 			{

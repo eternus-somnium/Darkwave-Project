@@ -4,7 +4,7 @@ using System.Collections;
 public class Weapon : MonoBehaviour 
 {
 
-	public bool mainActionFlag, SecondaryActionFlag;
+	public bool mainActionFlag, secondaryActionFlag;
 	bool ready;
 	public int cooldown, currentCooldown=0;//Measured in quarter seconds
 	public int energy = 100;
@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
 
 	public void SecondaryActionController(bool value)
 	{
-		SecondaryActionFlag = value;
+		secondaryActionFlag = value;
 	}
 
 	public Vector3 DefaultPosition {

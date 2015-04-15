@@ -27,6 +27,7 @@ public class Character : Entity
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
+
 	}
 
 	void Update() 
@@ -95,7 +96,6 @@ public class Character : Entity
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=0;
 			weapons[weaponChoice].SetActive(true);
-
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha2)) 
 		{
@@ -116,6 +116,10 @@ public class Character : Entity
 			weaponChoice=3;
 			weapons[weaponChoice].SetActive(true);
 		}
+
+		//Grid controller
+		if(weaponChoice == 3) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
+		else gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
 
 		//Attack controller
 		if(Input.GetButton("Fire1")) weapons[weaponChoice].SendMessage("MainActionController", true);

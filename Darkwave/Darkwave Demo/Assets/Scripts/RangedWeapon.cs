@@ -48,7 +48,7 @@ public class RangedWeapon : Weapon
 	public void SecondaryAction()
 	{
 		transform.localPosition=Vector3.Lerp(gameObject.transform.localPosition,nextPosition, 5f*Time.deltaTime);
-		if(SecondaryActionFlag)
+		if(secondaryActionFlag)
 		{
 			nextPosition=secondaryPosition;
 			//gameObject.transform.localPosition = new Vector3(0,-0.7f,0);
