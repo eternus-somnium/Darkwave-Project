@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
 	public int energy = 100;
 	public int currentEnergy;
 	public int energyDrain = 0;
+	public GameObject shooter; // Entity wielding the weapon.
+	public Entity entity; // Entity's entity script. This is set in WeaponStart().
 
 	Vector3 defaultPosition;
 	public Vector3 secondaryPosition;
@@ -21,6 +23,7 @@ public class Weapon : MonoBehaviour
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		currentEnergy = energy;
+		entity = shooter.GetComponent<Entity>();
 		InvokeRepeating("WeaponTime",0,.25f);
 	}
 

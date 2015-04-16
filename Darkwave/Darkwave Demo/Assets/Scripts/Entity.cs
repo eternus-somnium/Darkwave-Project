@@ -16,6 +16,12 @@ public class Entity : MonoBehaviour
 	public int aggroValue=1;
 	public int stun=0;
 
+	//Effects Variables
+	public float focus;
+	public float haste; // Decreases weapon cooldown.
+	public float regen; // Regenerates health.
+	public float degen; // Degenerates health.
+
 	//Movement variables
 	public float baseSpeed;	//set in editor
 	
@@ -30,6 +36,40 @@ public class Entity : MonoBehaviour
 	public void EntityUpdate()
 	{
 		if(stun > 0) stun--;
+		EffectsUpdate();
+	}
+
+	// Updates current effects on entity.
+	void EffectsUpdate()
+	{
+		// Used in RangedWeapon.cs to lower the spread of ranged weapons.
+		// Will be implemented in Melee to increase max targets
+		if (focus > 0)
+		{
+			focus -= Time.deltaTime;
+			if (focus < 0) focus = 0;
+		}
+		// Used in RangedWeapon.cs to lower the cooldown of ranged weapons. To be added to Melee.
+		if (haste > 0)
+		{
+			haste -= Time.deltaTime;
+			if (haste < 0) haste = 0;
+		}
+		// Regenerates health at a rate of 1 health per second.
+		if (regen > 0)
+		{
+			regen -= Time.deltaTime;
+			health += Time.deltaTime;
+			if (health > maxHealth) health = maxHealth;
+			if (regen < 0) regen = 0;
+		}
+		// Degenerates health at a rate of 1 health per second.
+		if (degen > 0)
+		{
+			degen -= Time.deltaTime;
+			health -= Time.deltaTime;
+			if (degen < 0) degen = 0;
+		}
 	}
 
 	//Stub function for implementation of an animation controller

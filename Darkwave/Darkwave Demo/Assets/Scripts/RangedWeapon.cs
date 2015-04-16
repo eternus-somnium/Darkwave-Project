@@ -5,13 +5,18 @@ public class RangedWeapon : Weapon
 {
 	public int secondaryActionType; //0 Zoom, 1 Secondary Attack
 	public float accuracy;
+	private float focused;
 	public GameObject shot;
+	private Vector3 bulletSpread;
+	private Quaternion shotSpawnRotation;
 
 	// Use this for initialization
 	void Start ()
 	{
 		WeaponStart();
 		secondaryPosition= new Vector3(0,-0.2f,0);
+		focused = (3/5)*accuracy;
+		if (focused < 10) focused = 10;
 	}
 	
 	// Update is called once per frame
@@ -34,12 +39,18 @@ public class RangedWeapon : Weapon
 				                                        gameObject.transform.position.y,
 				                                        gameObject.transform.position.z+.4f);*/
 
-				Vector3 bulletSpread = new Vector3(Random.Range(-1f,1f)*(10-accuracy),Random.Range(-1f,1f)*(10-accuracy),0);
-				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
+				if (entity.focus > 0)
+					bulletSpread = new Vector3(Random.Range(-1f,1f)*(10-focused),Random.Range(-1f,1f)*(10-focused),0);
+				else
+					bulletSpread = new Vector3(Random.Range(-1f,1f)*(10-accuracy),Random.Range(-1f,1f)*(10-accuracy),0);
+				shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 				
 				Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
 				Ready=false;
-				currentCooldown=cooldown;
+				if (entity.haste > 0)
+					currentCooldown = cooldown / 4;
+				else
+					currentCooldown=cooldown;
 				energy -= energyDrain;
 			}
 		}

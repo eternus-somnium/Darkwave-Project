@@ -9,10 +9,18 @@ public class GameController : MonoBehaviour
 	public float roundTimer, timeLeft, sphereScale;
 	public GameObject crystal, litSphere;
 	public GameObject[] allyTargets, enemyTargets;
+	public GameObject playerOne;
+	private Character playerOneScript;
+
+	public GUIText playerHealth;
+	public GUIText playerBuffs;
+	public GUIText playerDebuffs;
+	public GUIText currentWeapon;
 
 	// Use this for initialization
 	void Start () 
 	{
+		playerOneScript = playerOne.GetComponent<Character>();
 		timeLeft = roundTimer = roundTimer*60f;
 		enemiesLeft=enemiesPerRound;
 	}
@@ -30,6 +38,19 @@ public class GameController : MonoBehaviour
 
 		if(crystal.GetComponent<Crystal>().health <=0)
 			GameOver();
+	}
+
+	void OnGUI()
+	{
+		if (playerOneScript.enabled == true)
+		{
+			playerHealth.text = "Health: " + playerOneScript.health;
+			playerBuffs.text = "Focus: " + playerOneScript.focus + 
+				" Haste: " + playerOneScript.haste + 
+				" Regen: " + playerOneScript.regen;
+			playerDebuffs.text = "Degen: " + playerOneScript.degen;
+			currentWeapon.text = "Current Weapon: " + playerOneScript.weaponChoice;
+		}
 	}
 
 	void RoundController()

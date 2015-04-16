@@ -16,10 +16,10 @@ public class Character : Entity
 	float respawnTimer = 0;
 	Vector3 respawnPoint;
 	//Used in WeaponController()
-	int weaponChoice = 0;
+	public int weaponChoice = 0;
 	public GameObject[] weapons;
 
-	void Start()
+	protected void Start()
 	{
 		EntityStart();
 		respawnPoint = new Vector3(
