@@ -15,7 +15,7 @@ public class RangedWeapon : Weapon
 	{
 		WeaponStart();
 		secondaryPosition= new Vector3(0,-0.2f,0);
-		focused = (3/5)*accuracy;
+		focused = accuracy - 3;
 		if (focused < 10) focused = 10;
 	}
 	
