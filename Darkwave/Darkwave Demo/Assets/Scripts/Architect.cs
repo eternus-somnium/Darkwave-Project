@@ -13,7 +13,7 @@ public class Architect : Character
 	public int perception; // Value from 0 to 9 determines how many attribute points are in Perception.
 
 	// Called on script initialization to setup the Architect player in the game world.
-	void Start()
+	new void Start()
 	{
 		base.Start();
 		player = GameObject.Find("Character"); // Sets the player GameObject to the Architect.
@@ -28,14 +28,8 @@ public class Architect : Character
 	void AbilityUnlockMinor()
 	{
 		// Sets abilities to true or false depending on how many points each trait line has.
-		if (marksmanship >= 1)
-		{
-			attributeHuntersMomemtum.enabled = true;
-		}
-		else
-		{
-			attributeHuntersMomemtum.enabled = false;
-		}
+		if (marksmanship >= 1) attributeHuntersMomemtum.enabled = true;
+		else attributeHuntersMomemtum.enabled = false;
 
 		AbilitySet(); // Activates the trait abilities.
 	}

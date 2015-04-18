@@ -15,21 +15,28 @@ public class Entity : MonoBehaviour
 	public int touchDamage;	//set in editor
 	public int aggroValue=1;
 	public int stun=0;
+	public int accMod; // Accuracy modifier
 
 	//Effects Variables
-	public float focus;
+	public float empowered; // Increases damage.
+	public float focus; // Improves weapon accuracy.
 	public float haste; // Decreases weapon cooldown.
 	public float regen; // Regenerates health.
 	public float degen; // Degenerates health.
+	public float burning; // Degenerates health and worsens weapon accuracy.
+	public float swift; // Increases speed by 33%.
+	public float crippled; // Decreases speed by 50%.
 
 	//Movement variables
-	public float baseSpeed;	//set in editor
+	public float baseSpeed, speedMod;	//set in editor
 	
 	internal float yMove = 0;
 	
 	public void EntityStart()
 	{
 		health = maxHealth;
+		speedMod = 0;
+		accMod = 0;
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object
@@ -42,6 +49,22 @@ public class Entity : MonoBehaviour
 	// Updates current effects on entity.
 	void EffectsUpdate()
 	{
+		if (health <= 0)
+		{
+			empowered = 0;
+			focus = 0;
+			haste = 0;
+			regen = 0;
+			degen = 0;
+			burning = 0;
+			swift = 0;
+			crippled = 0;
+		}
+		if (empowered > 0)
+		{
+			empowered -= Time.deltaTime;
+			if (empowered < 0) empowered = 0;
+		}
 		// Used in RangedWeapon.cs to lower the spread of ranged weapons.
 		// Will be implemented in Melee to increase max targets
 		if (focus > 0)
@@ -70,6 +93,33 @@ public class Entity : MonoBehaviour
 			health -= Time.deltaTime;
 			if (degen < 0) degen = 0;
 		}
+		// Searing burns causes separate degen and worsens accuracy.
+		if (burning > 0)
+		{
+			burning -= Time.deltaTime;
+			health -= (1.5F * Time.deltaTime);
+			if (burning < 0) burning = 0;
+		}
+		// Increases movement speed.
+		if (swift > 0)
+		{
+			swift -= Time.deltaTime;
+			if (swift < 0) swift = 0;
+		}
+		// Decreases movement speed.
+		if (crippled > 0)
+		{
+			crippled -= Time.deltaTime;
+			if (crippled < 0) crippled = 0;
+		}
+		// Adjust speed multiplier based on movement effects.
+		speedMod = 1;
+		if (swift > 0) speedMod += 0.33F;
+		if (crippled > 0) speedMod -= 0.5F;
+		// Adjust accuracy modifier based on certain effects.
+		accMod = 0;
+		if (focus > 0) accMod--;
+		if (burning > 0) accMod += 3;
 	}
 
 	//Stub function for implementation of an animation controller

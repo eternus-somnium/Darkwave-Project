@@ -56,7 +56,7 @@ public class Character : Entity
 		{
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);// makes input directions camera relative
-			moveDirection *= baseSpeed;
+			moveDirection *= baseSpeed * speedMod;
 
 			if (controller.isGrounded) 
 			{

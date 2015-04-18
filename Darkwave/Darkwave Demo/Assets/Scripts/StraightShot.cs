@@ -4,13 +4,12 @@ using System.Collections;
 //Code for the straight shots
 public class StraightShot : Shot
 {
-
 	// Use this for initialization
 	void Start () 
 	{
 		ShotStart();
 		touchDamage = Mathf.RoundToInt(health);
-		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*50);
+		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
 	}
 
 	void Update()
@@ -27,6 +26,7 @@ public class StraightShot : Shot
 		   (gameObject.layer == 9) && (col.gameObject.layer == 8))
 		{
 			col.gameObject.GetComponent<Entity>().health -= gameObject.GetComponent<Entity>().health;
+			if (willBurn) col.gameObject.GetComponent<Entity>().burning = 10;
 			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
 
 			//If a shot hits anything other than a shot it zeros out it's health.  If a shot hits another shot the weaker one is destroyed

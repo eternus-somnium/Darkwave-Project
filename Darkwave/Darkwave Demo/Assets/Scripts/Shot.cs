@@ -5,6 +5,8 @@ using System.Collections;
  */
 public class Shot : Entity 
 {
+	public int projectileSpeed;
+	public bool willBurn = false;
 	bool inLitArea=true;
 
 	public void ShotStart()

@@ -30,6 +30,7 @@ public class AttributeHuntersMomemtum : MonoBehaviour {
 	// Called every cooldown seconds.
 	void Effect()
 	{
-		architect.focus += focusIncrease; // Increases the Architect's focus by focusIncrease.
+		// Increases the Architect's focus by focusIncrease if his health is at least 90%.
+		if (architect.health >= 0.9F * architect.maxHealth) architect.focus += focusIncrease; 
 	}
 }

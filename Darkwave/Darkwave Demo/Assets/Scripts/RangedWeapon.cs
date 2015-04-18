@@ -5,18 +5,18 @@ public class RangedWeapon : Weapon
 {
 	public int secondaryActionType; //0 Zoom, 1 Secondary Attack
 	public float accuracy;
-	private float focused;
 	public GameObject shot;
 	private Vector3 bulletSpread;
 	private Quaternion shotSpawnRotation;
+	private Shot shotScript;
+	private GameObject newShot;
 
 	// Use this for initialization
 	void Start ()
 	{
 		WeaponStart();
 		secondaryPosition= new Vector3(0,-0.2f,0);
-		focused = accuracy - 3;
-		if (focused < 10) focused = 10;
+
 	}
 	
 	// Update is called once per frame
@@ -24,6 +24,7 @@ public class RangedWeapon : Weapon
 	{
 		MainAction();
 		SecondaryAction();
+		WeaponTime();
 	}
 
 	public void MainAction()
@@ -38,19 +39,23 @@ public class RangedWeapon : Weapon
 				/*Vector3 shotSpawnPosition = new Vector3(gameObject.transform.position.x, 
 				                                        gameObject.transform.position.y,
 				                                        gameObject.transform.position.z+.4f);*/
-
-				if (entity.focus > 0)
-					bulletSpread = new Vector3(Random.Range(-1f,1f)*(10-focused),Random.Range(-1f,1f)*(10-focused),0);
-				else
-					bulletSpread = new Vector3(Random.Range(-1f,1f)*(10-accuracy),Random.Range(-1f,1f)*(10-accuracy),0);
+				bulletSpread = new Vector3(Random.Range(-1f,1f)*
+					(10-Mathf.Clamp(accuracy + entity.accMod,10,100)),Random.Range(-1f,1f)*
+				    (10-Mathf.Clamp(accuracy + entity.accMod,10,100)),0);
 				shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
-				
-				Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
+
+				// Allows modifications to instanced shots.
+				newShot = (GameObject)Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
+				shotScript = newShot.GetComponent<Shot>();
+				if (entity.empowered > 0)
+				{
+					shotScript.maxHealth *= 1.33F;
+					shotScript.health *= 1.33F;
+					shotScript.willBurn = true; // Test effect. To be moved to another conditional.
+				}
 				Ready=false;
-				if (entity.haste > 0)
-					currentCooldown = cooldown / 4;
-				else
-					currentCooldown=cooldown;
+				if (entity.haste > 0) currentCooldown = cooldown / 4;
+				else currentCooldown=cooldown;
 				energy -= energyDrain;
 			}
 		}
