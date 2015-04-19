@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 	public float currentEnergy;
 	public float energyDrain = 0;
 	public GameObject shooter; // Entity wielding the weapon.
-	protected Entity entity; // Entity's entity script. This is set in WeaponStart().
+	public Entity entity;
 
 	Vector3 defaultPosition;
 	public Vector3 secondaryPosition;
@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour
 		nextPosition=defaultPosition;
 		currentEnergy = energy;
 		entity = shooter.GetComponent<Entity>();
+		
 	}
 
 	// Controls the weapon's fire rate. Called in child script's Update().

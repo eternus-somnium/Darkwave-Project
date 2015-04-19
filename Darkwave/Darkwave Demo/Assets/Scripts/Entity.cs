@@ -16,27 +16,38 @@ public class Entity : MonoBehaviour
 	public int aggroValue=1;
 	public int stun=0;
 	public int accMod; // Accuracy modifier
+	public float defMod; // Defense modifier
+	public float dmgMod; // Damage modifier
+	public float headShotMod; // Extra critical damage
 
 	//Effects Variables
-	public float empowered; // Increases damage.
-	public float focus; // Improves weapon accuracy.
-	public float haste; // Decreases weapon cooldown.
-	public float regen; // Regenerates health.
-	public float degen; // Degenerates health.
-	public float burning; // Degenerates health and worsens weapon accuracy.
+	public float empowered; // Increases damage by 25%.
+	public float focus; // Improves weapon accuracy by one unit.
+	public float haste; // Decreases weapon cooldown by 300%.
+	public float regen; // Regenerates health by 1 point per second.
+	public float degen; // Degenerates health by 1 point per second.
+	public float burning; // Degenerates health by 1.5 points per second and worsens weapon accuracy.
 	public float swift; // Increases speed by 33%.
 	public float crippled; // Decreases speed by 50%.
+	public float armored; // Decreases incoming damage by 50%.
 
 	//Movement variables
 	public float baseSpeed, speedMod;	//set in editor
+	protected bool aiming; // Improves accuracy by one unit and slows down speed by 40%.
 	
 	internal float yMove = 0;
+
+	//Combat Variables
+	public bool causedHeadShot; // True if a headshot was made, then sets itself back to false after use.
 	
 	public void EntityStart()
 	{
 		health = maxHealth;
 		speedMod = 0;
 		accMod = 0;
+		headShotMod = 0;
+		aiming = false;
+		causedHeadShot = false;
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object
@@ -49,77 +60,76 @@ public class Entity : MonoBehaviour
 	// Updates current effects on entity.
 	void EffectsUpdate()
 	{
-		if (health <= 0)
-		{
-			empowered = 0;
-			focus = 0;
-			haste = 0;
-			regen = 0;
-			degen = 0;
-			burning = 0;
-			swift = 0;
-			crippled = 0;
-		}
-		if (empowered > 0)
-		{
-			empowered -= Time.deltaTime;
-			if (empowered < 0) empowered = 0;
-		}
+		if (health <= 0) empowered = focus = haste = regen = degen = burning = swift = crippled = armored = 0;
+		if (empowered > 0) empowered = EffectsTimer(empowered);
 		// Used in RangedWeapon.cs to lower the spread of ranged weapons.
 		// Will be implemented in Melee to increase max targets
-		if (focus > 0)
-		{
-			focus -= Time.deltaTime;
-			if (focus < 0) focus = 0;
-		}
+		if (focus > 0) focus = EffectsTimer(focus);
 		// Used in RangedWeapon.cs to lower the cooldown of ranged weapons. To be added to Melee.
-		if (haste > 0)
-		{
-			haste -= Time.deltaTime;
-			if (haste < 0) haste = 0;
-		}
+		if (haste > 0) haste = EffectsTimer(haste);
 		// Regenerates health at a rate of 1 health per second.
 		if (regen > 0)
 		{
-			regen -= Time.deltaTime;
+			regen = EffectsTimer(regen);
 			health += Time.deltaTime;
 			if (health > maxHealth) health = maxHealth;
-			if (regen < 0) regen = 0;
 		}
 		// Degenerates health at a rate of 1 health per second.
 		if (degen > 0)
 		{
-			degen -= Time.deltaTime;
+			degen = EffectsTimer(degen);
 			health -= Time.deltaTime;
-			if (degen < 0) degen = 0;
 		}
 		// Searing burns causes separate degen and worsens accuracy.
 		if (burning > 0)
 		{
-			burning -= Time.deltaTime;
+			burning = EffectsTimer(burning);
 			health -= (1.5F * Time.deltaTime);
-			if (burning < 0) burning = 0;
 		}
 		// Increases movement speed.
-		if (swift > 0)
-		{
-			swift -= Time.deltaTime;
-			if (swift < 0) swift = 0;
-		}
+		if (swift > 0) swift = EffectsTimer(swift);
 		// Decreases movement speed.
-		if (crippled > 0)
-		{
-			crippled -= Time.deltaTime;
-			if (crippled < 0) crippled = 0;
-		}
-		// Adjust speed multiplier based on movement effects.
+		if (crippled > 0) crippled = EffectsTimer(crippled);
+		// Decreases incoming damage.
+		if (armored > 0) armored = EffectsTimer(armored);
+		/* Adjust speed multiplier based on movement effects.
+		 * Only the largest positive and largest negative modifiers affect the entity.
+		 */
 		speedMod = 1;
 		if (swift > 0) speedMod += 0.33F;
 		if (crippled > 0) speedMod -= 0.5F;
+		else if (aiming) speedMod -= 0.40F;
 		// Adjust accuracy modifier based on certain effects.
 		accMod = 0;
 		if (focus > 0) accMod--;
+		if (aiming) accMod--;
 		if (burning > 0) accMod += 3;
+		// if defMod = 1, the entity takes no damage. Values above 1 causes damage to heal the entity.
+		defMod = 0;
+		if (armored > 0) defMod += 0.5F;
+		// dmgMod of 1 is base damage. Higher means more damage, and vise versa.
+		dmgMod = 1;
+		if (empowered > 0) dmgMod += 0.25F;
+	}
+
+	protected void ResetHeadShot()
+	{
+		causedHeadShot = false;
+		Debug.Log("On headshot triggers end");
+	}
+
+	float EffectsTimer(float effect)
+	{
+		effect -= Time.deltaTime;
+		if (effect < 0) effect = 0;
+		return effect;
+	}
+
+	// Parent method.
+	public virtual Shot FoeDmgEffect(Shot shot, Entity foe)
+	{
+		Debug.Log("virtual FoeDmgEffect");
+		return shot;
 	}
 
 	//Stub function for implementation of an animation controller

@@ -47,12 +47,10 @@ public class RangedWeapon : Weapon
 				// Allows modifications to instanced shots.
 				newShot = (GameObject)Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
 				shotScript = newShot.GetComponent<Shot>();
-				if (entity.empowered > 0)
-				{
-					shotScript.maxHealth *= 1.33F;
-					shotScript.health *= 1.33F;
-					shotScript.willBurn = true; // Test effect. To be moved to another conditional.
-				}
+				shotScript.shooter = shooter;
+				shotScript.shooterScript = entity;
+				shotScript.maxHealth *= entity.dmgMod;
+				shotScript.health *= entity.dmgMod;
 				Ready=false;
 				if (entity.haste > 0) currentCooldown = cooldown / 4;
 				else currentCooldown=cooldown;

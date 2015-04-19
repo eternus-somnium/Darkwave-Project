@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class NPC : Entity 
@@ -47,6 +47,10 @@ public class NPC : Entity
 
 	public Vector3 shotSpawnPosition;
 	public Quaternion shotSpawnRotation;
+
+	// NPCs should use weapon scripts for weapon attacks; this is a temporary change.
+	private GameObject newShot;
+	private Shot shotScript;
 
 	// Use this for initialization
 	public void NPCStart () 
@@ -121,7 +125,12 @@ public class NPC : Entity
 		case 1:
 			if(currentCooldown1 == 0)
 			{
-				Instantiate(attack1, shotSpawnPosition, shotSpawnRotation);
+				newShot = (GameObject)Instantiate(attack1, shotSpawnPosition, shotSpawnRotation);
+				shotScript = newShot.GetComponent<Shot>();
+				shotScript.shooter = this.gameObject;
+				shotScript.maxHealth *= this.dmgMod;
+				shotScript.health *= this.dmgMod;
+
 				currentCooldown1 = cooldown1;
 				energy -= energyDrain1;
 			}

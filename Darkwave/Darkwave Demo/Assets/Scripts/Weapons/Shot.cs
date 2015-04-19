@@ -7,11 +7,16 @@ public class Shot : Entity
 {
 	public int projectileSpeed;
 	public bool willBurn = false;
+	public float headShot;
+	public GameObject shooter;
+	public Entity shooterScript;
 	bool inLitArea=true;
 
 	public void ShotStart()
 	{
 		EntityStart();
+		headShot = 1;
+		if (shooterScript == null) shooterScript = shooter.GetComponent<Entity>();
 	}
 
 	public void ShotUpdate()

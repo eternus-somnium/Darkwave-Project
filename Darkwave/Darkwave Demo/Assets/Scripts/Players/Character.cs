@@ -30,7 +30,7 @@ public class Character : Entity
 
 	}
 
-	void Update() 
+	protected void Update() 
 	{
 		EntityUpdate();
 		CameraController();
@@ -125,8 +125,16 @@ public class Character : Entity
 		if(Input.GetButton("Fire1")) weapons[weaponChoice].SendMessage("MainActionController", true);
 		else weapons[weaponChoice].SendMessage("MainActionController", false);
 		
-		if(Input.GetButton("Fire2")) weapons[weaponChoice].SendMessage("SecondaryActionController", true);
-		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+		if(Input.GetButton("Fire2"))
+		{
+			weapons[weaponChoice].SendMessage("SecondaryActionController", true);
+			aiming = true;
+		}
+		else
+		{
+			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+			aiming = false;
+		}
 	}
 
 	void healthRegenController()

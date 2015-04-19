@@ -25,8 +25,29 @@ public class StraightShot : Shot
 		if((gameObject.layer == 8) && (col.gameObject.layer == 9) ||
 		   (gameObject.layer == 9) && (col.gameObject.layer == 8))
 		{
-			col.gameObject.GetComponent<Entity>().health -= gameObject.GetComponent<Entity>().health;
-			if (willBurn) col.gameObject.GetComponent<Entity>().burning = 10;
+			if (col.collider.material.name == "Head (Instance)")
+			{
+				shooterScript.causedHeadShot = true;
+				headShot += 0.5F;
+			}
+
+			/*
+			Shot strikingShot = this.gameObject.GetComponent<Shot>();
+			Entity struckFoe = col.gameObject.GetComponent<Entity>();
+
+			strikingShot = shooterScript.FoeHit(strikingShot, struckFoe);
+			*/
+
+			Debug.Log("Headshot before FoeDmgEffect is " + headShot);
+			Debug.Log (shooter + " is the shooter, " + shooterScript + " is shooterScript, " + this.gameObject.GetComponent<Shot>() + " is the Shot script, and " + col.gameObject.GetComponent<Entity>() + " is the struck entity.");
+			shooterScript.FoeDmgEffect(this.gameObject.GetComponent<Shot>(), col.gameObject.GetComponent<Entity>());
+			Debug.Log("Headshot after FoeDmgEffect is " + headShot);
+
+			col.gameObject.GetComponent<Entity>().health -= (this.gameObject.GetComponent<Shot>().health * (1 - col.gameObject.GetComponent<Entity>().defMod) * headShot);
+			headShot = 1;
+
+			if (willBurn) col.gameObject.GetComponent<Entity>().burning = 1;
+
 			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
 
 			//If a shot hits anything other than a shot it zeros out it's health.  If a shot hits another shot the weaker one is destroyed

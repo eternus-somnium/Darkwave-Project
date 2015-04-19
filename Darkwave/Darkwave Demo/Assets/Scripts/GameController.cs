@@ -47,10 +47,12 @@ public class GameController : MonoBehaviour
 		if (playerOneScript.enabled == true)
 		{
 			playerHealth.text = "Health: " + playerOneScript.health.ToString("F2");
-			playerBuffs.text = "Focus: " + playerOneScript.focus.ToString("F2") + 
+			playerBuffs.text = "Empowered: " + playerOneScript.empowered.ToString("F2") + 
+				" Focus: " + playerOneScript.focus.ToString("F2") + 
 				" Haste: " + playerOneScript.haste.ToString("F2") + 
 				" Regen: " + playerOneScript.regen.ToString("F2") +
-				" Swift: " + playerOneScript.swift.ToString("F2");
+				" Swift: " + playerOneScript.swift.ToString("F2") +
+				" Armored: " + playerOneScript.armored.ToString ("F2");
 			playerDebuffs.text = "Degen: " + playerOneScript.degen.ToString("F2") +
 				" Burning: " + playerOneScript.burning.ToString("F2") +
 				" Crippled: " + playerOneScript.crippled.ToString("F2");
