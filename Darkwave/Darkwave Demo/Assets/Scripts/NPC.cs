@@ -160,7 +160,7 @@ public class NPC : Entity
 		   ((gameObject.layer == 8 && col.gameObject.layer == 9) || 
 		 	(gameObject.layer == 9 && col.gameObject.layer == 8)))
 		{
-			col.gameObject.GetComponent<Entity>().health -= gameObject.GetComponent<Entity>().touchDamage;
+			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
 		}
 	}
 

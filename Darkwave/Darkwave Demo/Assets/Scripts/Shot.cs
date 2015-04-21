@@ -23,11 +23,11 @@ public class Shot : Entity
 
 	void OnTriggerEnter(Collider col)
 	{
-		inLitArea=true;
+		if(col.tag == "LitArea") inLitArea=true;
 	}
 
 	void OnTriggerExit(Collider col)
 	{
-		inLitArea=false;
+		if(col.tag == "LitArea") inLitArea=false;
 	}
 }
