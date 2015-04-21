@@ -2,17 +2,19 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BuildDevice.cs">
     <Files>
-      <File FileName="Assets\Scripts\BuildDevice.cs" Line="110" Column="64" />
+      <File FileName="Assets\Scripts\BuildDevice.cs" Line="96" Column="4" />
       <File FileName="Assets\Scripts\Grid.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character.cs" Line="118" Column="4" />
       <File FileName="Assets\Scripts\PlacementWall.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WallNode.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WallNode.cs" Line="36" Column="1" />
       <File FileName="Assets\Scripts\WallConnector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RangedWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Turret.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapon.cs" Line="7" Column="49" />
+      <File FileName="Assets\Scripts\RangedWeapon.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\Turret.cs" Line="29" Column="20" />
       <File FileName="Assets\Scripts\Walker.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BuildableObject.cs" Line="6" Column="41" />
+      <File FileName="Assets\Scripts\NPC.cs" Line="106" Column="1" />
+      <File FileName="Assets\Scripts\TurretBehavior.cs" Line="24" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

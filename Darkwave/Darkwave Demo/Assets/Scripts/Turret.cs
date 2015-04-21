@@ -8,20 +8,17 @@ public class Turret : NPC
 	void Start()
 	{
 		NPCStart();
-		if(gameObject.layer == 8) attack1 = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Shot.prefab", typeof(GameObject));
-		else attack1 = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/EShot.prefab", typeof(GameObject));
 	}
 	public void TurretStart()
 	{
 		NPCStart();
-		if(gameObject.layer == 8) attack1 = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Shot.prefab", typeof(GameObject));
-		else attack1 = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/EShot.prefab", typeof(GameObject));
 	}
 
 	// FixedUpdate is called at a set interval
 	void FixedUpdate () 
 	{
 		NPCUpdate();
+		shotSpawnPosition = transform.position;
 		EntityAI();
 		
 		//Debug.DrawRay (transform.position, target.transform.position - transform.position, rayColor);

@@ -22,6 +22,10 @@ public class TurretBehavior : Turret
 	void FixedUpdate () 
 	{
 		TurretFixedUpdate();
+		//spawns bullets in from topTurret object
+		shotSpawnPosition = topTurret.position;
+		//rotates topTurret toward target
+		topTurret.rotation= shotSpawnRotation;
         //adds floating effect
         Vector3 temp = topTurret.position;
         temp.y = temp.y + Mathf.Clamp(Mathf.Sin(Time.time) * 0.003f, -0.5f, 1f);
