@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CriticalPoint.cs" />
      <Compile Include="Assets\Scripts\BuildDevice.cs" />
      <Compile Include="Assets\Scripts\BuildableObject.cs" />
      <Compile Include="Assets\Scripts\Crystal.cs" />

@@ -63,6 +63,7 @@ public class StraightShot : Shot
 		//If a shot hits the terrain it will zero out it's health
 		else 
 			this.health = 0;
+
 	}
 
 }
