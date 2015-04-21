@@ -54,7 +54,7 @@ public class NPC : Entity
 		EntityStart();
 		energy=maxEnergy;
 		InvokeRepeating("AttackCooldowns",0,.5f);
-		InvokeRepeating("ChooseTarget",1,1f);
+		InvokeRepeating("ChooseTarget",1,2f);
 	}
 
 	// Update is called once per frame

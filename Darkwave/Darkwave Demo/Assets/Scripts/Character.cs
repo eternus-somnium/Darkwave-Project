@@ -143,6 +143,8 @@ public class Character : Entity
 	void DeathController()
 	{
 		aggroValue = 0;
+		weapons[weaponChoice].SendMessage("MainActionController", false);
+		weapons[weaponChoice].SendMessage("SecondaryActionController", false);
 		if(respawnTimer == 0) respawnTimer = ++deathCounter * 10f;
 		else if( respawnTimer > 0) respawnTimer-=Time.deltaTime;
 		else
