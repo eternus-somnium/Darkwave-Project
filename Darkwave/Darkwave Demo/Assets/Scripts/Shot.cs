@@ -5,6 +5,7 @@ using System.Collections;
  */
 public class Shot : Entity 
 {
+
 	bool inLitArea=true;
 
 	public void ShotStart()

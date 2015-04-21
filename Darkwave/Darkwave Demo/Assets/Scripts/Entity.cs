@@ -13,7 +13,8 @@ public class Entity : MonoBehaviour
 	public float health;
 	public float maxHealth;	//set in editor
 	public int touchDamage;	//set in editor
-	public int aggroValue=1;
+	public int baseAggroValue;
+	public int aggroValue;
 	public int stun=0;
 
 	//Movement variables
@@ -24,6 +25,7 @@ public class Entity : MonoBehaviour
 	public void EntityStart()
 	{
 		health = maxHealth;
+		aggroValue = baseAggroValue;
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object

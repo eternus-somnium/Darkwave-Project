@@ -10,7 +10,7 @@ public class StraightShot : Shot
 	{
 		ShotStart();
 		touchDamage = Mathf.RoundToInt(health);
-		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*50);
+		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*baseSpeed);
 	}
 
 	void Update()

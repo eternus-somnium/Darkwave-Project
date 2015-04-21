@@ -152,6 +152,7 @@ public class Character : Entity
 			respawnTimer = 0;
 			this.transform.position = respawnPoint;
 			health = maxHealth;
+			aggroValue = baseAggroValue;
 		}
 	}
 
