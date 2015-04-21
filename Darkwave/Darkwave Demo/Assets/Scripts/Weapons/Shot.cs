@@ -5,7 +5,6 @@ using System.Collections;
  */
 public class Shot : Entity 
 {
-	public int projectileSpeed;
 	public bool willBurn = false;
 	public float headShot;
 	public GameObject shooter;
@@ -29,11 +28,11 @@ public class Shot : Entity
 
 	void OnTriggerEnter(Collider col)
 	{
-		inLitArea=true;
+		if (col.gameObject.tag == "LitArea") inLitArea=true;
 	}
 
 	void OnTriggerExit(Collider col)
 	{
-		inLitArea=false;
+		if (col.gameObject.tag == "LitArea") inLitArea=false;
 	}
 }

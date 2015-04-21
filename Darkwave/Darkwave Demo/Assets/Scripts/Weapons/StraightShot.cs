@@ -9,7 +9,7 @@ public class StraightShot : Shot
 	{
 		ShotStart();
 		touchDamage = Mathf.RoundToInt(health);
-		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed);
+		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * baseSpeed);
 	}
 
 	void Update()
@@ -22,8 +22,7 @@ public class StraightShot : Shot
 	void OnCollisionEnter(Collision col)
 	{
 		//Player layer object vs enemy layer object collisions
-		if((gameObject.layer == 8) && (col.gameObject.layer == 9) ||
-		   (gameObject.layer == 9) && (col.gameObject.layer == 8))
+		if(col.gameObject.GetComponent<Entity>())
 		{
 			if (col.collider.material.name == "Head (Instance)")
 			{
@@ -47,23 +46,10 @@ public class StraightShot : Shot
 			headShot = 1;
 
 			if (willBurn) col.gameObject.GetComponent<Entity>().burning = 1;
-
-			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
-
-			//If a shot hits anything other than a shot it zeros out it's health.  If a shot hits another shot the weaker one is destroyed
-			if(col.gameObject.tag == "Shot")
-			{
-				if(gameObject.GetComponent<Entity>().health <= col.gameObject.GetComponent<Entity>().health)
-					gameObject.GetComponent<Entity>().health = 0;
-			}
-			else
-				gameObject.GetComponent<Entity>().health = 0;
-
+			Destroy(this.gameObject);
 		}
 		//If a shot hits the terrain it will zero out it's health
-		else 
-			this.health = 0;
-
+		else Destroy(this.gameObject);
 	}
 
 }
