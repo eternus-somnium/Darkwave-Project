@@ -13,13 +13,14 @@ public class EnemySpawner : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		enemySpawnPosition = this.transform.position;
+
 		enemySpawnRotation = this.transform.rotation;
 		InvokeRepeating("SpawnEnemies", 1, timeBetweenSpawns);
 	}
 
 	void SpawnEnemies()
 	{
+		enemySpawnPosition = transform.position + new Vector3(Random.Range(-2,2),0,Random.Range(-2,2));
 		if(gameObject.GetComponentInParent<GameController>().enemiesLeft > 0  && !inLitArea)
 		{
 			gameObject.GetComponentInParent<GameController>().enemiesLeft--;

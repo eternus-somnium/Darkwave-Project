@@ -15,7 +15,7 @@ public class PlacementWall : MonoBehaviour
         List<Vector3> vecs = m_grid.getAdjacentWallLocations(transform.position);
 
         m_walls = new List<GameObject>();
-        m_tempWall = (GameObject)Resources.Load("Prefabs/BasicWallConnectorsPlacement", typeof(GameObject));
+        m_tempWall = (GameObject)Resources.Load("Prefabs/BasicWallConnector", typeof(GameObject));
 
         foreach (Vector3 v in vecs)
         {

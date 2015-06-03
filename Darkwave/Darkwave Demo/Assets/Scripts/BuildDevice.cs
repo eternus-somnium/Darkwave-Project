@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BuildDevice : MonoBehaviour 
 {
+
 	GameObject hitObject;
 	Vector3 m_pos;
 
@@ -10,7 +11,7 @@ public class BuildDevice : MonoBehaviour
 	public int[] objectCosts;
 	int selectedObject=0;
 
-	public int placeable=0;
+	public int placeable=0, range;
 	public bool mainActionFlag, secondaryActionFlag;
 	bool ready;
 	int cooldown=1, currentCooldown;
@@ -92,14 +93,14 @@ public class BuildDevice : MonoBehaviour
 	{
 		RaycastHit hit;
 
-		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit))
+		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range))
 		{
 			if (hit.transform.gameObject.GetComponent<Grid>() != null && hit.transform.gameObject.GetComponent<Grid>().canPlace(hit.point))//Checks to see if hit.point is occupied on grid
 			{
 				#region can place
 				previewObjects[selectedObject].SetActive(true);
 				m_pos = hit.transform.gameObject.GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
-				m_pos.y = hit.point.y + 1;
+				m_pos.y = hit.point.y + .5f;
 				previewObjects[selectedObject].transform.position = m_pos;
 				return 1;//On grid and empty
 				#endregion
@@ -114,7 +115,7 @@ public class BuildDevice : MonoBehaviour
 				{
 					previewObjects[selectedObject].SetActive(true);
 					m_pos = GameObject.Find("Ground").GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
-					m_pos.y = hit.point.y + 1;
+					//m_pos.y = hit.point.y + 1;
 					previewObjects[selectedObject].transform.position = m_pos;
 					return 2;//On grid and occupied by a wall 
 				}

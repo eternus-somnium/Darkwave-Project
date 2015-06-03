@@ -13,12 +13,12 @@ public class GameController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		timeLeft = roundTimer = roundTimer*60f;
+		timeLeft = roundTimer;
 		enemiesLeft=enemiesPerRound;
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
 		timeLeft-=Time.deltaTime;
 
@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
 	void RoundController()
 	{
 		round++;
-		enemiesLeft = enemiesPerRound * round;
+		enemiesLeft += enemiesPerRound * round;
 		timeLeft=roundTimer;
 	}
 
@@ -47,13 +47,8 @@ public class GameController : MonoBehaviour
 
 	void SphereController()
 	{
-		sphereScale = 100 + (roundTimer-timeLeft)*0.5f;
+		sphereScale = 100 + ((round-1) * roundTimer + (roundTimer-timeLeft)) * 0.5f;
 		litSphere.transform.localScale = new Vector3(sphereScale,sphereScale,sphereScale);
-	}
-
-	void EnemySpawner()
-	{
-
 	}
 
 	void GameOver()

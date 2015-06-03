@@ -1,28 +1,28 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TrackingShot.cs">
     <Files>
-      <File FileName="Assets\Scripts\TurretBehavior.cs" Line="28" Column="22" />
-      <File FileName="Assets\Scripts\BuildDevice.cs" Line="96" Column="4" />
-      <File FileName="Assets\Scripts\Grid.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character.cs" Line="155" Column="32" />
-      <File FileName="Assets\Scripts\PlacementWall.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WallNode.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WallConnector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapon.cs" Line="7" Column="49" />
-      <File FileName="Assets\Scripts\RangedWeapon.cs" Line="26" Column="3" />
-      <File FileName="Assets\Scripts\Turret.cs" Line="17" Column="44" />
-      <File FileName="Assets\Scripts\Walker.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BuildableObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC.cs" Line="57" Column="40" />
-      <File FileName="Assets\Scripts\Entity.cs" Line="17" Column="23" />
-      <File FileName="Assets\Scripts\Shot.cs" Line="31" Column="27" />
-      <File FileName="Assets\Scripts\StraightShot.cs" Line="24" Column="3" />
+      <File FileName="Assets\Scripts\RangedWeapon.cs" Line="8" Column="25" />
+      <File FileName="Assets\Scripts\TrackingShot.cs" Line="38" Column="92" />
+      <File FileName="Assets\Scripts\StraightShot.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Turret.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Grid.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NPC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Walker.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemySpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BuildDevice.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Shot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entity.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\TurretBehavior.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\Scripts\NPC.cs" line="108" offsetX="830" offsetY="1712" expression="possibleTarget" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

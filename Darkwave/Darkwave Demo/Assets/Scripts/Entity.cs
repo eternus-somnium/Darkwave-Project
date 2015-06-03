@@ -44,6 +44,18 @@ public class Entity : MonoBehaviour
 	 * are both on the player or enemy layers. There may be a better way to implement entities being affected 
 	 * by terrain movement
 	*/
+
+	//Controls reactions to collisions
+	void OnCollisionEnter(Collision col)
+	{
+		if((stun == 0) && 
+		   ((gameObject.layer == 8 && col.gameObject.layer == 9) || 
+		 (gameObject.layer == 9 && col.gameObject.layer == 8)))
+		{
+			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
+		}
+	}
+
 	void OnCollisionStay(Collision col)
 	{
 		if(col.gameObject.tag == "Death")
