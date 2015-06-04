@@ -29,7 +29,7 @@ public class RangedWeapon : Weapon
 			if(Ready)
 			{
 				//Shot spawn position temporarily changed until correct model can be imported
-				Vector3 shotSpawnPosition = gameObject.transform.position;
+				Vector3 shotSpawnPosition = gameObject.transform.position + gameObject.transform.forward * 1.5f;
 				/*Vector3 shotSpawnPosition = new Vector3(gameObject.transform.position.x, 
 				                                        gameObject.transform.position.y,
 				                                        gameObject.transform.position.z+.4f);*/
