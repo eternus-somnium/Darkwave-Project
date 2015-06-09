@@ -15,6 +15,7 @@ public class MeleeWeapon : Weapon
 	{
 		MainAction();
 		SecondaryAction();
+		WeaponTime();
 	}
 	public void MainAction()
 	{

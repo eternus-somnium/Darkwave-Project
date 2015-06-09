@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class NPC : Entity 
+public class NPC : Entity
 {
 	//Behavior variables (set in editor)
 	public GameObject[] targetList;
@@ -17,7 +17,7 @@ public class NPC : Entity
 	public int energy;
 	public int maxEnergy;
 	public GameObject treasure;
-	
+
 	//Movement
 	public float jumpHeight;// set in editor
 	public Vector3 direction;
@@ -27,8 +27,12 @@ public class NPC : Entity
 	int weaponChoice  = 0;
 	public GameObject[] weapons;
 
+	// NPCs should use weapon scripts for weapon attacks; this is a temporary change.
+	private GameObject newShot;
+	private Shot shotScript;
+
 	// Use this for initialization
-	public void NPCStart () 
+	public void NPCStart ()
 	{
 		EntityStart();
 		energy=maxEnergy;
@@ -37,7 +41,7 @@ public class NPC : Entity
 	}
 
 	// Update is called once per frame
-	public void NPCUpdate () 
+	public void NPCUpdate ()
 	{
 		EntityUpdate();
 
@@ -76,12 +80,12 @@ public class NPC : Entity
 
 			targetDistance = Vector3.Distance(gameObject.transform.position, target.transform.position);
 
-			foreach (GameObject possibleTarget in targetList) 
+			foreach (GameObject possibleTarget in targetList)
 			{
 				if(possibleTarget != null)
 				{
 					float possibleTargetDistance = Vector3.Distance(gameObject.transform.position, possibleTarget.transform.position);
-					if((possibleTarget.GetComponent<Entity>().aggroValue / possibleTargetDistance) > 
+					if((possibleTarget.GetComponent<Entity>().aggroValue / possibleTargetDistance) >
 						(target.GetComponent<Entity>().aggroValue / targetDistance))
 					{
 						target = possibleTarget;
@@ -102,13 +106,13 @@ public class NPC : Entity
 
 
 
-	public int WeaponChoice 
+	public int WeaponChoice
 	{
-		get 
+		get
 		{
 			return weaponChoice;
 		}
-		set 
+		set
 		{
 			weaponChoice = value;
 		}

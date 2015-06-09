@@ -16,12 +16,13 @@ public class Character : Entity
 	float respawnTimer = 0;
 	Vector3 respawnPoint;
 	//Used in WeaponController()
-	int weaponChoice = 0;
+	public int weaponChoice = 0;
 	public GameObject[] weapons;
 
-	void Start()
+	protected void Start()
 	{
 		EntityStart();
+		// Spawn point of the character.
 		respawnPoint = new Vector3(
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.x+Random.Range(-1,1)*5,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
@@ -30,13 +31,15 @@ public class Character : Entity
 
 	}
 
-	void Update() 
+	// Called every frame.
+	protected void Update() 
 	{
 		EntityUpdate();
 		CameraController();
 
 		MoveController();
 
+		// Runs WeaponController() if character is still alive. Else, it runs DeathController().
 		if(health>0)
 		{ 
 			WeaponController();
@@ -44,6 +47,7 @@ public class Character : Entity
 		else DeathController();
 	}
 
+	// Controls Movement
 	void MoveController()
 	{
 		float jumpSpeed = 20.0F;
@@ -56,7 +60,7 @@ public class Character : Entity
 		{
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);// makes input directions camera relative
-			moveDirection *= baseSpeed;
+			moveDirection *= baseSpeed * speedMod;
 
 			if (controller.isGrounded) 
 			{
@@ -125,10 +129,19 @@ public class Character : Entity
 		if(Input.GetButton("Fire1")) weapons[weaponChoice].SendMessage("MainActionController", true);
 		else weapons[weaponChoice].SendMessage("MainActionController", false);
 		
-		if(Input.GetButton("Fire2")) weapons[weaponChoice].SendMessage("SecondaryActionController", true);
-		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+		if(Input.GetButton("Fire2"))
+		{
+			weapons[weaponChoice].SendMessage("SecondaryActionController", true);
+			aiming = true;
+		}
+		else
+		{
+			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+			aiming = false;
+		}
 	}
 
+	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
 	void healthRegenController()
 	{
 		counter = (GameObject.Find("Game Controller").GetComponent<GameController>().sphereScale/2)-
@@ -140,6 +153,8 @@ public class Character : Entity
 		else if (!inLitArea && health > 0)
 			health += counter / 100;
 	}
+
+	//Controls respawn timer and respawn position.
 	void DeathController()
 	{
 		aggroValue = 0;
@@ -155,6 +170,8 @@ public class Character : Entity
 			aggroValue = baseAggroValue;
 		}
 	}
+
+	// OnTriggerEnter and Exit are called when entering and leaving triggers.
 
 	void OnTriggerEnter(Collider col)
 	{
