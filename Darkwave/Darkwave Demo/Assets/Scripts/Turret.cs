@@ -15,29 +15,31 @@ public class Turret : NPC
 	}
 
 	// FixedUpdate is called at a set interval
-	void FixedUpdate () 
+	void Update () 
 	{
 		NPCUpdate();
-		shotSpawnPosition = transform.position;
-		shotSpawnRotation = Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up);
-		EntityAI();
+		TurretAI();
+
 		
 		//Debug.DrawRay (transform.position, target.transform.position - transform.position, rayColor);
 	}
-	public void TurretFixedUpdate () 
+	public void TurretUpdate () 
 	{
 		NPCUpdate();
-		EntityAI();
+		TurretAI();
 		
 		//Debug.DrawRay (transform.position, target.transform.position - transform.position, rayColor);
 	}
 	
 	//Controls the behavior of the enemy object
-	void EntityAI()
+	void TurretAI()
 	{	
 		//if the player is in sight
-		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, sensorRange))
+		RaycastHit hit;
+		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, sensorRange) && 
+		   hit.transform.gameObject == target.gameObject)
 		{
+			weapons[WeaponChoice].transform.LookAt(target.transform.position);
 			Attack();
 		}
 	}

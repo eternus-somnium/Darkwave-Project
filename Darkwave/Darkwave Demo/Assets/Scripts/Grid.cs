@@ -9,7 +9,7 @@ public class Grid : MonoBehaviour
     public int row, col;
     public Transform laserGrid;
 	
-    private float squareArea, width, height;
+    private float squareArea, width, depth, height = 0f;
     private Vector3 start, placementPos, center, size;
     private List<GameObject> gridLasers;
     private Vector2 lastGridPos;
@@ -22,9 +22,9 @@ public class Grid : MonoBehaviour
     {
         size = gameObject.GetComponent<Renderer>().bounds.size;
         width = size.x / row;
-        height = size.z / col;
-        center = new Vector3(gameObject.transform.position.x, 1.0f, gameObject.transform.position.z);
-        start = new Vector3(center.x - (size.x / 2), 1.0f, center.z - (size.z / 2));
+        depth = size.z / col;
+        center = new Vector3(gameObject.transform.position.x, height, gameObject.transform.position.z);
+        start = new Vector3(center.x - (size.x / 2), height, center.z - (size.z / 2));
         gridLasers = new List<GameObject>();
         canPlaceArray = new bool[row, col];
         objectsInGrid = new GameObject[row, col];
@@ -40,16 +40,16 @@ public class Grid : MonoBehaviour
             Vector3 rowPos = start;
             rowPos.x += width * i;
             //creates grid line
-            gridLine(rowPos, new Vector3(rowPos.x, 1.0f, center.z + size.z/2));
+            gridLine(rowPos, new Vector3(rowPos.x, height, center.z + size.z/2));
         }
 
         //Lines along z axis
         for (int j = 0; j <= col; j++)
         {
             Vector3 colPos = start;
-            colPos.z += height * j;
+            colPos.z += depth * j;
             //creates grid line
-            gridLine(colPos, new Vector3(center.x + size.x/2, 1.0f, colPos.z));
+            gridLine(colPos, new Vector3(center.x + size.x/2, height, colPos.z));
         }
 	}
 
@@ -87,7 +87,7 @@ public class Grid : MonoBehaviour
         //gets cols
         for (int j = 0; j <= col; j++)
         {
-            if (position.z > start.z + (height * j) && position.z <  start.z + (height * (j + 1)))
+            if (position.z > start.z + (depth * j) && position.z <  start.z + (depth * (j + 1)))
             {
                 gridPos.y = j;
             }
@@ -113,14 +113,14 @@ public class Grid : MonoBehaviour
         //gets cols
         for (int j = 0; j <= col; j++)
         {
-            if (position.z > start.z + (height * j) && position.z < start.z + (height * (j + 1)))
+            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
             {
                 gridPos.y = j;
             }
         }
 
         gridPos.x = (start.x + (gridPos.x * width)) + width / 2;
-        gridPos.z = (start.z + (gridPos.y * height)) + height / 2;
+        gridPos.z = (start.z + (gridPos.y * depth)) + depth / 2;
 
         return gridPos;
     }
@@ -141,7 +141,7 @@ public class Grid : MonoBehaviour
         //gets cols
         for (int j = 0; j <= col; j++)
         {
-            if (position.z > start.z + (height * j) && position.z < start.z + (height * (j + 1)))
+            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
             {
                 gridPos.y = j;
             }
@@ -225,7 +225,7 @@ public class Grid : MonoBehaviour
         //gets cols
         for (int j = 0; j <= col; j++)
         {
-            if (position.z > start.z + (height * j) && position.z < start.z + (height * (j + 1)))
+            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
             {
                 gridPos.y = j;
             }
@@ -239,7 +239,7 @@ public class Grid : MonoBehaviour
     {
         Vector3 vec = new Vector3();
         vec.x = (start.x + (grid.x * width)) + width / 2;
-        vec.z = (start.z + (grid.y * height)) + height / 2;
+        vec.z = (start.z + (grid.y * depth)) + depth / 2;
         return vec;
     }
 
@@ -259,7 +259,7 @@ public class Grid : MonoBehaviour
         //gets cols
         for (int j = 0; j <= col; j++)
         {
-            if (position.z > start.z + (height * j) && position.z < start.z + (height * (j + 1)))
+            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
             {
                 gridPos.y = j;
             }

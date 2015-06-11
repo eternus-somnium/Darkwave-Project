@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class NPC : Entity 
+public class NPC : Entity
 {
 	//Behavior variables (set in editor)
 	public GameObject[] targetList;
@@ -13,52 +13,35 @@ public class NPC : Entity
 	public int engagementRange;
 	public bool inSight;
 
+
 	public int energy;
 	public int maxEnergy;
 	public GameObject treasure;
-	
+
 	//Movement
 	public float jumpHeight;// set in editor
 	public Vector3 direction;
 	bool isJumping;
 
 	//Attack variables
-	int weaponChoice  = 1;
-	
-	public int cooldown1 = 1;
-	public int energyDrain1 = 0;
-	public int currentCooldown1 = 0;
-	public GameObject attack1;
-	
-	public int cooldown2 = 1;
-	public int energyDrain2 = 5;
-	public int currentCooldown2 = 0;
-	public GameObject attack2;
-	
-	public int cooldown3 = 1;
-	public int energyDrain3 = 5;
-	public int currentCooldown3 = 0;
-	public GameObject attack3;
-	
-	public int cooldown4 = 1;
-	public int energyDrain4 = 5;
-	public int currentCooldown4 = 0;
-	public GameObject attack4;
+	int weaponChoice  = 0;
+	public GameObject[] weapons;
 
-	public Vector3 shotSpawnPosition;
-	public Quaternion shotSpawnRotation;
+	// NPCs should use weapon scripts for weapon attacks; this is a temporary change.
+	private GameObject newShot;
+	private Shot shotScript;
 
 	// Use this for initialization
-	public void NPCStart () 
+	public void NPCStart ()
 	{
 		EntityStart();
 		energy=maxEnergy;
 		InvokeRepeating("AttackCooldowns",0,.5f);
-		InvokeRepeating("ChooseTarget",1,2f);
+		InvokeRepeating("ChooseTarget",0,2f);
 	}
 
 	// Update is called once per frame
-	public void NPCUpdate () 
+	public void NPCUpdate ()
 	{
 		EntityUpdate();
 
@@ -72,8 +55,6 @@ public class NPC : Entity
 		}
 		else inSight = false;
 
-		shotSpawnPosition = transform.position;
-
 		if(health < 1)
 		{
 			if(treasure != null)
@@ -85,29 +66,33 @@ public class NPC : Entity
 
 	void AttackCooldowns()
 	{
-		if(currentCooldown1 > 0) currentCooldown1--;
-		if(currentCooldown2 > 0) currentCooldown2--;
-		if(currentCooldown3 > 0) currentCooldown3--;
-		if(currentCooldown4 > 0) currentCooldown4--;
 		if(energy < maxEnergy) energy++;
 	}
 
 	void ChooseTarget()
 	{
-		if(target == null)
+		if(targetList.Length != 0)
 		{
-			target = targetList[0];
-		}
+			if(target == null)
+			{
+				target = targetList[0];
+			}
 
-		targetDistance = Vector3.Distance(gameObject.transform.position, target.transform.position);
+			targetDistance = Vector3.Distance(gameObject.transform.position, target.transform.position);
 
-		foreach (GameObject possibleTarget in targetList) 
-		{
-			if(
-				(possibleTarget.GetComponent<Entity>().aggroValue / 
-				Vector3.Distance(gameObject.transform.position, possibleTarget.transform.position)) > 
-				(target.GetComponent<Entity>().aggroValue / targetDistance))
-				target = possibleTarget;
+			foreach (GameObject possibleTarget in targetList)
+			{
+				if(possibleTarget != null)
+				{
+					float possibleTargetDistance = Vector3.Distance(gameObject.transform.position, possibleTarget.transform.position);
+					if((possibleTarget.GetComponent<Entity>().aggroValue / possibleTargetDistance) >
+						(target.GetComponent<Entity>().aggroValue / targetDistance))
+					{
+						target = possibleTarget;
+						targetDistance = possibleTargetDistance;
+					}
+				}
+			}
 		}
 	}
 
@@ -116,61 +101,18 @@ public class NPC : Entity
 	//Called by the child function when the conditions have been.
 	public void Attack()
 	{
-		switch(WeaponChoice)
-		{
-		case 1:
-			if(currentCooldown1 == 0)
-			{
-				Instantiate(attack1, shotSpawnPosition, shotSpawnRotation);
-				currentCooldown1 = cooldown1;
-				energy -= energyDrain1;
-			}
-			break;
-		case 2:
-			if(currentCooldown2 == 0)
-			{
-				Instantiate(attack2, shotSpawnPosition, shotSpawnRotation);
-				currentCooldown2 = cooldown2;
-				energy -= energyDrain2;
-			}
-			break;
-		case 3:
-			if(currentCooldown3 == 0)
-			{
-				Instantiate(attack3, shotSpawnPosition, shotSpawnRotation);
-				currentCooldown3 = cooldown3;
-				energy -= energyDrain3;
-			}
-			break;
-		case 4:
-			if(currentCooldown1 == 0)
-			{
-				Instantiate(attack4, shotSpawnPosition, shotSpawnRotation);
-				currentCooldown4 = cooldown4;
-				energy -= energyDrain4;
-			}
-			break;
-		}
+		weapons[weaponChoice].SendMessage("MainActionController", true);
 	}
 
-	//Controls reactions to collisions
-	void OnCollisionEnter(Collision col)
-	{
-		if((stun == 0) && 
-		   ((gameObject.layer == 8 && col.gameObject.layer == 9) || 
-		 	(gameObject.layer == 9 && col.gameObject.layer == 8)))
-		{
-			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
-		}
-	}
 
-	public int WeaponChoice 
+
+	public int WeaponChoice
 	{
-		get 
+		get
 		{
 			return weaponChoice;
 		}
-		set 
+		set
 		{
 			weaponChoice = value;
 		}
