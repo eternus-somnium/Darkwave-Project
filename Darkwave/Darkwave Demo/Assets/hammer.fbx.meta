@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: e05a9498fbf88184f9adff47fe1a5328
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: Camera
     100002: Cylinder
@@ -12,7 +12,9 @@ ModelImporter:
     400004: //RootNode
     400006: Lamp
     2300000: Cylinder
+    2300002: //RootNode
     3300000: Cylinder
+    3300002: //RootNode
     4300000: Cylinder
     9500000: //RootNode
   materials:
@@ -42,11 +44,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -69,3 +73,5 @@ ModelImporter:
   animationType: 2
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,8 +10,7 @@ public class Weapon : MonoBehaviour
 	public float energy = 100;
 	public float currentEnergy;
 	public float energyDrain = 0;
-	public GameObject shooter; // Entity wielding the weapon.
-	public Entity entity;
+	public GameObject parent; // Entity wielding the weapon.
 
 	Vector3 defaultPosition;
 	public Vector3 secondaryPosition;
@@ -20,10 +19,13 @@ public class Weapon : MonoBehaviour
 	// Use this for initialization
 	public void WeaponStart () 
 	{
+		if(gameObject.layer != 8)
+			parent = gameObject.transform.parent.gameObject;
+		else
+			parent = gameObject.transform.parent.parent.gameObject;
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		currentEnergy = energy;
-		entity = shooter.GetComponent<Entity>();
 		
 	}
 
