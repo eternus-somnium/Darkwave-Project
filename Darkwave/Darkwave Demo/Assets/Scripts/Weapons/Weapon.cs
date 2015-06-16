@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour
 	// Use this for initialization
 	public void WeaponStart () 
 	{
-		if(gameObject.GetComponentInParent<Entity>() != null)
+		if(gameObject.layer != 8)
 			parent = gameObject.transform.parent.gameObject;
 		else
 			parent = gameObject.transform.parent.parent.gameObject;
