@@ -1,10 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WallNode.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\RangedWeapon.cs">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\StraightShot.cs" Line="56" Column="1" />
-      <File FileName="Assets\Scripts\WallNode.cs" Line="15" Column="62" />
-      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\BuildDevice.cs" Line="65" Column="40" />
+      <File FileName="Assets\Scripts\BuildableObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\StraightShot.cs" Line="42" Column="33" />
+      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\BuildDevice.cs" Line="113" Column="145" />
+      <File FileName="Assets\Scripts\Weapons\RangedWeapon.cs" Line="44" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="25" Column="11" />
+      <File FileName="Assets\Scripts\Players\Character.cs" Line="196" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Shot.cs" Line="40" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

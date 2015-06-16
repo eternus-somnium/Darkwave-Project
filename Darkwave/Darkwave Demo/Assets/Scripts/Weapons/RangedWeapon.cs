@@ -42,7 +42,7 @@ public class RangedWeapon : Weapon
 
 				// Allows modifications to instanced shots.
 				newShot = (GameObject)Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
-				SendMessage("BulletModifications", parent);
+				newShot.SendMessage("BulletModifications", parent);
 
 				Ready=false;
 				if (parent.GetComponent<Entity>().haste > 0) currentCooldown = cooldown / 4;

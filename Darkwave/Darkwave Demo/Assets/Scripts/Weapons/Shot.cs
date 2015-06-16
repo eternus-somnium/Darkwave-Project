@@ -35,9 +35,9 @@ public class Shot : Entity
 		if(col.tag == "LitArea") inLitArea=false;
 	}
 
-	void BulletModifications(GameObject p)
+	public void BulletModifications(GameObject p)
 	{
-	
+		parent = p;
 	}
 
 }
