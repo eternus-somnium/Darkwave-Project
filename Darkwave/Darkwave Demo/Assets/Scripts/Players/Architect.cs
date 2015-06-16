@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Architect : Character
@@ -49,7 +49,7 @@ public class Architect : Character
 	public override Shot FoeDmgEffect(Shot shot, Entity foe)
 	{
 		Debug.Log("Architect FoeDmgEffect");
-		if (traitCriticalFinish.enabled == true) shot.headShot += traitCriticalFinish.Effect(foe);
+		if (traitCriticalFinish.enabled == true) shot.criticalMultiplier += traitCriticalFinish.Effect(foe);
 		if (traitHuntersMomemtum.enabled == true) traitHuntersMomemtum.StartEffect();
 		ResetHeadShot();
 		return shot;

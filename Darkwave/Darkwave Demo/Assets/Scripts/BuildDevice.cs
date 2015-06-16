@@ -61,8 +61,7 @@ public class BuildDevice : MonoBehaviour
 			else if(placeable == 2)
 			{
 				obj = GameObject.Instantiate(buildableObjects[selectedObject], m_pos, Quaternion.identity) as GameObject;
-				
-				hitObject.GetComponent<Wall>().addTurret(obj);//gives object a reference of turret
+
 				
 				previewObjects[selectedObject].SetActive(false);
 			}
@@ -111,7 +110,7 @@ public class BuildDevice : MonoBehaviour
 
 				hitObject = hit.transform.gameObject;
 				
-				if (!hitObject.GetComponent<Wall>().m_hasTurret && selectedObject == 0)
+				if (!hitObject.GetComponent<BuildableObject>().canBeStackedOn && buildableObjects[selectedObject].GetComponent<BuildableObject>().canStackOn)
 				{
 					previewObjects[selectedObject].SetActive(true);
 					m_pos = GameObject.Find("Ground").GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place

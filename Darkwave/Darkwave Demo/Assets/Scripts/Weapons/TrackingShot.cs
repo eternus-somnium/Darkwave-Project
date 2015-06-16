@@ -14,8 +14,6 @@ public class TrackingShot : Shot
 		ShotStart();
 		touchDamage = Mathf.RoundToInt(health);
 		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*baseSpeed);
-		//DEBUG
-		target=GameObject.Find("Enemy Cube");
 
 		if(target == null && Physics.Raycast(transform.position, transform.forward, out hit, sensorRange))
 			if(hit.transform.gameObject.tag == "Enemy")
@@ -37,7 +35,7 @@ public class TrackingShot : Shot
 		if(target != null)
 		{
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*-baseSpeed);
-			transform.rotation = Quaternion.LookRotation(target.transform.position);
+			transform.rotation = Quaternion.LookRotation(target.transform.position-transform.position);
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*baseSpeed);
 			Debug.Log ("Tracking");
 		}

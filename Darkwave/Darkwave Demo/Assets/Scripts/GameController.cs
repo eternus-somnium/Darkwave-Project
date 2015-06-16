@@ -9,21 +9,12 @@ public class GameController : MonoBehaviour
 	public float roundTimer, timeLeft, sphereScale;
 	public GameObject crystal, litSphere;
 	public GameObject[] allyTargets, enemyTargets;
-	public GameObject playerOne;
-	private Character playerOneScript;
 
-	public GUIText playerHealth;
-	public GUIText playerBuffs;
-	public GUIText playerDebuffs;
-	public GUIText currentWeapon;
-	public GUIText timer;
-	public GUIText shards;
 
 	// Use this for initialization
 	void Start ()
 	{
 		timeLeft = roundTimer;
-		playerOneScript = playerOne.GetComponent<Character>();
 		enemiesLeft=enemiesPerRound;
 	}
 
@@ -40,28 +31,6 @@ public class GameController : MonoBehaviour
 
 		if(crystal.GetComponent<Crystal>().health <=0)
 			GameOver();
-	}
-
-	void OnGUI()
-	{
-		if (playerOneScript.enabled == true)
-		{
-			playerHealth.text = "Health: " + playerOneScript.health.ToString("F2");
-			playerBuffs.text = "Empowered: " + playerOneScript.empowered.ToString("F2") +
-				" Focus: " + playerOneScript.focus.ToString("F2") +
-				" Haste: " + playerOneScript.haste.ToString("F2") +
-				" Regen: " + playerOneScript.regen.ToString("F2") +
-				" Swift: " + playerOneScript.swift.ToString("F2") +
-				" Armored: " + playerOneScript.armored.ToString ("F2");
-			playerDebuffs.text = "Degen: " + playerOneScript.degen.ToString("F2") +
-				" Burning: " + playerOneScript.burning.ToString("F2") +
-				" Crippled: " + playerOneScript.crippled.ToString("F2");
-			currentWeapon.text = "Current Weapon: " + playerOneScript.weaponChoice;
-			timer.text = "Round Time Left: " + Mathf.Floor(timeLeft/60).ToString("00") +
-				":" + (timeLeft%60).ToString("00") +
-				" Round: " + round;
-			shards.text = "Sha- Treasure?: " + playerOneScript.treasures;
-		}
 	}
 
 	void RoundController()
@@ -85,6 +54,7 @@ public class GameController : MonoBehaviour
 
 	void GameOver()
 	{
+		Time.timeScale=0;
 		Debug.Log("GAME OVER");//gameover
 	}
 }
