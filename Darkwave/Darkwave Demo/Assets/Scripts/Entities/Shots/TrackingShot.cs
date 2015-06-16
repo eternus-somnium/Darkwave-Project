@@ -35,7 +35,11 @@ public class TrackingShot : Shot
 		if(target != null)
 		{
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*-baseSpeed);
+<<<<<<< HEAD:Darkwave/Darkwave Demo/Assets/Scripts/Entities/Shots/TrackingShot.cs
 			transform.rotation = Quaternion.LookRotation(target.transform.position-transform.position);
+=======
+			transform.LookAt(target.transform.position);
+>>>>>>> Bring up to date:Darkwave/Darkwave Demo/Assets/Scripts/TrackingShot.cs
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*baseSpeed);
 			Debug.Log ("Tracking");
 		}

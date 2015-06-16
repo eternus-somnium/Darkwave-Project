@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Darkwave/Darkwave Demo/Assets/Scripts/Entities/Buildable Objects/Turret.cs.meta
 guid: 5a6f03609b05690408bb9cecb09ae563
+=======
+guid: 7e6ac591cd1168843be4013c274e5839
+>>>>>>> Bring up to date:Darkwave/Darkwave Demo/Assets/Scripts/Weapons/StraightShot.cs.meta
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -19,6 +19,7 @@ Global
 	EndGlobalSection
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 																																																																											GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																		GlobalSection(MonoDevelopProperties) = preSolution
@@ -29,6 +30,9 @@ Global
 =======
 			GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Further update
+=======
+								GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Bring up to date
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

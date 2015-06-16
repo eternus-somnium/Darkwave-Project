@@ -11,9 +11,16 @@ public class Weapon : MonoBehaviour
 		gridLinesFlag;
 	public int touchDamage;
 	bool ready;
+<<<<<<< HEAD
 
 	public float baseCooldown, augmentedCooldown, baseEnergy, augmentedEnergy, 
 				 currentEnergy, currentCooldown=0, energyDrain = 0;
+=======
+	public float cooldown, currentCooldown=0;//Measured in quarter seconds
+	public float energy = 100;
+	public float currentEnergy;
+	public float energyDrain = 0;
+>>>>>>> Bring up to date
 	public GameObject parent; // Entity wielding the weapon.
 
 	Vector3 defaultPosition;
@@ -23,6 +30,7 @@ public class Weapon : MonoBehaviour
 	// Use this for initialization
 	public void WeaponStart () 
 	{
+<<<<<<< HEAD
 		if(this.transform.parent.gameObject.name != "Main Camera")
 		{
 			parent = gameObject.transform.parent.gameObject;
@@ -40,6 +48,16 @@ public class Weapon : MonoBehaviour
 		currentEnergy = augmentedEnergy;
 		InvokeRepeating("WeaponTime",0,.25f);
 
+=======
+		if(gameObject.layer != 8)
+			parent = gameObject.transform.parent.gameObject;
+		else
+			parent = gameObject.transform.parent.parent.gameObject;
+		defaultPosition = transform.localPosition;
+		nextPosition=defaultPosition;
+		currentEnergy = energy;
+		
+>>>>>>> Bring up to date
 	}
 
 	// Controls the weapon's fire rate and recharge
