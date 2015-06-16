@@ -5,17 +5,16 @@ using System.Collections;
  */
 public class Shot : Entity
 {
+	public GameObject parent;
+	public float criticalMultiplier;
 	public bool willBurn = false;
-	public float headShot;
-	public GameObject shooter;
-	public Entity shooterScript;
+
 	bool inLitArea=true;
 
 	public void ShotStart()
 	{
 		EntityStart();
-		headShot = 1;
-		if (shooterScript == null) shooterScript = shooter.GetComponent<Entity>();
+		criticalMultiplier = 1;
 	}
 
 	public void ShotUpdate()
@@ -35,4 +34,10 @@ public class Shot : Entity
 	{
 		if(col.tag == "LitArea") inLitArea=false;
 	}
+
+	void BulletModifications(GameObject p)
+	{
+	
+	}
+
 }

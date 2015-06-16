@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WallNode.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Weapons\StraightShot.cs" Line="56" Column="1" />
+      <File FileName="Assets\Scripts\WallNode.cs" Line="15" Column="62" />
+      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\BuildDevice.cs" Line="65" Column="40" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

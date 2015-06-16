@@ -26,8 +26,8 @@ public class StraightShot : Shot
 		{
 			if (col.collider.material.name == "Head (Instance)")
 			{
-				shooterScript.causedHeadShot = true;
-				headShot += 0.5F;
+				parent.GetComponent<Entity>().causedHeadShot = true;
+				criticalMultiplier += 0.5F;
 			}
 
 			/*
@@ -37,13 +37,13 @@ public class StraightShot : Shot
 			strikingShot = shooterScript.FoeHit(strikingShot, struckFoe);
 			*/
 
-			Debug.Log("Headshot before FoeDmgEffect is " + headShot);
-			Debug.Log (shooter + " is the shooter, " + shooterScript + " is shooterScript, " + this.gameObject.GetComponent<Shot>() + " is the Shot script, and " + col.gameObject.GetComponent<Entity>() + " is the struck entity.");
-			shooterScript.FoeDmgEffect(this.gameObject.GetComponent<Shot>(), col.gameObject.GetComponent<Entity>());
-			Debug.Log("Headshot after FoeDmgEffect is " + headShot);
+			Debug.Log("Headshot before FoeDmgEffect is " + criticalMultiplier);
+			Debug.Log (parent + " is the shooter, " + parent.GetComponent<Entity>() + " is shooterScript, " + this.gameObject.GetComponent<Shot>() + " is the Shot script, and " + col.gameObject.GetComponent<Entity>() + " is the struck entity.");
+			parent.GetComponent<Entity>().FoeDmgEffect(this.gameObject.GetComponent<Shot>(), col.gameObject.GetComponent<Entity>());
+			Debug.Log("Headshot after FoeDmgEffect is " + criticalMultiplier);
 
-			col.gameObject.GetComponent<Entity>().health -= (this.gameObject.GetComponent<Shot>().health * (1 - col.gameObject.GetComponent<Entity>().defMod) * headShot);
-			headShot = 1;
+			col.gameObject.GetComponent<Entity>().health -= (this.gameObject.GetComponent<Shot>().health * (1 - col.gameObject.GetComponent<Entity>().defMod) * criticalMultiplier);
+			criticalMultiplier = 1;
 
 			if (willBurn) col.gameObject.GetComponent<Entity>().burning = 1;
 			Destroy(this.gameObject);

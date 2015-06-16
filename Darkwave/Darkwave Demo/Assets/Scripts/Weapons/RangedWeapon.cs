@@ -4,12 +4,11 @@ using System.Collections;
 public class RangedWeapon : Weapon
 {
 	public int secondaryActionType; //0 Zoom, 1 Secondary Attack
-	public float accuracy;
+	public float weaponAccuracy;
 	public GameObject shot;
-	private Vector3 bulletSpread;
-	private Quaternion shotSpawnRotation;
-	private Shot shotScript;
 	private GameObject newShot;
+	private Vector3 bulletSpread;
+
 
 	// Use this for initialization
 	void Start ()
@@ -35,20 +34,18 @@ public class RangedWeapon : Weapon
 			if(Ready)
 			{
 				Vector3 shotSpawnPosition = gameObject.transform.position + gameObject.transform.forward * 1.25f;
-				bulletSpread = new Vector3(Random.Range(-1f,1f)*
-					(10-Mathf.Clamp(accuracy + entity.accMod,10,100)),Random.Range(-1f,1f)*
-				    (10-Mathf.Clamp(accuracy + entity.accMod,10,100)),0);
-				shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
+				bulletSpread = new Vector3(
+					Random.Range(-1f,1f)*(10-Mathf.Clamp(weaponAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
+				    Random.Range(-1f,1f)*(10-Mathf.Clamp(weaponAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
+					0);
+				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 
 				// Allows modifications to instanced shots.
 				newShot = (GameObject)Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
-				shotScript = newShot.GetComponent<Shot>();
-				shotScript.shooter = shooter;
-				shotScript.shooterScript = entity;
-				shotScript.maxHealth *= entity.dmgMod;
-				shotScript.health *= entity.dmgMod;
+				SendMessage("BulletModifications", parent);
+
 				Ready=false;
-				if (entity.haste > 0) currentCooldown = cooldown / 4;
+				if (parent.GetComponent<Entity>().haste > 0) currentCooldown = cooldown / 4;
 				else currentCooldown=cooldown;
 				energy -= energyDrain;
 			}
