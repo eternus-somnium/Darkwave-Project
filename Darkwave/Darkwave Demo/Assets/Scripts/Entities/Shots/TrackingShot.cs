@@ -36,10 +36,15 @@ public class TrackingShot : Shot
 		{
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*-baseSpeed);
 <<<<<<< HEAD:Darkwave/Darkwave Demo/Assets/Scripts/Entities/Shots/TrackingShot.cs
+<<<<<<< HEAD:Darkwave/Darkwave Demo/Assets/Scripts/Entities/Shots/TrackingShot.cs
 			transform.rotation = Quaternion.LookRotation(target.transform.position-transform.position);
 =======
 			transform.LookAt(target.transform.position);
 >>>>>>> Bring up to date:Darkwave/Darkwave Demo/Assets/Scripts/TrackingShot.cs
+=======
+			//transform.LookAt(target.transform.position);
+			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(target.transform.position - transform.position), 0.95f);
+>>>>>>> Smoothed bullet tracking:Darkwave/Darkwave Demo/Assets/Scripts/TrackingShot.cs
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*baseSpeed);
 			Debug.Log ("Tracking");
 		}
