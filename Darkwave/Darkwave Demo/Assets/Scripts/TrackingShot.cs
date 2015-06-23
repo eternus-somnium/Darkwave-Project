@@ -37,7 +37,8 @@ public class TrackingShot : Shot
 		if(target != null)
 		{
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*-baseSpeed);
-			transform.LookAt(target.transform.position);
+			//transform.LookAt(target.transform.position);
+			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation(target.transform.position - transform.position), 0.95f);
 			gameObject.GetComponent<Rigidbody>().AddForce(transform.forward*baseSpeed);
 			Debug.Log ("Tracking");
 		}
