@@ -4,7 +4,7 @@ using System.Collections;
 public class RangedWeapon : Weapon
 {
 	public int secondaryActionType; //0 Zoom, 1 Secondary Attack
-	public float weaponAccuracy;
+	public int baseAccuracy, augmentedAccuracy;
 	public GameObject shot;
 	private GameObject newShot;
 	private Vector3 bulletSpread;
@@ -14,7 +14,8 @@ public class RangedWeapon : Weapon
 	void Start ()
 	{
 		WeaponStart();
-		secondaryPosition= new Vector3(0,-0.2f,0);
+		augmentedAccuracy = baseAccuracy;
+		secondaryPosition = new Vector3(0,-0.2f,0);
 
 	}
 
@@ -35,8 +36,8 @@ public class RangedWeapon : Weapon
 			{
 				Vector3 shotSpawnPosition = gameObject.transform.position + gameObject.transform.forward * 1.25f;
 				bulletSpread = new Vector3(
-					Random.Range(-1f,1f)*(10-Mathf.Clamp(weaponAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
-				    Random.Range(-1f,1f)*(10-Mathf.Clamp(weaponAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
+					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
+					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
 					0);
 				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 
@@ -45,9 +46,9 @@ public class RangedWeapon : Weapon
 				newShot.SendMessage("BulletModifications", parent);
 
 				Ready=false;
-				if (parent.GetComponent<Entity>().haste > 0) currentCooldown = cooldown / 4;
-				else currentCooldown=cooldown;
-				energy -= energyDrain;
+				if (parent.GetComponent<Entity>().haste > 0) currentCooldown = augmentedCooldown / 4;
+				else currentCooldown=augmentedCooldown;
+				augmentedEnergy -= energyDrain;
 			}
 		}
 	}

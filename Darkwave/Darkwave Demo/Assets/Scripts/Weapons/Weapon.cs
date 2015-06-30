@@ -6,10 +6,9 @@ public class Weapon : MonoBehaviour
 
 	public bool mainActionFlag, secondaryActionFlag;
 	bool ready;
-	public float cooldown, currentCooldown=0;//Measured in quarter seconds
-	public float energy = 100;
-	public float currentEnergy;
-	public float energyDrain = 0;
+
+	public float baseCooldown, augmentedCooldown, baseEnergy, augmentedEnergy, 
+				 currentEnergy, currentCooldown=0, energyDrain = 0;
 	public GameObject parent; // Entity wielding the weapon.
 
 	Vector3 defaultPosition;
@@ -23,18 +22,23 @@ public class Weapon : MonoBehaviour
 			parent = gameObject.transform.parent.gameObject;
 		else
 			parent = gameObject.transform.parent.parent.gameObject;
+
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
-		currentEnergy = energy;
-		
+		augmentedEnergy=baseEnergy;
+		Debug.Log("OK");
+		augmentedCooldown=baseCooldown;
+		currentEnergy = augmentedEnergy;
+		InvokeRepeating("WeaponTime",1,1);
+
 	}
 
 	// Controls the weapon's fire rate. Called in child script's Update().
 	protected void WeaponTime()
 	{
-		if(currentEnergy < energy) currentEnergy+=Time.deltaTime;
+		if(currentEnergy < augmentedEnergy) currentEnergy++;
 		if(currentCooldown <= 0) ready=true;
-		else currentCooldown = Mathf.Clamp(currentCooldown - Time.deltaTime, 0, cooldown);
+		else currentCooldown--;
 	}
 
 	public void AttackAnimation()

@@ -3,23 +3,23 @@ using System.Collections;
 
 /* Base code for all shot objects.  All shots disapppear when they move offscreen
  */
-public class Shot : Entity
+public class Shot : MonoBehaviour
 {
 	public GameObject parent;
-	public float criticalMultiplier;
+	public int health, maxHealth, touchDamage;
+	public float baseSpeed, criticalMultiplier;
 	public bool willBurn = false;
 
 	bool inLitArea=true;
 
 	public void ShotStart()
 	{
-		EntityStart();
+		health = maxHealth;
 		criticalMultiplier = 1;
 	}
 
 	public void ShotUpdate()
 	{
-		EntityUpdate();
 		if(health < 1) Destroy(gameObject);
 		//if(health < 1) Stub for destruction animation control
 		if(!inLitArea) Destroy(gameObject);

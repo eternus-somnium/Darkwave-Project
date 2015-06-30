@@ -22,6 +22,7 @@ public class Entity : MonoBehaviour
 	public float headShotMod; // Extra critical damage
 
 	//Effects Variables
+	//public float[] effectArray = new float[10];
 	public float empowered; // Increases damage by 25%.
 	public float focus; // Improves weapon accuracy by one unit.
 	public float haste; // Decreases weapon cooldown by 300%.
@@ -149,10 +150,13 @@ public class Entity : MonoBehaviour
 	void OnCollisionEnter(Collision col)
 	{
 		if((stun == 0) &&
-		   ((gameObject.layer == 8 && col.gameObject.layer == 9) ||
-		 (gameObject.layer == 9 && col.gameObject.layer == 8)))
+		  ((gameObject.layer == 8 && col.gameObject.layer == 9) ||
+		   (gameObject.layer == 9 && col.gameObject.layer == 8)))
 		{
-			gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
+			if(col.gameObject.tag == "Shot")
+				gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Shot>().touchDamage;
+			else
+				gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
 		}
 	}
 
