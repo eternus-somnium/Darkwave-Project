@@ -4,8 +4,9 @@ using System.Collections;
 public class RangedWeapon : Weapon
 {
 	public int secondaryActionType; //0 Zoom, 1 Secondary Attack
-	public int baseAccuracy, augmentedAccuracy;
-	public GameObject shot;
+	public int baseAccuracy, augmentedAccuracy, ammoType;
+	float zoom=0;
+	public GameObject[] shot;
 	private GameObject newShot;
 	private Vector3 bulletSpread;
 
@@ -22,9 +23,18 @@ public class RangedWeapon : Weapon
 	// Update is called once per frame
 	void Update ()
 	{
+		if(parent.GetComponentInChildren<Camera>()!=null)
+			WeaponAim();
+
 		MainAction();
 		SecondaryAction();
-		WeaponTime();
+	}
+
+	void WeaponAim()
+	{
+		if(parent.GetComponent<Character>().Target != Vector3.zero && !secondaryActionFlag)
+			transform.LookAt(parent.GetComponent<Character>().Target);
+		else transform.localRotation = Quaternion.Euler(Vector3.zero);
 	}
 
 	public void MainAction()
@@ -32,7 +42,7 @@ public class RangedWeapon : Weapon
 		if(mainActionFlag)
 		{
 			AttackAnimation();
-			if(Ready)
+			if(Ready && currentEnergy > energyDrain)
 			{
 				Vector3 shotSpawnPosition = gameObject.transform.position + gameObject.transform.forward * 1.25f;
 				bulletSpread = new Vector3(
@@ -42,13 +52,12 @@ public class RangedWeapon : Weapon
 				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 
 				// Allows modifications to instanced shots.
-				newShot = (GameObject)Instantiate(shot, shotSpawnPosition, shotSpawnRotation);
+				newShot = (GameObject)Instantiate(shot[ammoType], shotSpawnPosition, shotSpawnRotation);
 				newShot.SendMessage("BulletModifications", parent);
 
 				Ready=false;
-				if (parent.GetComponent<Entity>().haste > 0) currentCooldown = augmentedCooldown / 4;
-				else currentCooldown=augmentedCooldown;
-				augmentedEnergy -= energyDrain;
+				currentCooldown = augmentedCooldown;
+				currentEnergy -= energyDrain;
 			}
 		}
 	}
@@ -59,12 +68,16 @@ public class RangedWeapon : Weapon
 		if(secondaryActionFlag)
 		{
 			nextPosition=secondaryPosition;
+			if(parent.GetComponentInChildren<Camera>()!=null && zoom < 1)
+				parent.GetComponentInChildren<Camera>().fieldOfView = Mathf.Lerp(60,30,zoom+=.05f);
 			//gameObject.transform.localPosition = new Vector3(0,-0.7f,0);
 
 		}
 		else
 		{
 			nextPosition=DefaultPosition;
+			if(parent.GetComponentInChildren<Camera>()!=null && zoom > 0)
+				parent.GetComponentInChildren<Camera>().fieldOfView = Mathf.Lerp(60,30,zoom-=.05f);
 			//gameObject.transform.localPosition = DefaultPosition;
 		}
 	}

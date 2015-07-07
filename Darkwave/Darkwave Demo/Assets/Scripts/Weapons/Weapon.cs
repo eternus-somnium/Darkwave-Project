@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour
 {
 
 	public bool mainActionFlag, secondaryActionFlag;
+	public int touchDamage;
 	bool ready;
 
 	public float baseCooldown, augmentedCooldown, baseEnergy, augmentedEnergy, 
@@ -26,18 +27,19 @@ public class Weapon : MonoBehaviour
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		augmentedEnergy=baseEnergy;
-		Debug.Log("OK");
 		augmentedCooldown=baseCooldown;
 		currentEnergy = augmentedEnergy;
 		InvokeRepeating("WeaponTime",1,1);
 
 	}
 
-	// Controls the weapon's fire rate. Called in child script's Update().
+	// Controls the weapon's fire rate and recharge
 	protected void WeaponTime()
 	{
 		if(currentEnergy < augmentedEnergy) currentEnergy++;
+
 		if(currentCooldown <= 0) ready=true;
+		else if (parent.GetComponent<Entity>().haste > 0) currentCooldown -= 4;
 		else currentCooldown--;
 	}
 

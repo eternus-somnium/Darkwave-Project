@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Turret.cs" />
      <Compile Include="Assets\Scripts\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\Walker.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Lunge.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangedWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Shot.cs" />
