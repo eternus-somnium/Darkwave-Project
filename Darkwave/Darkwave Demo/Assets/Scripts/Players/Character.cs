@@ -4,8 +4,9 @@ using System.Collections;
 public class Character : Entity 
 {
 	public int treasures=0;
-	//Used in OnTriggerEnter() and healthController()
-	bool inLitArea = true, dying=false;
+	//Used in healthController()
+	public int inLitArea=0;
+	bool dying=false;
 	//Used for MoveController()
 	float jumpPower, jumpCounter = 0.0F;
 	//Used in CameraController()
@@ -198,9 +199,9 @@ public class Character : Entity
 					Vector3.Distance(gameObject.transform.position, 
 			                 GameObject.Find("Game Controller").GetComponentInChildren<Crystal>().transform.position);
 
-		if(inLitArea && health < maxHealth)
+		if(inLitArea >= 1 && health < maxHealth)
 			health += counter / 1000;
-		else if (!inLitArea)
+		else if (inLitArea < 1)
 			health += counter / 100;
 	}
 
@@ -253,7 +254,7 @@ public class Character : Entity
 	{
 		if(col.gameObject.tag == "LitArea")
 		{
-			inLitArea=true;
+			inLitArea++;
 		}
 		if(col.gameObject.tag == "Treasure")
 		{
@@ -265,7 +266,7 @@ public class Character : Entity
 	{
 		if(col.gameObject.tag == "LitArea")
 		{
-			inLitArea=false;
+			inLitArea--;
 		}
 	}
 }
