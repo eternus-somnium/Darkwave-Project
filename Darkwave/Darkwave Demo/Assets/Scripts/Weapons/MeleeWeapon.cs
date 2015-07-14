@@ -19,6 +19,7 @@ public class MeleeWeapon : Weapon
 	}
 	public void MainAction()
 	{
+		parent.GetComponent<Animator>().SetBool("Attack",mainActionFlag);
 		if(mainActionFlag)
 		{
 			AttackAnimation();

@@ -19,10 +19,11 @@ public class Weapon : MonoBehaviour
 	// Use this for initialization
 	public void WeaponStart () 
 	{
-		if(gameObject.layer != 8)
+		/*if(gameObject.layer != 8)
 			parent = gameObject.transform.parent.gameObject;
 		else
-			parent = gameObject.transform.parent.parent.gameObject;
+			parent = gameObject.transform.parent.parent.gameObject;*/
+		parent = transform.root.gameObject;
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		currentEnergy = energy;
