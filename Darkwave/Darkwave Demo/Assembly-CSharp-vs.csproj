@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\PlacementWall.cs" />
      <Compile Include="Assets\Scripts\Players\Architect.cs" />
      <Compile Include="Assets\Scripts\Players\Character.cs" />
+     <Compile Include="Assets\Scripts\Players\FPSWithModel.cs" />
      <Compile Include="Assets\Scripts\Players\TPSWithAnim.cs" />
      <Compile Include="Assets\Scripts\TrackingShot.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" />
