@@ -16,10 +16,10 @@ public class Entity : MonoBehaviour
 	public int baseAggroValue;
 	public int aggroValue;
 	public int stun=0;
-	public int accMod; // Accuracy modifier
-	public float defMod; // Defense modifier
-	public float dmgMod; // Damage modifier
-	public float headShotMod; // Extra critical damage
+	public int accMod=0; // Accuracy modifier
+	public float defMod=0; // Defense modifier
+	public float dmgMod=0; // Damage modifier
+	public float headShotMod=0; // Extra critical damage
 
 	//Effects Variables
 	public float empowered; // Increases damage by 25%.
@@ -33,9 +33,7 @@ public class Entity : MonoBehaviour
 	public float armored; // Decreases incoming damage by 50%.
 
 	//Movement variables
-	public float baseSpeed, speedMod;	//set in editor
-	protected bool aiming; // Improves accuracy by one unit and slows down speed by 40%.
-
+	public float baseSpeed, speedMod, augmentedSpeed;	//set in editor
 	internal float yMove = 0;
 
 	//Combat Variables
@@ -45,10 +43,7 @@ public class Entity : MonoBehaviour
 	{
 		health = maxHealth;
 		aggroValue = baseAggroValue;
-		speedMod = 0;
-		accMod = 0;
-		headShotMod = 0;
-		aiming = false;
+		augmentedSpeed = baseSpeed;
 		causedHeadShot = false;
 	}
 
@@ -100,11 +95,9 @@ public class Entity : MonoBehaviour
 		speedMod = 1;
 		if (swift > 0) speedMod += 0.33F;
 		if (crippled > 0) speedMod -= 0.5F;
-		else if (aiming) speedMod -= 0.40F;
 		// Adjust accuracy modifier based on certain effects.
 		accMod = 0;
 		if (focus > 0) accMod--;
-		if (aiming) accMod--;
 		if (burning > 0) accMod += 3;
 		// if defMod = 1, the entity takes no damage. Values above 1 causes damage to heal the entity.
 		defMod = 0;

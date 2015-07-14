@@ -6,6 +6,7 @@ public class RangedWeapon : Weapon
 	public int secondaryActionType; //0 Zoom, 1 Secondary Attack
 	public int baseAccuracy, augmentedAccuracy, ammoType;
 	float zoom=0;
+	bool aiming = false;
 	public GameObject[] shot;
 	private GameObject newShot;
 	private Vector3 bulletSpread;
@@ -64,21 +65,36 @@ public class RangedWeapon : Weapon
 
 	public void SecondaryAction()
 	{
-		transform.localPosition=Vector3.Lerp(gameObject.transform.localPosition,nextPosition, 5f*Time.deltaTime);
-		if(secondaryActionFlag)
+		if(secondaryActionType==0)
 		{
-			nextPosition=secondaryPosition;
-			if(parent.GetComponentInChildren<Camera>()!=null && zoom < 1)
-				parent.GetComponentInChildren<Camera>().fieldOfView = Mathf.Lerp(60,30,zoom+=.05f);
-			//gameObject.transform.localPosition = new Vector3(0,-0.7f,0);
+			transform.localPosition=Vector3.Lerp(gameObject.transform.localPosition,nextPosition, 5f*Time.deltaTime);
+			if(secondaryActionFlag)
+			{
+				nextPosition=secondaryPosition;
+				if(parent.GetComponentInChildren<Camera>()!=null && zoom < 1)
+					parent.GetComponentInChildren<Camera>().fieldOfView = Mathf.Lerp(60,30,zoom+=.05f);
+				if(!aiming)
+				{
+					augmentedAccuracy++;
+					parent.GetComponent<Entity>().augmentedSpeed *=.5f;
+					aiming = true;
+				}
+				//gameObject.transform.localPosition = new Vector3(0,-0.7f,0);
 
-		}
-		else
-		{
-			nextPosition=DefaultPosition;
-			if(parent.GetComponentInChildren<Camera>()!=null && zoom > 0)
-				parent.GetComponentInChildren<Camera>().fieldOfView = Mathf.Lerp(60,30,zoom-=.05f);
-			//gameObject.transform.localPosition = DefaultPosition;
+			}
+			else
+			{
+				nextPosition=DefaultPosition;
+				if(parent.GetComponentInChildren<Camera>()!=null && zoom > 0)
+					parent.GetComponentInChildren<Camera>().fieldOfView = Mathf.Lerp(60,30,zoom-=.05f);
+				if(aiming)
+				{
+					augmentedAccuracy--;
+					parent.GetComponent<Entity>().augmentedSpeed *=2;
+					aiming = false;
+				}
+				//gameObject.transform.localPosition = DefaultPosition;
+			}
 		}
 	}
 }

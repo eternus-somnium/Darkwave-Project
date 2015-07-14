@@ -27,7 +27,10 @@ public class Lunge : Weapon
 			if(Ready && currentEnergy > energyDrain)
 			{
 				Debug.Log("Lunging");
-				transform.Translate((parent.GetComponent<NPC>().target.transform.position)*parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
+				transform.position = Vector3.MoveTowards(transform.position, 
+				                                         parent.GetComponent<NPC>().target.transform.position, 
+				                                         parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
+				//transform.Translate((parent.GetComponent<NPC>().target.transform.position)*parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
 				Ready=false;
 				currentCooldown = augmentedCooldown;
 				currentEnergy -= energyDrain;

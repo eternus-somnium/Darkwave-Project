@@ -6,10 +6,8 @@ public class Character : Entity
 	public int treasures=0;
 	//Used in OnTriggerEnter() and healthController()
 	bool inLitArea = true, dying=false;
-	float counter;
 	//Used for MoveController()
-	float jumpPower;
-	public float jumpCounter = 0.0F;
+	float jumpPower, jumpCounter = 0.0F;
 	//Used in CameraController()
 	float hRotation = 0F, vRotation = 0F;
 	//Used in DeathController()
@@ -189,22 +187,14 @@ public class Character : Entity
 		if(Input.GetButton("Fire1")) weapons[weaponChoice].SendMessage("MainActionController", true);
 		else weapons[weaponChoice].SendMessage("MainActionController", false);
 		
-		if(Input.GetButton("Fire2"))
-		{
-			weapons[weaponChoice].SendMessage("SecondaryActionController", true);
-			aiming = true;
-		}
-		else
-		{
-			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
-			aiming = false;
-		}
+		if(Input.GetButton("Fire2")) weapons[weaponChoice].SendMessage("SecondaryActionController", true);
+		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
 	}
 
 	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
 	void healthRegenController()
 	{
-		counter = (GameObject.Find("Game Controller").GetComponent<GameController>().sphereScale/2)-
+		float counter = (GameObject.Find("Game Controller").GetComponent<GameController>().sphereScale/2)-
 					Vector3.Distance(gameObject.transform.position, 
 			                 GameObject.Find("Game Controller").GetComponentInChildren<Crystal>().transform.position);
 
