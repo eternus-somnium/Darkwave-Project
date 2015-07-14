@@ -31,6 +31,7 @@ public class Weapon : MonoBehaviour
 	public void WeaponStart () 
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(this.transform.parent.gameObject.name != "Main Camera")
 		{
 			parent = gameObject.transform.parent.gameObject;
@@ -50,9 +51,13 @@ public class Weapon : MonoBehaviour
 
 =======
 		if(gameObject.layer != 8)
+=======
+		/*if(gameObject.layer != 8)
+>>>>>>> TPS Update
 			parent = gameObject.transform.parent.gameObject;
 		else
-			parent = gameObject.transform.parent.parent.gameObject;
+			parent = gameObject.transform.parent.parent.gameObject;*/
+		parent = transform.root.gameObject;
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		currentEnergy = energy;
