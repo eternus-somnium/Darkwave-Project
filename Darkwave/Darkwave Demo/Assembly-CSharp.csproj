@@ -46,14 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CriticalPoint.cs" />
      <Compile Include="Assets\Scripts\BuildDevice.cs" />
      <Compile Include="Assets\Scripts\BuildableObject.cs" />
+     <Compile Include="Assets\Scripts\CriticalPoint.cs" />
      <Compile Include="Assets\Scripts\Crystal.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Entity.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
+     <Compile Include="Assets\Scripts\HUD\ArchitectHUD.cs" />
+     <Compile Include="Assets\Scripts\HUD\CharacterHUD.cs" />
      <Compile Include="Assets\Scripts\NPC.cs" />
      <Compile Include="Assets\Scripts\PlacementWall.cs" />
      <Compile Include="Assets\Scripts\Players\Architect.cs" />
