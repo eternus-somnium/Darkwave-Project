@@ -164,12 +164,12 @@ public class FPSWithModel : Entity
 		if(Input.GetButton("Fire2"))
 		{
 			weapons[weaponChoice].SendMessage("SecondaryActionController", true);
-			aiming = true;
+			//aiming = true;
 		}
 		else
 		{
 			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
-			aiming = false;
+			//aiming = false;
 		}
 	}
 	
