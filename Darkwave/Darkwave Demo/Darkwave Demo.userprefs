@@ -1,12 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Players\FPSWithModel.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Players\FPSWithModel.cs" Line="81" Column="21" />
-      <File FileName="Assets\Scripts\Players\Character.cs" Line="26" Column="1" />
-      <File FileName="Assets\Scripts\Players\TPSWithAnim.cs" Line="84" Column="150" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -100,18 +100,21 @@ public class Character : Entity
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=0;
 			weapons[weaponChoice].SetActive(true);
+			GetComponent<Animator>().SetInteger("CurrWeap", 1);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha2)) 
 		{
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=1;
 			weapons[weaponChoice].SetActive(true);
+			GetComponent<Animator>().SetInteger("CurrWeap", 2);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha3)) 
 		{
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=2;
 			weapons[weaponChoice].SetActive(true);
+			GetComponent<Animator>().SetInteger("CurrWeap", 1);
 
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha4))
@@ -119,6 +122,7 @@ public class Character : Entity
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=3;
 			weapons[weaponChoice].SetActive(true);
+			GetComponent<Animator>().SetInteger("CurrWeap", 0);
 		}
 
 		//Grid controller

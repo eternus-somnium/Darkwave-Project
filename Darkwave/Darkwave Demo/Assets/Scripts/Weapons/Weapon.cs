@@ -36,6 +36,10 @@ public class Weapon : MonoBehaviour
 		if(currentEnergy < energy) currentEnergy+=Time.deltaTime;
 		if(currentCooldown <= 0) ready=true;
 		else currentCooldown = Mathf.Clamp(currentCooldown - Time.deltaTime, 0, cooldown);
+		parent.GetComponent<Animator>().SetBool("Attack",!ready);
+		if (mainActionFlag) parent.GetComponent<Animator>().SetTrigger("Primary");
+		if (secondaryActionFlag) parent.GetComponent<Animator>().SetTrigger("Secondary");
+		print (mainActionFlag);
 	}
 
 	public void AttackAnimation()
