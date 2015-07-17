@@ -21,22 +21,14 @@ public class Walker : NPC
 	void Update () 
 	{
 		NPCUpdate();
-		WalkerAI();
+
 
 
 		if(target != null && agent.isActiveAndEnabled)
-			agent.SetDestination (target.transform.position + randomAdd);
-	}
-
-	//Controls the behavior of the npc turret
-	void WalkerAI()
-	{	
-		//if the player is in sight
-		RaycastHit hit;
-		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && 
-		   hit.transform.gameObject == target.gameObject)
 		{
-			Attack();
+			goal = target.transform.position + randomAdd;
+
+			agent.SetDestination (goal);
 		}
 	}
 	

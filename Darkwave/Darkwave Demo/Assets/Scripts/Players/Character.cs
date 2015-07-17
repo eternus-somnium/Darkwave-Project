@@ -4,21 +4,20 @@ using System.Collections;
 public class Character : Entity 
 {
 	public int treasures=0;
-	//Used in healthController()
-	public int inLitArea=0;
-	bool dying=false;
+	//Used in OnTriggerEnter() and healthController()
+	bool inLitArea = true;
+	float counter;
 	//Used for MoveController()
-	float jumpPower, jumpCounter = 0.0F;
+	float jumpCounter = 0.0F;
 	//Used in CameraController()
 	float hRotation = 0F, vRotation = 0F;
 	//Used in DeathController()
 	int deathCounter = 0;
-	float respawnTimer = -99;
+	float respawnTimer = 0;
 	Vector3 respawnPoint;
 	//Used in WeaponController()
 	public int weaponChoice = 0;
 	public GameObject[] weapons;
-	public Vector3 target;
 
 	protected void Start()
 	{
@@ -37,30 +36,18 @@ public class Character : Entity
 	{
 		EntityUpdate();
 		CameraController();
+
 		MoveController();
-
-
 
 		// Runs WeaponController() if character is still alive. Else, it runs DeathController().
 		if(health>0)
 		{ 
-			dying = false;
-			aggroValue = baseAggroValue + treasures;
 			WeaponController();
 		}
-		else if(!dying)
-		{
-			dying=true;
-			aggroValue = 0;
-			weapons[weaponChoice].SendMessage("MainActionController", false);
-			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
-			CancelInvoke("healthRegenController");
-			InvokeRepeating("DeathController",0,1);
-		}
+		else DeathController();
 	}
 
-	// Controls Movement(old)
-	/*
+	// Controls Movement
 	void MoveController()
 	{
 		float jumpSpeed = 20.0F;
@@ -89,44 +76,6 @@ public class Character : Entity
 		controller.Move(moveDirection * Time.deltaTime);
 		
 	}
-*/
-	void MoveController()
-	{	
-		Vector3 moveDirection = Vector3.zero;
-		
-		CharacterController controller = GetComponent<CharacterController>();
-		if(health > 0)
-		{
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-			moveDirection = transform.TransformDirection(moveDirection);// makes input directions camera relative
-			moveDirection *= baseSpeed * speedMod;
-			
-			if (controller.isGrounded) 
-			{
-				if (Input.GetButton("Jump"))
-				{
-					if(jumpCounter == 0)
-						jumpCounter = 1.5f;
-					else
-					jumpCounter+=Time.deltaTime; 
-					if(jumpCounter > 2) jumpCounter=2;
-				}
-				else
-				{
-					jumpPower = jumpCounter*10;
-					jumpCounter=0;
-				}
-			}
-			else
-			{
-				jumpPower-=Time.deltaTime*5;
-				moveDirection /=2;
-			}
-		}
-		moveDirection.y = jumpPower + Physics.gravity.y;
-		controller.Move(moveDirection * Time.deltaTime);
-		
-	}
 
 	void CameraController()
 	{
@@ -140,14 +89,6 @@ public class Character : Entity
 		//Rotates Player on "Y" Axis Acording to Mouse Input
 		vRotation = Mathf.Clamp(vRotation - verticalSpeed * Input.GetAxis("Mouse Y"), -90,90);
 		Camera.main.transform.localEulerAngles = new Vector3(vRotation, 0, 0);
-
-		RaycastHit hit;
-
-		if(Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
-		                   GetComponentInChildren<Camera>().transform.forward, out hit))
-			target = hit.point;
-		else target = Vector3.zero;
-		Debug.DrawLine(transform.position, Vector3.zero, Color.cyan);
 
 	}
 
@@ -188,63 +129,45 @@ public class Character : Entity
 		if(Input.GetButton("Fire1")) weapons[weaponChoice].SendMessage("MainActionController", true);
 		else weapons[weaponChoice].SendMessage("MainActionController", false);
 		
-		if(Input.GetButton("Fire2")) weapons[weaponChoice].SendMessage("SecondaryActionController", true);
-		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+		if(Input.GetButton("Fire2"))
+		{
+			weapons[weaponChoice].SendMessage("SecondaryActionController", true);
+			aiming = true;
+		}
+		else
+		{
+			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+			aiming = false;
+		}
 	}
 
 	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
 	void healthRegenController()
 	{
-		float counter = (GameObject.Find("Game Controller").GetComponent<GameController>().sphereScale/2)-
+		counter = (GameObject.Find("Game Controller").GetComponent<GameController>().sphereScale/2)-
 					Vector3.Distance(gameObject.transform.position, 
 			                 GameObject.Find("Game Controller").GetComponentInChildren<Crystal>().transform.position);
 
-		if(inLitArea >= 1 && health < maxHealth)
+		if(inLitArea && health > 0 && health < maxHealth)
 			health += counter / 1000;
-		else if (inLitArea < 1)
+		else if (!inLitArea && health > 0)
 			health += counter / 100;
 	}
 
 	//Controls respawn timer and respawn position.
 	void DeathController()
 	{
-		if(respawnTimer == -99) 
-		{
-			Debug.Log ("you are dying");
-			respawnTimer = deathCounter+1 * 10f;
-		}
-		else if(health > 0)
-		{
-			respawnTimer = -99;
-			dying=false;
-			Debug.Log("someone helped you up");
-			InvokeRepeating("healthRegenController",1,1);
-			CancelInvoke("DeathController");
-		}
-		else if( respawnTimer > 0) respawnTimer--;
+		aggroValue = 0;
+		weapons[weaponChoice].SendMessage("MainActionController", false);
+		weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+		if(respawnTimer == 0) respawnTimer = ++deathCounter * 10f;
+		else if( respawnTimer > 0) respawnTimer-=Time.deltaTime;
 		else
 		{
-			respawnTimer = -99;
-			deathCounter++;
+			respawnTimer = 0;
 			this.transform.position = respawnPoint;
-			treasures = 0;
 			health = maxHealth;
-			dying=false;
-			Debug.Log("you got better");
-			InvokeRepeating("healthRegenController",1,1);
-			CancelInvoke("DeathController");
-		}
-	}
-
-	public Vector3 Target 
-	{
-		get 
-		{
-			return target;
-		}
-		set 
-		{
-			target = value;
+			aggroValue = baseAggroValue;
 		}
 	}
 
@@ -254,7 +177,7 @@ public class Character : Entity
 	{
 		if(col.gameObject.tag == "LitArea")
 		{
-			inLitArea++;
+			inLitArea=true;
 		}
 		if(col.gameObject.tag == "Treasure")
 		{
@@ -266,7 +189,7 @@ public class Character : Entity
 	{
 		if(col.gameObject.tag == "LitArea")
 		{
-			inLitArea--;
+			inLitArea=false;
 		}
 	}
 }

@@ -25,7 +25,7 @@ public class MeleeWeapon : Weapon
 			if(currentCooldown == 0)
 			{
 
-				currentCooldown=augmentedCooldown;
+				currentCooldown=cooldown;
 			}
 		}
 	}
@@ -42,8 +42,8 @@ public class MeleeWeapon : Weapon
 					AttackAnimation();
 					//Weapon swing stub
 
-					currentCooldown = augmentedCooldown;
-					currentEnergy -= energyDrain;
+					currentCooldown = cooldown;
+					energy -= energyDrain;
 				}
 			}
 		}
