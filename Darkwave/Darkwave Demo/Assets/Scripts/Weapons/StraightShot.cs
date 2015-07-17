@@ -36,12 +36,12 @@ public class StraightShot : Shot
 
 			strikingShot = shooterScript.FoeHit(strikingShot, struckFoe);
 			*/
-
+			/*
 			Debug.Log("Headshot before FoeDmgEffect is " + criticalMultiplier);
 			Debug.Log (parent + " is the shooter, " + parent.GetComponent<Entity>() + " is shooterScript, " + this.gameObject.GetComponent<Shot>() + " is the Shot script, and " + col.gameObject.GetComponent<Entity>() + " is the struck entity.");
 			parent.GetComponent<Entity>().FoeDmgEffect(this.gameObject.GetComponent<Shot>(), col.gameObject.GetComponent<Entity>());
 			Debug.Log("Headshot after FoeDmgEffect is " + criticalMultiplier);
-
+			*/
 			col.gameObject.GetComponent<Entity>().health -= (this.gameObject.GetComponent<Shot>().health * (1 - col.gameObject.GetComponent<Entity>().defMod) * criticalMultiplier);
 			criticalMultiplier = 1;
 

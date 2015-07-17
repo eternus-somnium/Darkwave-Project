@@ -31,7 +31,7 @@ public class Turret : NPC
 		//Debug.DrawRay (transform.position, target.transform.position - transform.position, rayColor);
 	}
 	
-	//Controls the behavior of the enemy object
+	//Controls the behavior of the npc turret
 	void TurretAI()
 	{	
 		//if the player is in sight

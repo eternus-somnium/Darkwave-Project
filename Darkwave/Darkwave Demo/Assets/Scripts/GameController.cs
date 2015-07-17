@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
 
 	void GameOver()
 	{
+		Time.timeScale=0;
 		Debug.Log("GAME OVER");//gameover
 	}
 }

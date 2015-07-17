@@ -4,12 +4,12 @@ using System.Collections;
 public class Weapon : MonoBehaviour 
 {
 
-	public bool mainActionFlag, secondaryActionFlag;
+	public bool mainActionFlag, secondaryActionFlag, particleFlag;
+	public int touchDamage;
 	bool ready;
-	public float cooldown, currentCooldown=0;//Measured in quarter seconds
-	public float energy = 100;
-	public float currentEnergy;
-	public float energyDrain = 0;
+
+	public float baseCooldown, augmentedCooldown, baseEnergy, augmentedEnergy, 
+				 currentEnergy, currentCooldown=0, energyDrain = 0;
 	public GameObject parent; // Entity wielding the weapon.
 
 	Vector3 defaultPosition;
@@ -19,27 +19,41 @@ public class Weapon : MonoBehaviour
 	// Use this for initialization
 	public void WeaponStart () 
 	{
-		/*if(gameObject.layer != 8)
+		if(this.transform.parent.gameObject.name != "Main Camera")
+		{
 			parent = gameObject.transform.parent.gameObject;
+			particleFlag = false;
+		}
 		else
-			parent = gameObject.transform.parent.parent.gameObject;*/
-		parent = transform.root.gameObject;
+		{
+			parent = gameObject.transform.parent.parent.gameObject;
+			particleFlag = true;
+		}
+
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
-		currentEnergy = energy;
-		
+		augmentedEnergy=baseEnergy;
+		augmentedCooldown=baseCooldown;
+		currentEnergy = augmentedEnergy;
+		InvokeRepeating("WeaponTime",0,.25f);
+
 	}
 
-	// Controls the weapon's fire rate. Called in child script's Update().
+	// Controls the weapon's fire rate and recharge
 	protected void WeaponTime()
 	{
-		if(currentEnergy < energy) currentEnergy+=Time.deltaTime;
+		if(currentEnergy < augmentedEnergy) 
+		{
+			currentEnergy++;
+			if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isStopped) 
+				gameObject.GetComponentInChildren<ParticleSystem>().Play();
+		}
+		else if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
+			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+
 		if(currentCooldown <= 0) ready=true;
-		else currentCooldown = Mathf.Clamp(currentCooldown - Time.deltaTime, 0, cooldown);
-		parent.GetComponent<Animator>().SetBool("Attack",!ready);
-		if (mainActionFlag) parent.GetComponent<Animator>().SetTrigger("Primary");
-		if (secondaryActionFlag) parent.GetComponent<Animator>().SetTrigger("Secondary");
-		print (mainActionFlag);
+		else if (parent.GetComponent<Entity>().haste > 0) currentCooldown -= 4;
+		else currentCooldown--;
 	}
 
 	public void AttackAnimation()
