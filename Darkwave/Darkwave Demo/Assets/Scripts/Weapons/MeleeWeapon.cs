@@ -21,6 +21,11 @@ public class MeleeWeapon : Weapon
 		parent.GetComponent<Animator>().SetBool("Attack",mainActionFlag);
 		if(mainActionFlag)
 		{
+<<<<<<< HEAD
+=======
+			AttackAnimation();
+			Ready = false;
+>>>>>>> Finished FPS Update
 			if(currentCooldown == 0)
 			{
 				AttackAnimation();
