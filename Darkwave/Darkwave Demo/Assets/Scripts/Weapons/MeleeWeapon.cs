@@ -22,6 +22,7 @@ public class MeleeWeapon : Weapon
 		if(mainActionFlag)
 		{
 			AttackAnimation();
+			Ready = false;
 			if(currentCooldown == 0)
 			{
 

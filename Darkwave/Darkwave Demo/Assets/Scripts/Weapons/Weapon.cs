@@ -42,18 +42,19 @@ public class Weapon : MonoBehaviour
 	// Controls the weapon's fire rate and recharge
 	protected void WeaponTime()
 	{
-		if(currentEnergy < augmentedEnergy) 
+		/*if(currentEnergy < augmentedEnergy) 
 		{
 			currentEnergy++;
 			if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isStopped) 
 				gameObject.GetComponentInChildren<ParticleSystem>().Play();
 		}
 		else if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
-			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+			gameObject.GetComponentInChildren<ParticleSystem>().Stop();*/
 
 		if(currentCooldown <= 0) ready=true;
 		else if (parent.GetComponent<Entity>().haste > 0) currentCooldown -= 4;
 		else currentCooldown--;
+		if(parent.GetComponent<Animator> ()) parent.GetComponent<Animator> ().SetBool ("Attack", !ready);
 	}
 
 	public void AttackAnimation()
