@@ -38,9 +38,9 @@ public class RangedWeapon : Weapon
 
 	void WeaponAim()
 	{
-		/*if(parent.GetComponent<Character>().Target != Vector3.zero && !secondaryActionFlag)
-			transform.LookAt(parent.GetComponent<Character>().Target);
-		else transform.localRotation = Quaternion.Euler(Vector3.zero);*/
+		if(parent.GetComponent<FPSWithModel>().Target != Vector3.zero && !secondaryActionFlag)
+			transform.LookAt(parent.GetComponent<FPSWithModel>().Target);
+		else transform.localRotation = Quaternion.Euler(Vector3.zero);
 	}
 
 	public void MainAction()
