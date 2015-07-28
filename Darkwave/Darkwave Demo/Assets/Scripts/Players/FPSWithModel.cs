@@ -23,12 +23,17 @@ public class FPSWithModel : Entity
 	private Animator animator;
 	public Transform head;
 	public Transform rightHand;
+	public bool ikActive;
+	public Transform gripR;
+	public Transform gripL;
 	
 	protected void Start()
 	{
 		EntityStart();
 		animator = GetComponent<Animator> ();
 		animator.SetInteger("CurrWeap", 1);
+		gripR = weapons [weaponChoice].transform.Find ("GripPointR");
+		gripL = weapons [weaponChoice].transform.Find ("GripPointL");
 		// Spawn point of the character.
 		respawnPoint = new Vector3(
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.x+Random.Range(-1,1)*5,
@@ -67,6 +72,7 @@ public class FPSWithModel : Entity
 			weapons[weaponChoice].SendMessage("MainActionController", false);
 			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
 			weapons[weaponChoice].SetActive(false);
+			ikActive = false;
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
 		}
@@ -140,7 +146,7 @@ public class FPSWithModel : Entity
 		moveDirection.y = jumpPower + Physics.gravity.y;
 		controller.Move(moveDirection * Time.deltaTime);
 		Vector3 withoutGravity = new Vector3 (moveDirection.x, 0, moveDirection.z);
-		if (animator.GetInteger ("CurrWeap") > 0)
+		if (weaponChoice == 1)
 		{
 			weapons [weaponChoice].transform.position = rightHand.position + (weapons [weaponChoice].transform.position - weapons [weaponChoice].transform.Find ("GripPoint").position);
 			weapons [weaponChoice].transform.rotation = rightHand.rotation * weapons [weaponChoice].transform.Find ("GripPoint").localRotation;
@@ -178,11 +184,9 @@ public class FPSWithModel : Entity
 		RaycastHit hit;
 		
 		if(Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
-		                   GetComponentInChildren<Camera>().transform.forward, out hit))
+		                   GetComponentInChildren<Camera>().transform.forward, out hit) && hit.collider.gameObject != gameObject)
 			target = hit.point;
 		else target = Vector3.zero;
-		Debug.DrawLine(transform.position, Vector3.zero, Color.cyan);
-		
 	}
 	
 	void WeaponController()
@@ -194,6 +198,9 @@ public class FPSWithModel : Entity
 			weaponChoice=0;
 			weapons[weaponChoice].SetActive(true);
 			animator.SetInteger("CurrWeap", 1);
+			ikActive = true;
+			gripR = weapons [weaponChoice].transform.Find ("GripPointR");
+			gripL = weapons [weaponChoice].transform.Find ("GripPointL");
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha2)) 
 		{
@@ -201,6 +208,7 @@ public class FPSWithModel : Entity
 			weaponChoice=1;
 			weapons[weaponChoice].SetActive(true);
 			animator.SetInteger("CurrWeap", 2);
+			ikActive = false;
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha3)) 
 		{
@@ -208,6 +216,9 @@ public class FPSWithModel : Entity
 			weaponChoice=2;
 			weapons[weaponChoice].SetActive(true);
 			animator.SetInteger("CurrWeap", 1);
+			ikActive = true;
+			gripR = weapons [weaponChoice].transform.Find ("GripPointR");
+			gripL = weapons [weaponChoice].transform.Find ("GripPointL");
 			
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha4))
@@ -215,7 +226,8 @@ public class FPSWithModel : Entity
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=3;
 			weapons[weaponChoice].SetActive(true);
-			animator.SetInteger("CurrWeap", 0);
+			animator.SetInteger("CurrWeap", 3);
+			ikActive = false;
 		}
 		
 		//Grid controller
@@ -231,6 +243,38 @@ public class FPSWithModel : Entity
 		
 		if(Input.GetButton("Fire2")) weapons[weaponChoice].SendMessage("SecondaryActionController", true);
 		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+	}
+
+	void OnAnimatorIK()
+	{
+		if (animator) {
+			if (ikActive) {
+				animator.SetLookAtWeight(1);
+				animator.SetLookAtPosition(Camera.main.transform.position + Camera.main.transform.forward);
+				// Set the right hand target position and rotation, if one has been assigned
+				if (gripR != null) {
+					animator.SetIKPositionWeight (AvatarIKGoal.RightHand, 1);
+					animator.SetIKRotationWeight (AvatarIKGoal.RightHand, 1);  
+					animator.SetIKPosition (AvatarIKGoal.RightHand, gripR.position);
+					animator.SetIKRotation (AvatarIKGoal.RightHand, gripR.rotation);
+				}
+				if (gripL != null) {
+					animator.SetIKPositionWeight (AvatarIKGoal.LeftHand, 1);
+					animator.SetIKRotationWeight (AvatarIKGoal.LeftHand, 1);  
+					animator.SetIKPosition (AvatarIKGoal.LeftHand, gripL.position);
+					animator.SetIKRotation (AvatarIKGoal.LeftHand, gripL.rotation);
+				}
+			}
+		
+		//if the IK is not active, set the position and rotation of the hand and head back to the original position
+			else {          
+				animator.SetIKPositionWeight (AvatarIKGoal.RightHand, 0);
+				animator.SetIKRotationWeight (AvatarIKGoal.RightHand, 0);
+				animator.SetIKPositionWeight (AvatarIKGoal.LeftHand, 0);
+				animator.SetIKRotationWeight (AvatarIKGoal.LeftHand, 0);
+				animator.SetLookAtWeight(0);
+			}
+		}
 	}
 	
 	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
@@ -266,6 +310,7 @@ public class FPSWithModel : Entity
 			Debug.Log("someone helped you up");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
+			ikActive = true;
 		}
 		else if( respawnTimer > 0) respawnTimer--;
 		else
@@ -283,6 +328,7 @@ public class FPSWithModel : Entity
 			Debug.Log("you got better");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
+			ikActive = true;
 		}
 	}
 	

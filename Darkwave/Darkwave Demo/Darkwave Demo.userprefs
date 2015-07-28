@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\..\Projects\SSE\Assets\Coaster.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Players\FPSWithModel.cs">
     <Files>
-      <File FileName="..\..\..\..\..\..\Projects\SSE\Assets\FPSController.js" Line="1" Column="1" />
-      <File FileName="..\..\..\..\..\..\Projects\SSE\Assets\Coaster.js" Line="67" Column="1" />
+      <File FileName="Assets\Scripts\Players\FPSWithModel.cs" Line="208" Column="19" />
+      <File FileName="Assets\Scripts\Weapons\Shot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\StraightShot.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
