@@ -16,12 +16,12 @@ public class Entity : MonoBehaviour
 	public int baseAggroValue;
 	public int aggroValue;
 	public int stun=0;
+
+	//Ability effects
 	public int accMod=0; // Accuracy modifier
 	public float defMod=0; // Defense modifier
 	public float dmgMod=0; // Damage modifier
 	public float headShotMod=0; // Extra critical damage
-
-	//Effects Variables
 	public float empowered; // Increases damage by 25%.
 	public float focus; // Improves weapon accuracy by one unit.
 	public float haste; // Decreases weapon cooldown by 300%.
@@ -141,16 +141,19 @@ public class Entity : MonoBehaviour
 	//Controls reactions to collisions
 	void OnCollisionEnter(Collision col)
 	{
+		float baseDamage;
 		if((stun == 0) &&
 		  ((gameObject.layer == 8 && col.gameObject.layer == 9) ||
 		   (gameObject.layer == 9 && col.gameObject.layer == 8)))
 		{
 			if(col.gameObject.tag == "Shot")
-				gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Shot>().touchDamage;
+				baseDamage = col.gameObject.GetComponent<Shot>().touchDamage;
 			else if(col.gameObject.tag == "Weapon")
-				gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Weapon>().touchDamage;
+				baseDamage = col.gameObject.GetComponent<Weapon>().touchDamage;
 			else
-				gameObject.GetComponent<Entity>().health -= col.gameObject.GetComponent<Entity>().touchDamage;
+				baseDamage = col.gameObject.GetComponent<Entity>().touchDamage;
+
+			gameObject.GetComponent<Entity>().health -= defMod > 0?baseDamage/2:baseDamage;
 		}
 	}
 
