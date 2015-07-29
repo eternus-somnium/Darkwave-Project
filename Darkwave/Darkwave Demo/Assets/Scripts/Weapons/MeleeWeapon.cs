@@ -24,8 +24,11 @@ public class MeleeWeapon : Weapon
 <<<<<<< HEAD
 =======
 			AttackAnimation();
+<<<<<<< HEAD
 			Ready = false;
 >>>>>>> Finished FPS Update
+=======
+>>>>>>> Update
 			if(currentCooldown == 0)
 			{
 				AttackAnimation();

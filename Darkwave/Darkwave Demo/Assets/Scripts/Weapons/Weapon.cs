@@ -69,6 +69,7 @@ public class Weapon : MonoBehaviour
 	protected void WeaponTime()
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		//Continuous energy recharge
 		if(currentEnergy < augmentedEnergy) 
@@ -87,12 +88,21 @@ public class Weapon : MonoBehaviour
 		else if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();*/
 >>>>>>> Finished FPS Update
+=======
+		if(currentEnergy < augmentedEnergy) 
+		{
+			currentEnergy++;
+			//if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isStopped) 
+				//gameObject.GetComponentInChildren<ParticleSystem>().Play();
+		}
+		//else if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
+			//gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+>>>>>>> Update
 
 		//Controls time between shots
 		if(currentCooldown <= 0) ready=true;
 		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= 4; //statusEffects[6] is haste
 		else currentCooldown--;
-		if(parent.GetComponent<Animator> ()) parent.GetComponent<Animator> ().SetBool ("Attack", !ready);
 	}
 
 	public void AttackAnimation()

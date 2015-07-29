@@ -43,7 +43,6 @@ public class StraightShot : Shot
 			Debug.Log("Headshot after FoeDmgEffect is " + criticalMultiplier);
 
 			col.gameObject.GetComponent<Entity>().health -= (this.gameObject.GetComponent<Shot>().health * (1 - col.gameObject.GetComponent<Entity>().defMod) * criticalMultiplier);
-			if(col.gameObject.GetComponent<Animator>())col.gameObject.GetComponent<Animator>().SetTrigger ("Pain");
 			criticalMultiplier = 1;
 
 			if (willBurn) col.gameObject.GetComponent<Entity>().burning = 1;
