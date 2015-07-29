@@ -5,7 +5,7 @@ using System.Linq;
 
 public class GameController : MonoBehaviour
 {
-	public int round = 1, roundsInLevel, enemiesPerRound, enemiesLeft;
+	public int sphereStartSize=10, round = 1, roundsInLevel, enemiesPerRound, enemiesLeft;
 	public float roundTimer, timeLeft, sphereScale;
 	public GameObject crystal, litSphere;
 	public GameObject[] allyTargets, enemyTargets;
@@ -28,7 +28,8 @@ public class GameController : MonoBehaviour
 
 		ListController();
 		SphereController();
-
+		if(round == roundsInLevel+1)
+			LevelComplete();
 		if(crystal.GetComponent<Crystal>().health <=0)
 			GameOver();
 	}
@@ -48,8 +49,14 @@ public class GameController : MonoBehaviour
 
 	void SphereController()
 	{
-		sphereScale = 100 + ((round-1) * roundTimer + (roundTimer-timeLeft)) * 0.5f;
+		sphereScale = sphereStartSize + ((round-1) * roundTimer + (roundTimer-timeLeft)) * 0.5f;
 		litSphere.transform.localScale = new Vector3(sphereScale,sphereScale,sphereScale);
+	}
+
+	void LevelComplete()
+	{
+		Time.timeScale=0;
+		Debug.Log("Level Complete");//Level Complete
 	}
 
 	void GameOver()
