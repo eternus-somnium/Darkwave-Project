@@ -154,7 +154,7 @@ public class FPSWithModel : Entity
 		float runSpeed = withoutGravity.magnitude/baseSpeed;
 		animator.SetFloat("Speed",runSpeed);
 		animator.SetFloat("SpeedWithDir",transform.InverseTransformDirection (withoutGravity).z/baseSpeed);
-		animator.SetFloat("Turn", transform.InverseTransformDirection (withoutGravity).normalized.x);
+		animator.SetFloat("Turn", transform.InverseTransformDirection (withoutGravity).x/baseSpeed);
 		animator.SetBool("IsGrounded", controller.isGrounded);
 		
 	}
@@ -170,8 +170,7 @@ public class FPSWithModel : Entity
 		animator.SetFloat("Turn", Mathf.Clamp (animator.GetFloat("Turn") - (Input.GetAxis("Mouse X") / (horizontalSpeed)),-0.5f,0.5f));
 		//Camera.main.transform.position = new Vector3(transform.position.x,transform.position.y + 2,transform.position.z) - (Camera.main.transform.forward * 5);
 		Camera.main.transform.position = head.position + head.forward * 0.1f + head.transform.up * 0.15f;
-		//Camera.main.transform.rotation = head.rotation;
-		
+
 		//Rotates Player on "Y" Axis Acording to Mouse Input
 		vRotation = Mathf.Clamp(vRotation - verticalSpeed * Input.GetAxis("Mouse Y"), -90,90);
 		//Camera.main.transform.localEulerAngles = new Vector3(vRotation,head.transform.rotation.eulerAngles.y - transform.rotation.eulerAngles.y, 0);

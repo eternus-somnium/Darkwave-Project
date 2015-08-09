@@ -130,7 +130,8 @@ public class Entity : MonoBehaviour
 	//Stub function for implementation of an animation controller
 	protected virtual void AnimationController()
 	{
-		//if(stun) this.gameObject.
+		//if (stun && GetComponent <Animator>())
+						//GetComponent <Animator>().SetTrigger ("Pain");
 	}
 
 	/*Function recognizes if an entity hits a Death object. Collisions don't occur between objects if they

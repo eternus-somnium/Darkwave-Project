@@ -25,6 +25,7 @@ Global
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 																																																																									GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																			GlobalSection(MonoDevelopProperties) = preSolution
@@ -49,6 +50,9 @@ Global
 >>>>>>> Skin fix
 =======
 																																																																															GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Update
+=======
+																																																																																		GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Update
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
