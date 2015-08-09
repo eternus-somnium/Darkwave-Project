@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlacementWall.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\..\Projects\Playground\Assets\SegmentDisplay.js">
     <Files>
-      <File FileName="Assets\Scripts\PlacementWall.cs" Line="22" Column="1" />
-      <File FileName="Assets\Scripts\Grid.cs" Line="275" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="52" Column="6" />
-      <File FileName="Assets\Scripts\BuildDevice.cs" Line="99" Column="12" />
+      <File FileName="..\..\..\..\..\..\Projects\Playground\Assets\SegmentDisplay.js" Line="14" Column="52" />
+      <File FileName="..\..\..\..\..\..\Projects\Playground\Assets\ChooseEnding.js" Line="22" Column="96" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
