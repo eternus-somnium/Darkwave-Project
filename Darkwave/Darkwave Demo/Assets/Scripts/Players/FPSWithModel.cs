@@ -24,6 +24,7 @@ public class FPSWithModel : Entity
 	public Transform head;
 	public Transform rightHand;
 	public bool IKActive;
+	public bool headIK;
 	public Transform gripR;
 	public Transform gripL;
 	
@@ -31,7 +32,7 @@ public class FPSWithModel : Entity
 	{
 		EntityStart();
 		animator = GetComponent<Animator> ();
-		animator.SetInteger("CurrWeap", 1);
+		animator.SetInteger("WeaponPose", weaponChoice);
 		gripR = weapons [weaponChoice].transform.Find ("GripPointR");
 		gripL = weapons [weaponChoice].transform.Find ("GripPointL");
 		// Spawn point of the character.
@@ -73,6 +74,7 @@ public class FPSWithModel : Entity
 			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
 			weapons[weaponChoice].SetActive(false);
 			IKActive = false;
+			headIK = false;
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
 		}
@@ -192,46 +194,39 @@ public class FPSWithModel : Entity
 			target = hit.point;
 		else target = Vector3.zero;
 	}
-	
+
+	void SwitchWeapon(int choice, int pose, bool hands)
+	{
+		weapons [weaponChoice].SetActive (false);
+		weaponChoice = choice;
+		weapons [weaponChoice].SetActive (true);
+		animator.SetInteger ("WeaponPose", pose);
+		IKActive = hands;
+		if (hands)
+		{
+			gripR = weapons [weaponChoice].transform.Find ("GripPointR");
+			gripL = weapons [weaponChoice].transform.Find ("GripPointL");
+		}
+	}
+
 	void WeaponController()
 	{
 		//Weapon chooser
 		if(Input.GetKeyDown(KeyCode.Alpha1)) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=0;
-			weapons[weaponChoice].SetActive(true);
-			animator.SetInteger("CurrWeap", 1);
-			IKActive = true;
-			gripR = weapons [weaponChoice].transform.Find ("GripPointR");
-			gripL = weapons [weaponChoice].transform.Find ("GripPointL");
+			SwitchWeapon (0,1,true);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha2)) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=1;
-			weapons[weaponChoice].SetActive(true);
-			animator.SetInteger("CurrWeap", 2);
-			IKActive = false;
+			SwitchWeapon(1,2,false);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha3)) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=2;
-			weapons[weaponChoice].SetActive(true);
-			animator.SetInteger("CurrWeap", 1);
-			IKActive = true;
-			gripR = weapons [weaponChoice].transform.Find ("GripPointR");
-			gripL = weapons [weaponChoice].transform.Find ("GripPointL");
-			
+			SwitchWeapon (2,1,true);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha4))
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=3;
-			weapons[weaponChoice].SetActive(true);
-			animator.SetInteger("CurrWeap", 3);
-			IKActive = false;
+			SwitchWeapon(3,3,false);
 		}
 		
 		//Grid controller
@@ -253,8 +248,6 @@ public class FPSWithModel : Entity
 	{
 		if (animator) {
 			if (IKActive) {
-				animator.SetLookAtWeight(1);
-				animator.SetLookAtPosition(Camera.main.transform.position + Camera.main.transform.forward);
 				// Set the right hand target position and rotation, if one has been assigned
 				if (gripR != null) {
 					animator.SetIKPositionWeight (AvatarIKGoal.RightHand, 1);
@@ -277,6 +270,11 @@ public class FPSWithModel : Entity
 				animator.SetIKPositionWeight (AvatarIKGoal.LeftHand, 0);
 				animator.SetIKRotationWeight (AvatarIKGoal.LeftHand, 0);
 				animator.SetLookAtWeight(0);
+			}
+			if(headIK)
+			{
+				animator.SetLookAtWeight(1);
+				animator.SetLookAtPosition(Camera.main.transform.position + Camera.main.transform.forward);
 			}
 		}
 	}
@@ -333,6 +331,7 @@ public class FPSWithModel : Entity
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
 			IKActive = true;
+			headIK = true;
 		}
 	}
 	

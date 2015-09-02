@@ -27,6 +27,7 @@ Global
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 																																																																											GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																		GlobalSection(MonoDevelopProperties) = preSolution
@@ -61,6 +62,9 @@ Global
 =======
 																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> AnimationController function
+=======
+																																																																																									GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Separate Animation Script
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
