@@ -151,12 +151,17 @@ public class FPSWithModel : Entity
 			weapons [weaponChoice].transform.position = rightHand.position + (weapons [weaponChoice].transform.position - weapons [weaponChoice].transform.Find ("GripPoint").position);
 			weapons [weaponChoice].transform.rotation = rightHand.rotation * weapons [weaponChoice].transform.Find ("GripPoint").localRotation;
 		}
-		float runSpeed = withoutGravity.magnitude/baseSpeed;
-		animator.SetFloat("Speed",runSpeed);
-		animator.SetFloat("SpeedWithDir",transform.InverseTransformDirection (withoutGravity).z/baseSpeed);
-		animator.SetFloat("Turn", transform.InverseTransformDirection (withoutGravity).x/baseSpeed);
-		animator.SetBool("IsGrounded", controller.isGrounded);
+		AnimationController (withoutGravity, withoutGravity.magnitude / baseSpeed, transform.InverseTransformDirection (withoutGravity).z / baseSpeed, transform.InverseTransformDirection (withoutGravity).x / baseSpeed, controller.isGrounded,0);
 		
+	}
+
+	void AnimationController(Vector3 direction, float runSpeed, float speedWithDir, float turn, bool isGrounded, float pitch)
+	{
+		animator.SetFloat("Speed",runSpeed);
+		animator.SetFloat("SpeedWithDir",speedWithDir);
+		animator.SetFloat("Turn", turn);
+		animator.SetBool("IsGrounded", isGrounded);
+		animator.SetFloat("Pitch", pitch);
 	}
 	
 	void CameraController()
@@ -167,7 +172,7 @@ public class FPSWithModel : Entity
 		//Rotates Player on "X" Axis Acording to Mouse Input
 		hRotation = (hRotation + horizontalSpeed * Input.GetAxis("Mouse X"))%360;
 		transform.localEulerAngles = new Vector3(0, hRotation, 0);
-		animator.SetFloat("Turn", Mathf.Clamp (animator.GetFloat("Turn") - (Input.GetAxis("Mouse X") / (horizontalSpeed)),-0.5f,0.5f));
+	
 		//Camera.main.transform.position = new Vector3(transform.position.x,transform.position.y + 2,transform.position.z) - (Camera.main.transform.forward * 5);
 		Camera.main.transform.position = head.position + head.forward * 0.1f + head.transform.up * 0.15f;
 
@@ -178,7 +183,7 @@ public class FPSWithModel : Entity
 		float pitchScale = Camera.main.transform.eulerAngles.x;
 		if (pitchScale > 90)
 			pitchScale -= 360;
-		animator.SetFloat("Pitch", pitchScale / 90);
+		AnimationController (Vector3.zero, 0, 0, Mathf.Clamp (animator.GetFloat("Turn") - (Input.GetAxis("Mouse X") / (horizontalSpeed)),-0.5f,0.5f), true, pitchScale / 90);
 		
 		RaycastHit hit;
 		
