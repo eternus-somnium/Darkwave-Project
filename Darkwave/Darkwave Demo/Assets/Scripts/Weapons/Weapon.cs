@@ -13,6 +13,8 @@ public class Weapon : MonoBehaviour
 	public GameObject parent; // Entity wielding the weapon.
 
 	Vector3 defaultPosition;
+
+	public Entity charComponent;
 	public Vector3 secondaryPosition;
 	internal Vector3 nextPosition;
 

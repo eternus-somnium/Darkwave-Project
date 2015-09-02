@@ -23,7 +23,7 @@ public class FPSWithModel : Entity
 	private Animator animator;
 	public Transform head;
 	public Transform rightHand;
-	public bool ikActive;
+	public bool IKActive;
 	public Transform gripR;
 	public Transform gripL;
 	
@@ -72,7 +72,7 @@ public class FPSWithModel : Entity
 			weapons[weaponChoice].SendMessage("MainActionController", false);
 			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
 			weapons[weaponChoice].SetActive(false);
-			ikActive = false;
+			IKActive = false;
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
 		}
@@ -197,7 +197,7 @@ public class FPSWithModel : Entity
 			weaponChoice=0;
 			weapons[weaponChoice].SetActive(true);
 			animator.SetInteger("CurrWeap", 1);
-			ikActive = true;
+			IKActive = true;
 			gripR = weapons [weaponChoice].transform.Find ("GripPointR");
 			gripL = weapons [weaponChoice].transform.Find ("GripPointL");
 		}
@@ -207,7 +207,7 @@ public class FPSWithModel : Entity
 			weaponChoice=1;
 			weapons[weaponChoice].SetActive(true);
 			animator.SetInteger("CurrWeap", 2);
-			ikActive = false;
+			IKActive = false;
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha3)) 
 		{
@@ -215,7 +215,7 @@ public class FPSWithModel : Entity
 			weaponChoice=2;
 			weapons[weaponChoice].SetActive(true);
 			animator.SetInteger("CurrWeap", 1);
-			ikActive = true;
+			IKActive = true;
 			gripR = weapons [weaponChoice].transform.Find ("GripPointR");
 			gripL = weapons [weaponChoice].transform.Find ("GripPointL");
 			
@@ -226,7 +226,7 @@ public class FPSWithModel : Entity
 			weaponChoice=3;
 			weapons[weaponChoice].SetActive(true);
 			animator.SetInteger("CurrWeap", 3);
-			ikActive = false;
+			IKActive = false;
 		}
 		
 		//Grid controller
@@ -247,7 +247,7 @@ public class FPSWithModel : Entity
 	void OnAnimatorIK()
 	{
 		if (animator) {
-			if (ikActive) {
+			if (IKActive) {
 				animator.SetLookAtWeight(1);
 				animator.SetLookAtPosition(Camera.main.transform.position + Camera.main.transform.forward);
 				// Set the right hand target position and rotation, if one has been assigned
@@ -309,7 +309,7 @@ public class FPSWithModel : Entity
 			Debug.Log("someone helped you up");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
-			ikActive = true;
+			IKActive = true;
 		}
 		else if( respawnTimer > 0) respawnTimer--;
 		else
@@ -327,7 +327,7 @@ public class FPSWithModel : Entity
 			Debug.Log("you got better");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
-			ikActive = true;
+			IKActive = true;
 		}
 	}
 	
