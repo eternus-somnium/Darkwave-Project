@@ -269,4 +269,22 @@ public class Character : Entity
 			inLitArea--;
 		}
 	}
+
+	public bool Dying {
+		get {
+			return dying;
+		}
+		set {
+			dying = value;
+		}
+	}
+
+	public float JumpCounter {
+		get {
+			return jumpCounter;
+		}
+		set {
+			jumpCounter = value;
+		}
+	}
 }

@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Players\FPSWithModel.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CharacterAnimations.cs">
     <Files>
-      <File FileName="Assets\Scripts\Players\FPSWithModel.cs" Line="312" Column="42" />
+      <File FileName="Assets\Scripts\Players\FPSWithModel.cs" Line="314" Column="4" />
+      <File FileName="Assets\CharacterAnimations.cs" Line="113" Column="4" />
+      <File FileName="Assets\Scripts\Players\Character.cs" Line="287" Column="15" />
+      <File FileName="Assets\Scripts\Weapons\RangedWeapon.cs" Line="101" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
