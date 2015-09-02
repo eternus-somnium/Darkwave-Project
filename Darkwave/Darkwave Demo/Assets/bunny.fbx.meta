@@ -147,6 +147,7 @@ ModelImporter:
     100278: R_Thumb
     100280: R_Thumb.001
     100282: R_Thumb.001_end
+    100284: Rifle
     400000: Armature
     400002: //RootNode
     400004: Cube.003
@@ -289,6 +290,7 @@ ModelImporter:
     400278: R_Thumb
     400280: R_Thumb.001
     400282: R_Thumb.001_end
+    400284: Rifle
     2300000: //RootNode
     2300002: Crystal
     2300004: Cylinder
@@ -298,6 +300,7 @@ ModelImporter:
     2300012: Body.003
     2300014: Body.004
     2300016: Cylinder.001
+    2300018: Rifle
     3300000: //RootNode
     3300002: Crystal
     3300004: Cylinder
@@ -307,6 +310,7 @@ ModelImporter:
     3300012: Body.003
     3300014: Body.004
     3300016: Cylinder.001
+    3300018: Rifle
     4300000: Cube.003
     4300002: Trigger
     4300004: Crystal
@@ -318,6 +322,7 @@ ModelImporter:
     4300016: Body.002
     4300018: Body.003
     4300020: Body.004
+    4300022: Rifle
     7400000: ArmatureAction
     7400002: Armature|ArmatureAction.001
     7400004: Standing.001
@@ -363,37 +368,33 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 'MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-'
+    animationImportWarnings: "MuscleClip 'bunny' conversion warning: Bone length is
+      different in avatar and animation\n\n     'L_Thigh' : position error = 137.761017
+      mm\n\n     'L_Shin' : position error = 453.066345 mm\n\n     'L_Foot' : position
+      error = 429.333740 mm\n\n     'R_Thigh' : position error = 137.761002 mm\n\n
+      \    'R_Shin' : position error = 453.066345 mm\n\n     'R_Foot' : position error
+      = 429.334137 mm\n\nMuscleClip 'bunny' conversion warning: 'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm'
+      has scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm' has
+      scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm' has
+      scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm' has
+      scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm' has
+      scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm' has
+      scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005'
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.\n\nMuscleClip 'bunny' conversion warning: 'Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm'
+      has scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm' has
+      scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm' has
+      scale animation'. It is not supported.\nMuscleClip 'bunny' conversion warning:
+      'Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm' has
+      scale animation'. It is not supported.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -1914,12 +1915,12 @@ ModelImporter:
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
-      heightFromFeet: 1
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
