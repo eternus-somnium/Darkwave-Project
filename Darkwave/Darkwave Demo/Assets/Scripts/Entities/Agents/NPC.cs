@@ -5,18 +5,20 @@ public class NPC : Agent
 {
 	//Behavior variables (set in editor)
 	public GameObject[] targetList;
-	public GameObject target = null;
+	public GameObject 
+		target = null,
+		treasure;
 	public float targetDistance;
-	public int behavior;
-
-	public int sensorRange;
-	public int engagementRange;
+	public int 
+		behavior,
+		sensorRange,
+		engagementRange;
 	public bool inSight;
 
 
-	public int energy;
-	public int maxEnergy;
-	public GameObject treasure;
+	public int 
+		energy,
+		maxEnergy;
 
 	//Movement
 	public float jumpHeight;// set in editor
@@ -34,7 +36,7 @@ public class NPC : Agent
 	// Use this for initialization
 	public void NPCStart ()
 	{
-		EntityStart();
+		AgentStart();
 		energy=maxEnergy;
 		InvokeRepeating("AttackCooldowns",0,.5f);
 		InvokeRepeating("ChooseTarget",0,2f);
@@ -43,7 +45,7 @@ public class NPC : Agent
 	// Update is called once per frame
 	public void NPCUpdate ()
 	{
-		EntityUpdate();
+		AgentUpdate();
 
 		if(gameObject.tag == "Ally")
 			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
@@ -85,8 +87,8 @@ public class NPC : Agent
 				if(possibleTarget != null)
 				{
 					float possibleTargetDistance = Vector3.Distance(gameObject.transform.position, possibleTarget.transform.position);
-					if((possibleTarget.GetComponent<Agent>().aggroValue / possibleTargetDistance) >
-						(target.GetComponent<Agent>().aggroValue / targetDistance))
+					if((possibleTarget.GetComponent<Entity>().aggroValue / possibleTargetDistance) >
+						(target.GetComponent<Entity>().aggroValue / targetDistance))
 					{
 						target = possibleTarget;
 						targetDistance = possibleTargetDistance;

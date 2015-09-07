@@ -4,7 +4,7 @@ using System.Collections;
 public class Weapon : MonoBehaviour 
 {
 
-	public bool mainActionFlag, secondaryActionFlag, particleFlag;
+	public bool mainActionFlag, secondaryActionFlag, particleFlag, gridLinesFlag;
 	public int touchDamage;
 	bool ready;
 
@@ -22,14 +22,13 @@ public class Weapon : MonoBehaviour
 		if(this.transform.parent.gameObject.name != "Main Camera")
 		{
 			parent = gameObject.transform.parent.gameObject;
-			particleFlag = false;
 		}
 		else
 		{
 			parent = gameObject.transform.parent.parent.gameObject;
-			particleFlag = true;
 		}
 
+		particleFlag = gameObject.GetComponentInChildren<ParticleSystem>() != null;
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		augmentedEnergy=baseEnergy;
@@ -42,6 +41,8 @@ public class Weapon : MonoBehaviour
 	// Controls the weapon's fire rate and recharge
 	protected void WeaponTime()
 	{
+
+		//Continuous energy recharge
 		if(currentEnergy < augmentedEnergy) 
 		{
 			currentEnergy++;
@@ -51,6 +52,7 @@ public class Weapon : MonoBehaviour
 		else if(gameObject.activeSelf && particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
 
+		//Controls time between shots
 		if(currentCooldown <= 0) ready=true;
 		else if (parent.GetComponent<Agent>().haste > 0) currentCooldown -= 4;
 		else currentCooldown--;

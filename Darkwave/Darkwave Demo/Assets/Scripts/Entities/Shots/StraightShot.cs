@@ -31,7 +31,8 @@ public class StraightShot : Shot
 				touchDamage = Mathf.RoundToInt(touchDamage * criticalMultiplier);
 			}
 
-			col.gameObject.GetComponent<Agent>().DamageController(touchDamage, burning>0?true:false);
+			col.gameObject.GetComponent<Entity>().DamageController(touchDamage, burning>0?true:false);
+			Debug.Log (gameObject + " hit " + col.gameObject);
 		}
 		 Destroy(this.gameObject);
 	}

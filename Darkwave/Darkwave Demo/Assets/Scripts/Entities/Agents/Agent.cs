@@ -11,34 +11,37 @@ public class Agent : Entity
 {
 	//Ability effects
 	public int accMod=0; // Accuracy modifier
-	public float defMod=0; // Defense modifier
-	public float dmgMod=0; // Damage modifier
-	public float headShotMod=0; // Extra critical damage
+	public float 
+		defMod=0, // Defense modifier
+		dmgMod=0, // Damage modifier
+		headShotMod=0, // Extra critical damage
+		focus, // Improves weapon accuracy by one unit.
+		haste; // Decreases weapon cooldown by 300%.
 
-	public float focus; // Improves weapon accuracy by one unit.
-	public float haste; // Decreases weapon cooldown by 300%.
 
-	public float swift; // Increases speed by 33%.
-	public float crippled; // Decreases speed by 50%.
 
 
 	//Movement variables
-	public float baseSpeed, speedMod, augmentedSpeed;	//set in editor
+	public float 
+		baseSpeed, 
+		speedMod, 
+		augmentedSpeed,
+		swift, // Increases speed by 33%.
+		crippled; // Decreases speed by 50%.;	//set in editor
 	internal float yMove = 0;
 
 	//Combat Variables
 	public bool causedHeadShot; // True if a headshot was made, then sets itself back to false after use.
 
-	public void EntityStart()
+	public void AgentStart()
 	{
-		health = maxHealth;
-		aggroValue = baseAggroValue;
+		EntityStart();
 		augmentedSpeed = baseSpeed;
 		causedHeadShot = false;
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object
-	public void EntityUpdate()
+	public void AgentUpdate()
 	{
 		if(stun > 0) stun--;
 		EffectsUpdate();

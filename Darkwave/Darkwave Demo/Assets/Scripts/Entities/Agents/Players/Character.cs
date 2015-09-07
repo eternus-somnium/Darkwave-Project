@@ -21,7 +21,7 @@ public class Character : Agent
 
 	protected void Start()
 	{
-		EntityStart();
+		AgentStart();
 		// Spawn point of the character.
 		respawnPoint = new Vector3(
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.x+Random.Range(-1,1)*5,
@@ -34,7 +34,7 @@ public class Character : Agent
 	// Called every frame.
 	protected void Update() 
 	{
-		EntityUpdate();
+		AgentUpdate();
 		CameraController();
 		MoveController();
 
@@ -153,26 +153,26 @@ public class Character : Agent
 	void WeaponController()
 	{
 		//Weapon chooser
-		if(Input.GetKeyDown(KeyCode.Alpha1)) 
+		if(Input.GetKeyDown(KeyCode.Alpha1) && weapons[0] != null) 
 		{
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=0;
 			weapons[weaponChoice].SetActive(true);
 		}
-		else if(Input.GetKeyDown(KeyCode.Alpha2)) 
+		else if(Input.GetKeyDown(KeyCode.Alpha2) && weapons[1] != null) 
 		{
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=1;
 			weapons[weaponChoice].SetActive(true);
 		}
-		else if(Input.GetKeyDown(KeyCode.Alpha3)) 
+		else if(Input.GetKeyDown(KeyCode.Alpha3) && weapons[2] != null) 
 		{
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=2;
 			weapons[weaponChoice].SetActive(true);
 
 		}
-		else if(Input.GetKeyDown(KeyCode.Alpha4))
+		else if(Input.GetKeyDown(KeyCode.Alpha4) && weapons[3] != null)
 		{
 			weapons[weaponChoice].SetActive(false);
 			weaponChoice=3;
@@ -180,7 +180,7 @@ public class Character : Agent
 		}
 
 		//Grid controller
-		if(weaponChoice == 3) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
+		if(weapons[weaponChoice].GetComponent<Weapon>().gridLinesFlag) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
 		else gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
 
 		//Attack controller
@@ -238,6 +238,16 @@ public class Character : Agent
 		}
 	}
 
+	// OnTriggerEnter and Exit are called when entering and leaving triggers.
+	void OnTriggerEnter(Collider col)
+	{
+		if(col.gameObject.tag == "Treasure")
+		{
+			treasures++;
+			Destroy(col.gameObject);
+		}
+	}
+
 	public Vector3 Target 
 	{
 		get 
@@ -250,31 +260,26 @@ public class Character : Agent
 		}
 	}
 
-	// OnTriggerEnter and Exit are called when entering and leaving triggers.
-
-	void OnTriggerEnter(Collider col)
+	public bool InLitArea 
 	{
-		if(col.gameObject.tag == "Treasure")
+		get 
 		{
-			treasures++;
-			Destroy(col.gameObject);
-		}
-	}
-
-	public bool InLitArea {
-		get {
 			return inLitArea;
 		}
-		set {
+		set 
+		{
 			inLitArea = value;
 		}
 	}
 
-	public bool Dying {
-		get {
+	public bool Dying 
+	{
+		get 
+		{
 			return dying;
 		}
-		set {
+		set 
+		{
 			dying = value;
 		}
 	}

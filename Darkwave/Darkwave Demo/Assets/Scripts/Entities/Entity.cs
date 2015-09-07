@@ -19,6 +19,12 @@ public class Entity : MonoBehaviour
 	public float burning; // Degenerates health by 1.5 points per second and worsens weapon accuracy.
 	public float armored; // Decreases incoming damage by 50%.
 
+	public void EntityStart()
+	{
+		health = maxHealth;
+		aggroValue = baseAggroValue;
+	}
+
 	public void DamageController(int baseDamage, bool isBurning)
 	{
 		if(armored > 0) baseDamage /= 2;

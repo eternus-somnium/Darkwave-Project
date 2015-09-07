@@ -8,8 +8,6 @@ public class MeleeWeapon : Weapon
 	void Start () 
 	{
 		WeaponStart();
-		//Currently set to false until a particle system is added to the hammer
-		particleFlag = false;
 	}
 	
 	// Update is called once per frame

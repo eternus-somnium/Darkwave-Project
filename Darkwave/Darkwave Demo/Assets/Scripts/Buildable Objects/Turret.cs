@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections;
 
 //This code serves as the base for NPC turrets
-public class Turret : NPC 
+public class Turret : BuildableObject 
 {
 	void Start()
 	{
