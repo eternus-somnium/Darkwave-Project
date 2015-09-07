@@ -47,8 +47,8 @@ public class RangedWeapon : Weapon
 			{
 				Vector3 shotSpawnPosition = gameObject.transform.position + gameObject.transform.forward * 1.25f;
 				bulletSpread = new Vector3(
-					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
-					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Entity>().accMod,10,100)),
+					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Agent>().accMod,10,100)),
+					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Agent>().accMod,10,100)),
 					0);
 				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 
@@ -76,7 +76,7 @@ public class RangedWeapon : Weapon
 				if(!aiming)
 				{
 					augmentedAccuracy++;
-					parent.GetComponent<Entity>().augmentedSpeed *=.5f;
+					parent.GetComponent<Agent>().augmentedSpeed *=.5f;
 					aiming = true;
 				}
 				//gameObject.transform.localPosition = new Vector3(0,-0.7f,0);
@@ -90,7 +90,7 @@ public class RangedWeapon : Weapon
 				if(aiming)
 				{
 					augmentedAccuracy--;
-					parent.GetComponent<Entity>().augmentedSpeed *=2;
+					parent.GetComponent<Agent>().augmentedSpeed *=2;
 					aiming = false;
 				}
 				//gameObject.transform.localPosition = DefaultPosition;

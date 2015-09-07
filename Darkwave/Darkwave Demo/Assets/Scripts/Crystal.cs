@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Crystal : Entity {
+public class Crystal : Agent {
 
 	// Use this for initialization
 	void Start () 

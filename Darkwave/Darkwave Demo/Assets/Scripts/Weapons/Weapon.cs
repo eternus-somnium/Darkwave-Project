@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Weapon : MonoBehaviour 
@@ -45,14 +45,14 @@ public class Weapon : MonoBehaviour
 		if(currentEnergy < augmentedEnergy) 
 		{
 			currentEnergy++;
-			if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isStopped) 
+			if(gameObject.activeSelf && particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isStopped) 
 				gameObject.GetComponentInChildren<ParticleSystem>().Play();
 		}
-		else if(particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
+		else if(gameObject.activeSelf && particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
 
 		if(currentCooldown <= 0) ready=true;
-		else if (parent.GetComponent<Entity>().haste > 0) currentCooldown -= 4;
+		else if (parent.GetComponent<Agent>().haste > 0) currentCooldown -= 4;
 		else currentCooldown--;
 	}
 

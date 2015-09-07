@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character : Entity 
+public class Character : Agent 
 {
 	public int treasures=0;
 	//Used in healthController()
-	public int inLitArea=0;
-	bool dying=false;
+	bool inLitArea = true, dying=false;
 	//Used for MoveController()
 	float jumpPower, jumpCounter = 0.0F;
 	//Used in CameraController()
@@ -199,9 +198,12 @@ public class Character : Entity
 					Vector3.Distance(gameObject.transform.position, 
 			                 GameObject.Find("Game Controller").GetComponentInChildren<Crystal>().transform.position);
 
-		if(inLitArea >= 1 && health < maxHealth)
+		if(counter > 0) inLitArea = true;
+		else inLitArea = false;
+
+		if(inLitArea && health < maxHealth)
 			health += counter / 1000;
-		else if (inLitArea < 1)
+		else if (!inLitArea)
 			health += counter / 100;
 	}
 
@@ -252,21 +254,28 @@ public class Character : Entity
 
 	void OnTriggerEnter(Collider col)
 	{
-		if(col.gameObject.tag == "LitArea")
-		{
-			inLitArea++;
-		}
 		if(col.gameObject.tag == "Treasure")
 		{
 			treasures++;
 			Destroy(col.gameObject);
 		}
 	}
-	void OnTriggerExit(Collider col)
-	{
-		if(col.gameObject.tag == "LitArea")
-		{
-			inLitArea--;
+
+	public bool InLitArea {
+		get {
+			return inLitArea;
+		}
+		set {
+			inLitArea = value;
+		}
+	}
+
+	public bool Dying {
+		get {
+			return dying;
+		}
+		set {
+			dying = value;
 		}
 	}
 }

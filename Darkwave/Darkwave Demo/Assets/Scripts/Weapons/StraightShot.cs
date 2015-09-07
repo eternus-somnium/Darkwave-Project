@@ -21,35 +21,19 @@ public class StraightShot : Shot
 	//Controls the shot's behavior when it hits something
 	void OnCollisionEnter(Collision col)
 	{
-		//Player layer object vs enemy layer object collisions
-		if(col.gameObject.GetComponent<Entity>())
+		//If the shot hit something on the opposing team
+		if((gameObject.layer == 8 && col.gameObject.layer == 9) ||
+		  (gameObject.layer == 9 && col.gameObject.layer == 8))
 		{
 			if (col.collider.material.name == "Head (Instance)")
 			{
-				parent.GetComponent<Entity>().causedHeadShot = true;
-				criticalMultiplier += 0.5F;
+				parent.GetComponent<Agent>().causedHeadShot = true;
+				touchDamage = Mathf.RoundToInt(touchDamage * criticalMultiplier);
 			}
 
-			/*
-			Shot strikingShot = this.gameObject.GetComponent<Shot>();
-			Entity struckFoe = col.gameObject.GetComponent<Entity>();
-
-			strikingShot = shooterScript.FoeHit(strikingShot, struckFoe);
-			*/
-			/*
-			Debug.Log("Headshot before FoeDmgEffect is " + criticalMultiplier);
-			Debug.Log (parent + " is the shooter, " + parent.GetComponent<Entity>() + " is shooterScript, " + this.gameObject.GetComponent<Shot>() + " is the Shot script, and " + col.gameObject.GetComponent<Entity>() + " is the struck entity.");
-			parent.GetComponent<Entity>().FoeDmgEffect(this.gameObject.GetComponent<Shot>(), col.gameObject.GetComponent<Entity>());
-			Debug.Log("Headshot after FoeDmgEffect is " + criticalMultiplier);
-			*/
-			col.gameObject.GetComponent<Entity>().health -= (this.gameObject.GetComponent<Shot>().health * (1 - col.gameObject.GetComponent<Entity>().defMod) * criticalMultiplier);
-			criticalMultiplier = 1;
-
-			if (willBurn) col.gameObject.GetComponent<Entity>().burning = 1;
-			Destroy(this.gameObject);
+			col.gameObject.GetComponent<Agent>().DamageController(touchDamage, burning>0?true:false);
 		}
-		//If a shot hits the terrain it will zero out it's health
-		else Destroy(this.gameObject);
+		 Destroy(this.gameObject);
 	}
 
 }

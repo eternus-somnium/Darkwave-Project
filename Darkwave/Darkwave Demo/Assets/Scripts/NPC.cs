@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class NPC : Entity
+public class NPC : Agent
 {
 	//Behavior variables (set in editor)
 	public GameObject[] targetList;
@@ -85,8 +85,8 @@ public class NPC : Entity
 				if(possibleTarget != null)
 				{
 					float possibleTargetDistance = Vector3.Distance(gameObject.transform.position, possibleTarget.transform.position);
-					if((possibleTarget.GetComponent<Entity>().aggroValue / possibleTargetDistance) >
-						(target.GetComponent<Entity>().aggroValue / targetDistance))
+					if((possibleTarget.GetComponent<Agent>().aggroValue / possibleTargetDistance) >
+						(target.GetComponent<Agent>().aggroValue / targetDistance))
 					{
 						target = possibleTarget;
 						targetDistance = possibleTargetDistance;

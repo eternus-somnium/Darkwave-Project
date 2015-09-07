@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BuildDevice.cs" />
-     <Compile Include="Assets\Scripts\BuildableObject.cs" />
+     <Compile Include="Assets\Scripts\Agent.cs" />
+     <Compile Include="Assets\Scripts\Buildable Objects\BuildableObject.cs" />
+     <Compile Include="Assets\Scripts\Buildable Objects\Turret.cs" />
+     <Compile Include="Assets\Scripts\Buildable Objects\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\CriticalPoint.cs" />
      <Compile Include="Assets\Scripts\Crystal.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
@@ -63,9 +65,8 @@
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" />
      <Compile Include="Assets\Scripts\Traits\Trait.cs" />
-     <Compile Include="Assets\Scripts\Turret.cs" />
-     <Compile Include="Assets\Scripts\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\Walker.cs" />
+     <Compile Include="Assets\Scripts\Weapons\BuildDevice.cs" />
      <Compile Include="Assets\Scripts\Weapons\Lunge.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangedWeapon.cs" />

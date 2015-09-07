@@ -1,24 +1,30 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Players\Character.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\MeleeWeapon.cs">
     <Files>
-      <File FileName="Darkwave Demo.sln" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entity.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\Agent.cs" Line="132" Column="7" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="57" Column="35" />
+      <File FileName="Assets\Scripts\Players\Character.cs" Line="207" Column="28" />
+      <File FileName="Assets\Scripts\Weapons\Shot.cs" Line="8" Column="45" />
+      <File FileName="Assets\Scripts\Weapons\StraightShot.cs" Line="34" Column="24" />
       <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="51" Column="1" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Players\Character.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Lunge.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NPC.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Turret.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BuildableObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\StraightShot.cs" Line="1" Column="1" />
-      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\BuildDevice.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\RangedWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Shot.cs" Line="1" Column="1" />
-      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\Weapons\MeleeWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\TrackingShot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Walker.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\MeleeWeapon.cs" Line="11" Column="74" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="Players" expanded="True" />
+              <Node name="Weapons" expanded="True">
+                <Node name="MeleeWeapon.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
