@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\HUD\ArchitectHUD.cs" />
      <Compile Include="Assets\Scripts\HUD\CharacterHUD.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\ButtonController.cs" />
      <Compile Include="Assets\Scripts\PlacementWall.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" />
