@@ -4,7 +4,11 @@ using System.Collections;
 public class Weapon : MonoBehaviour 
 {
 
-	public bool mainActionFlag, secondaryActionFlag, particleFlag, gridLinesFlag;
+	public bool 
+		mainActionFlag,
+		secondaryActionFlag,
+		particleFlag,
+		gridLinesFlag;
 	public int touchDamage;
 	bool ready;
 
@@ -54,7 +58,7 @@ public class Weapon : MonoBehaviour
 
 		//Controls time between shots
 		if(currentCooldown <= 0) ready=true;
-		else if (parent.GetComponent<Agent>().haste > 0) currentCooldown -= 4;
+		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= 4; //statusEffects[6] is haste
 		else currentCooldown--;
 	}
 

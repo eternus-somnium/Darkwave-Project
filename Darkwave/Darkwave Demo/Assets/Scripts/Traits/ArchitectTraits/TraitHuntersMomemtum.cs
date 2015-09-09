@@ -6,7 +6,7 @@ public class TraitHuntersMomemtum : Trait
 	public float cooldown; // The trait's base cooldown.
 	private float currentCooldown; // The trait's current cooldown timer.
 
-	public float focusIncrease; // Seconds of focus that is granted.
+	public int focusIncrease; // Seconds of focus that is granted.
 
 	// Manages the cooldown of the trait.
 	void Update()
@@ -28,6 +28,6 @@ public class TraitHuntersMomemtum : Trait
 	// Increases the player's focus by the value of focusIncrease.
 	void Effect()
 	{
-		playerScript.focus += focusIncrease; 
+		playerScript.EffectsController(5,focusIncrease);
 	}
 }

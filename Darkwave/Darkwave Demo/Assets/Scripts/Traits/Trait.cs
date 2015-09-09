@@ -4,11 +4,11 @@ using System.Collections;
 public class Trait : MonoBehaviour
 {
 	protected GameObject player; // The Architect, in this case. Set in Start();
-	protected Agent playerScript; // Set to the Architect's Architect.cs script.
+	protected Character playerScript; // Set to the Architect's Architect.cs script.
 	// Use this for initialization
 	void Start()
 	{
 		player = this.gameObject;
-		playerScript = player.GetComponent<Agent>();
+		playerScript = player.GetComponent<Character>();
 	}
 }

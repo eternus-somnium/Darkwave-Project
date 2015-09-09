@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
@@ -40,7 +40,7 @@ public class Turret : BuildableObject
 		   hit.transform.gameObject == target.gameObject)
 		{
 			weapons[WeaponChoice].transform.LookAt(target.transform.position);
-			Attack();
+			MainAction();
 		}
 	}
 }

@@ -5,7 +5,12 @@ using System.Collections;
  */
 public class Shot : Entity
 {
-	public float baseSpeed, criticalMultiplier;
+	public bool
+		onFire;
+	public float 
+		baseSpeed,
+		damageModifier=1,
+		criticalMultiplier=1;
 	
 	public void ShotStart()
 	{
