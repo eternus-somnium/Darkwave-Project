@@ -38,17 +38,16 @@ public class CharacterAnimations : MonoBehaviour
 	{
 		//CameraController();
 		MoveController();
-		
-		
-		
+
 		// Runs WeaponController() if character is still alive. Else, it runs DeathController().
 		if(character.health>0)
 		{
 			WeaponController();
 		}
-		if(!character.Dying)
+		else if(character.Dying)
 		{
 			animator.enabled = false;
+			GetComponent<CharacterController>().enabled = false;
 			foreach (Rigidbody bone in bones)
 				bone.isKinematic = false;
 			IKActive = false;
@@ -99,11 +98,8 @@ public class CharacterAnimations : MonoBehaviour
 		AnimationController (Vector3.zero, 0, 0, Mathf.Clamp (animator.GetFloat("Turn") - (Input.GetAxis("Mouse X") / (character.horizontalSpeed)),-0.5f,0.5f), true, pitchScale / 90);
 	}*/
 
-	void SwitchWeapon(int choice, int pose, bool hands)
+	void SwitchWeapon(int pose, bool hands)
 	{
-		character.weapons [character.weaponChoice].SetActive (false);
-		character.weaponChoice = choice;
-		character.weapons [character.weaponChoice].SetActive (true);
 		animator.SetInteger ("WeaponPose", pose);
 		IKActive = hands;
 		if (hands)
@@ -118,19 +114,19 @@ public class CharacterAnimations : MonoBehaviour
 		//Weapon chooser
 		if(Input.GetKeyDown(KeyCode.Alpha1)) 
 		{
-			SwitchWeapon (0,1,true);
+			SwitchWeapon (1,true);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha2)) 
 		{
-			SwitchWeapon(1,2,false);
+			SwitchWeapon(2,false);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha3)) 
 		{
-			SwitchWeapon (2,1,true);
+			SwitchWeapon (1,true);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha4))
 		{
-			SwitchWeapon(3,3,false);
+			SwitchWeapon(3,false);
 		}
 
 		//Attack controller
@@ -180,14 +176,6 @@ public class CharacterAnimations : MonoBehaviour
 		{
 			animator.enabled = true;
 			GetComponent<CharacterController>().enabled = true;
-			foreach (Rigidbody bone in bones) bone.isKinematic = true;
-			character.weapons[character.weaponChoice].SetActive(true);
-			CancelInvoke("DeathController");
-			IKActive = true;
-		}
-		else
-		{
-			animator.enabled = true;
 			foreach (Rigidbody bone in bones) bone.isKinematic = true;
 			character.weapons[character.weaponChoice].SetActive(true);
 			CancelInvoke("DeathController");
