@@ -29,6 +29,7 @@ public class Character : Entity
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
+		print (GetComponent<Collider> ());
 
 	}
 
@@ -51,6 +52,17 @@ public class Character : Entity
 		else if(!dying)
 		{
 			dying=true;
+			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = false;
+			if(GetComponent<CharacterAnimations>())
+			{
+				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
+				{
+					bone.isKinematic = false;
+					Physics.IgnoreCollision(bone.GetComponent<Collider>(), GetComponent<Collider>());
+				}
+				GetComponent<CharacterAnimations>().IKActive = false;
+				GetComponent<CharacterAnimations>().headIK = false;
+			}
 			aggroValue = 0;
 			weapons[weaponChoice].SendMessage("MainActionController", false);
 			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
@@ -217,6 +229,17 @@ public class Character : Entity
 		{
 			respawnTimer = -99;
 			dying=false;
+			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = true;
+			if(GetComponent<CharacterAnimations>())
+			{
+				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
+				{
+					bone.isKinematic = true;
+					Physics.IgnoreCollision(bone.GetComponent<Collider>(), GetComponent<Collider>());
+				}
+				GetComponent<CharacterAnimations>().IKActive = true;
+				GetComponent<CharacterAnimations>().headIK = true;
+			}
 			Debug.Log("someone helped you up");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
@@ -230,6 +253,14 @@ public class Character : Entity
 			treasures = 0;
 			health = maxHealth;
 			dying=false;
+			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = true;
+			if(GetComponent<CharacterAnimations>())
+			{
+				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
+					bone.isKinematic = true;
+				GetComponent<CharacterAnimations>().IKActive = true;
+				GetComponent<CharacterAnimations>().headIK = true;
+			}
 			Debug.Log("you got better");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
