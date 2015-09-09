@@ -28,6 +28,7 @@ Global
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 																																																																											GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																		GlobalSection(MonoDevelopProperties) = preSolution
@@ -65,6 +66,9 @@ Global
 =======
 																																																																																									GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Separate Animation Script
+=======
+																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Fixed IK and Death related code
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
