@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Lunge : Weapon 
@@ -28,8 +28,8 @@ public class Lunge : Weapon
 			{
 				Debug.Log("Lunging");
 				transform.position = Vector3.MoveTowards(transform.position, 
-				                                         parent.GetComponent<NPC>().target.transform.position, 
-				                                         parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
+				                                         parent.GetComponent<NonPlayer>().target.transform.position, 
+				                                         parent.GetComponent<NonPlayer>().baseSpeed*lungeSpeedMultiplier);
 				//transform.Translate((parent.GetComponent<NPC>().target.transform.position)*parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
 				Ready=false;
 				currentCooldown = augmentedCooldown;

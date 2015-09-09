@@ -15,16 +15,14 @@ public class MeleeWeapon : Weapon
 	{
 		MainAction();
 		SecondaryAction();
-		WeaponTime();
 	}
 	public void MainAction()
 	{
 		if(mainActionFlag)
 		{
-			AttackAnimation();
 			if(currentCooldown == 0)
 			{
-
+				AttackAnimation();
 				currentCooldown=augmentedCooldown;
 			}
 		}

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character : Agent 
+public class Character : Unit 
 {
 	public int treasures=0;
 	//Used in healthController()
@@ -15,9 +15,8 @@ public class Character : Agent
 	float respawnTimer = -99;
 	Vector3 respawnPoint;
 	//Used in WeaponController()
-	public int weaponChoice = 0;
-	public GameObject[] weapons;
-	public Vector3 target;
+	public Vector3 focusPoint; //Point in space where a ray from the center of the camera first hits an object
+	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
 
 	protected void Start()
 	{
@@ -51,8 +50,8 @@ public class Character : Agent
 		{
 			dying=true;
 			aggroValue = 0;
-			weapons[weaponChoice].SendMessage("MainActionController", false);
-			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+			weapons[WeaponChoice].SendMessage("MainActionController", false);
+			weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
 		}
@@ -144,8 +143,8 @@ public class Character : Agent
 
 		if(Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
 		                   GetComponentInChildren<Camera>().transform.forward, out hit))
-			target = hit.point;
-		else target = Vector3.zero;
+			focusPoint = hit.point;
+		else focusPoint = Vector3.zero;
 		Debug.DrawLine(transform.position, Vector3.zero, Color.cyan);
 
 	}
@@ -155,40 +154,40 @@ public class Character : Agent
 		//Weapon chooser
 		if(Input.GetKeyDown(KeyCode.Alpha1) && weapons[0] != null) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=0;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=0;
+			weapons[WeaponChoice].SetActive(true);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha2) && weapons[1] != null) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=1;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=1;
+			weapons[WeaponChoice].SetActive(true);
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha3) && weapons[2] != null) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=2;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=2;
+			weapons[WeaponChoice].SetActive(true);
 
 		}
 		else if(Input.GetKeyDown(KeyCode.Alpha4) && weapons[3] != null)
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=3;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=3;
+			weapons[WeaponChoice].SetActive(true);
 		}
 
 		//Grid controller
-		if(weapons[weaponChoice].GetComponent<Weapon>().gridLinesFlag) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
+		if(weapons[WeaponChoice].GetComponent<Weapon>().gridLinesFlag) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
 		else gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
 
 		//Attack controller
-		if(Input.GetButton("Fire1")) weapons[weaponChoice].SendMessage("MainActionController", true);
-		else weapons[weaponChoice].SendMessage("MainActionController", false);
+		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController", true);
+		else weapons[WeaponChoice].SendMessage("MainActionController", false);
 		
-		if(Input.GetButton("Fire2")) weapons[weaponChoice].SendMessage("SecondaryActionController", true);
-		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+		if(Input.GetButton("Fire2")) weapons[WeaponChoice].SendMessage("SecondaryActionController", true);
+		else weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
 	}
 
 	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
@@ -252,11 +251,11 @@ public class Character : Agent
 	{
 		get 
 		{
-			return target;
+			return focusPoint;
 		}
 		set 
 		{
-			target = value;
+			focusPoint = value;
 		}
 	}
 

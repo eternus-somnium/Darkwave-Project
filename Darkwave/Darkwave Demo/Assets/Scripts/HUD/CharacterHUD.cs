@@ -56,7 +56,7 @@ public class CharacterHUD : MonoBehaviour
 		characterDegen = characterScript.degen;
 		characterBurn = characterScript.burning;
 		characterCrip = characterScript.crippled;
-		characterWeaponSlot = characterScript.weaponChoice;
+		characterWeaponSlot = characterScript.WeaponChoice;
 		characterShards = characterScript.treasures;
 		
 		healthSlider.value = characterHealth;

@@ -42,19 +42,21 @@ public class RangedWeapon : Weapon
 	{
 		if(mainActionFlag)
 		{
-			AttackAnimation();
 			if(Ready && currentEnergy > energyDrain)
 			{
+				AttackAnimation();
 				Vector3 shotSpawnPosition = gameObject.transform.position + gameObject.transform.forward * 1.25f;
 				bulletSpread = new Vector3(
-					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Agent>().accMod,10,100)),
-					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Agent>().accMod,10,100)),
+					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Unit>().accMod,10,100)),
+					Random.Range(-1f,1f)*(10-Mathf.Clamp(augmentedAccuracy + parent.GetComponent<Unit>().accMod,10,100)),
 					0);
 				Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 
 				// Allows modifications to instanced shots.
 				newShot = (GameObject)Instantiate(shot[ammoType], shotSpawnPosition, shotSpawnRotation);
-				newShot.SendMessage("BulletModifications", parent);
+				newShot.GetComponent<Shot>().touchDamage = Mathf.RoundToInt(touchDamage * parent.GetComponent<Unit>().dmgMod);
+				newShot.GetComponent<Shot>().criticalMultiplier *= parent.GetComponent<Unit>().headShotMod;
+
 
 				Ready=false;
 				currentCooldown = augmentedCooldown;
@@ -76,7 +78,7 @@ public class RangedWeapon : Weapon
 				if(!aiming)
 				{
 					augmentedAccuracy++;
-					parent.GetComponent<Agent>().augmentedSpeed *=.5f;
+					parent.GetComponent<Unit>().augmentedSpeed *=.5f;
 					aiming = true;
 				}
 				//gameObject.transform.localPosition = new Vector3(0,-0.7f,0);
@@ -90,7 +92,7 @@ public class RangedWeapon : Weapon
 				if(aiming)
 				{
 					augmentedAccuracy--;
-					parent.GetComponent<Agent>().augmentedSpeed *=2;
+					parent.GetComponent<Unit>().augmentedSpeed *=2;
 					aiming = false;
 				}
 				//gameObject.transform.localPosition = DefaultPosition;

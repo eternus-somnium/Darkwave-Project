@@ -46,16 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Buildable Objects\BuildableObject.cs" />
-     <Compile Include="Assets\Scripts\Buildable Objects\Turret.cs" />
-     <Compile Include="Assets\Scripts\Buildable Objects\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\CriticalPoint.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\Agent.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\NPC.cs" />
+     <Compile Include="Assets\Scripts\Entities\Agents\NonPlayer.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\Players\Architect.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\Players\Character.cs" />
+     <Compile Include="Assets\Scripts\Entities\Agents\Unit.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\Walker.cs" />
+     <Compile Include="Assets\Scripts\Entities\Buildable Objects\BuildableObject.cs" />
+     <Compile Include="Assets\Scripts\Entities\Buildable Objects\Turret.cs" />
+     <Compile Include="Assets\Scripts\Entities\Buildable Objects\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\Entities\Crystal.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
      <Compile Include="Assets\Scripts\Entities\Shots\Shot.cs" />

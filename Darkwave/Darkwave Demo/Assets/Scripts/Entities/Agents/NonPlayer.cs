@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class NPC : Agent
+public class NonPlayer : Unit
 {
 	//Behavior variables (set in editor)
 	public GameObject[] targetList;
@@ -16,37 +16,17 @@ public class NPC : Agent
 	public bool inSight;
 
 
-	public int 
-		energy,
-		maxEnergy;
-
-	//Movement
-	public float jumpHeight;// set in editor
-	public Vector3 direction;
-	bool isJumping;
-
-	//Attack variables
-	int weaponChoice  = 0;
-	public GameObject[] weapons;
-
-	// NPCs should use weapon scripts for weapon attacks; this is a temporary change.
-	private GameObject newShot;
-	private Shot shotScript;
 
 	// Use this for initialization
 	public void NPCStart ()
 	{
-		AgentStart();
-		energy=maxEnergy;
-		InvokeRepeating("AttackCooldowns",0,.5f);
+		EntityStart();
 		InvokeRepeating("ChooseTarget",0,2f);
 	}
 
 	// Update is called once per frame
 	public void NPCUpdate ()
 	{
-		AgentUpdate();
-
 		if(gameObject.tag == "Ally")
 			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
 		else targetList = GameObject.Find("Game Controller").GetComponent<GameController>().enemyTargets;
@@ -64,11 +44,6 @@ public class NPC : Agent
 			Destroy(gameObject);
 			//Stub for destruction animation control
 		}
-	}
-
-	void AttackCooldowns()
-	{
-		if(energy < maxEnergy) energy++;
 	}
 
 	void ChooseTarget()
@@ -101,22 +76,8 @@ public class NPC : Agent
 
 	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
 	//Called by the child function when the conditions have been.
-	public void Attack()
+	public void MainAction()
 	{
-		weapons[weaponChoice].SendMessage("MainActionController", true);
-	}
-
-
-
-	public int WeaponChoice
-	{
-		get
-		{
-			return weaponChoice;
-		}
-		set
-		{
-			weaponChoice = value;
-		}
+		weapons[WeaponChoice].SendMessage("MainActionController", true);
 	}
 }
