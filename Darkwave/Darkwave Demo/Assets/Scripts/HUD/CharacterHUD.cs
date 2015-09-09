@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -61,9 +61,8 @@ public class CharacterHUD : MonoBehaviour
 		characterDegen = characterScript.degen;
 		characterBurn = characterScript.burning;
 		characterCrip = characterScript.crippled;
-
+		characterWeaponSlot = characterScript.WeaponChoice;
 		characterShards = characterScript.treasures;
-		characterWeaponSlot = characterScript.weaponChoice;
 
 		weaponScript = characterScript.weapons[characterWeaponSlot].GetComponent<Weapon>();
 		characterWeaponEnergy = weaponScript.currentEnergy;
