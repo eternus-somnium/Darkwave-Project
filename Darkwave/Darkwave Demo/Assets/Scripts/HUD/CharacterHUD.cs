@@ -12,6 +12,7 @@ public class CharacterHUD : MonoBehaviour
 	public float damageFlashSpeed;
 	public Color damageFlashColor;
 	public Text weaponText;
+	public Text weaponEnergyText;
 	public Text buffText;
 	public Text debuffText;
 	public GameObject gameController;
@@ -19,6 +20,7 @@ public class CharacterHUD : MonoBehaviour
 	public Text shardsText;
 
 	protected GameController gameControllerScript;
+	protected Weapon weaponScript;
 
 	protected float characterHealth;
 	protected float oldCharacterHealth;
@@ -33,7 +35,8 @@ public class CharacterHUD : MonoBehaviour
 	protected float characterBurn;
 	protected float characterCrip;
 
-	protected float characterWeaponSlot;
+	protected int characterWeaponSlot;
+	protected float characterWeaponEnergy;
 
 	protected float characterShards;
 	// Use this for initialization
@@ -46,6 +49,8 @@ public class CharacterHUD : MonoBehaviour
 	// Update is called once per frame
 	protected void Update ()
 	{
+
+
 		characterHealth = characterScript.health;
 		characterEmp = characterScript.empowered;
 		characterFocus = characterScript.focus;
@@ -56,8 +61,11 @@ public class CharacterHUD : MonoBehaviour
 		characterDegen = characterScript.degen;
 		characterBurn = characterScript.burning;
 		characterCrip = characterScript.crippled;
-		characterWeaponSlot = characterScript.weaponChoice;
 		characterShards = characterScript.treasures;
+		characterWeaponSlot = characterScript.weaponChoice;
+
+		weaponScript = characterScript.weapons[characterWeaponSlot].GetComponent<Weapon>();
+		characterWeaponEnergy = weaponScript.currentEnergy;
 		
 		healthSlider.value = characterHealth;
 		healthText.text = "HP: " + characterHealth.ToString("F2");
@@ -76,6 +84,7 @@ public class CharacterHUD : MonoBehaviour
 		if (characterCrip > 0) debuffText.text += "Crip: " + characterCrip.ToString("F2") + " ";
 		
 		weaponText.text = "Weapon Slot: " + characterWeaponSlot;
+		weaponEnergyText.text = "Weapon Energy: " + characterWeaponEnergy;
 		
 		timerText.text = "Round Time Left: " + Mathf.Floor(gameControllerScript.timeLeft/60).ToString("00") + 
 			":" + (gameControllerScript.timeLeft%60).ToString("00") +
