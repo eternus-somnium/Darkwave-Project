@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FPSWithModel : Entity 
+public class FPSWithModel : Unit 
 {
 	public int treasures=0;
 	//Used in healthController()
@@ -18,7 +18,6 @@ public class FPSWithModel : Entity
 	//Used in WeaponController()
 	public int weaponChoice = 0;
 	private Rigidbody[] bones;
-	public GameObject[] weapons;
 	public Vector3 target;
 	private Animator animator;
 	public Transform head;
@@ -49,7 +48,7 @@ public class FPSWithModel : Entity
 	// Called every frame.
 	protected void Update() 
 	{
-		EntityUpdate();
+		AgentUpdate();
 		CameraController();
 		MoveController();
 		

@@ -20,15 +20,15 @@ public class CharacterAnimations : MonoBehaviour
 	public bool headIK;
 	public Transform gripR;
 	public Transform gripL;
-	public Character character;
+	private Character character;
 
 	protected void Start()
 	{
 		animator = GetComponent<Animator> ();
 		character = GetComponent<Character> ();
 		animator.SetInteger("WeaponPose", 1);
-		gripR = character.weapons [character.weaponChoice].transform.Find ("GripPointR");
-		gripL = character.weapons [character.weaponChoice].transform.Find ("GripPointL");
+		gripR = character.weapons [character.WeaponChoice].transform.Find ("GripPointR");
+		gripL = character.weapons [character.WeaponChoice].transform.Find ("GripPointL");
 		bones = GetComponentsInChildren<Rigidbody>(); 
 		foreach (Rigidbody bone in bones) bone.isKinematic = true;
 		
@@ -36,7 +36,7 @@ public class CharacterAnimations : MonoBehaviour
 
 	protected void Update() 
 	{
-		//CameraController();
+		CameraController();
 		MoveController();
 
 		// Runs WeaponController() if character is still alive. Else, it runs DeathController().
@@ -46,13 +46,9 @@ public class CharacterAnimations : MonoBehaviour
 		}
 		else if(character.Dying)
 		{
-			animator.enabled = false;
-			GetComponent<CharacterController>().enabled = false;
-			foreach (Rigidbody bone in bones)
-				bone.isKinematic = false;
-			IKActive = false;
-			headIK = false;
-			InvokeRepeating("DeathController",0,1);
+
+			//InvokeRepeating("DeathController",0,1);
+			//print ("Blech");
 		}
 	}
 
@@ -82,21 +78,22 @@ public class CharacterAnimations : MonoBehaviour
 			}
 		}
 		Vector3 withoutGravity = new Vector3 (moveDirection.x, 0, moveDirection.z);
-		if (character.weaponChoice == 1)
+		if (character.WeaponChoice == 1)
 		{
-			character.weapons [character.weaponChoice].transform.position = rightHand.position + (character.weapons [character.weaponChoice].transform.position - character.weapons [character.weaponChoice].transform.Find ("GripPoint").position);
-			character.weapons [character.weaponChoice].transform.rotation = rightHand.rotation * character.weapons [character.weaponChoice].transform.Find ("GripPoint").localRotation;
+			character.weapons [character.WeaponChoice].transform.position = rightHand.position + (character.weapons [character.WeaponChoice].transform.position - character.weapons [character.WeaponChoice].transform.Find ("GripPoint").position);
+			character.weapons [character.WeaponChoice].transform.rotation = rightHand.rotation * character.weapons [character.WeaponChoice].transform.Find ("GripPoint").localRotation;
 		}
 		AnimationController (withoutGravity, withoutGravity.magnitude / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).z / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).x / character.baseSpeed, controller.isGrounded,0);
 	}
 
-	/*void CameraController()
+	void CameraController()
 	{
+		Camera.main.transform.position = head.position + head.forward * 0.1f + head.transform.up * 0.15f;
 		float pitchScale = Camera.main.transform.eulerAngles.x;
 		if (pitchScale > 90)
 			pitchScale -= 360;
-		AnimationController (Vector3.zero, 0, 0, Mathf.Clamp (animator.GetFloat("Turn") - (Input.GetAxis("Mouse X") / (character.horizontalSpeed)),-0.5f,0.5f), true, pitchScale / 90);
-	}*/
+		//AnimationController (Vector3.zero, 0, 0, Mathf.Clamp (animator.GetFloat("Turn") - (Input.GetAxis("Mouse X") / (character.horizontalSpeed)),-0.5f,0.5f), true, pitchScale / 90);
+	}
 
 	void SwitchWeapon(int pose, bool hands)
 	{
@@ -104,8 +101,8 @@ public class CharacterAnimations : MonoBehaviour
 		IKActive = hands;
 		if (hands)
 		{
-			gripR = character.weapons [character.weaponChoice].transform.Find ("GripPointR");
-			gripL = character.weapons [character.weaponChoice].transform.Find ("GripPointL");
+			gripR = character.weapons [character.WeaponChoice].transform.Find ("GripPointR");
+			gripL = character.weapons [character.WeaponChoice].transform.Find ("GripPointL");
 		}
 	}
 	
@@ -170,17 +167,12 @@ public class CharacterAnimations : MonoBehaviour
 		}
 	}
 
-	void DeathController()
-	{
-		if(character.health > 0)
-		{
-			animator.enabled = true;
-			GetComponent<CharacterController>().enabled = true;
-			foreach (Rigidbody bone in bones) bone.isKinematic = true;
-			character.weapons[character.weaponChoice].SetActive(true);
-			CancelInvoke("DeathController");
-			IKActive = true;
-			headIK = true;
+	public Rigidbody[] Bones {
+		get {
+			return bones;
+		}
+		set {
+			bones = value;
 		}
 	}
 }

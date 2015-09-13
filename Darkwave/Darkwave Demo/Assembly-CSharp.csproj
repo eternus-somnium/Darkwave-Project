@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\CharacterAnimations.cs" />
      <Compile Include="Assets\Scripts\CriticalPoint.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\NonPlayer.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\Players\Architect.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\Players\Character.cs" />
@@ -62,14 +63,21 @@
      <Compile Include="Assets\Scripts\Entities\Shots\StraightShot.cs" />
      <Compile Include="Assets\Scripts\Entities\Shots\TrackingShot.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\HUD\ArchitectHUD.cs" />
      <Compile Include="Assets\Scripts\HUD\CharacterHUD.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ButtonController.cs" />
+     <Compile Include="Assets\Scripts\PlacementWall.cs" />
      <Compile Include="Assets\Scripts\Players\FPSWithModel.cs" />
+     <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" />
+     <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" />
+     <Compile Include="Assets\Scripts\Traits\Trait.cs" />
      <Compile Include="Assets\Scripts\Weapons\BuildDevice.cs" />
      <Compile Include="Assets\Scripts\Weapons\Lunge.cs" />
+     <Compile Include="Assets\Scripts\Weapons\MeleeWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangedWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+     <None Include="Assets\Inside Sphere.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
