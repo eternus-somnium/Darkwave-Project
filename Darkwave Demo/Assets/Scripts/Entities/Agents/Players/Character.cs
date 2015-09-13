@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character : Entity 
+public class Character : Unit 
 {
 	public int treasures=0;
 	//Used in healthController()
-	public int inLitArea=0;
-	bool dying=false;
+	bool inLitArea = true, dying=false;
 	//Used for MoveController()
 	float jumpPower, jumpCounter = 0.0F;
 	//Used in CameraController()
@@ -16,27 +15,25 @@ public class Character : Entity
 	float respawnTimer = -99;
 	Vector3 respawnPoint;
 	//Used in WeaponController()
-	public int weaponChoice = 0;
-	public GameObject[] weapons;
-	public Vector3 target;
+	public Vector3 focusPoint; //Point in space where a ray from the center of the camera first hits an object
+	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
 
 	protected void Start()
 	{
-		EntityStart();
+		AgentStart();
 		// Spawn point of the character.
 		respawnPoint = new Vector3(
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.x+Random.Range(-1,1)*5,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
-		print (GetComponent<Collider> ());
 
 	}
 
 	// Called every frame.
 	protected void Update() 
 	{
-		EntityUpdate();
+		AgentUpdate();
 		CameraController();
 		MoveController();
 
@@ -52,20 +49,9 @@ public class Character : Entity
 		else if(!dying)
 		{
 			dying=true;
-			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = false;
-			if(GetComponent<CharacterAnimations>())
-			{
-				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
-				{
-					bone.isKinematic = false;
-					Physics.IgnoreCollision(bone.GetComponent<Collider>(), GetComponent<Collider>());
-				}
-				GetComponent<CharacterAnimations>().IKActive = false;
-				GetComponent<CharacterAnimations>().headIK = false;
-			}
 			aggroValue = 0;
-			weapons[weaponChoice].SendMessage("MainActionController", false);
-			weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+			weapons[WeaponChoice].SendMessage("MainActionController", false);
+			weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
 		}
@@ -157,8 +143,8 @@ public class Character : Entity
 
 		if(Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
 		                   GetComponentInChildren<Camera>().transform.forward, out hit))
-			target = hit.point;
-		else target = Vector3.zero;
+			focusPoint = hit.point;
+		else focusPoint = Vector3.zero;
 		Debug.DrawLine(transform.position, Vector3.zero, Color.cyan);
 
 	}
@@ -166,42 +152,42 @@ public class Character : Entity
 	void WeaponController()
 	{
 		//Weapon chooser
-		if(Input.GetKeyDown(KeyCode.Alpha1)) 
+		if(Input.GetKeyDown(KeyCode.Alpha1) && weapons[0] != null) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=0;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=0;
+			weapons[WeaponChoice].SetActive(true);
 		}
-		else if(Input.GetKeyDown(KeyCode.Alpha2)) 
+		else if(Input.GetKeyDown(KeyCode.Alpha2) && weapons[1] != null) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=1;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=1;
+			weapons[WeaponChoice].SetActive(true);
 		}
-		else if(Input.GetKeyDown(KeyCode.Alpha3)) 
+		else if(Input.GetKeyDown(KeyCode.Alpha3) && weapons[2] != null) 
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=2;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=2;
+			weapons[WeaponChoice].SetActive(true);
 
 		}
-		else if(Input.GetKeyDown(KeyCode.Alpha4))
+		else if(Input.GetKeyDown(KeyCode.Alpha4) && weapons[3] != null)
 		{
-			weapons[weaponChoice].SetActive(false);
-			weaponChoice=3;
-			weapons[weaponChoice].SetActive(true);
+			weapons[WeaponChoice].SetActive(false);
+			WeaponChoice=3;
+			weapons[WeaponChoice].SetActive(true);
 		}
 
 		//Grid controller
-		if(weaponChoice == 3) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
+		if(weapons[WeaponChoice].GetComponent<Weapon>().gridLinesFlag) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
 		else gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
 
 		//Attack controller
-		if(Input.GetButton("Fire1")) weapons[weaponChoice].SendMessage("MainActionController", true);
-		else weapons[weaponChoice].SendMessage("MainActionController", false);
+		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController", true);
+		else weapons[WeaponChoice].SendMessage("MainActionController", false);
 		
-		if(Input.GetButton("Fire2")) weapons[weaponChoice].SendMessage("SecondaryActionController", true);
-		else weapons[weaponChoice].SendMessage("SecondaryActionController", false);
+		if(Input.GetButton("Fire2")) weapons[WeaponChoice].SendMessage("SecondaryActionController", true);
+		else weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
 	}
 
 	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
@@ -211,9 +197,12 @@ public class Character : Entity
 					Vector3.Distance(gameObject.transform.position, 
 			                 GameObject.Find("Game Controller").GetComponentInChildren<Crystal>().transform.position);
 
-		if(inLitArea >= 1 && health < maxHealth)
+		if(counter > 0) inLitArea = true;
+		else inLitArea = false;
+
+		if(inLitArea && health < maxHealth)
 			health += counter / 1000;
-		else if (inLitArea < 1)
+		else if (!inLitArea)
 			health += counter / 100;
 	}
 
@@ -229,17 +218,6 @@ public class Character : Entity
 		{
 			respawnTimer = -99;
 			dying=false;
-			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = true;
-			if(GetComponent<CharacterAnimations>())
-			{
-				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
-				{
-					bone.isKinematic = true;
-					Physics.IgnoreCollision(bone.GetComponent<Collider>(), GetComponent<Collider>());
-				}
-				GetComponent<CharacterAnimations>().IKActive = true;
-				GetComponent<CharacterAnimations>().headIK = true;
-			}
 			Debug.Log("someone helped you up");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
@@ -253,17 +231,19 @@ public class Character : Entity
 			treasures = 0;
 			health = maxHealth;
 			dying=false;
-			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = true;
-			if(GetComponent<CharacterAnimations>())
-			{
-				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
-					bone.isKinematic = true;
-				GetComponent<CharacterAnimations>().IKActive = true;
-				GetComponent<CharacterAnimations>().headIK = true;
-			}
 			Debug.Log("you got better");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
+		}
+	}
+
+	// OnTriggerEnter and Exit are called when entering and leaving triggers.
+	void OnTriggerEnter(Collider col)
+	{
+		if(col.gameObject.tag == "Treasure")
+		{
+			treasures++;
+			Destroy(col.gameObject);
 		}
 	}
 
@@ -271,51 +251,35 @@ public class Character : Entity
 	{
 		get 
 		{
-			return target;
+			return focusPoint;
 		}
 		set 
 		{
-			target = value;
+			focusPoint = value;
 		}
 	}
 
-	// OnTriggerEnter and Exit are called when entering and leaving triggers.
-
-	void OnTriggerEnter(Collider col)
+	public bool InLitArea 
 	{
-		if(col.gameObject.tag == "LitArea")
+		get 
 		{
-			inLitArea++;
+			return inLitArea;
 		}
-		if(col.gameObject.tag == "Treasure")
+		set 
 		{
-			treasures++;
-			Destroy(col.gameObject);
-		}
-	}
-	void OnTriggerExit(Collider col)
-	{
-		if(col.gameObject.tag == "LitArea")
-		{
-			inLitArea--;
+			inLitArea = value;
 		}
 	}
 
-	public bool Dying {
-		get {
+	public bool Dying 
+	{
+		get 
+		{
 			return dying;
 		}
-		set {
+		set 
+		{
 			dying = value;
-		}
-	}
-
-	public float JumpCounter {
-		get {
-			return jumpCounter;
-		}
-		set {
-			jumpCounter = value;
 		}
 	}
 }

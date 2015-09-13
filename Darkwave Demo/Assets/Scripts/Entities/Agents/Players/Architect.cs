@@ -46,7 +46,7 @@ public class Architect : Character
 	}
 
 	// Called when the player strikes a foe for ability effects that occur when striking a foe.
-	public override Shot FoeDmgEffect(Shot shot, Entity foe)
+	public override Shot FoeDmgEffect(Shot shot, Unit foe)
 	{
 		Debug.Log("Architect FoeDmgEffect");
 		if (traitCriticalFinish.enabled == true) shot.criticalMultiplier += traitCriticalFinish.Effect(foe);

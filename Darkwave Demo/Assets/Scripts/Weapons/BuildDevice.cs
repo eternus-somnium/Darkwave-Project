@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BuildDevice : MonoBehaviour 
+public class BuildDevice : Weapon 
 {
 
 	GameObject hitObject;
@@ -12,14 +12,11 @@ public class BuildDevice : MonoBehaviour
 	int selectedObject=0;
 
 	public int placeable=0, range;
-	public bool mainActionFlag, secondaryActionFlag;
-	bool ready;
-	int cooldown=1, currentCooldown;
 
 	// Use this for initialization
 	void Start () 
 	{
-		InvokeRepeating("CooldownTime",0,.5f);
+		WeaponStart();
 	}
 	
 	// Update is called once per frame
@@ -28,21 +25,9 @@ public class BuildDevice : MonoBehaviour
 		foreach(GameObject item in previewObjects)
 			item.transform.rotation = Quaternion.identity;
 		placeable = CheckPlacement();
-		if(ready)
-		{
-			MainAction();
-			SecondaryAction();
-		}
-	}
 
-	public void MainActionController(bool value)
-	{
-		mainActionFlag = value;
-	}
-	
-	public void SecondaryActionController(bool value)
-	{
-		secondaryActionFlag = value;
+		MainAction();
+		SecondaryAction();
 	}
 
 	public void MainAction()
@@ -66,8 +51,8 @@ public class BuildDevice : MonoBehaviour
 				previewObjects[selectedObject].SetActive(false);
 			}
 
-			ready=false;
-			currentCooldown=cooldown;
+			Ready=false;
+			currentCooldown=augmentedCooldown;
 		}
 	}
 	
@@ -83,8 +68,8 @@ public class BuildDevice : MonoBehaviour
 
 			previewObjects[selectedObject].SetActive(true);
 
-			ready=false;
-			currentCooldown=cooldown;
+			Ready=false;
+			currentCooldown=augmentedCooldown;
 		}
 	}
 
@@ -127,11 +112,5 @@ public class BuildDevice : MonoBehaviour
 			}
 		}
 		return 0;//No position detected or position invalid
-	}
-
-	void CooldownTime()
-	{
-		if(currentCooldown == 0) ready=true;
-		else currentCooldown--;
 	}
 }

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class Walker : NPC
+public class Walker : NonPlayer
 {
 	
 	private NavMeshAgent agent;
@@ -10,7 +10,7 @@ public class Walker : NPC
 	// Use this for initialization
 	void Start () 
 	{
-		NPCStart ();
+		AgentStart ();
 		
 		agent = gameObject.GetComponent<NavMeshAgent> ();
 		agent.speed = baseSpeed;
@@ -20,7 +20,7 @@ public class Walker : NPC
 	// Update is called once per frame
 	void Update () 
 	{
-		NPCUpdate();
+		AgentUpdate();
 		WalkerAI();
 
 
@@ -36,7 +36,7 @@ public class Walker : NPC
 		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && 
 		   hit.transform.gameObject == target.gameObject)
 		{
-			Attack();
+			MainAction();
 		}
 	}
 	
