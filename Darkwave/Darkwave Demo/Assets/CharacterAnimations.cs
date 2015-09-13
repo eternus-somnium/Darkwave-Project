@@ -46,9 +46,13 @@ public class CharacterAnimations : MonoBehaviour
 		}
 		else if(character.Dying)
 		{
-
-			//InvokeRepeating("DeathController",0,1);
-			//print ("Blech");
+			animator.enabled = false;
+			GetComponent<CharacterController>().enabled = false;
+			foreach (Rigidbody bone in bones)
+				bone.isKinematic = false;
+			IKActive = false;
+			headIK = false;
+			InvokeRepeating("DeathController",0,1);
 		}
 	}
 
@@ -166,12 +170,17 @@ public class CharacterAnimations : MonoBehaviour
 		}
 	}
 
-	public Rigidbody[] Bones {
-		get {
-			return bones;
-		}
-		set {
-			bones = value;
+	void DeathController()
+	{
+		if(character.health > 0)
+		{
+			animator.enabled = true;
+			GetComponent<CharacterController>().enabled = true;
+			foreach (Rigidbody bone in bones) bone.isKinematic = true;
+			character.weapons[character.weaponChoice].SetActive(true);
+			CancelInvoke("DeathController");
+			IKActive = true;
+			headIK = true;
 		}
 	}
 }
