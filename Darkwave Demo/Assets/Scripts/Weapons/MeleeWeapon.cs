@@ -22,11 +22,7 @@ public class MeleeWeapon : Weapon
 		{
 			if(currentCooldown == 0)
 			{
-<<<<<<< HEAD:Darkwave Demo/Assets/Scripts/Weapons/MeleeWeapon.cs
 				AttackAnimation();
-=======
-
->>>>>>> origin/DoomTay-branch:Darkwave/Darkwave Demo/Assets/Scripts/Weapons/MeleeWeapon.cs
 				currentCooldown=augmentedCooldown;
 			}
 		}
