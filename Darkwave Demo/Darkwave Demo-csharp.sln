@@ -17,11 +17,15 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD:Darkwave Demo/Darkwave Demo-csharp.sln
 <<<<<<< HEAD
 																																																																																															GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																																											GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/DoomTay-branch
+=======
+																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> origin/DoomTay-branch:Darkwave/Darkwave Demo/Darkwave Demo-csharp.sln
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

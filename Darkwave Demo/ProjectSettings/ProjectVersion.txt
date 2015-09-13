@@ -1,2 +1,6 @@
+<<<<<<< HEAD:Darkwave Demo/ProjectSettings/ProjectVersion.txt
 m_EditorVersion: 5.1.1f1
+=======
+m_EditorVersion: 5.1.2f1
+>>>>>>> origin/DoomTay-branch:Darkwave/Darkwave Demo/ProjectSettings/ProjectVersion.txt
 m_StandardAssetsVersion: 0

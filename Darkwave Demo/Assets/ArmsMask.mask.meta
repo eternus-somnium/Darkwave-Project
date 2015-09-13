@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Darkwave Demo/Assets/ArmsMask.mask.meta
 fileFormatVersion: 2
 guid: f2f3fdf55bbd2614a97c292a5b662624
 timeCreated: 1436884202
@@ -6,3 +7,5 @@ NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+>>>>>>> origin/DoomTay-branch:Darkwave/Darkwave Demo/Assets/Materials/Head.physicMaterial.meta
