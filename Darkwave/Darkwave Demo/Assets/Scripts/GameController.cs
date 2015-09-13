@@ -56,6 +56,7 @@ public class GameController : MonoBehaviour
 		//Increases the sphere scale in bursts at the end of each round
 		sphereScale = sphereStartSize + (round-1) * roundTimer;
 
+		sphereScale = sphereStartSize + ((round-1) * roundTimer + (roundTimer-timeLeft)) * 0.5f;
 		litSphere.transform.localScale = new Vector3(sphereScale,sphereScale,sphereScale);
 	}
 

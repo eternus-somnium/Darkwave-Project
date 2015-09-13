@@ -1,65 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\NonPlayer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\Players\Character.cs">
     <Files>
-      <File FileName="Assets\Scripts\Entities\Agents\NonPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Entity.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="61" Column="56" />
-      <File FileName="Assets\Scripts\Weapons\MeleeWeapon.cs" Line="22" Column="4" />
-      <File FileName="Assets\Scripts\Weapons\RangedWeapon.cs" Line="57" Column="114" />
-      <File FileName="Assets\Scripts\Weapons\BuildDevice.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Agents\Unit.cs" Line="185" Column="18" />
-      <File FileName="Assets\Scripts\Entities\Crystal.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Shots\StraightShot.cs" Line="34" Column="76" />
-      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\Entities\Agents\Walker.cs" Line="1" Column="1" />
-      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" Line="9" Column="12" />
-      <File FileName="Assets\Scripts\Traits\Trait.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Shots\Shot.cs" Line="13" Column="23" />
-      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" Line="50" Column="34" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HUD\CharacterHUD.cs">
-    <Files>
-      <File FileName="Assets\Scripts\HUD\CharacterHUD.cs" Line="32" Column="27" />
-      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\RangedWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Agents\Players\Character.cs" Line="12" Column="39" />
->>>>>>> NicoliDemoPolish
+      <File FileName="Assets\Scripts\Entities\Agents\Players\Character.cs" Line="133" Column="1" />
+      <File FileName="Assets\CharacterAnimations.cs" Line="91" Column="100" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="Entities" expanded="True">
-                <Node name="Agents" expanded="True">
-                  <Node name="Players" expanded="True" />
-                  <Node name="NonPlayer.cs" selected="True" />
-                </Node>
-<<<<<<< HEAD
-                <Node name="Shots" expanded="True" />
-              </Node>
-              <Node name="HUD" expanded="True" />
-              <Node name="Traits" expanded="True">
-                <Node name="ArchitectTraits" expanded="True" />
-=======
-              </Node>
-              <Node name="HUD" expanded="True">
-                <Node name="CharacterHUD.cs" selected="True" />
->>>>>>> NicoliDemoPolish
-              </Node>
-              <Node name="Weapons" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\Entities\Entity.cs" line="51" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

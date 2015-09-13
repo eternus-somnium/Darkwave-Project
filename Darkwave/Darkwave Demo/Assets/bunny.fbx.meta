@@ -1,0 +1,3891 @@
+fileFormatVersion: 2
+guid: 81befccf697d5af438635fe7545a9b5d
+timeCreated: 1438061738
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: //RootNode
+    100004: Cube.003
+    100006: Head
+    100008: L_Ear1
+    100010: L_Ear2
+    100012: L_Ear3
+    100014: L_Ear3_end
+    100016: L_Foot
+    100018: L_Foot_end
+    100020: L_Forearm
+    100022: L_Hand
+    100024: L_Hand.001
+    100026: L_Hand.004
+    100028: L_Hand.007
+    100030: L_Hand.010
+    100032: L_Index1
+    100034: L_Index2
+    100036: L_Index2_end
+    100038: L_Middle1
+    100040: L_Middle2
+    100042: L_Middle2_end
+    100044: L_Pinky1
+    100046: L_Pinky2
+    100048: L_Pinky2_end
+    100050: L_Ring1
+    100052: L_Ring2
+    100054: L_Ring2_end
+    100056: L_Shin
+    100058: L_Shoulder
+    100060: L_Thigh
+    100062: L_Thumb1
+    100064: L_Thumb2
+    100066: L_Thumb3
+    100068: L_Thumb3_end
+    100070: L_Thumbjoint
+    100072: L_UpperArm
+    100074: LowerTorso
+    100076: Neck
+    100078: Pelvis
+    100080: R_Ear1
+    100082: R_Ear2
+    100084: R_Ear3
+    100086: R_Ear3_end
+    100088: R_Foot
+    100090: R_Foot_end
+    100092: R_Forearm
+    100094: R_Hand
+    100096: R_Hand.001
+    100098: R_Hand.002
+    100100: R_Hand.004
+    100102: R_Hand.007
+    100104: R_Hand.010
+    100106: R_Index1
+    100108: R_Index2
+    100110: R_Index2_end
+    100112: R_Middle1
+    100114: R_Middle2
+    100116: R_Middle2_end
+    100118: R_Pinky2
+    100120: R_Pinky2_end
+    100122: R_Ring1
+    100124: R_Ring2
+    100126: R_Ring2_end
+    100128: R_Shin
+    100130: R_Shoulder
+    100132: R_Thigh
+    100134: R_Thumb1
+    100136: R_Thumb2
+    100138: R_Thumb3
+    100140: R_Thumb3_end
+    100142: R_Thumbjoint
+    100144: R_UpperArm
+    100146: UpperTorso
+    100148: R_Pinky1
+    100150: Crystal
+    100152: Cylinder
+    100154: Trigger
+    100156: L_Hip
+    100158: R_Hip
+    100160: Body
+    100162: Torso_IK
+    100164: Torso_IK_end
+    100166: L_Foot_IK
+    100168: L_Foot_IK_end
+    100170: Pelvis_IK
+    100172: Pelvis_IK_end
+    100174: R_Foot_IK
+    100176: R_Foot_IK_end
+    100178: Body.001
+    100180: Body.002
+    100182: Body.003
+    100184: Body.004
+    100186: Body.005
+    100188: Cylinder.001
+    100190: L_Hand.002
+    100192: L_Hand.003
+    100194: L_Hand.005
+    100196: L_Hand_IK
+    100198: L_Hand_IK_end
+    100200: L_Index
+    100202: L_Index.001
+    100204: L_Index.002
+    100206: L_Index.002_end
+    100208: L_Middle
+    100210: L_Middle.001
+    100212: L_Middle.002
+    100214: L_Middle.002_end
+    100216: L_Pinky
+    100218: L_Pinky.001
+    100220: L_Pinky.002
+    100222: L_Pinky.002_end
+    100224: L_Ring
+    100226: L_Ring.001
+    100228: L_Ring.002
+    100230: L_Ring.002_end
+    100232: L_Thumb
+    100234: L_Thumb.001
+    100236: L_Thumb.001_end
+    100238: R_Hand.003
+    100240: R_Hand.005
+    100242: R_Hand_IK
+    100244: R_Hand_IK_end
+    100246: R_Index
+    100248: R_Index.001
+    100250: R_Index.002
+    100252: R_Index.002_end
+    100254: R_Middle
+    100256: R_Middle.001
+    100258: R_Middle.002
+    100260: R_Middle.002_end
+    100262: R_Pinky
+    100264: R_Pinky.001
+    100266: R_Pinky.002
+    100268: R_Pinky.002_end
+    100270: R_Ring
+    100272: R_Ring.001
+    100274: R_Ring.002
+    100276: R_Ring.002_end
+    100278: R_Thumb
+    100280: R_Thumb.001
+    100282: R_Thumb.001_end
+    100284: Rifle
+    400000: Armature
+    400002: //RootNode
+    400004: Cube.003
+    400006: Head
+    400008: L_Ear1
+    400010: L_Ear2
+    400012: L_Ear3
+    400014: L_Ear3_end
+    400016: L_Foot
+    400018: L_Foot_end
+    400020: L_Forearm
+    400022: L_Hand
+    400024: L_Hand.001
+    400026: L_Hand.004
+    400028: L_Hand.007
+    400030: L_Hand.010
+    400032: L_Index1
+    400034: L_Index2
+    400036: L_Index2_end
+    400038: L_Middle1
+    400040: L_Middle2
+    400042: L_Middle2_end
+    400044: L_Pinky1
+    400046: L_Pinky2
+    400048: L_Pinky2_end
+    400050: L_Ring1
+    400052: L_Ring2
+    400054: L_Ring2_end
+    400056: L_Shin
+    400058: L_Shoulder
+    400060: L_Thigh
+    400062: L_Thumb1
+    400064: L_Thumb2
+    400066: L_Thumb3
+    400068: L_Thumb3_end
+    400070: L_Thumbjoint
+    400072: L_UpperArm
+    400074: LowerTorso
+    400076: Neck
+    400078: Pelvis
+    400080: R_Ear1
+    400082: R_Ear2
+    400084: R_Ear3
+    400086: R_Ear3_end
+    400088: R_Foot
+    400090: R_Foot_end
+    400092: R_Forearm
+    400094: R_Hand
+    400096: R_Hand.001
+    400098: R_Hand.002
+    400100: R_Hand.004
+    400102: R_Hand.007
+    400104: R_Hand.010
+    400106: R_Index1
+    400108: R_Index2
+    400110: R_Index2_end
+    400112: R_Middle1
+    400114: R_Middle2
+    400116: R_Middle2_end
+    400118: R_Pinky2
+    400120: R_Pinky2_end
+    400122: R_Ring1
+    400124: R_Ring2
+    400126: R_Ring2_end
+    400128: R_Shin
+    400130: R_Shoulder
+    400132: R_Thigh
+    400134: R_Thumb1
+    400136: R_Thumb2
+    400138: R_Thumb3
+    400140: R_Thumb3_end
+    400142: R_Thumbjoint
+    400144: R_UpperArm
+    400146: UpperTorso
+    400148: R_Pinky1
+    400150: Crystal
+    400152: Cylinder
+    400154: Trigger
+    400156: L_Hip
+    400158: R_Hip
+    400160: Body
+    400162: Torso_IK
+    400164: Torso_IK_end
+    400166: L_Foot_IK
+    400168: L_Foot_IK_end
+    400170: Pelvis_IK
+    400172: Pelvis_IK_end
+    400174: R_Foot_IK
+    400176: R_Foot_IK_end
+    400178: Body.001
+    400180: Body.002
+    400182: Body.003
+    400184: Body.004
+    400186: Body.005
+    400188: Cylinder.001
+    400190: L_Hand.002
+    400192: L_Hand.003
+    400194: L_Hand.005
+    400196: L_Hand_IK
+    400198: L_Hand_IK_end
+    400200: L_Index
+    400202: L_Index.001
+    400204: L_Index.002
+    400206: L_Index.002_end
+    400208: L_Middle
+    400210: L_Middle.001
+    400212: L_Middle.002
+    400214: L_Middle.002_end
+    400216: L_Pinky
+    400218: L_Pinky.001
+    400220: L_Pinky.002
+    400222: L_Pinky.002_end
+    400224: L_Ring
+    400226: L_Ring.001
+    400228: L_Ring.002
+    400230: L_Ring.002_end
+    400232: L_Thumb
+    400234: L_Thumb.001
+    400236: L_Thumb.001_end
+    400238: R_Hand.003
+    400240: R_Hand.005
+    400242: R_Hand_IK
+    400244: R_Hand_IK_end
+    400246: R_Index
+    400248: R_Index.001
+    400250: R_Index.002
+    400252: R_Index.002_end
+    400254: R_Middle
+    400256: R_Middle.001
+    400258: R_Middle.002
+    400260: R_Middle.002_end
+    400262: R_Pinky
+    400264: R_Pinky.001
+    400266: R_Pinky.002
+    400268: R_Pinky.002_end
+    400270: R_Ring
+    400272: R_Ring.001
+    400274: R_Ring.002
+    400276: R_Ring.002_end
+    400278: R_Thumb
+    400280: R_Thumb.001
+    400282: R_Thumb.001_end
+    400284: Rifle
+    2300000: //RootNode
+    2300002: Crystal
+    2300004: Cylinder
+    2300006: Trigger
+    2300008: Body.001
+    2300010: Body.002
+    2300012: Body.003
+    2300014: Body.004
+    2300016: Cylinder.001
+    2300018: Rifle
+    3300000: //RootNode
+    3300002: Crystal
+    3300004: Cylinder
+    3300006: Trigger
+    3300008: Body.001
+    3300010: Body.002
+    3300012: Body.003
+    3300014: Body.004
+    3300016: Cylinder.001
+    3300018: Rifle
+    4300000: Cube.003
+    4300002: Trigger
+    4300004: Crystal
+    4300006: Cylinder
+    4300008: Body
+    4300010: Body.005
+    4300012: Body.001
+    4300014: Cylinder.001
+    4300016: Body.002
+    4300018: Body.003
+    4300020: Body.004
+    4300022: Rifle
+    7400000: ArmatureAction
+    7400002: Armature|ArmatureAction.001
+    7400004: Standing.001
+    7400006: Armature|Standing
+    7400008: Standing
+    7400010: Running
+    7400012: Armature|Running
+    7400014: Cube.003|ArmatureAction.001
+    7400016: Running0
+    7400018: Rifle
+    7400020: Armature|Rifle
+    7400022: HammerStand
+    7400024: Armature|HammerStand
+    7400026: Armature|ArmatureAction
+    7400028: Armature|HammerAttack
+    7400030: Armature|LeftTurn
+    7400032: Armature|RightTurn
+    7400034: Armature|LookUp
+    7400036: Armature|Land
+    7400038: Armature|LookDown
+    7400040: Armature|BasePose
+    7400042: Armature|LookUp
+    7400044: Armature|LookDown
+    7400046: Armature|PreJump
+    7400048: Armature|Jump
+    7400050: Armature|InAir
+    7400052: Armature|HammerAttackPrimary
+    7400054: Armature|Pain
+    7400056: Armature|RunForward
+    7400058: Armature|Strafe
+    7400060: Armature|BuildDevice
+    9500000: //RootNode
+    13700000: Cube.003
+    13700002: Body
+    13700004: Body.005
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 'MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
+      has scale animation''. It is not supported.
+
+'
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|BasePose
+      takeName: Armature|BasePose
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|HammerAttackPrimary
+      takeName: Armature|HammerAttackPrimary
+      firstFrame: 0
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|HammerStand
+      takeName: Armature|HammerStand
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Land
+      takeName: Armature|Land
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Pain
+      takeName: Armature|Pain
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|PreJump
+      takeName: Armature|PreJump
+      firstFrame: 0
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Rifle
+      takeName: Armature|Rifle
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|RunForward
+      takeName: Armature|RunForward
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Running
+      takeName: Armature|Running
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Standing
+      takeName: Armature|Standing
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Strafe
+      takeName: Armature|Strafe
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|BuildDevice
+      takeName: Armature|BuildDevice
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/L_Foot_IK
+        weight: 0
+      - path: Armature/L_Foot_IK/L_Foot_IK_end
+        weight: 0
+      - path: Armature/L_Hand_IK
+        weight: 0
+      - path: Armature/L_Hand_IK/L_Hand_IK_end
+        weight: 0
+      - path: Armature/Pelvis
+        weight: 1
+      - path: Armature/Pelvis/L_Hip
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot
+        weight: 1
+      - path: Armature/Pelvis/L_Hip/L_Thigh/L_Shin/L_Foot/L_Foot_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.001/L_Pinky/L_Pinky.001/L_Pinky.002/L_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.002/L_Ring/L_Ring.001/L_Ring.002/L_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.003/L_Middle/L_Middle.001/L_Middle.002/L_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.004/L_Index/L_Index.001/L_Index.002/L_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm/L_Hand/L_Hand.005/L_Thumbjoint/L_Thumb/L_Thumb.001/L_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/L_Ear1/L_Ear2/L_Ear3/L_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/Neck/Head/R_Ear1/R_Ear2/R_Ear3/R_Ear3_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.001/R_Pinky/R_Pinky.001/R_Pinky.002/R_Pinky.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.002/R_Ring/R_Ring.001/R_Ring.002/R_Ring.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.003/R_Middle/R_Middle.001/R_Middle.002/R_Middle.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.004/R_Index/R_Index.001/R_Index.002/R_Index.002_end
+        weight: 0
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001
+        weight: 1
+      - path: Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm/R_Hand/R_Hand.005/R_Thumbjoint/R_Thumb/R_Thumb.001/R_Thumb.001_end
+        weight: 0
+      - path: Armature/Pelvis/R_Hip
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot
+        weight: 1
+      - path: Armature/Pelvis/R_Hip/R_Thigh/R_Shin/R_Foot/R_Foot_end
+        weight: 0
+      - path: Armature/R_Foot_IK
+        weight: 0
+      - path: Armature/R_Foot_IK/R_Foot_IK_end
+        weight: 0
+      - path: Armature/R_Hand_IK
+        weight: 0
+      - path: Armature/R_Hand_IK/R_Hand_IK_end
+        weight: 0
+      - path: Armature/Torso_IK
+        weight: 0
+      - path: Armature/Torso_IK/Torso_IK_end
+        weight: 0
+      - path: Body
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .075000003
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: -60, y: -60, z: -90}
+        max: {x: 60, y: 60, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: -60, y: -60, z: -90}
+        max: {x: 60, y: 60, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Shin
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Shin
+      humanName: RightLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: -30, z: -50}
+        max: {x: 0, y: 30, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: -30, z: -50}
+        max: {x: 0, y: 30, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerTorso
+      humanName: Spine
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperTorso
+      humanName: Chest
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck
+      humanName: Neck
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Shoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: -15, z: -15}
+        max: {x: 0, y: 15, z: 30}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Shoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: -15, z: -15}
+        max: {x: 0, y: 15, z: 30}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Index
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Index.001
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Middle
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Middle.001
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Ring
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Ring.001
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Pinky
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Pinky.001
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Index
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Index.001
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Middle
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Middle.001
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Ring
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Ring.001
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Pinky
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Thumbjoint
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Pinky.001
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Thumbjoint
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Thumb
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Thumb.001
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Thumb
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Thumb.001
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Index.002
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Middle.002
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Ring.002
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Pinky.002
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Middle.002
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Pinky.002
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Index.002
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Ring.002
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: bunny(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Armature
+      position: {x: 0, y: .974999964, z: -.0524999946}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Foot_IK
+      position: {x: -.127499998, y: -.0825000033, z: -.944999993}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Foot_IK_end
+      position: {x: -0, y: .232500002, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Hand_IK
+      position: {x: -.626574636, y: .00496613607, z: .168457448}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Hand_IK_end
+      position: {x: -0, y: .164999992, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Pelvis
+      position: {x: -0, y: .0224999953, z: .13499999}
+      rotation: {x: .788205504, y: -7.33628411e-08, z: -9.39613969e-08, w: .615412235}
+      scale: {x: 1, y: .999999344, z: .999999285}
+      transformModified: 1
+    - name: L_Hip
+      position: {x: -3.32201134e-16, y: -1.67638059e-09, z: -4.47034809e-09}
+      rotation: {x: -.61939913, y: .492612481, z: .585751176, w: .174852431}
+      scale: {x: .999999642, y: .999999583, z: .999999523}
+      transformModified: 1
+    - name: L_Thigh
+      position: {x: -6.00703043e-09, y: .156424895, z: -8.31205327e-09}
+      rotation: {x: -.470113397, y: .030619381, z: -.0429082662, w: .88103056}
+      scale: {x: 1, y: 1.00000012, z: .999999881}
+      transformModified: 1
+    - name: L_Shin
+      position: {x: -7.82310927e-09, y: .51444757, z: -1.45286316e-08}
+      rotation: {x: -.0446410999, y: -.732566357, z: .0482679494, w: -.677513123}
+      scale: {x: .999999881, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: L_Foot
+      position: {x: -3.15542126e-09, y: .487500221, z: 5.2531629e-10}
+      rotation: {x: 1.30145949e-07, y: .707106709, z: -.707106829, w: -1.20162982e-08}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: L_Foot_end
+      position: {x: -0, y: .172499985, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: LowerTorso
+      position: {x: 2.6645351e-16, y: .123693176, z: -1.11758691e-08}
+      rotation: {x: -.154086396, y: 5.88927804e-08, z: 2.75527885e-08, w: .988057435}
+      scale: {x: 1, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: UpperTorso
+      position: {x: -1.414469e-15, y: .116491653, z: 6.33759545e-10}
+      rotation: {x: .0629023015, y: 1.8716511e-08, z: -6.31889119e-09, w: .998019695}
+      scale: {x: .999999881, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: L_Shoulder
+      position: {x: -1.29892831e-15, y: .244211063, z: 2.23517405e-09}
+      rotation: {x: .599096, y: -.40497005, z: -.548298419, w: -.420062035}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: L_UpperArm
+      position: {x: 1.80413329e-09, y: .169207707, z: 3.03295948e-08}
+      rotation: {x: -.133363158, y: -.00213465025, z: -.0373300761, w: -.990361691}
+      scale: {x: 1.00000024, y: 1, z: .999999642}
+      transformModified: 1
+    - name: L_Forearm
+      position: {x: 3.02097747e-09, y: .319798082, z: 6.9562013e-08}
+      rotation: {x: .00185328722, y: -.017582655, z: -.00845590234, w: .999808013}
+      scale: {x: 1.00000036, y: 1, z: 1.00000024}
+      transformModified: 1
+    - name: L_Hand
+      position: {x: 5.587935e-09, y: .288065702, z: 2.35741009e-08}
+      rotation: {x: .0508087054, y: -.0298826657, z: -.00544086052, w: -.998246431}
+      scale: {x: .999999821, y: .99999994, z: .999999464}
+      transformModified: 1
+    - name: L_Hand.001
+      position: {x: -0, y: .0138711594, z: 1.53668207e-08}
+      rotation: {x: .0564388409, y: .210838735, z: -.0898126587, w: .97174871}
+      scale: {x: .999999762, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: L_Pinky
+      position: {x: 3.12924371e-08, y: .0977665782, z: -1.00582831e-08}
+      rotation: {x: -.0111023309, y: -.211365834, z: .104106285, w: .971783519}
+      scale: {x: .99999994, y: .999999881, z: .999999762}
+      transformModified: 1
+    - name: L_Pinky.001
+      position: {x: 1.95577732e-09, y: .0333750434, z: -3.45055007e-08}
+      rotation: {x: 4.32133476e-07, y: 4.47034637e-07, z: -5.5134268e-07, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1.00000024}
+      transformModified: 1
+    - name: L_Pinky.002
+      position: {x: -5.58793511e-10, y: .0151875587, z: 2.34693278e-08}
+      rotation: {x: -1.46031311e-06, y: 1.19209233e-07, z: -7.45057704e-08, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Pinky.002_end
+      position: {x: -0, y: .0151874674, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Hand.002
+      position: {x: -0, y: .0138711594, z: 1.53668207e-08}
+      rotation: {x: .038264703, y: .18468453, z: -.0144265126, w: .981946707}
+      scale: {x: .999999583, y: .999999702, z: .99999994}
+      transformModified: 1
+    - name: L_Ring
+      position: {x: 1.78813924e-08, y: .100244053, z: -9.05245514e-08}
+      rotation: {x: .00723746372, y: -.188919201, z: .0275213849, w: .981580257}
+      scale: {x: 1, y: 1, z: 1.00000024}
+      transformModified: 1
+    - name: L_Ring.001
+      position: {x: -2.79396756e-10, y: .039375104, z: 6.32135126e-08}
+      rotation: {x: -5.5134285e-07, y: 5.96046306e-08, z: -4.47034729e-08, w: 1}
+      scale: {x: 1, y: 1.00000024, z: 1.00000012}
+      transformModified: 1
+    - name: L_Ring.002
+      position: {x: -2.79396756e-10, y: .0181875024, z: -6.58677877e-08}
+      rotation: {x: 2.23517389e-07, y: 0, z: 1.04308114e-07, w: 1}
+      scale: {x: 1, y: .999999523, z: .999999881}
+      transformModified: 1
+    - name: L_Ring.002_end
+      position: {x: -0, y: .0181874931, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Hand.003
+      position: {x: -0, y: .0138711594, z: 1.53668207e-08}
+      rotation: {x: -.0509261265, y: .916324854, z: .060976319, w: .392475784}
+      scale: {x: 1, y: .999999762, z: 1}
+      transformModified: 1
+    - name: L_Middle
+      position: {x: 7.26431582e-09, y: .0973507538, z: 1.95577723e-08}
+      rotation: {x: .0650576055, y: -.920488477, z: -.0164054912, w: .384966791}
+      scale: {x: .999999642, y: 1.00000048, z: 1.00000024}
+      transformModified: 1
+    - name: L_Middle.001
+      position: {x: -5.58793511e-10, y: .0442500114, z: -4.26080042e-08}
+      rotation: {x: -2.83121949e-07, y: -5.96046235e-08, z: 5.96046235e-08, w: 1}
+      scale: {x: 1, y: 1.00000024, z: 1.00000036}
+      transformModified: 1
+    - name: L_Middle.002
+      position: {x: 1.11758702e-09, y: .0206249729, z: -2.48663117e-08}
+      rotation: {x: 4.470348e-08, y: 5.96046377e-08, z: 2.98023188e-08, w: 1}
+      scale: {x: 1, y: .999999762, z: .99999994}
+      transformModified: 1
+    - name: L_Middle.002_end
+      position: {x: -0, y: .0206249896, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Hand.004
+      position: {x: -0, y: .0138711594, z: 1.53668207e-08}
+      rotation: {x: -.100731611, y: .385884345, z: -.140895858, w: -.906142831}
+      scale: {x: .999999404, y: .999999583, z: 1}
+      transformModified: 1
+    - name: L_Index
+      position: {x: -3.35276118e-09, y: .0954842046, z: 2.68220894e-08}
+      rotation: {x: .0571073554, y: -.374377847, z: .154445454, w: -.912538588}
+      scale: {x: .999999762, y: 1, z: 1.00000048}
+      transformModified: 1
+    - name: L_Index.001
+      position: {x: 5.3085385e-09, y: .0442500487, z: 3.04542453e-08}
+      rotation: {x: -7.45057989e-08, y: 0, z: -1.49011594e-08, w: 1}
+      scale: {x: 1, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: L_Index.002
+      position: {x: -2.93366598e-09, y: .0206250399, z: -1.77416943e-08}
+      rotation: {x: 7.4505806e-08, y: 0, z: 1.49011612e-08, w: 1}
+      scale: {x: .999999881, y: .999999642, z: .999999762}
+      transformModified: 1
+    - name: L_Index.002_end
+      position: {x: -0, y: .0206249896, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Hand.005
+      position: {x: -0, y: .0138711594, z: 1.53668207e-08}
+      rotation: {x: -.113060176, y: .310728371, z: -.468432307, w: -.819290221}
+      scale: {x: .999999583, y: .999999821, z: 1.00000024}
+      transformModified: 1
+    - name: L_Thumbjoint
+      position: {x: -5.4202971e-08, y: .0284051094, z: 2.06753601e-08}
+      rotation: {x: -.0771183893, y: -.880199134, z: -.00628339965, w: -.468255132}
+      scale: {x: 1.00000024, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Thumb
+      position: {x: -6.42612505e-08, y: .0222554952, z: 8.94069618e-09}
+      rotation: {x: -.0221703183, y: .683399439, z: .0305495337, w: -.72906816}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: L_Thumb.001
+      position: {x: 3.12924371e-08, y: .0399820954, z: 6.28642667e-08}
+      rotation: {x: 6.25848486e-07, y: -1.81794076e-06, z: -2.98023082e-07, w: 1}
+      scale: {x: 1, y: 1, z: 1.00000024}
+      transformModified: 1
+    - name: L_Thumb.001_end
+      position: {x: -0, y: .039982155, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Neck
+      position: {x: -1.29892831e-15, y: .244211063, z: 2.23517405e-09}
+      rotation: {x: -.139607474, y: -1.81368804e-07, z: 3.69770383e-08, w: .990206957}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: Head
+      position: {x: 3.23326558e-15, y: .0691465512, z: -9.04760178e-09}
+      rotation: {x: .109116815, y: 7.70161748e-08, z: -4.04330187e-08, w: .994028926}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: L_Ear1
+      position: {x: -8.38871573e-16, y: .142500103, z: -6.90049146e-14}
+      rotation: {x: -.194936916, y: .679705501, z: .194936976, w: .67970556}
+      scale: {x: 1.00000024, y: 1.00000024, z: 1.00000012}
+      transformModified: 1
+    - name: L_Ear2
+      position: {x: -5.64881427e-14, y: .0707549527, z: 6.70607214e-09}
+      rotation: {x: .194937021, y: -.679705322, z: -.194937006, w: .679705739}
+      scale: {x: .999999642, y: 1.00000024, z: .99999994}
+      transformModified: 1
+    - name: L_Ear3
+      position: {x: 4.4762391e-10, y: .0450000204, z: -6.50146576e-14}
+      rotation: {x: 6.19124449e-08, y: -1.37287131e-07, z: 2.98023259e-08, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: L_Ear3_end
+      position: {x: -0, y: .0374999978, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Ear1
+      position: {x: -8.38871573e-16, y: .142500103, z: -6.90049146e-14}
+      rotation: {x: -.194936976, y: -.679705322, z: -.194936901, w: .679705739}
+      scale: {x: 1.00000012, y: 1.00000036, z: 1.00000024}
+      transformModified: 1
+    - name: R_Ear2
+      position: {x: -1.47082338e-13, y: .0707549602, z: -3.35269483e-08}
+      rotation: {x: .194936991, y: .679705322, z: .194936886, w: .679705739}
+      scale: {x: .999999583, y: 1.00000024, z: 1.00000012}
+      transformModified: 1
+    - name: R_Ear3
+      position: {x: -8.94221031e-10, y: .0450000204, z: 1.41220355e-13}
+      rotation: {x: 8.25291977e-08, y: 1.46518786e-07, z: 4.47034729e-08, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Ear3_end
+      position: {x: -0, y: .0374999978, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Shoulder
+      position: {x: -1.29892831e-15, y: .244211063, z: 2.23517405e-09}
+      rotation: {x: .599096, y: .404969901, z: .548298597, w: -.420061976}
+      scale: {x: 1.00000024, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: R_UpperArm
+      position: {x: -6.14116091e-09, y: .169207722, z: 3.8972523e-08}
+      rotation: {x: .133363694, y: -.00213479949, z: -.0373298302, w: .990361571}
+      scale: {x: 1, y: 1.00000012, z: .999999762}
+      transformModified: 1
+    - name: R_Forearm
+      position: {x: 2.79396756e-10, y: .319798142, z: 8.29609181e-09}
+      rotation: {x: .00185473263, y: .0175827146, z: .00845588744, w: .999807954}
+      scale: {x: 1.00000012, y: .999999642, z: .999999821}
+      transformModified: 1
+    - name: R_Hand
+      position: {x: 2.79396756e-10, y: .288065642, z: -5.12518419e-08}
+      rotation: {x: -.0508064553, y: -.0298827551, z: -.00544078602, w: .998246551}
+      scale: {x: .999999881, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: R_Hand.001
+      position: {x: 2.51457077e-09, y: .0138711603, z: -5.88479399e-09}
+      rotation: {x: .0564373359, y: -.210838616, z: .0898129344, w: .971748769}
+      scale: {x: .999999702, y: .999999523, z: .99999994}
+      transformModified: 1
+    - name: R_Pinky
+      position: {x: 6.70552236e-09, y: .0977665111, z: -8.94069618e-09}
+      rotation: {x: -.0111021968, y: .211365744, z: -.104106165, w: .971783519}
+      scale: {x: 1.00000012, y: 1.00000036, z: 1}
+      transformModified: 1
+    - name: R_Pinky.001
+      position: {x: -5.58793511e-10, y: .0333750062, z: -8.51461621e-08}
+      rotation: {x: 4.32133476e-07, y: -2.98023082e-07, z: 4.6193577e-07, w: 1}
+      scale: {x: 1.00000012, y: .999999762, z: .999999821}
+      transformModified: 1
+    - name: R_Pinky.002
+      position: {x: 4.19095114e-09, y: .0151875345, z: 1.64145586e-08}
+      rotation: {x: -1.62422577e-06, y: -8.94069245e-08, z: 1.9371501e-07, w: 1}
+      scale: {x: 1.00000012, y: 1.00000036, z: 1}
+      transformModified: 1
+    - name: R_Pinky.002_end
+      position: {x: -0, y: .0151874674, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Hand.002
+      position: {x: 2.51457077e-09, y: .0138711603, z: -5.88479399e-09}
+      rotation: {x: .0382631496, y: -.18468459, z: .0144267492, w: .981946766}
+      scale: {x: .99999994, y: .999999881, z: 1}
+      transformModified: 1
+    - name: R_Ring
+      position: {x: 2.7939675e-09, y: .100244105, z: 1.62050124e-08}
+      rotation: {x: .00723749306, y: .188919187, z: -.0275212191, w: .981580257}
+      scale: {x: .999999821, y: .999999821, z: .999999821}
+      transformModified: 1
+    - name: R_Ring.001
+      position: {x: -6.98491875e-10, y: .0393749252, z: -2.1199229e-08}
+      rotation: {x: -4.0233121e-07, y: -5.96046235e-08, z: -7.45057775e-08, w: 1}
+      scale: {x: 1.00000024, y: 1.00000048, z: 1.00000012}
+      transformModified: 1
+    - name: R_Ring.002
+      position: {x: 1.11758702e-09, y: .0181875248, z: 1.91037532e-08}
+      rotation: {x: 1.93715024e-07, y: 1.49011555e-07, z: 0, w: 1}
+      scale: {x: .99999994, y: .999999881, z: .999999702}
+      transformModified: 1
+    - name: R_Ring.002_end
+      position: {x: -0, y: .0181874931, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Hand.003
+      position: {x: 2.51457077e-09, y: .0138711603, z: -5.88479399e-09}
+      rotation: {x: -.0509267226, y: -.916324973, z: -.0609747246, w: .392475724}
+      scale: {x: .999999762, y: .999999762, z: .999999821}
+      transformModified: 1
+    - name: R_Middle
+      position: {x: 1.117587e-08, y: .0973507687, z: 2.23517405e-09}
+      rotation: {x: .0650576428, y: .920488477, z: .0164052378, w: .38496685}
+      scale: {x: 1.00000024, y: .999999881, z: 1.00000036}
+      transformModified: 1
+    - name: R_Middle.001
+      position: {x: -2.51457077e-09, y: .0442499816, z: 1.90862917e-08}
+      rotation: {x: -2.83122063e-07, y: 1.1920929e-07, z: -4.47034836e-08, w: 1}
+      scale: {x: 1.00000024, y: 1, z: .999999821}
+      transformModified: 1
+    - name: R_Middle.002
+      position: {x: 3.63215791e-09, y: .0206249524, z: 4.09141627e-08}
+      rotation: {x: 1.19209261e-07, y: -1.19209261e-07, z: -1.49011576e-08, w: 1}
+      scale: {x: 1, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: R_Middle.002_end
+      position: {x: -0, y: .0206249896, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Hand.004
+      position: {x: 2.51457077e-09, y: .0138711603, z: -5.88479399e-09}
+      rotation: {x: .100730069, y: .385884136, z: -.140896529, w: .90614295}
+      scale: {x: .999999583, y: .999999523, z: .999999881}
+      transformModified: 1
+    - name: R_Index
+      position: {x: 1.34110447e-08, y: .0954841748, z: -5.36441789e-08}
+      rotation: {x: -.0571071468, y: -.374377698, z: .154445559, w: .912538648}
+      scale: {x: 1.00000024, y: 1.00000036, z: 1.00000024}
+      transformModified: 1
+    - name: R_Index.001
+      position: {x: -4.61004657e-09, y: .0442500263, z: -2.66823896e-08}
+      rotation: {x: -2.68220873e-07, y: -8.94069601e-08, z: 2.98023188e-08, w: 1}
+      scale: {x: 1.00000024, y: 1, z: .999999881}
+      transformModified: 1
+    - name: R_Index.002
+      position: {x: 3.2130627e-09, y: .0206249934, z: 3.2619571e-08}
+      rotation: {x: 7.45057918e-08, y: 2.98023153e-08, z: -1.49011576e-08, w: 1}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Index.002_end
+      position: {x: -0, y: .0206249896, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Hand.005
+      position: {x: 2.51457077e-09, y: .0138711603, z: -5.88479399e-09}
+      rotation: {x: .113058895, y: .310727507, z: -.468432754, w: .819290459}
+      scale: {x: .999999404, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: R_Thumbjoint
+      position: {x: 3.91155446e-08, y: .028405061, z: -1.11758702e-09}
+      rotation: {x: .0771169364, y: -.880199015, z: -.00628342992, w: .46825543}
+      scale: {x: .999999762, y: .999999821, z: .999999762}
+      transformModified: 1
+    - name: R_Thumb
+      position: {x: 3.56230867e-09, y: .0222554822, z: -6.92903939e-08}
+      rotation: {x: .022169672, y: .683399558, z: .0305470116, w: .729068279}
+      scale: {x: 1.00000012, y: 1.00000048, z: 1}
+      transformModified: 1
+    - name: R_Thumb.001
+      position: {x: 3.57627847e-08, y: .0399821438, z: -7.51577289e-08}
+      rotation: {x: 6.85453244e-07, y: 1.96695282e-06, z: 3.72528945e-07, w: 1}
+      scale: {x: 1.00000012, y: .999999762, z: .99999994}
+      transformModified: 1
+    - name: R_Thumb.001_end
+      position: {x: -0, y: .039982155, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Hip
+      position: {x: -3.32201134e-16, y: -1.67638059e-09, z: -4.47034809e-09}
+      rotation: {x: .61939919, y: .492612332, z: .585751235, w: -.174852476}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Thigh
+      position: {x: -3.49245943e-09, y: .156424865, z: 1.95577732e-09}
+      rotation: {x: -.470113128, y: -.0306196772, z: .0429083221, w: .881030679}
+      scale: {x: 1.00000012, y: 1, z: .999999523}
+      transformModified: 1
+    - name: R_Shin
+      position: {x: -2.01165662e-08, y: .51444757, z: 5.86733195e-09}
+      rotation: {x: .0446409881, y: -.732566237, z: .0482681319, w: .677513123}
+      scale: {x: 1.00000012, y: 1.00000024, z: .99999994}
+      transformModified: 1
+    - name: R_Foot
+      position: {x: -1.03246689e-09, y: .487500161, z: 2.13187956e-09}
+      rotation: {x: -1.18647435e-07, y: .707106769, z: -.707106888, w: -1.05976483e-07}
+      scale: {x: .999999762, y: 1, z: .999999642}
+      transformModified: 1
+    - name: R_Foot_end
+      position: {x: -0, y: .172499985, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Foot_IK
+      position: {x: .127499998, y: -.0825000033, z: -.944999993}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Foot_IK_end
+      position: {x: -0, y: .232500002, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Hand_IK
+      position: {x: .626574636, y: .00496613607, z: .168457448}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: R_Hand_IK_end
+      position: {x: -0, y: .164999992, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Torso_IK
+      position: {x: -0, y: -.0149999997, z: .61499995}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Torso_IK_end
+      position: {x: -0, y: .449999988, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Body
+      position: {x: 0, y: 1.43051139e-07, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    armTwist: .600000024
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

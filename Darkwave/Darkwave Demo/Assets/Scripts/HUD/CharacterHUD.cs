@@ -52,14 +52,14 @@ public class CharacterHUD : MonoBehaviour
 
 
 		characterHealth = characterScript.health;
-		characterEmp = characterScript.empowered;
-		characterFocus = characterScript.focus;
-		characterHaste = characterScript.haste;
-		characterRegen = characterScript.regen;
+//		characterEmp = characterScript.empowered;
+//		characterFocus = characterScript.focus;
+//		characterHaste = characterScript.haste;
+//		characterRegen = characterScript.regen;
 		characterSwift = characterScript.swift;
-		characterArmor = characterScript.armored;
-		characterDegen = characterScript.degen;
-		characterBurn = characterScript.burning;
+//		characterArmor = characterScript.armored;
+//		characterDegen = characterScript.degen;
+//		characterBurn = characterScript.burning;
 		characterCrip = characterScript.crippled;
 		characterWeaponSlot = characterScript.WeaponChoice;
 		characterShards = characterScript.treasures;
