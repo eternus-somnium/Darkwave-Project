@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
 //This code serves as the base for NPC turrets
-public class Turret : NPC 
+public class Turret : BuildableObject 
 {
 	void Start()
 	{
@@ -40,7 +40,7 @@ public class Turret : NPC
 		   hit.transform.gameObject == target.gameObject)
 		{
 			weapons[WeaponChoice].transform.LookAt(target.transform.position);
-			Attack();
+			MainAction();
 		}
 	}
 }

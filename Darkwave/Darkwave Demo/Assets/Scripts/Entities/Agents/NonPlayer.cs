@@ -1,50 +1,32 @@
 using UnityEngine;
 using System.Collections;
 
-public class NPC : Entity
+public class NonPlayer : Unit
 {
 	//Behavior variables (set in editor)
 	public GameObject[] targetList;
-	public GameObject target = null;
+	public GameObject 
+		target = null,
+		treasure;
 	public float targetDistance;
-	public int behavior;
-
-	public int sensorRange;
-	public int engagementRange;
+	public int 
+		behavior,
+		sensorRange,
+		engagementRange;
 	public bool inSight;
 
 
-	public int energy;
-	public int maxEnergy;
-	public GameObject treasure;
-
-	//Movement
-	public float jumpHeight;// set in editor
-	public Vector3 direction;
-	bool isJumping;
-
-	//Attack variables
-	int weaponChoice  = 0;
-	public GameObject[] weapons;
-
-	// NPCs should use weapon scripts for weapon attacks; this is a temporary change.
-	private GameObject newShot;
-	private Shot shotScript;
 
 	// Use this for initialization
 	public void NPCStart ()
 	{
 		EntityStart();
-		energy=maxEnergy;
-		InvokeRepeating("AttackCooldowns",0,.5f);
 		InvokeRepeating("ChooseTarget",0,2f);
 	}
 
 	// Update is called once per frame
 	public void NPCUpdate ()
 	{
-		EntityUpdate();
-
 		if(gameObject.tag == "Ally")
 			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
 		else targetList = GameObject.Find("Game Controller").GetComponent<GameController>().enemyTargets;
@@ -62,11 +44,6 @@ public class NPC : Entity
 			Destroy(gameObject);
 			//Stub for destruction animation control
 		}
-	}
-
-	void AttackCooldowns()
-	{
-		if(energy < maxEnergy) energy++;
 	}
 
 	void ChooseTarget()
@@ -99,22 +76,8 @@ public class NPC : Entity
 
 	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
 	//Called by the child function when the conditions have been.
-	public void Attack()
+	public void MainAction()
 	{
-		weapons[weaponChoice].SendMessage("MainActionController", true);
-	}
-
-
-
-	public int WeaponChoice
-	{
-		get
-		{
-			return weaponChoice;
-		}
-		set
-		{
-			weaponChoice = value;
-		}
+		weapons[WeaponChoice].SendMessage("MainActionController", true);
 	}
 }

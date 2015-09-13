@@ -8,10 +8,4 @@ public class Crystal : Entity {
 	{
 		EntityStart();
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		EntityUpdate();
-	}
 }
