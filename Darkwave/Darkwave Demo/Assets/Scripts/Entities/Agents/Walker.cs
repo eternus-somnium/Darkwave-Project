@@ -10,7 +10,7 @@ public class Walker : NonPlayer
 	// Use this for initialization
 	void Start () 
 	{
-		AgentStart ();
+		NonPlayerStart();
 		
 		agent = gameObject.GetComponent<NavMeshAgent> ();
 		agent.speed = baseSpeed;
@@ -20,14 +20,14 @@ public class Walker : NonPlayer
 	// Update is called once per frame
 	void Update () 
 	{
-		AgentUpdate();
+		NonPlayerUpdate();
 		WalkerAI();
-
-
+		
+		
 		if(target != null && agent.isActiveAndEnabled)
 			agent.SetDestination (target.transform.position + randomAdd);
 	}
-
+	
 	//Controls the behavior of the npc turret
 	void WalkerAI()
 	{	

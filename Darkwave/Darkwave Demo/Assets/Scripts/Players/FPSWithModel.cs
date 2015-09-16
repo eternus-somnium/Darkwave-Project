@@ -48,7 +48,7 @@ public class FPSWithModel : Unit
 	// Called every frame.
 	protected void Update() 
 	{
-		AgentUpdate();
+		UnitUpdate();
 		CameraController();
 		MoveController();
 		
