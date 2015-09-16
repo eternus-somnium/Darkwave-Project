@@ -18,15 +18,17 @@ public class NonPlayer : Unit
 
 
 	// Use this for initialization
-	public void NPCStart ()
+	public void NonPlayerStart()
 	{
-		EntityStart();
+		UnitStart();
 		InvokeRepeating("ChooseTarget",0,2f);
 	}
 
 	// Update is called once per frame
-	public void NPCUpdate ()
+	public void NonPlayerUpdate()
 	{
+		UnitUpdate();
+
 		if(gameObject.tag == "Ally")
 			targetList = GameObject.Find("Game Controller").GetComponent<GameController>().allyTargets;
 		else targetList = GameObject.Find("Game Controller").GetComponent<GameController>().enemyTargets;

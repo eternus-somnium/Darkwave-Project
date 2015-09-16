@@ -24,15 +24,16 @@ public class CharacterHUD : MonoBehaviour
 
 	protected float characterHealth;
 	protected float oldCharacterHealth;
-	protected float characterEmp;
-	protected float characterFocus;
-	protected float characterHaste;
-	protected float characterRegen;
-	protected float characterSwift;
-	protected float characterArmor;
 
-	protected float characterDegen;
-	protected float characterBurn;
+	protected bool 
+		characterEmp,
+		characterFocus,
+		characterHaste,
+		characterRegen,
+		characterSwift,
+		characterArmor,
+		characterDegen,
+		characterBurn;
 	protected float characterCrip;
 
 	protected int characterWeaponSlot;
@@ -42,6 +43,7 @@ public class CharacterHUD : MonoBehaviour
 	// Use this for initialization
 	protected void Start ()
 	{
+		healthSlider.maxValue = characterScript.maxHealth;
 		oldCharacterHealth = characterHealth = characterScript.health;
 		gameControllerScript = gameController.GetComponent<GameController>();
 	}
@@ -52,14 +54,14 @@ public class CharacterHUD : MonoBehaviour
 
 
 		characterHealth = characterScript.health;
-		characterEmp = characterScript.empowered;
-		characterFocus = characterScript.focus;
-		characterHaste = characterScript.haste;
-		characterRegen = characterScript.regen;
-		characterSwift = characterScript.swift;
-		characterArmor = characterScript.armored;
-		characterDegen = characterScript.degen;
-		characterBurn = characterScript.burning;
+		characterEmp = characterScript.statusEffects[0];
+		characterFocus = characterScript.statusEffects[5];
+		characterHaste = characterScript.statusEffects[6];
+		characterRegen = characterScript.statusEffects[1];
+		//characterSwift = characterScript.swift;
+		characterArmor = characterScript.statusEffects[4];
+		characterDegen = characterScript.statusEffects[2];
+		characterBurn = characterScript.statusEffects[3];
 		characterCrip = characterScript.crippled;
 		characterWeaponSlot = characterScript.WeaponChoice;
 		characterShards = characterScript.treasures;
@@ -71,20 +73,20 @@ public class CharacterHUD : MonoBehaviour
 		healthText.text = "HP: " + characterHealth.ToString("F2");
 		
 		buffText.text = "";
-		if (characterEmp > 0) buffText.text += "Emp: " + characterEmp.ToString("F2") + " ";
-		if (characterFocus > 0) buffText.text += "Focus: " + characterFocus.ToString("F2") + " ";
-		if (characterHaste > 0) buffText.text += "Haste: " + characterHaste.ToString("F2") + " ";
-		if (characterRegen > 0) buffText.text += "Regen: " + characterRegen.ToString("F2") + " ";
-		if (characterSwift > 0) buffText.text += "Swift: " + characterSwift.ToString("F2") + " ";
-		if (characterArmor > 0) buffText.text += "Armor: " + characterArmor.ToString("F2") + " ";
+		if (characterEmp) buffText.text += "Emp: " ;//+ characterEmp.ToString("F2") + " ";
+		if (characterFocus) buffText.text += "Focus: ";// + characterFocus.ToString("F2") + " ";
+		if (characterHaste) buffText.text += "Haste: ";// + characterHaste.ToString("F2") + " ";
+		if (characterRegen) buffText.text += "Regen: ";// + characterRegen.ToString("F2") + " ";
+		if (characterSwift) buffText.text += "Swift: ";// + characterSwift.ToString("F2") + " ";
+		if (characterArmor) buffText.text += "Armor: ";// + characterArmor.ToString("F2") + " ";
 		
 		debuffText.text = "";
-		if (characterDegen > 0) debuffText.text += "Degen: " + characterDegen.ToString("F2") + " ";
-		if (characterBurn > 0) debuffText.text += "Burn: " + characterBurn.ToString("F2") + " ";
-		if (characterCrip > 0) debuffText.text += "Crip: " + characterCrip.ToString("F2") + " ";
+		if (characterDegen) debuffText.text += "Degen: ";// + characterDegen.ToString("F2") + " ";
+		if (characterBurn) debuffText.text += "Burn: ";// + characterBurn.ToString("F2") + " ";
+		//if (characterCrip) debuffText.text += "Crip: ";// + characterCrip.ToString("F2") + " ";
 		
 		weaponText.text = "Weapon Slot: " + characterWeaponSlot;
-		weaponEnergyText.text = "Weapon Energy: " + characterWeaponEnergy;
+		//weaponEnergyText.text = "Weapon Energy: " + characterWeaponEnergy;
 		
 		timerText.text = "Round Time Left: " + Mathf.Floor(gameControllerScript.timeLeft/60).ToString("00") + 
 			":" + (gameControllerScript.timeLeft%60).ToString("00") +

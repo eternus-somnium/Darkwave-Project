@@ -25,10 +25,12 @@ public class StraightShot : Shot
 		if((gameObject.layer == 8 && col.gameObject.layer == 9) ||
 		  (gameObject.layer == 9 && col.gameObject.layer == 8))
 		{
-			if (parent.GetComponent<Character>() != null && col.collider.material.name == "Head (Instance)")
+			if (col.collider.material.name == "Head (Instance)")
 			{
-				parent.GetComponent<Character>().causedHeadShot = true;
 				touchDamage = Mathf.RoundToInt(touchDamage * criticalMultiplier);
+
+				if(parent != null && parent.GetComponent<Character>() != null)
+					parent.GetComponent<Character>().causedHeadShot = true;
 			}
 
 			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, onFire);

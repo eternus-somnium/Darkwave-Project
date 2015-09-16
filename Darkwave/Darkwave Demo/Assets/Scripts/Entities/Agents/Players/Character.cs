@@ -7,6 +7,7 @@ public class Character : Unit
 	//Used in healthController()
 	bool inLitArea = true, dying=false;
 	//Used for MoveController()
+	CharacterController controller;
 	float jumpPower, jumpCounter = 0.0F;
 	//Used in CameraController()
 	float hRotation = 0F, vRotation = 0F;
@@ -20,7 +21,8 @@ public class Character : Unit
 
 	protected void Start()
 	{
-		AgentStart();
+		UnitStart();
+		controller = GetComponent<CharacterController>();
 		// Spawn point of the character.
 		respawnPoint = new Vector3(
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.x+Random.Range(-1,1)*5,
@@ -33,7 +35,7 @@ public class Character : Unit
 	// Called every frame.
 	protected void Update() 
 	{
-		AgentUpdate();
+		UnitUpdate();
 		CameraController();
 		MoveController();
 
@@ -90,15 +92,14 @@ public class Character : Unit
 */
 	void MoveController()
 	{	
-		Vector3 moveDirection = Vector3.zero;
-		
-		CharacterController controller = GetComponent<CharacterController>();
+		MoveDirection = Vector3.zero;
+
 		if(health > 0)
 		{
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-			moveDirection = transform.TransformDirection(moveDirection);// makes input directions camera relative
-			moveDirection *= baseSpeed * speedMod;
-			
+			MoveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			MoveDirection = transform.TransformDirection(MoveDirection);// makes input directions camera relative
+			MoveDirection *= augmentedSpeed;
+
 			if (controller.isGrounded) 
 			{
 				if (Input.GetButton("Jump"))
@@ -118,12 +119,11 @@ public class Character : Unit
 			else
 			{
 				jumpPower-=Time.deltaTime*5;
-				moveDirection /=2;
+				MoveDirection /=2;
 			}
 		}
-		moveDirection.y = jumpPower + Physics.gravity.y;
-		controller.Move(moveDirection * Time.deltaTime);
-		
+		MoveDirection = new Vector3(MoveDirection.x, jumpPower + Physics.gravity.y, MoveDirection.z);
+		controller.Move(MoveDirection * Time.deltaTime);
 	}
 
 	void CameraController()

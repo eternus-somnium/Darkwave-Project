@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CriticalPoint.cs" />
-     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\NonPlayer.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\Players\Architect.cs" />
      <Compile Include="Assets\Scripts\Entities\Agents\Players\Character.cs" />
@@ -66,6 +65,7 @@
      <Compile Include="Assets\Scripts\HUD\CharacterHUD.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ButtonController.cs" />
      <Compile Include="Assets\Scripts\PlacementWall.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" />
      <Compile Include="Assets\Scripts\Traits\Trait.cs" />

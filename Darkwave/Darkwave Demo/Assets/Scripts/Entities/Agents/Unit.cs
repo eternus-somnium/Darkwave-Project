@@ -36,6 +36,7 @@ public class Unit : Entity
 		augmentedSpeed,
 		swift, // Increases speed by 33%.
 		crippled; // Decreases speed by 50%.
+	Vector3 moveDirection;
 	internal float yMove = 0;
 
 	//Attack variables
@@ -43,16 +44,17 @@ public class Unit : Entity
 	public GameObject[] weapons;
 
 
-	public void AgentStart()
+	public void UnitStart()
 	{
 		EntityStart();
-		augmentedSpeed = baseSpeed;
+
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object
-	public void AgentUpdate()
+	public void UnitUpdate()
 	{
 		if(stun > 0) stun--;
+		augmentedSpeed = baseSpeed + speedMod;
 	}
 
 	// Updates current effects on entity.
@@ -208,6 +210,15 @@ public class Unit : Entity
 		
 		if(col.gameObject.tag == "Death") 
 			health = 0;
+	}
+
+	public Vector3 MoveDirection {
+		get {
+			return moveDirection;
+		}
+		set {
+			moveDirection = value;
+		}
 	}
 
 	public int WeaponChoice

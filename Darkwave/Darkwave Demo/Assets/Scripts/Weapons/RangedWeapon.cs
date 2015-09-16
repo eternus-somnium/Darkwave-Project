@@ -54,6 +54,7 @@ public class RangedWeapon : Weapon
 
 				// Allows modifications to instanced shots.
 				newShot = (GameObject)Instantiate(shot[ammoType], shotSpawnPosition, shotSpawnRotation);
+				newShot.GetComponent<Shot>().parent = parent;
 				newShot.GetComponent<Shot>().touchDamage = Mathf.RoundToInt(touchDamage * parent.GetComponent<Unit>().dmgMod);
 				newShot.GetComponent<Shot>().criticalMultiplier *= parent.GetComponent<Unit>().headShotMod;
 

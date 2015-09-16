@@ -7,17 +7,17 @@ public class Turret : BuildableObject
 {
 	void Start()
 	{
-		NPCStart();
+		NonPlayerStart();
 	}
 	public void TurretStart()
 	{
-		NPCStart();
+		NonPlayerStart();
 	}
 
 	// FixedUpdate is called at a set interval
 	void Update () 
 	{
-		NPCUpdate();
+		NonPlayerUpdate();
 		TurretAI();
 
 		
@@ -25,7 +25,7 @@ public class Turret : BuildableObject
 	}
 	public void TurretUpdate () 
 	{
-		NPCUpdate();
+		NonPlayerUpdate();
 		TurretAI();
 		
 		//Debug.DrawRay (transform.position, target.transform.position - transform.position, rayColor);

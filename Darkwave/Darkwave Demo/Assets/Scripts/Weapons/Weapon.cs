@@ -12,8 +12,14 @@ public class Weapon : MonoBehaviour
 	public int touchDamage;
 	bool ready;
 
-	public float baseCooldown, augmentedCooldown, baseEnergy, augmentedEnergy, 
-				 currentEnergy, currentCooldown=0, energyDrain = 0;
+	public float 
+		baseCooldown,
+		augmentedCooldown,
+		baseEnergy,
+		augmentedEnergy,
+		currentEnergy,
+		currentCooldown=0,
+		energyDrain = 0;
 	public GameObject parent; // Entity wielding the weapon.
 
 	Vector3 defaultPosition;
@@ -56,7 +62,7 @@ public class Weapon : MonoBehaviour
 		else if(gameObject.activeSelf && particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
 
-		//Controls time between shots
+		//Controls time between attacks
 		if(currentCooldown <= 0) ready=true;
 		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= 4; //statusEffects[6] is haste
 		else currentCooldown--;
@@ -74,6 +80,7 @@ public class Weapon : MonoBehaviour
 
 	public void SecondaryActionController(bool value)
 	{
+
 		secondaryActionFlag = value;
 	}
 

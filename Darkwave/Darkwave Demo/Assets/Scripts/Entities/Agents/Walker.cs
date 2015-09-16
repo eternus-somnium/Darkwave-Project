@@ -10,7 +10,7 @@ public class Walker : NonPlayer
 	// Use this for initialization
 	void Start () 
 	{
-		AgentStart ();
+		NonPlayerStart();
 		
 		agent = gameObject.GetComponent<NavMeshAgent> ();
 		agent.speed = baseSpeed;
@@ -20,7 +20,7 @@ public class Walker : NonPlayer
 	// Update is called once per frame
 	void Update () 
 	{
-		AgentUpdate();
+		NonPlayerUpdate();
 		WalkerAI();
 
 
