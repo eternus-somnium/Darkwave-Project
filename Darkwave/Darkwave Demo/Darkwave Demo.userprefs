@@ -1,6 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\..\Projects\AstralClash\ZodiacFighter\Assets\Fighter.cs">
+    <Files>
+      <File FileName="..\..\..\..\..\..\Projects\AstralClash\ZodiacFighter\Assets\Fighter.js" Line="2" Column="1" />
+      <File FileName="..\..\..\..\..\..\Projects\AstralClash\ZodiacFighter\Assets\Fighter.cs" Line="6" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
