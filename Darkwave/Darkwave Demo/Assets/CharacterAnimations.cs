@@ -37,6 +37,18 @@ public class CharacterAnimations : MonoBehaviour
 			if(character.WeaponChoice == 0 || character.WeaponChoice == 2) SwitchWeapon (1,true);
 			else if(character.WeaponChoice == 1) SwitchWeapon(2,false);
 			else if(character.WeaponChoice == 3) SwitchWeapon(3,false);
+
+			//Attack controller
+			if (Input.GetButton ("Fire1") && animator.GetBool("Attack") == false) {
+				animator.SetTrigger ("Primary");
+				animator.SetBool ("Attack", true);
+			}
+			
+			if (Input.GetButton ("Fire2")) {
+				animator.SetTrigger ("Secondary");
+				animator.SetBool ("Attack", true);
+			}
+			//animator.ResetTrigger ("Primary");
 		}
 		else if(character.Dying)
 		{
@@ -46,13 +58,12 @@ public class CharacterAnimations : MonoBehaviour
 		}
 	}
 
-	void AnimationController(Vector3 direction, float runSpeed, float speedWithDir, float turn, bool isGrounded, float pitch)
+	void AnimationController(Vector3 direction, float runSpeed, float speedWithDir, float turn, bool isGrounded)
 	{
 		animator.SetFloat("Speed",runSpeed);
 		animator.SetFloat("SpeedWithDir",speedWithDir);
 		animator.SetFloat("Turn", turn);
 		animator.SetBool("IsGrounded", isGrounded);
-		animator.SetFloat("Pitch", pitch);
 	}
 
 	void MoveController()
@@ -71,16 +82,12 @@ public class CharacterAnimations : MonoBehaviour
 			character.weapons [character.WeaponChoice].transform.rotation = rightHand.rotation * character.weapons [character.WeaponChoice].transform.Find ("GripPoint").localRotation;
 		}
 		Vector3 withoutGravity = new Vector3(character.MoveDirection.x, 0, character.MoveDirection.z);
-		AnimationController (withoutGravity, withoutGravity.magnitude / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).z / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).x / character.baseSpeed, controller.isGrounded,0);
+		AnimationController (withoutGravity, withoutGravity.magnitude / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).z / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).x / character.baseSpeed, controller.isGrounded);
 	}
 
 	void CameraController()
 	{
 		Camera.main.transform.position = head.position + head.forward * 0.1f + head.transform.up * 0.15f;
-		float pitchScale = Camera.main.transform.eulerAngles.x;
-		if (pitchScale > 90)
-			pitchScale -= 360;
-		//AnimationController (Vector3.zero, 0, 0, Mathf.Clamp (animator.GetFloat("Turn") - (Input.GetAxis("Mouse X") / (character.horizontalSpeed)),-0.5f,0.5f), true, pitchScale / 90);
 	}
 
 	void SwitchWeapon(int pose, bool hands)
@@ -113,11 +120,6 @@ public class CharacterAnimations : MonoBehaviour
 		{
 			SwitchWeapon(3,false);
 		}
-
-		//Attack controller
-		if (Input.GetButton ("Fire1")) animator.SetTrigger("Primary");
-
-		//if(Input.GetButton("Fire2")) animator.SetTrigger("Secondary");
 	}
 
 	void OnAnimatorIK()
@@ -149,9 +151,10 @@ public class CharacterAnimations : MonoBehaviour
 			}
 			if(headIK)
 			{
-				animator.SetLookAtWeight(1);
+				animator.SetLookAtWeight(1,0.5f);
 				animator.SetLookAtPosition(Camera.main.transform.position + Camera.main.transform.forward);
 			}
+
 		}
 	}
 

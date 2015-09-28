@@ -49,4 +49,20 @@ public class MeleeWeapon : Weapon
 			}
 		}
 	}
+
+	void OnCollisionEnter(Collision col)
+	{
+		//If the weapon hit something on the opposing team
+		if((gameObject.layer == 8 && col.gameObject.layer == 9) ||
+		   (gameObject.layer == 9 && col.gameObject.layer == 8))
+		{
+			if (parent.GetComponent<Character>() != null && col.collider.material.name == "Head (Instance)")
+			{
+				//touchDamage = Mathf.RoundToInt(touchDamage * criticalMultiplier);
+			}
+			
+			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, false);
+			Debug.Log (gameObject + " hit " + col.gameObject);
+		}
+	}
 }
