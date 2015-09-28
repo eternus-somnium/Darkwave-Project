@@ -36,8 +36,9 @@ public class Walker : NonPlayer
 		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && 
 		   hit.transform.gameObject == target.gameObject)
 		{
-			MainAction();
+			WeaponMainAction(WeaponChoice);
 		}
+
 	}
 	
 }

@@ -6,11 +6,22 @@ using System.Collections.Generic;
 
 public class Grid : MonoBehaviour 
 {
-    public int row, col;
-    public Transform laserGrid;
+    public int 
+		row,
+		col;
+    public Transform 
+		laserGrid;
 	
-    private float squareArea, width, depth, height = 0f;
-    private Vector3 start, placementPos, center, size;
+    private float 
+		squareArea, 
+		width, 
+		depth, 
+		height = 0f;
+    private Vector3 
+		start, 
+		placementPos, 
+		center, 
+		size;
     private List<GameObject> gridLasers;
     private Vector2 lastGridPos;
     private bool[,] canPlaceArray;
@@ -71,7 +82,7 @@ public class Grid : MonoBehaviour
     }
 
     //returns the row and col number as a vector2
-    public Vector2 getGridRowCol(Vector3 position)
+    public Vector2 GetGridPosition(Vector3 position)
     {
         Vector2 gridPos = new Vector2(-1, -1);
 
@@ -85,7 +96,7 @@ public class Grid : MonoBehaviour
         }
 
         //gets cols
-        for (int j = 0; j <= col; j++)
+        for (int j = 0; j <= col + 1; j++)
         {
             if (position.z > start.z + (depth * j) && position.z <  start.z + (depth * (j + 1)))
             {
@@ -208,7 +219,7 @@ public class Grid : MonoBehaviour
         return vectors;
     }
     
-    public void placeInGrid(GameObject obj)
+    public void editGrid(GameObject obj, bool create)
     //places the reference object in objectsInGrid and updates canPlaceArray
     {
         Vector2 gridPos = new Vector3(-1, -1);
@@ -230,9 +241,16 @@ public class Grid : MonoBehaviour
                 gridPos.y = j;
             }
         }
-        canPlaceArray[(int)gridPos.x, (int)gridPos.y] = false;//updates array so that objects cannot be placed on others
-
-        objectsInGrid[(int)gridPos.x, (int)gridPos.y] = obj;//puts gameobject in reference array
+		if(create)
+		{
+	        canPlaceArray[(int)gridPos.x, (int)gridPos.y] = false;//updates array so that objects cannot be placed on others
+	        objectsInGrid[(int)gridPos.x, (int)gridPos.y] = obj;//puts gameobject in reference array
+		}
+		else
+		{
+			canPlaceArray[(int)gridPos.x, (int)gridPos.y] = true;//updates array so that objects cannot be placed on others
+			objectsInGrid[(int)gridPos.x, (int)gridPos.y] = null;//puts gameobject in reference array
+		}
     }
 
     private Vector3 gridToVector(Vector2 grid)

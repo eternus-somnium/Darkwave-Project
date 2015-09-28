@@ -5,8 +5,8 @@ public class Weapon : MonoBehaviour
 {
 
 	public bool 
-		mainActionFlag,
-		secondaryActionFlag,
+		mainActionFlag = false,
+		secondaryActionFlag = false,
 		particleFlag,
 		gridLinesFlag;
 	public int touchDamage;
@@ -73,15 +73,15 @@ public class Weapon : MonoBehaviour
 		//Trigger animation built into weapon object
 	}
 
-	public void MainActionController(bool value)
+	public void MainActionController()
 	{
-		mainActionFlag = value;
+		mainActionFlag = true;
 	}
 
-	public void SecondaryActionController(bool value)
+	public void SecondaryActionController()
 	{
 
-		secondaryActionFlag = value;
+		secondaryActionFlag = true;
 	}
 
 	public Vector3 DefaultPosition {

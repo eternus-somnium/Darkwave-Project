@@ -12,42 +12,30 @@ public class Lunge : Weapon
 		WeaponStart();
 	}
 
-	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
-		MainAction();
-		SecondaryAction();
+		if(mainActionFlag) MainAction();
+		if(secondaryActionFlag) SecondaryAction();
 	}
 
 	public void MainAction()
 	{
-		if(mainActionFlag)
+		AttackAnimation();
+		if(Ready && currentEnergy > energyDrain)
 		{
-			AttackAnimation();
-			if(Ready && currentEnergy > energyDrain)
-			{
-				Debug.Log("Lunging");
-				transform.position = Vector3.MoveTowards(transform.position, 
-				                                         parent.GetComponent<NonPlayer>().target.transform.position, 
-				                                         parent.GetComponent<NonPlayer>().baseSpeed*lungeSpeedMultiplier);
-				//transform.Translate((parent.GetComponent<NPC>().target.transform.position)*parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
-				Ready=false;
-				currentCooldown = augmentedCooldown;
-				currentEnergy -= energyDrain;
-			}
+			Debug.Log("Lunging");
+			transform.position = Vector3.MoveTowards(transform.position, 
+			                                         parent.GetComponent<NonPlayer>().target.transform.position, 
+			                                         parent.GetComponent<NonPlayer>().baseSpeed*lungeSpeedMultiplier);
+			//transform.Translate((parent.GetComponent<NPC>().target.transform.position)*parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
+			Ready=false;
+			currentCooldown = augmentedCooldown;
+			currentEnergy -= energyDrain;
 		}
 	}
 
 	public void SecondaryAction()
 	{
-
-		if(secondaryActionFlag)
-		{
-			//Raise arms
-		}
-		else
-		{
-			//lower arms
-		}
+		
 	}
 }

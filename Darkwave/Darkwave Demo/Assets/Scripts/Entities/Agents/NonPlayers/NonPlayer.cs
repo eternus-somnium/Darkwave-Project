@@ -72,14 +72,13 @@ public class NonPlayer : Unit
 					}
 				}
 			}
+
+			RaycastHit hit;
+			
+			if(Physics.Raycast(transform.position, target.transform.position, out hit))
+				FocusPoint = hit.point;
+			else FocusPoint = Vector3.zero;
+			Debug.DrawLine(transform.position, Vector3.zero, Color.cyan);
 		}
-	}
-
-
-	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
-	//Called by the child function when the conditions have been.
-	public void MainAction()
-	{
-		weapons[WeaponChoice].SendMessage("MainActionController", true);
 	}
 }

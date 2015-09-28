@@ -16,7 +16,6 @@ public class Character : Unit
 	float respawnTimer = -99;
 	Vector3 respawnPoint;
 	//Used in WeaponController()
-	public Vector3 focusPoint; //Point in space where a ray from the center of the camera first hits an object
 	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
 
 	protected void Start()
@@ -52,8 +51,6 @@ public class Character : Unit
 		{
 			dying=true;
 			aggroValue = 0;
-			weapons[WeaponChoice].SendMessage("MainActionController", false);
-			weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
 		}
@@ -143,8 +140,8 @@ public class Character : Unit
 
 		if(Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
 		                   GetComponentInChildren<Camera>().transform.forward, out hit))
-			focusPoint = hit.point;
-		else focusPoint = Vector3.zero;
+			FocusPoint = hit.point;
+		else FocusPoint = Vector3.zero;
 		Debug.DrawLine(transform.position, Vector3.zero, Color.cyan);
 
 	}
@@ -183,11 +180,9 @@ public class Character : Unit
 		else gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
 
 		//Attack controller
-		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController", true);
-		else weapons[WeaponChoice].SendMessage("MainActionController", false);
+		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController");
 		
-		if(Input.GetButton("Fire2")) weapons[WeaponChoice].SendMessage("SecondaryActionController", true);
-		else weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
+		if(Input.GetButton("Fire2")) weapons[WeaponChoice].SendMessage("SecondaryActionController");
 	}
 
 	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
@@ -244,18 +239,6 @@ public class Character : Unit
 		{
 			treasures++;
 			Destroy(col.gameObject);
-		}
-	}
-
-	public Vector3 Target 
-	{
-		get 
-		{
-			return focusPoint;
-		}
-		set 
-		{
-			focusPoint = value;
 		}
 	}
 

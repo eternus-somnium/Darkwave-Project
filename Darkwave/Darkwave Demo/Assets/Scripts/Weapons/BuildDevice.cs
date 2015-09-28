@@ -26,20 +26,19 @@ public class BuildDevice : Weapon
 			item.transform.rotation = Quaternion.identity;
 		placeable = CheckPlacement();
 
-		MainAction();
-		SecondaryAction();
+		if(mainActionFlag) MainAction();
+		if(secondaryActionFlag) SecondaryAction();
 	}
 
 	public void MainAction()
 	{
-		if(mainActionFlag)
+		GameObject obj;
+		if (Ready)
 		{
-			GameObject obj;
-
 			if(placeable == 1)
 			{
 				obj = GameObject.Instantiate(buildableObjects[selectedObject], m_pos, Quaternion.identity) as GameObject;
-				GameObject.Find("Ground").GetComponent<Grid>().placeInGrid(obj);
+				GameObject.Find("Ground").GetComponent<Grid>().editGrid(obj, true);
 
 				previewObjects[selectedObject].SetActive(false);
 			}
@@ -52,13 +51,14 @@ public class BuildDevice : Weapon
 			}
 
 			Ready=false;
-			currentCooldown=augmentedCooldown;
+			currentCooldown=baseCooldown;
 		}
+		mainActionFlag=false;
 	}
 	
 	public void SecondaryAction()
 	{
-		if(secondaryActionFlag)
+		if(Ready)
 		{
 			previewObjects[selectedObject].SetActive(false);
 
@@ -69,8 +69,9 @@ public class BuildDevice : Weapon
 			previewObjects[selectedObject].SetActive(true);
 
 			Ready=false;
-			currentCooldown=augmentedCooldown;
+			currentCooldown=baseCooldown;
 		}
+		secondaryActionFlag=false;
 	}
 
 	int CheckPlacement()

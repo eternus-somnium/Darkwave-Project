@@ -42,7 +42,7 @@ public class Unit : Entity
 	//Attack variables
 	int weaponChoice  = 0;
 	public GameObject[] weapons;
-
+	Vector3 focusPoint; //Point in space where a ray from the center of the object hits a target
 
 	public void UnitStart()
 	{
@@ -133,7 +133,6 @@ public class Unit : Entity
 		Debug.Log("On headshot triggers end");
 	}
 
-
 	// Parent method.
 	public virtual Shot FoeDmgEffect(Shot shot, Unit foe)
 	{
@@ -191,6 +190,18 @@ public class Unit : Entity
 		statusEffects[6] = false;
 	}
 
+	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
+	//Called by the child function when the conditions have been.
+	public void WeaponMainAction(int chosenWeapon)
+	{
+		weapons[chosenWeapon].SendMessage("MainActionController");
+	}
+
+	public void WeaponSecondaryAction(int chosenWeapon)
+	{
+		weapons[chosenWeapon].SendMessage("SecondaryActionController");
+	}
+
 	//Stub function for implementation of an animation controller
 	protected virtual void AnimationController()
 	{
@@ -230,6 +241,18 @@ public class Unit : Entity
 		set
 		{
 			weaponChoice = value;
+		}
+	}
+
+	public Vector3 FocusPoint 
+	{
+		get 
+		{
+			return focusPoint;
+		}
+		set 
+		{
+			focusPoint = value;
 		}
 	}
 }

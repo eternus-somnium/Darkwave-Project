@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlacementWall : MonoBehaviour 
+public class PlacementWall : BuildableObject 
 {
     Grid m_grid;
     List<GameObject> m_walls;
@@ -10,6 +10,7 @@ public class PlacementWall : MonoBehaviour
 
 	void Start () 
     {
+		BuildableObjectStart();
         m_grid = GameObject.Find("Ground").GetComponent<Grid>();
 
         List<Vector3> vecs = m_grid.getAdjacentWallLocations(transform.position);
@@ -26,6 +27,7 @@ public class PlacementWall : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+		BuildableObjectUpdate();
         for (int i = 0; i < m_walls.Count; i++)
         {
             if (m_walls[i] != null)
