@@ -52,10 +52,10 @@ public class RangedWeapon : Weapon
 				0);
 			Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 
-			// Allows modifications to instanced shots.
+			//Modifies instantiated shots
 			newShot = (GameObject)Instantiate(shot[ammoType], shotSpawnPosition, shotSpawnRotation);
 			newShot.GetComponent<Shot>().parent = parent;
-			newShot.GetComponent<Shot>().touchDamage = Mathf.RoundToInt(touchDamage * parent.GetComponent<Unit>().dmgMod);
+			newShot.GetComponent<Shot>().touchDamage = Mathf.RoundToInt(baseDamage * parent.GetComponent<Unit>().dmgMod);
 			newShot.GetComponent<Shot>().criticalMultiplier *= parent.GetComponent<Unit>().headShotMod;
 
 

@@ -94,6 +94,7 @@ public class Character : Unit
 		if(health > 0)
 		{
 			MoveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			Debug.Log(MoveDirection);
 			MoveDirection = transform.TransformDirection(MoveDirection);// makes input directions camera relative
 			MoveDirection *= augmentedSpeed;
 
@@ -176,8 +177,10 @@ public class Character : Unit
 		}
 
 		//Grid controller
-		if(weapons[WeaponChoice].GetComponent<Weapon>().gridLinesFlag) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
-		else gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
+		if(weapons[WeaponChoice].GetComponent<Weapon>().gridLinesFlag) 
+			gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
+		else 
+			gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
 
 		//Attack controller
 		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController");

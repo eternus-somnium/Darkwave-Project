@@ -9,7 +9,8 @@ public class Weapon : MonoBehaviour
 		secondaryActionFlag = false,
 		particleFlag,
 		gridLinesFlag;
-	public int touchDamage;
+	public int 
+		baseDamage;
 	bool ready;
 
 	public float 
@@ -51,7 +52,7 @@ public class Weapon : MonoBehaviour
 	// Controls the weapon's fire rate and recharge
 	protected void WeaponTime()
 	{
-
+		//
 		//Continuous energy recharge
 		if(currentEnergy < augmentedEnergy) 
 		{

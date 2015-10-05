@@ -16,7 +16,7 @@ public class Grid : MonoBehaviour
 		squareArea, 
 		width, 
 		depth, 
-		height = 0f;
+		height = .25f;
     private Vector3 
 		start, 
 		placementPos, 
@@ -34,8 +34,8 @@ public class Grid : MonoBehaviour
         size = gameObject.GetComponent<Renderer>().bounds.size;
         width = size.x / row;
         depth = size.z / col;
-        center = new Vector3(gameObject.transform.position.x, height, gameObject.transform.position.z);
-        start = new Vector3(center.x - (size.x / 2), height, center.z - (size.z / 2));
+        center = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + height, gameObject.transform.position.z);
+		start = new Vector3(center.x - (size.x / 2), gameObject.transform.position.y + height, center.z - (size.z / 2));
         gridLasers = new List<GameObject>();
         canPlaceArray = new bool[row, col];
         objectsInGrid = new GameObject[row, col];

@@ -13,8 +13,8 @@ public class Unit : Entity
 	public float 
 		stun=0,
 		accMod=0, // Accuracy modifier
-		defMod=0, // Defense modifier
-		dmgMod=0, // Damage modifier
+		defMod=1, // Defense modifier
+		dmgMod=1, // Damage modifier
 		headShotMod=0; // Extra critical damage
 
 	//Status effects
@@ -36,7 +36,7 @@ public class Unit : Entity
 		augmentedSpeed,
 		swift, // Increases speed by 33%.
 		crippled; // Decreases speed by 50%.
-	Vector3 moveDirection;
+	public Vector3 moveDirection;
 	internal float yMove = 0;
 
 	//Attack variables

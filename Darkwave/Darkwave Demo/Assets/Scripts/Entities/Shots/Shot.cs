@@ -9,13 +9,11 @@ public class Shot : Entity
 		onFire;
 	public float 
 		baseSpeed,
-		damageModifier=1,
 		criticalMultiplier=1;
 	
 	public void ShotStart()
 	{
-		health = maxHealth;
-		criticalMultiplier = 1;
+		EntityStart();
 	}
 
 	public void ShotUpdate()
