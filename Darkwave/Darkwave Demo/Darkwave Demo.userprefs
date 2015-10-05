@@ -1,9 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\Players\Character.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Grid.cs">
     <Files>
-      <File FileName="Assets\Scripts\Entities\Agents\Players\Character.cs" Line="60" Column="15" />
-      <File FileName="Assets\CharacterAnimations.cs" Line="170" Column="1" />
+      <File FileName="Assets\Scripts\Grid.cs" Line="18" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

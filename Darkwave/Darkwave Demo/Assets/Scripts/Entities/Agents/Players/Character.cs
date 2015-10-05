@@ -51,10 +51,7 @@ public class Character : Unit
 				aggroValue = baseAggroValue + treasures;
 				WeaponController ();
 				CameraController ();
-		} else if (health == 0) {
-			Camera.main.transform.position -= (Camera.main.transform.position - (transform.position - (transform.forward * 5))) * 0.1f;
-			Camera.main.transform.LookAt (transform.position);
-		}
+		} 
 		else if(!dying)
 		{
 			dying=true;
@@ -74,6 +71,10 @@ public class Character : Unit
 			weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
+		}
+		if (health == 0) {
+			Camera.main.transform.position -= (Camera.main.transform.position - (transform.position - (transform.forward * 5))) * 0.1f;
+			Camera.main.transform.LookAt (transform.position);
 		}
 	}
 	
