@@ -27,7 +27,6 @@ public class CharacterAnimations : MonoBehaviour
 
 	protected void Update() 
 	{
-		CameraController();
 		MoveController();
 
 		// Runs WeaponController() if character is still alive. Else, it runs DeathController().
@@ -49,6 +48,7 @@ public class CharacterAnimations : MonoBehaviour
 				animator.SetBool ("Attack", true);
 			}
 			//animator.ResetTrigger ("Primary");
+			CameraController();
 		}
 		else if(character.Dying)
 		{

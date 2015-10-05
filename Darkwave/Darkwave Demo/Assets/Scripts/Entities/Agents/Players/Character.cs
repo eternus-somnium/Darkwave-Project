@@ -18,6 +18,9 @@ public class Character : Unit
 	//Used in WeaponController()
 	public Vector3 focusPoint; //Point in space where a ray from the center of the camera first hits an object
 	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
+
+	private Vector3 defaultCameraPos;
+	private Quaternion defaultCameraRot;
 	
 	protected void Start()
 	{
@@ -29,6 +32,8 @@ public class Character : Unit
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
+		defaultCameraPos = Camera.main.transform.localPosition;
+		defaultCameraRot = Camera.main.transform.localRotation;
 		
 	}
 	
@@ -36,17 +41,19 @@ public class Character : Unit
 	protected void Update() 
 	{
 		UnitUpdate();
-		CameraController();
 		MoveController();
 		
 		
 		
 		// Runs WeaponController() if character is still alive. Else, it runs DeathController().
-		if(health>0)
-		{ 
-			dying = false;
-			aggroValue = baseAggroValue + treasures;
-			WeaponController();
+		if (health > 0) { 
+				dying = false;
+				aggroValue = baseAggroValue + treasures;
+				WeaponController ();
+				CameraController ();
+		} else if (health == 0) {
+			Camera.main.transform.position -= (Camera.main.transform.position - (transform.position - (transform.forward * 5))) * 0.1f;
+			Camera.main.transform.LookAt (transform.position);
 		}
 		else if(!dying)
 		{
