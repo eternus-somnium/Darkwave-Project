@@ -9,6 +9,7 @@ public class RangedWeapon : Weapon
 	bool aiming = false;
 	public GameObject[] shot;
 	private GameObject newShot;
+	private Shot newShotScript;
 	private Vector3 bulletSpread;
 
 
@@ -54,8 +55,12 @@ public class RangedWeapon : Weapon
 
 				// Allows modifications to instanced shots.
 				newShot = (GameObject)Instantiate(shot[ammoType], shotSpawnPosition, shotSpawnRotation);
-				newShot.GetComponent<Shot>().touchDamage = Mathf.RoundToInt(touchDamage * parent.GetComponent<Unit>().dmgMod);
-				newShot.GetComponent<Shot>().criticalMultiplier *= parent.GetComponent<Unit>().headShotMod;
+				Debug.Log("parent.GetComponent<Unit>().dmgMod = " + parent.GetComponent<Unit>().dmgMod);
+				Debug.Log("parent.GetComponent<Unit>() = " + parent.GetComponent<Unit>());
+				newShotScript = newShot.GetComponent<Shot>();
+				newShotScript.touchDamage = Mathf.RoundToInt(newShotScript.touchDamage * (1 + parent.GetComponent<Unit>().dmgMod));
+				newShotScript.criticalMultiplier *= parent.GetComponent<Unit>().headShotMod;
+				newShotScript.parent = parent;
 
 
 				Ready=false;

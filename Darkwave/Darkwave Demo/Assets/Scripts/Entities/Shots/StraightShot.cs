@@ -5,17 +5,22 @@ using System.Collections;
 public class StraightShot : Shot
 {
 	// Use this for initialization
+	void Awake()
+	{
+		//touchDamage = 5;
+	}
+
 	void Start () 
 	{
 		ShotStart();
-		touchDamage = Mathf.RoundToInt(health);
+		//touchDamage = Mathf.RoundToInt(health);
 		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * baseSpeed);
 	}
 
 	void Update()
 	{
 		ShotUpdate();
-		touchDamage = Mathf.RoundToInt(health);
+		//touchDamage = Mathf.RoundToInt(health);
 	}
 
 	//Controls the shot's behavior when it hits something
@@ -31,6 +36,7 @@ public class StraightShot : Shot
 				touchDamage = Mathf.RoundToInt(touchDamage * criticalMultiplier);
 			}
 
+			Debug.Log("Touch damage of Straight Shot is " + touchDamage);
 			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, onFire);
 			Debug.Log (gameObject + " hit " + col.gameObject);
 		}

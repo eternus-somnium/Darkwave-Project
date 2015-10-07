@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Character : Unit 
 {
@@ -17,6 +18,7 @@ public class Character : Unit
 	//Used in WeaponController()
 	public Vector3 focusPoint; //Point in space where a ray from the center of the camera first hits an object
 	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
+	public CharacterHUD hud;
 
 	protected void Start()
 	{
@@ -28,6 +30,56 @@ public class Character : Unit
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
 
+		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff.EffectStart(1,this,this);
+		NewEffect(tempEff);
+
+
+		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff.EffectStart(1,this,this);
+		NewEffect(tempEff);
+
+
+		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff.EffectStart(1,this,this);
+		NewEffect(tempEff);
+
+
+		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff.EffectStart(1,this,this);
+		NewEffect(tempEff);
+
+
+		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff.EffectStart(1,this,this);
+		NewEffect(tempEff);
+
+
+		Debug.Log ("The longest duration is " + longestEmp.duration);
+
+		/* Test of an older version of effects on the player.
+		tempEff = gameObject.AddComponent<Empowered>();
+		tempEff.EffectStart(10,this,this);
+		if (!longestEmp || longestEmp.duration < 10) longestEmp = tempEff;
+		Debug.Log("Longest Empower is at " + longestEmp.duration + " seconds.");
+
+		tempEff = gameObject.AddComponent<Empowered>();
+		tempEff.EffectStart(15,this,this);
+		if (!longestEmp || longestEmp.duration < 15) longestEmp = tempEff;
+		Debug.Log("Longest Empower is at " + longestEmp.duration + " seconds.");
+		
+		tempEff = gameObject.AddComponent<Empowered>();
+		tempEff.EffectStart(5,this,this);
+		if (!longestEmp || longestEmp.duration < 5) longestEmp = tempEff;
+		Debug.Log("Longest Empower is at " + longestEmp.duration + " seconds.");
+		*/
+	}
+
+	/// Additionally runs updateEffectTimers.
+	new protected void NewEffect(Effect newEff)
+	{
+		base.NewEffect(newEff);
+		hud.updateEffectTimers(longestEmp);
 	}
 
 	// Called every frame.
