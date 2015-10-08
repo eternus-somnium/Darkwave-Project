@@ -5,7 +5,7 @@ public class Regeneration : Effect
 {
 	private float healthGain;
 
-	// Set values that need to be set earlier than Start().
+	/// Set variables before the object is interacted with.
 	void Awake()
 	{
 		effectName = "Regeneration";
@@ -13,13 +13,13 @@ public class Regeneration : Effect
 		stackDuration = false;
 	}
 
-	// Use this for initialization
+	/// Change the state of the target unit on creation.
 	void Start ()
 	{
 		targetUnit.statusEffects[1] = true;
 	}
 	
-	// Update is called once per frame
+	/// Counts down the duration. Stops the effect if duration reaches zero or lower.
 	void Update ()
 	{
 		if (targetUnit.health < targetUnit.maxHealth)
@@ -38,7 +38,7 @@ public class Regeneration : Effect
 		}
 	}
 
-	// Reverses the effects of Start() and destroys the instance of this Regeneration class.
+	/// Reverses the effects of Start() and destroys this object.
 	public override void EffectStop()
 	{
 		int num = targetUnit.GetComponents<Regeneration>().Length;

@@ -16,6 +16,7 @@ public class Unit : Entity
 		accMod=0, // Accuracy modifier
 		defMod=0, // Defense modifier
 		dmgMod=0, // Damage modifier
+		actMod=0, // Action speed modifier (reloading, firing rate, ability activation, etc.)
 		headShotMod=0; // Extra critical damage
 
 	//Status effects
@@ -268,6 +269,11 @@ public class Unit : Entity
 
 	}
 
+	/// <summary>
+	///  DamageController is called by another function that deals damage to this Unit.
+	/// </summary>
+	/// <param name="baseDamage">Base damage.</param>
+	/// <param name="isBurning">If set to <c>true</c> is burning.</param>
 	public void DamageController(float baseDamage, bool isBurning)
 	{
 		baseDamage *= (1 - defMod); //statusEffects[4] is armored

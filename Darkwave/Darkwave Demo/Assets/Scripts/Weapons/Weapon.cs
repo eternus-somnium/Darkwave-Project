@@ -58,7 +58,7 @@ public class Weapon : MonoBehaviour
 
 		//Controls time between shots
 		if(currentCooldown <= 0) ready=true;
-		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= 4; //statusEffects[6] is haste
+		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= parent.GetComponent<Unit>().actMod; //statusEffects[6] is haste
 		else currentCooldown--;
 	}
 

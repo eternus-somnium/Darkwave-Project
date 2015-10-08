@@ -5,7 +5,7 @@ public class Focused : Effect
 {
 	private float focus;
 	
-	// Update is called once per frame
+	/// Set variables before the object is interacted with.
 	void Awake()
 	{
 		effectName = "Focused";
@@ -14,13 +14,14 @@ public class Focused : Effect
 		hasTrig = false;
 	}
 	
+	/// Change the state of the target unit on creation.
 	void Start ()
 	{
 		targetUnit.statusEffects[5] = true;
 		targetUnit.accMod -= focus;
 	}
 	
-	// Counts down the duration. Stops the effect if duration reaches zero or lower.
+	/// Counts down the duration. Stops the effect if duration reaches zero or lower.
 	void Update ()
 	{
 		if (duration > 0) duration -= Time.deltaTime;
@@ -30,7 +31,7 @@ public class Focused : Effect
 		}
 	}
 	
-	// Reverses the effects of Start() and destroys the instance of this Empowered class.
+	/// Reverses the effects of Start() and destroys this object.
 	public override void EffectStop()
 	{
 		int num = targetUnit.GetComponents<Focused>().Length;

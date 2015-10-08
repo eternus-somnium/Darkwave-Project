@@ -52,7 +52,9 @@
      <Compile Include="Assets\Scripts\Effects\Buffs\Focused.cs" />
      <Compile Include="Assets\Scripts\Effects\Buffs\Hasted.cs" />
      <Compile Include="Assets\Scripts\Effects\Buffs\Regeneration.cs" />
+     <Compile Include="Assets\Scripts\Effects\Buffs\Swiftness.cs" />
      <Compile Include="Assets\Scripts\Effects\Debuffs\Burning.cs" />
+     <Compile Include="Assets\Scripts\Effects\Debuffs\Crippled.cs" />
      <Compile Include="Assets\Scripts\Effects\Debuffs\Degeneration.cs" />
      <Compile Include="Assets\Scripts\Effects\Effect.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />

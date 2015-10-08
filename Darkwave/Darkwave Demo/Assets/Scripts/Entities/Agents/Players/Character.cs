@@ -30,27 +30,27 @@ public class Character : Unit
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
 
-		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff = gameObject.AddComponent<Crippled>();
 		tempEff.EffectStart(1,this,this);
 		NewEffect(tempEff);
 
 
-		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff = gameObject.AddComponent<Crippled>();
 		tempEff.EffectStart(1,this,this);
 		NewEffect(tempEff);
 
 
-		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff = gameObject.AddComponent<Crippled>();
 		tempEff.EffectStart(1,this,this);
 		NewEffect(tempEff);
 
 
-		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff = gameObject.AddComponent<Crippled>();
 		tempEff.EffectStart(1,this,this);
 		NewEffect(tempEff);
 
 
-		tempEff = gameObject.AddComponent<Hasted>();
+		tempEff = gameObject.AddComponent<Crippled>();
 		tempEff.EffectStart(1,this,this);
 		NewEffect(tempEff);
 

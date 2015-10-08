@@ -5,7 +5,7 @@ public class Armored : Effect
 {
 	private float defense;
 	
-	// Update is called once per frame
+	/// Set variables before the object is interacted with.
 	void Awake()
 	{
 		effectName = "Armored";
@@ -14,13 +14,14 @@ public class Armored : Effect
 		hasTrig = false;
 	}
 	
+	/// Change the state of the target unit on creation.
 	void Start ()
 	{
 		targetUnit.statusEffects[4] = true;
 		targetUnit.defMod += defense;
 	}
 
-	// Counts down the duration. Stops the effect if duration reaches zero or lower.
+	/// Counts down the duration. Stops the effect if duration reaches zero or lower.
 	void Update ()
 	{
 		if (duration > 0) duration -= Time.deltaTime;
@@ -30,7 +31,7 @@ public class Armored : Effect
 		}
 	}
 	
-	// Reverses the effects of Start() and destroys the instance of this Empowered class.
+	/// Reverses the effects of Start() and destroys this object.
 	public override void EffectStop()
 	{
 		int num = targetUnit.GetComponents<Armored>().Length;

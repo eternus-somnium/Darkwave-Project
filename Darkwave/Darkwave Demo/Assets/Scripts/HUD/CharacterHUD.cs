@@ -34,6 +34,7 @@ public class CharacterHUD : MonoBehaviour
 	protected float characterRegen;
 	protected Regeneration longestReg;
 	protected float characterSwift;
+	protected Swiftness longestSwift;
 	protected float characterArmor;
 	protected Armored longestArmor;
 
@@ -42,6 +43,7 @@ public class CharacterHUD : MonoBehaviour
 	protected float characterBurn;
 	protected Burning longestBurn;
 	protected float characterCrip;
+	protected Crippled longestCrip;
 
 	protected int characterWeaponSlot;
 	protected float characterWeaponEnergy;
@@ -105,6 +107,18 @@ public class CharacterHUD : MonoBehaviour
 			Debug.Log ("Setting longestHaste.");
 			break;
 		}
+		case "Swiftness":
+		{
+			if (effect.isLongest) longestSwift = (Swiftness)effect;
+			Debug.Log ("Setting longestSwift.");
+			break;
+		}
+		case "Crippled":
+		{
+			if (effect.isLongest) longestCrip = (Crippled)effect;
+			Debug.Log ("Setting longestCrip.");
+			break;
+		}
 		default:
 		{
 			Debug.Log("Invalid effect.");
@@ -124,14 +138,16 @@ public class CharacterHUD : MonoBehaviour
 		else characterHaste = 0;
 		if (longestReg) characterRegen = longestReg.duration;
 		else characterRegen = 0;
-		characterSwift = characterScript.swift;
+		if (longestSwift) characterSwift = longestSwift.duration;
+		else characterSwift = 0;
 		if (longestArmor) characterArmor = longestArmor.duration;
 		else characterArmor = 0;
 		if (longestDegen) characterDegen = longestDegen.duration;
 		else characterDegen = 0;
 		if (longestBurn) characterBurn = longestBurn.duration;
 		else characterBurn = 0;
-		characterCrip = characterScript.crippled;
+		if (longestCrip) characterCrip = longestCrip.duration;
+		else characterCrip = 0;
 		characterWeaponSlot = characterScript.WeaponChoice;
 		characterShards = characterScript.treasures;
 
