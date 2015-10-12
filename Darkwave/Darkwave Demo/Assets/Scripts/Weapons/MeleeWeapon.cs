@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MeleeWeapon : Weapon 
 {
-
+	public AudioClip primaryHit;
+	public AudioClip secondaryHit;
 	// Use this for initialization
 	void Start () 
 	{
@@ -62,6 +63,7 @@ public class MeleeWeapon : Weapon
 			}
 			
 			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, false);
+			if(GetComponent<AudioSource>())PlaySound (primaryHit);
 			Debug.Log (gameObject + " hit " + col.gameObject);
 		}
 	}

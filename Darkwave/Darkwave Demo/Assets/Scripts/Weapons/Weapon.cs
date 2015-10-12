@@ -12,6 +12,9 @@ public class Weapon : MonoBehaviour
 	public int touchDamage;
 	bool ready;
 
+	public AudioClip primarySound;
+	public AudioClip secondarySound;
+
 	public float baseCooldown, augmentedCooldown, baseEnergy, augmentedEnergy, 
 				 currentEnergy, currentCooldown=0, energyDrain = 0;
 	public GameObject parent; // Entity wielding the weapon.
@@ -65,6 +68,11 @@ public class Weapon : MonoBehaviour
 	public void AttackAnimation()
 	{
 		//Trigger animation built into weapon object
+		if (GetComponent<AudioSource> ())
+		{
+			if(mainActionFlag) PlaySound (primarySound);
+			else if(secondaryActionFlag) PlaySound (secondarySound);
+		}
 	}
 
 	public void MainActionController(bool value)
@@ -75,6 +83,12 @@ public class Weapon : MonoBehaviour
 	public void SecondaryActionController(bool value)
 	{
 		secondaryActionFlag = value;
+	}
+
+	public void PlaySound(AudioClip sound)
+	{
+		GetComponent<AudioSource> ().clip = sound;
+		GetComponent<AudioSource> ().Play();
 	}
 
 	public Vector3 DefaultPosition {

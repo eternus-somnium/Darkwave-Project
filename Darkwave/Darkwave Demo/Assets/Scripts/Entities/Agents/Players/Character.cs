@@ -19,6 +19,9 @@ public class Character : Unit
 	public Vector3 focusPoint; //Point in space where a ray from the center of the camera first hits an object
 	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
 
+	public AudioClip[] painSounds;
+	public AudioClip[] deathSounds;
+
 	private Vector3 defaultCameraPos;
 	private Quaternion defaultCameraRot;
 	
@@ -55,6 +58,7 @@ public class Character : Unit
 		else if(!dying)
 		{
 			dying=true;
+			PlaySound(deathSounds[Random.Range(0,deathSounds.Length)]);
 			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = false;
 			if(GetComponent<CharacterAnimations>())
 			{
@@ -223,6 +227,12 @@ public class Character : Unit
 			health += counter / 1000;
 		else if (!inLitArea)
 			health += counter / 100;
+	}
+
+	public void PlaySound(AudioClip sound)
+	{
+		GetComponent<AudioSource> ().clip = sound;
+		GetComponent<AudioSource> ().Play();
 	}
 	
 	//Controls respawn timer and respawn position.

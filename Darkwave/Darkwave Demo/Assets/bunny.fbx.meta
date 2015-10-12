@@ -368,34 +368,32 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 'MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/L_Shoulder/L_UpperArm/L_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-      MuscleClip ''bunny'' conversion warning: ''Armature/Pelvis/LowerTorso/UpperTorso/R_Shoulder/R_UpperArm/R_Forearm''
-      has scale animation''. It is not supported.
-
-'
+    animationImportWarnings: "\nClip 'Armature|BasePose' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'L_Forearm' has scale animation that will
+      be discarded.\n\t'R_Forearm' has scale animation that will be discarded.\n\nClip
+      'Armature|BuildDevice' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Forearm'
+      has scale animation that will be discarded.\n\nClip 'Armature|HammerAttackPrimary'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'R_Forearm' has
+      scale animation that will be discarded.\n\nClip 'Armature|Land' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'R_Forearm' has scale animation
+      that will be discarded.\n\nClip 'Armature|Pain' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'L_Forearm' has scale animation that will
+      be discarded.\n\t'R_Forearm' has scale animation that will be discarded.\n\nClip
+      'Armature|PreJump' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'L_Forearm'
+      has scale animation that will be discarded.\n\t'R_Forearm' has scale animation
+      that will be discarded.\n\nClip 'Armature|RunForward' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'L_Forearm' has scale animation that will
+      be discarded.\n\t'R_Forearm' has scale animation that will be discarded.\n\nClip
+      'Armature|Strafe' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'R_Forearm'
+      has scale animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -3657,8 +3655,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
