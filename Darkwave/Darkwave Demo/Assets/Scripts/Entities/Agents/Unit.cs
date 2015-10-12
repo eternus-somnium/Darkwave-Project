@@ -13,10 +13,10 @@ public class Unit : Entity
 	public float 
 		stun=0,
 		accMod=0, // Accuracy modifier
-		defMod=0, // Defense modifier
-		dmgMod=0, // Damage modifier
+		defMod=1, // Defense modifier
+		dmgMod=1, // Damage modifier
 		headShotMod=0; // Extra critical damage
-	
+
 	//Status effects
 	public bool[] statusEffects = new bool[10];
 	/*
@@ -28,7 +28,7 @@ public class Unit : Entity
 		5-focus:		Improves weapon accuracy by one unit.
 		6-haste:		Decreases weapon cooldown to 1/4th.
 	*/
-	
+
 	//Movement variables
 	public float 
 		baseSpeed, 
@@ -36,27 +36,30 @@ public class Unit : Entity
 		augmentedSpeed,
 		swift, // Increases speed by 33%.
 		crippled; // Decreases speed by 50%.
-	Vector3 moveDirection;
+	public Vector3 moveDirection;
 	internal float yMove = 0;
-	
+
 	//Attack variables
 	int weaponChoice  = 0;
 	public GameObject[] weapons;
-	
-	
+	Vector3 focusPoint; //Point in space where a ray from the center of the object hits a target
+
+	public AudioClip[] painSounds;
+	public AudioClip[] deathSounds;
+
 	public void UnitStart()
 	{
 		EntityStart();
-		
+
 	}
-	
+
 	//Function used to update entity status. Called from the fixed update of the child object
 	public void UnitUpdate()
 	{
 		if(stun > 0) stun--;
 		augmentedSpeed = baseSpeed + speedMod;
 	}
-	
+
 	// Updates current effects on entity.
 	public void EffectsController(int effect, int duration)
 	{
@@ -115,32 +118,32 @@ public class Unit : Entity
 			Invoke ("Haste", duration);
 			break;
 		}
-		/*.
+			/*.
 			haste=0; // Decreases weapon cooldown by 300%.
 			*/
-		
+
 	}
-	
+
 	public void DamageController(int baseDamage, bool isBurning)
 	{
 		if(statusEffects[4]) baseDamage /= 2; //statusEffects[4] is armored
 		if(stun == 0) health -= baseDamage;
+		PlaySound(painSounds[Random.Range(0,painSounds.Length)]);
 		if(isBurning) EffectsController(3,10);
 	}
-	
+
 	protected void ResetHeadShot()
 	{
 		Debug.Log("On headshot triggers end");
 	}
-	
-	
+
 	// Parent method.
 	public virtual Shot FoeDmgEffect(Shot shot, Unit foe)
 	{
 		Debug.Log("virtual FoeDmgEffect");
 		return shot;
 	}
-	
+
 	//Status effects
 	void Empowered()
 	{
@@ -190,13 +193,31 @@ public class Unit : Entity
 	{
 		statusEffects[6] = false;
 	}
-	
+
+	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
+	//Called by the child function when the conditions have been.
+	public void WeaponMainAction(int chosenWeapon)
+	{
+		weapons[chosenWeapon].SendMessage("MainActionController");
+	}
+
+	public void WeaponSecondaryAction(int chosenWeapon)
+	{
+		weapons[chosenWeapon].SendMessage("SecondaryActionController");
+	}
+
 	//Stub function for implementation of an animation controller
 	protected virtual void AnimationController()
 	{
 		//if(stun) this.gameObject.
 	}
-	
+
+	public void PlaySound(AudioClip sound)
+	{
+		GetComponent<AudioSource> ().clip = sound;
+		GetComponent<AudioSource> ().Play();
+	}
+
 	//Controls reactions to collisions
 	void OnCollisionEnter(Collision col)
 	{
@@ -211,7 +232,7 @@ public class Unit : Entity
 		if(col.gameObject.tag == "Death") 
 			health = 0;
 	}
-	
+
 	public Vector3 MoveDirection {
 		get {
 			return moveDirection;
@@ -220,7 +241,7 @@ public class Unit : Entity
 			moveDirection = value;
 		}
 	}
-	
+
 	public int WeaponChoice
 	{
 		get
@@ -230,6 +251,18 @@ public class Unit : Entity
 		set
 		{
 			weaponChoice = value;
+		}
+	}
+
+	public Vector3 FocusPoint 
+	{
+		get 
+		{
+			return focusPoint;
+		}
+		set 
+		{
+			focusPoint = value;
 		}
 	}
 }

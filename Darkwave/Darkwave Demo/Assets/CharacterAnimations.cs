@@ -38,16 +38,8 @@ public class CharacterAnimations : MonoBehaviour
 			else if(character.WeaponChoice == 3) SwitchWeapon(3,false);
 
 			//Attack controller
-			if (Input.GetButton ("Fire1") && animator.GetBool("Attack") == false) {
-				animator.SetTrigger ("Primary");
-				animator.SetBool ("Attack", true);
-			}
-			
-			if (Input.GetButton ("Fire2")) {
-				animator.SetTrigger ("Secondary");
-				animator.SetBool ("Attack", true);
-			}
-			//animator.ResetTrigger ("Primary");
+			animator.SetBool ("Primary", character.weapons [character.WeaponChoice].GetComponent<Weapon>().mainActionFlag && character.weapons [character.WeaponChoice].GetComponent<Weapon>().Ready);
+			animator.SetBool ("Secondary", character.weapons [character.WeaponChoice].GetComponent<Weapon>().secondaryActionFlag);
 			CameraController();
 		}
 		else if(character.Dying)

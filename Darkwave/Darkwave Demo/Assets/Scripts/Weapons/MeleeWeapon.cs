@@ -14,16 +14,13 @@ public class MeleeWeapon : Weapon
 	// Update is called once per frame
 	void Update () 
 	{
-		MainAction();
-		SecondaryAction();
+		if(mainActionFlag) MainAction();
+		if(secondaryActionFlag) SecondaryAction();
 	}
 	public void MainAction()
 	{
-		//parent.GetComponent<Animator>().SetBool("Attack",mainActionFlag);
 		if(mainActionFlag)
 		{
-			AttackAnimation();
-			Ready = false;
 			if(currentCooldown == 0)
 			{
 				AttackAnimation();
@@ -51,20 +48,5 @@ public class MeleeWeapon : Weapon
 		}
 	}
 
-	void OnCollisionEnter(Collision col)
-	{
-		//If the weapon hit something on the opposing team
-		if((gameObject.layer == 8 && col.gameObject.layer == 9) ||
-		   (gameObject.layer == 9 && col.gameObject.layer == 8))
-		{
-			if (parent.GetComponent<Character>() != null && col.collider.material.name == "Head (Instance)")
-			{
-				//touchDamage = Mathf.RoundToInt(touchDamage * criticalMultiplier);
-			}
-			
-			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, false);
-			if(GetComponent<AudioSource>())PlaySound (primaryHit);
-			Debug.Log (gameObject + " hit " + col.gameObject);
-		}
-	}
+	//if(GetComponent<AudioSource>())PlaySound (primaryHit);
 }

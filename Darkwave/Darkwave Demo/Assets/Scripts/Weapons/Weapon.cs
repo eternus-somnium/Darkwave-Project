@@ -3,26 +3,33 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour 
 {
-
+	
 	public bool 
-		mainActionFlag,
-		secondaryActionFlag,
+		mainActionFlag = false,
+		secondaryActionFlag = false,
 		particleFlag,
 		gridLinesFlag;
-	public int touchDamage;
+	public int 
+		baseDamage;
 	bool ready;
 
 	public AudioClip primarySound;
 	public AudioClip secondarySound;
-
-	public float baseCooldown, augmentedCooldown, baseEnergy, augmentedEnergy, 
-				 currentEnergy, currentCooldown=0, energyDrain = 0;
+	
+	public float 
+		baseCooldown,
+		augmentedCooldown,
+		baseEnergy,
+		augmentedEnergy,
+		currentEnergy,
+		currentCooldown=0,
+		energyDrain = 0;
 	public GameObject parent; // Entity wielding the weapon.
-
+	
 	Vector3 defaultPosition;
 	public Vector3 secondaryPosition;
 	internal Vector3 nextPosition;
-
+	
 	// Use this for initialization
 	public void WeaponStart () 
 	{
@@ -34,7 +41,7 @@ public class Weapon : MonoBehaviour
 		{
 			parent = gameObject.transform.parent.parent.gameObject;
 		}
-
+		
 		particleFlag = gameObject.GetComponentInChildren<ParticleSystem>() != null;
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
@@ -42,13 +49,13 @@ public class Weapon : MonoBehaviour
 		augmentedCooldown=baseCooldown;
 		currentEnergy = augmentedEnergy;
 		InvokeRepeating("WeaponTime",0,.25f);
-
+		
 	}
-
+	
 	// Controls the weapon's fire rate and recharge
 	protected void WeaponTime()
 	{
-
+		//
 		//Continuous energy recharge
 		if(currentEnergy < augmentedEnergy) 
 		{
@@ -58,8 +65,8 @@ public class Weapon : MonoBehaviour
 		}
 		else if(gameObject.activeSelf && particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
-
-		//Controls time between shots
+		
+		//Controls time between attacks
 		if(currentCooldown <= 0) ready=true;
 		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= 4; //statusEffects[6] is haste
 		else currentCooldown--;
@@ -75,14 +82,14 @@ public class Weapon : MonoBehaviour
 		}
 	}
 
-	public void MainActionController(bool value)
+	public void MainActionController()
 	{
-		mainActionFlag = value;
+		mainActionFlag = true;
 	}
-
-	public void SecondaryActionController(bool value)
+	
+	public void SecondaryActionController()
 	{
-		secondaryActionFlag = value;
+		secondaryActionFlag = true;
 	}
 
 	public void PlaySound(AudioClip sound)
@@ -99,7 +106,7 @@ public class Weapon : MonoBehaviour
 			defaultPosition = value;
 		}
 	}
-
+	
 	public bool Ready {
 		get {
 			return ready;
