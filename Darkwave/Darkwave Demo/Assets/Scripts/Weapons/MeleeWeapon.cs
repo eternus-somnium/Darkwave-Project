@@ -48,5 +48,4 @@ public class MeleeWeapon : Weapon
 		}
 	}
 
-	//if(GetComponent<AudioSource>())PlaySound (primaryHit);
 }
