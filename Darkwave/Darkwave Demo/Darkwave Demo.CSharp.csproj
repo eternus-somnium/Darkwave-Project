@@ -75,6 +75,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CriticalPoint.cs" />
+    <Compile Include="Assets\Scripts\Effects\Buffs\Armored.cs" />
+    <Compile Include="Assets\Scripts\Effects\Buffs\Empowered.cs" />
+    <Compile Include="Assets\Scripts\Effects\Buffs\Focused.cs" />
+    <Compile Include="Assets\Scripts\Effects\Buffs\Hasted.cs" />
+    <Compile Include="Assets\Scripts\Effects\Buffs\Regeneration.cs" />
+    <Compile Include="Assets\Scripts\Effects\Buffs\Swiftness.cs" />
+    <Compile Include="Assets\Scripts\Effects\Debuffs\Burning.cs" />
+    <Compile Include="Assets\Scripts\Effects\Debuffs\Crippled.cs" />
+    <Compile Include="Assets\Scripts\Effects\Debuffs\Degeneration.cs" />
+    <Compile Include="Assets\Scripts\Effects\Effect.cs" />
+    <Compile Include="Assets\Scripts\Entities\Agents\NonPlayers\NonPlayer.cs" />
+    <Compile Include="Assets\Scripts\Entities\Agents\NonPlayers\Walker.cs" />
+    <Compile Include="Assets\Scripts\Entities\Agents\Players\Architect.cs" />
+    <Compile Include="Assets\Scripts\Entities\Agents\Players\Character.cs" />
+    <Compile Include="Assets\Scripts\Entities\Agents\Unit.cs" />
+    <Compile Include="Assets\Scripts\Entities\Buildable Objects\BuildableObject.cs" />
+    <Compile Include="Assets\Scripts\Entities\Buildable Objects\Pillar.cs" />
+    <Compile Include="Assets\Scripts\Entities\Buildable Objects\Turret.cs" />
+    <Compile Include="Assets\Scripts\Entities\Buildable Objects\TurretBehavior.cs" />
     <Compile Include="Assets\Scripts\Entities\Crystal.cs" />
     <Compile Include="Assets\Scripts\Entities\Entity.cs" />
     <Compile Include="Assets\Scripts\Entities\Shots\Shot.cs" />
