@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Effects\Debuffs\Crippled.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\Unit.cs">
     <Files>
-      <File FileName="Assets\Scripts\Entities\Agents\Unit.cs" Line="373" Column="25" />
+      <File FileName="Assets\Scripts\HUD\CharacterHUD.cs" Line="133" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Agents\Unit.cs" Line="173" Column="45" />
       <File FileName="Assets\Scripts\Effects\Buffs\Empowered.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Agents\Players\Character.cs" Line="53" Column="45" />
+      <File FileName="Assets\Scripts\Entities\Agents\Players\Character.cs" Line="66" Column="4" />
       <File FileName="Assets\Scripts\Effects\Buffs\Regeneration.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HUD\CharacterHUD.cs" Line="150" Column="26" />
       <File FileName="Assets\Scripts\Effects\Debuffs\Degeneration.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Effects\Debuffs\Burning.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\RangedWeapon.cs" Line="1" Column="1" />
@@ -14,15 +14,23 @@
       <File FileName="Assets\Scripts\Effects\Effect.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Shots\StraightShot.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Effects\Buffs\Focused.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Hasted.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="61" Column="111" />
+      <File FileName="Assets\Scripts\Effects\Buffs\Hasted.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Shots\Shot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Swiftness.cs" Line="23" Column="2" />
+      <File FileName="Assets\Scripts\Effects\Buffs\Swiftness.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Effects\Debuffs\Crippled.cs" Line="12" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="70" />
+      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="133" />
+      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="134" />
+      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="161" />
+      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="63" />
+      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="68" />
+      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="66" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

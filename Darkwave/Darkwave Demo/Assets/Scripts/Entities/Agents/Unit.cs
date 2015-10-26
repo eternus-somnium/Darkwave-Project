@@ -36,6 +36,9 @@ public class Unit : Entity
 
 	public List<List<Effect>> effects = new List<List<Effect>>();
 
+	/// <summary>
+	/// Removes expired effects from the effects List.
+	/// </summary>
 	public void ClearExpEffects()
 	{
 		int i, j;
@@ -59,6 +62,10 @@ public class Unit : Entity
 		}
 	}
 
+	/// <summary>
+	/// Sets the correct status effect boolean to false.
+	/// </summary>
+	/// <param name="effectName">Effect name.</param>
 	protected void ClearExpEffectsSwitch(string effectName)
 	{
 		switch (effectName)
@@ -104,6 +111,69 @@ public class Unit : Entity
 			break;
 		}
 		}
+	}
+
+	public void NewEffectSwitch(string effectName, int duration, Unit sourceUnit, Unit targetUnit)
+	{
+		Effect newEff = null;
+		switch (effectName)
+		{
+		case "Empowered":
+		{
+			newEff = gameObject.AddComponent<Empowered>();
+			break;
+		}
+		case "Regeneration":
+		{
+			newEff = gameObject.AddComponent<Regeneration>();
+			break;
+		}
+		case "Degeneration":
+		{
+			newEff = gameObject.AddComponent<Degeneration>();
+			break;
+		}
+		case "Burning":
+		{
+			newEff = gameObject.AddComponent<Burning>();
+			break;
+		}
+		case "Armored":
+		{
+			newEff = gameObject.AddComponent<Armored>();
+			break;
+		}
+		case "Focused":
+		{
+			newEff = gameObject.AddComponent<Focused>();
+			break;
+		}
+		case "Hasted":
+		{
+			newEff = gameObject.AddComponent<Hasted>();
+			break;
+		}
+		case "Swiftness":
+		{
+			newEff = gameObject.AddComponent<Swiftness>();
+			break;
+		}
+		case "Crippled":
+		{
+			newEff = gameObject.AddComponent<Crippled>();
+			break;
+		}
+		default:
+		{
+			Debug.Log("ERROR:Invalid effect name in NewEffectSwitch");
+			break;
+		}
+		}
+		
+		if (newEff != null) newEff.EffectStart(duration, sourceUnit, targetUnit);
+		else Debug.Log ("ERROR: newEff is null.");
+		if (this.GetComponent<Character>()) this.GetComponent<Character>().NewEffect(newEff);
+		else NewEffect(newEff);
 	}
 
 	///Called by an ability from a unit that applies an effect to the target unit.

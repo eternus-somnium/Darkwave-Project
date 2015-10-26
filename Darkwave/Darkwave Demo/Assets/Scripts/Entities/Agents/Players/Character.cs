@@ -29,52 +29,22 @@ public class Character : Unit
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
-
+        
 		tempEff = gameObject.AddComponent<Crippled>();
-		tempEff.EffectStart(1,this,this);
+		tempEff.EffectStart(10,this,this);
 		NewEffect(tempEff);
 
-
-		tempEff = gameObject.AddComponent<Crippled>();
-		tempEff.EffectStart(1,this,this);
-		NewEffect(tempEff);
-
-
-		tempEff = gameObject.AddComponent<Crippled>();
-		tempEff.EffectStart(1,this,this);
-		NewEffect(tempEff);
-
-
-		tempEff = gameObject.AddComponent<Crippled>();
-		tempEff.EffectStart(1,this,this);
-		NewEffect(tempEff);
-
-
-		tempEff = gameObject.AddComponent<Crippled>();
-		tempEff.EffectStart(1,this,this);
-		NewEffect(tempEff);
-
+		// NewEffectSwitch("Empowered",10,this,this);
 
 		Debug.Log ("The longest duration is " + longestEmp.duration);
-
-		/* Test of an older version of effects on the player.
-		tempEff = gameObject.AddComponent<Empowered>();
-		tempEff.EffectStart(10,this,this);
-		if (!longestEmp || longestEmp.duration < 10) longestEmp = tempEff;
-		Debug.Log("Longest Empower is at " + longestEmp.duration + " seconds.");
-
-		tempEff = gameObject.AddComponent<Empowered>();
-		tempEff.EffectStart(15,this,this);
-		if (!longestEmp || longestEmp.duration < 15) longestEmp = tempEff;
-		Debug.Log("Longest Empower is at " + longestEmp.duration + " seconds.");
-		
-		tempEff = gameObject.AddComponent<Empowered>();
-		tempEff.EffectStart(5,this,this);
-		if (!longestEmp || longestEmp.duration < 5) longestEmp = tempEff;
-		Debug.Log("Longest Empower is at " + longestEmp.duration + " seconds.");
-		*/
 	}
 
+	/*
+	new public void NewEffectSwitch(string effectName, int duration, Unit sourceUnit, Unit targetUnit)
+	{
+		base.NewEffectSwitch(effectName, duration, sourceUnit, targetUnit);
+	}
+	*/
 	/// Additionally runs updateEffectTimers.
 	new protected void NewEffect(Effect newEff)
 	{
