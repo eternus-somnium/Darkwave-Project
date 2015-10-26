@@ -118,7 +118,7 @@ public class Character : Unit
 			MoveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 			Debug.Log(MoveDirection);
 			MoveDirection = transform.TransformDirection(MoveDirection);// makes input directions camera relative
-			MoveDirection *= augmentedSpeed;
+			MoveDirection *= (1 + augmentedSpeed);
 
 			if (controller.isGrounded) 
 			{

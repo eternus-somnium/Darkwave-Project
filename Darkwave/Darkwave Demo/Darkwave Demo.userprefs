@@ -1,36 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\Unit.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Grid.cs">
     <Files>
-      <File FileName="Assets\Scripts\HUD\CharacterHUD.cs" Line="133" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Agents\Unit.cs" Line="173" Column="45" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Empowered.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Agents\Players\Character.cs" Line="66" Column="4" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Regeneration.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Debuffs\Degeneration.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Debuffs\Burning.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\RangedWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Armored.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Effect.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Shots\StraightShot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Focused.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Hasted.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Grid.cs" Line="21" Column="10" />
+      <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Shots\StraightShot.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\Weapons\RangedWeapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Shots\Shot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Buffs\Swiftness.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Effects\Debuffs\Crippled.cs" Line="12" Column="14" />
+      <File FileName="Assets\Scripts\Entities\Agents\Unit.cs" Line="119" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="70" />
-      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="133" />
-      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="134" />
-      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="161" />
-      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="63" />
-      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="68" />
-      <Breakpoint file="C:\Users\Nicoli\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\HUD\CharacterHUD.cs" line="66" />
+      <Breakpoint file="c:\Users\Clive\Documents\GitHub\Darkwave-Project\Darkwave\Darkwave Demo\Assets\Scripts\Weapons\RangedWeapon.cs" line="58" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\Scripts\Entities\Agents\NonPlayer.cs" line="90" offsetX="654" offsetY="1408" expression="weapons" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>
