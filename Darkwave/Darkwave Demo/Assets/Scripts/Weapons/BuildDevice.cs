@@ -45,7 +45,6 @@ public class BuildDevice : Weapon
 			else if(placeable == 2)
 			{
 				obj = GameObject.Instantiate(buildableObjects[selectedObject], m_pos, Quaternion.identity) as GameObject;
-
 				
 				previewObjects[selectedObject].SetActive(false);
 			}
@@ -85,7 +84,7 @@ public class BuildDevice : Weapon
 				#region can place
 				previewObjects[selectedObject].SetActive(true);
 				m_pos = hit.transform.gameObject.GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
-				m_pos.y = hit.point.y + .5f;
+				m_pos.y = hit.point.y + buildableObjects[selectedObject].transform.position.y;
 				previewObjects[selectedObject].transform.position = m_pos;
 				return 1;//On grid and empty
 				#endregion

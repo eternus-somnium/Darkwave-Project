@@ -46,26 +46,27 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CriticalPoint.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\NonPlayers\NonPlayer.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\NonPlayers\Walker.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\Players\Architect.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\Players\Character.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\Unit.cs" />
-     <Compile Include="Assets\Scripts\Entities\Buildable Objects\BuildableObject.cs" />
-     <Compile Include="Assets\Scripts\Entities\Buildable Objects\Pillar.cs" />
-     <Compile Include="Assets\Scripts\Entities\Buildable Objects\Turret.cs" />
-     <Compile Include="Assets\Scripts\Entities\Buildable Objects\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\Entities\Crystal.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
      <Compile Include="Assets\Scripts\Entities\Shots\Shot.cs" />
      <Compile Include="Assets\Scripts\Entities\Shots\StraightShot.cs" />
      <Compile Include="Assets\Scripts\Entities\Shots\TrackingShot.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\BuildableObject.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\EnergySphere.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Pillar.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Turret.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\TurretBehavior.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\NonPlayer.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Walker.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\Players\Architect.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\Players\Character.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\Unit.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\HUD\ArchitectHUD.cs" />
      <Compile Include="Assets\Scripts\HUD\CharacterHUD.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ButtonController.cs" />
-     <Compile Include="Assets\Scripts\PlacementWall.cs" />
+     <Compile Include="Assets\Scripts\PlacementPillar.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" />

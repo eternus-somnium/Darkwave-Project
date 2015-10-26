@@ -16,34 +16,24 @@ public class MeleeWeapon : Weapon
 		if(mainActionFlag) MainAction();
 		if(secondaryActionFlag) SecondaryAction();
 	}
+
 	public void MainAction()
 	{
-		if(mainActionFlag)
+		if(Ready && currentEnergy > energyDrain)
 		{
-			if(currentCooldown == 0)
-			{
-				AttackAnimation();
-				currentCooldown=augmentedCooldown;
-			}
+			Ready=false;
+			currentCooldown = augmentedCooldown;
+			currentEnergy -= energyDrain;
 		}
 	}
 	
 	public void SecondaryAction()
 	{
-		if(secondaryActionFlag)
+		if(Ready && currentEnergy > energyDrain)
 		{
-			if(!mainActionFlag)
-			{
-
-				if(currentCooldown == 0)
-				{
-					AttackAnimation();
-					//Weapon swing stub
-
-					currentCooldown = augmentedCooldown;
-					currentEnergy -= energyDrain;
-				}
-			}
+			Ready=false;
+			currentCooldown = augmentedCooldown;
+			currentEnergy -= energyDrain;
 		}
 	}
 }
