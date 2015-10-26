@@ -10,7 +10,6 @@ public class TurretBehavior : Turret
     // Use this for initialization
 	void Start () 
 	{
-		TurretStart();
         topTurret = transform.FindChild("TurretTop").transform;
 	}
 	
@@ -30,6 +29,6 @@ public class TurretBehavior : Turret
 		//if(target != null)
 			//shotSpawnRotation = Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up);
 
-		TurretUpdate();
+		//TurretUpdate();
 	}
 }

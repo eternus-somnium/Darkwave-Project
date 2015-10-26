@@ -8,6 +8,7 @@ public class Character : Unit
 	//Used in healthController()
 	bool inLitArea = true, dying=false;
 	//Used for MoveController()
+	CharacterController controller;
 	float jumpPower, jumpCounter = 0.0F;
 	//Used in CameraController()
 	float hRotation = 0F, vRotation = 0F;
@@ -16,13 +17,13 @@ public class Character : Unit
 	float respawnTimer = -99;
 	Vector3 respawnPoint;
 	//Used in WeaponController()
-	public Vector3 focusPoint; //Point in space where a ray from the center of the camera first hits an object
 	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
 	public CharacterHUD hud;
 
 	protected void Start()
 	{
-		AgentStart();
+		UnitStart();
+		controller = GetComponent<CharacterController>();
 		// Spawn point of the character.
 		respawnPoint = new Vector3(
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.x+Random.Range(-1,1)*5,
@@ -55,7 +56,7 @@ public class Character : Unit
 	// Called every frame.
 	protected void Update() 
 	{
-		AgentUpdate();
+		UnitUpdate();
 		CameraController();
 		MoveController();
 
@@ -72,8 +73,6 @@ public class Character : Unit
 		{
 			dying=true;
 			aggroValue = 0;
-			weapons[WeaponChoice].SendMessage("MainActionController", false);
-			weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
 		}
@@ -112,15 +111,15 @@ public class Character : Unit
 */
 	void MoveController()
 	{	
-		Vector3 moveDirection = Vector3.zero;
-		
-		CharacterController controller = GetComponent<CharacterController>();
+		MoveDirection = Vector3.zero;
+
 		if(health > 0)
 		{
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-			moveDirection = transform.TransformDirection(moveDirection);// makes input directions camera relative
-			moveDirection *= baseSpeed * speedMod;
-			
+			MoveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			Debug.Log(MoveDirection);
+			MoveDirection = transform.TransformDirection(MoveDirection);// makes input directions camera relative
+			MoveDirection *= augmentedSpeed;
+
 			if (controller.isGrounded) 
 			{
 				if (Input.GetButton("Jump"))
@@ -140,12 +139,11 @@ public class Character : Unit
 			else
 			{
 				jumpPower-=Time.deltaTime*5;
-				moveDirection /=2;
+				MoveDirection /=2;
 			}
 		}
-		moveDirection.y = jumpPower + Physics.gravity.y;
-		controller.Move(moveDirection * Time.deltaTime);
-		
+		MoveDirection = new Vector3(MoveDirection.x, jumpPower + Physics.gravity.y, MoveDirection.z);
+		controller.Move(MoveDirection * Time.deltaTime);
 	}
 
 	void CameraController()
@@ -165,8 +163,8 @@ public class Character : Unit
 
 		if(Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
 		                   GetComponentInChildren<Camera>().transform.forward, out hit))
-			focusPoint = hit.point;
-		else focusPoint = Vector3.zero;
+			FocusPoint = hit.point;
+		else FocusPoint = Vector3.zero;
 		Debug.DrawLine(transform.position, Vector3.zero, Color.cyan);
 
 	}
@@ -201,15 +199,15 @@ public class Character : Unit
 		}
 
 		//Grid controller
-		if(weapons[WeaponChoice].GetComponent<Weapon>().gridLinesFlag) gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
-		else gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
+		if(weapons[WeaponChoice].GetComponent<Weapon>().gridLinesFlag) 
+			gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
+		else 
+			gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
 
 		//Attack controller
-		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController", true);
-		else weapons[WeaponChoice].SendMessage("MainActionController", false);
+		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController");
 		
-		if(Input.GetButton("Fire2")) weapons[WeaponChoice].SendMessage("SecondaryActionController", true);
-		else weapons[WeaponChoice].SendMessage("SecondaryActionController", false);
+		if(Input.GetButton("Fire2")) weapons[WeaponChoice].SendMessage("SecondaryActionController");
 	}
 
 	// Regenerates health based on distance from crystal. Separate from and stacks with an Entity's regen float.
@@ -266,18 +264,6 @@ public class Character : Unit
 		{
 			treasures++;
 			Destroy(col.gameObject);
-		}
-	}
-
-	public Vector3 Target 
-	{
-		get 
-		{
-			return focusPoint;
-		}
-		set 
-		{
-			focusPoint = value;
 		}
 	}
 

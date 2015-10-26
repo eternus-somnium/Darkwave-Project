@@ -243,22 +243,25 @@ public class Unit : Entity
 		augmentedSpeed,
 		swift, // Increases speed by 33%.
 		crippled; // Decreases speed by 50%.
+	public Vector3 moveDirection;
 	internal float yMove = 0;
 
 	//Attack variables
 	int weaponChoice  = 0;
-	public GameObject[] weapons; 
+	public GameObject[] weapons;
+	Vector3 focusPoint; //Point in space where a ray from the center of the object hits a target
 
-	public void AgentStart()
+	public void UnitStart()
 	{
 		EntityStart();
-		augmentedSpeed = baseSpeed;
+
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object
-	public void AgentUpdate()
+	public void UnitUpdate()
 	{
 		if(stun > 0) stun--;
+		augmentedSpeed = baseSpeed + speedMod;
 	}
 
 	// Updates current effects on entity.
@@ -356,7 +359,6 @@ public class Unit : Entity
 		Debug.Log("On headshot triggers end");
 	}
 
-
 	// Parent method.
 	public virtual Shot FoeDmgEffect(Shot shot, Unit foe)
 	{
@@ -419,6 +421,18 @@ public class Unit : Entity
 	}
 	*/
 
+	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
+	//Called by the child function when the conditions have been.
+	public void WeaponMainAction(int chosenWeapon)
+	{
+		weapons[chosenWeapon].SendMessage("MainActionController");
+	}
+
+	public void WeaponSecondaryAction(int chosenWeapon)
+	{
+		weapons[chosenWeapon].SendMessage("SecondaryActionController");
+	}
+
 	//Stub function for implementation of an animation controller
 	protected virtual void AnimationController()
 	{
@@ -440,6 +454,15 @@ public class Unit : Entity
 			health = 0;
 	}
 
+	public Vector3 MoveDirection {
+		get {
+			return moveDirection;
+		}
+		set {
+			moveDirection = value;
+		}
+	}
+
 	public int WeaponChoice
 	{
 		get
@@ -449,6 +472,18 @@ public class Unit : Entity
 		set
 		{
 			weaponChoice = value;
+		}
+	}
+
+	public Vector3 FocusPoint 
+	{
+		get 
+		{
+			return focusPoint;
+		}
+		set 
+		{
+			focusPoint = value;
 		}
 	}
 }

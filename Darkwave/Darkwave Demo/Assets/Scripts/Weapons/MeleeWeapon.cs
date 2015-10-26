@@ -13,8 +13,8 @@ public class MeleeWeapon : Weapon
 	// Update is called once per frame
 	void Update () 
 	{
-		MainAction();
-		SecondaryAction();
+		if(mainActionFlag) MainAction();
+		if(secondaryActionFlag) SecondaryAction();
 	}
 	public void MainAction()
 	{
