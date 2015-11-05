@@ -16,6 +16,7 @@ public class Unit : Entity
 		defMod=1, // Defense modifier
 		dmgMod=1, // Damage modifier
 		headShotMod=0; // Extra critical damage
+	public bool dying=false;
 
 	//Status effects
 	public bool[] statusEffects = new bool[10];

@@ -25,6 +25,7 @@ public class MeleeWeapon : Weapon
 			currentCooldown = augmentedCooldown;
 			currentEnergy -= energyDrain;
 		}
+		mainActionFlag = false;
 	}
 	
 	public void SecondaryAction()
@@ -35,5 +36,6 @@ public class MeleeWeapon : Weapon
 			currentCooldown = augmentedCooldown;
 			currentEnergy -= energyDrain;
 		}
+		secondaryActionFlag = false;
 	}
 }

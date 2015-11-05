@@ -7,7 +7,7 @@ public class NonPlayer : Unit
 	public GameObject[] targetList;
 	public GameObject 
 		target = null,
-		treasure;
+		remains;
 	public float targetDistance;
 	public int 
 		behavior,
@@ -42,10 +42,8 @@ public class NonPlayer : Unit
 		if(health < 1)
 		{
 			this.target = null;
-			if(treasure != null)
-				Instantiate(treasure, gameObject.transform.position, gameObject.transform.rotation);
-			Destroy(gameObject,2);
-			//Stub for destruction animation control
+			if(!dying)
+				Death ();
 		}
 	}
 
@@ -84,6 +82,9 @@ public class NonPlayer : Unit
 	}
 	void Death()
 	{
-
+		dying=true;
+		if(remains != null)
+			Instantiate(remains, gameObject.transform.position, gameObject.transform.rotation);
+		Destroy(gameObject,1);
 	}
 }

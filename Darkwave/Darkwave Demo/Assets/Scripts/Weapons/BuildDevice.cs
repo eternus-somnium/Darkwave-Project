@@ -9,7 +9,7 @@ public class BuildDevice : Weapon
 
 	public GameObject[] previewObjects, buildableObjects;
 	public int[] objectCosts;
-	int selectedObject=0;
+	public int selectedObject=0;
 
 	public int placeable=0, range;
 
@@ -61,9 +61,7 @@ public class BuildDevice : Weapon
 		{
 			previewObjects[selectedObject].SetActive(false);
 
-			if(selectedObject == buildableObjects.Length-1)
-				selectedObject=0;
-			else selectedObject++;
+			selectedObject = ++selectedObject % buildableObjects.Length;
 
 			previewObjects[selectedObject].SetActive(true);
 
@@ -77,40 +75,36 @@ public class BuildDevice : Weapon
 	{
 		RaycastHit hit;
 
-		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range))
+		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range)) //If the ray hit something
 		{
-			if (hit.transform.gameObject.GetComponent<Grid>() != null && hit.transform.gameObject.GetComponent<Grid>().canPlace(hit.point))//Checks to see if hit.point is occupied on grid
+			if (hit.transform.gameObject.GetComponent<Grid>() != null && //If the thing the ray hit had a grid component
+				hit.transform.gameObject.GetComponent<Grid>().openSpace(hit.point))//If the hit.point is unoccupied on grid
 			{
-				#region can place
-				previewObjects[selectedObject].SetActive(true);
-				m_pos = hit.transform.gameObject.GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
-				m_pos.y = hit.point.y + buildableObjects[selectedObject].transform.position.y;
-				previewObjects[selectedObject].transform.position = m_pos;
-				return 1;//On grid and empty
-				#endregion
+					#region can place
+					previewObjects[selectedObject].SetActive(true);
+					m_pos = hit.transform.gameObject.GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
+					m_pos.y = hit.point.y + buildableObjects[selectedObject].transform.position.y;
+					previewObjects[selectedObject].transform.position = m_pos;
+					return 1;//On grid and empty
+					#endregion
 			}
-			else if (hit.transform.tag == "Wall" && selectedObject == 0)
+			else if (hit.transform.gameObject.GetComponent<BuildableObject>() != null &&
+			         hit.transform.gameObject.GetComponent<BuildableObject>().canBeStackedOn && 
+			         buildableObjects[selectedObject].GetComponent<BuildableObject>().canStackOn) //If the hit point is occupied but stackable
 			{
 				#region Wall Turret
-
-				hitObject = hit.transform.gameObject;
-				
-				if (!hitObject.GetComponent<BuildableObject>().canBeStackedOn && buildableObjects[selectedObject].GetComponent<BuildableObject>().canStackOn)
-				{
-					previewObjects[selectedObject].SetActive(true);
-					m_pos = GameObject.Find("Ground").GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
-					//m_pos.y = hit.point.y + 1;
-					previewObjects[selectedObject].transform.position = m_pos;
-					return 2;//On grid and occupied by a wall 
-				}
-				else previewObjects[selectedObject].SetActive(false);
+				previewObjects[selectedObject].SetActive(true);
+				m_pos = hit.transform.gameObject.GetComponent<Grid>().getVector3(hit.point); //WRONG
+				//m_pos.y = hit.point.y + 1;
+				previewObjects[selectedObject].transform.position = m_pos;
+				return 2;//On grid and occupied by a wall 
 				#endregion
+				
 			}
-			else
-			{
-				previewObjects[selectedObject].SetActive(false);
-			}
+			
 		}
+
+		previewObjects[selectedObject].SetActive(false);
 		return 0;//No position detected or position invalid
 	}
 }

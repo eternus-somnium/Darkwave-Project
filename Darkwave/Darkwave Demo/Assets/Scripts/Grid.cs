@@ -24,7 +24,7 @@ public class Grid : MonoBehaviour
 		size;
     private List<GameObject> gridLasers;
     private Vector2 lastGridPos;
-    private bool[,] canPlaceArray;
+    private bool[,] openArray;
 
     private GameObject[,] objectsInGrid;
 
@@ -37,13 +37,13 @@ public class Grid : MonoBehaviour
         center = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + height, gameObject.transform.position.z);
 		start = new Vector3(center.x - (size.x / 2), gameObject.transform.position.y + height, center.z - (size.z / 2));
         gridLasers = new List<GameObject>();
-        canPlaceArray = new bool[rows, columns];
+        openArray = new bool[rows, columns];
         objectsInGrid = new GameObject[rows, columns];
 
-        //sets up canPlace array
+        //sets up occupied array
         for (int i = 0; i < rows; i++)
             for (int j = 0; j < columns; j++)
-                canPlaceArray[i, j] = true;
+                openArray[i, j] = true;
 
         //Lines along x axis
         for (int i = 0; i <= rows; i++)
@@ -190,7 +190,7 @@ public class Grid : MonoBehaviour
         return vectors;
     }
 
-	//places the reference object in objectsInGrid and updates canPlaceArray
+	//places the reference object in objectsInGrid and updates occupiedArray
     public void editGrid(GameObject obj, bool create)
     {
         Vector3 position = obj.transform.position;
@@ -198,12 +198,12 @@ public class Grid : MonoBehaviour
         
 		if(create)
 		{
-	        canPlaceArray[(int)gridPos.x, (int)gridPos.y] = false;//updates array so that objects cannot be placed on others
+	        openArray[(int)gridPos.x, (int)gridPos.y] = false;//updates array so that objects cannot be placed on others
 	        objectsInGrid[(int)gridPos.x, (int)gridPos.y] = obj;//puts gameobject in reference array
 		}
 		else
 		{
-			canPlaceArray[(int)gridPos.x, (int)gridPos.y] = true;//updates array so that objects cannot be placed on others
+			openArray[(int)gridPos.x, (int)gridPos.y] = true;//updates array so that objects cannot be placed on others
 			objectsInGrid[(int)gridPos.x, (int)gridPos.y] = null;//puts gameobject in reference array
 		}
     }
@@ -216,14 +216,14 @@ public class Grid : MonoBehaviour
         return vec;
     }
 
-    public bool canPlace(Vector3 position)
+    public bool openSpace(Vector3 position)
     {
         Vector2 gridPos = GetGridPosition(position);
 
         if (gridPos.x == -1 || gridPos.y == -1)
             return false;
         else
-            return canPlaceArray[(int)gridPos.x, (int)gridPos.y];
+            return openArray[(int)gridPos.x, (int)gridPos.y];
 
     }
 }

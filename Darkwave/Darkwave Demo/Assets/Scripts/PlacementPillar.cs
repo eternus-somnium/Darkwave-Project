@@ -4,32 +4,46 @@ using System.Collections.Generic;
 
 public class PlacementPillar : MonoBehaviour 
 {
-    Grid m_grid;
-    List<GameObject> pillars;
-    GameObject m_tempWall;
+	public int wallRange;
+	Vector3 oldPosition;
+	public GameObject tempWall;
+    List<GameObject> tempWalls;
+    
 
 	void Start () 
     {
-        m_grid = GameObject.Find("Ground").GetComponent<Grid>();
-        m_tempWall = (GameObject)Resources.Load("Prefabs/BasicWallConnector", typeof(GameObject));
+		oldPosition = new Vector3(0,0,0);
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        for (int i = 0; i < pillars.Count; i++)
+		if(gameObject.transform.position != oldPosition)
+		{
+			oldPosition = gameObject.transform.position;
+			BuildWalls();
+		}
+
+        for (int i = 0; i < tempWalls.Count; i++)
         {
-            if (pillars[i] != null)
+            if (tempWalls[i] != null)
             {
-                GameObject.Destroy(pillars[i]);//destorys game objects
+                GameObject.Destroy(tempWalls[i]);//destorys game objects
             }
         }
-        pillars.Clear();//empties list
+        tempWalls.Clear();//empties list
 
-        List<Vector3> vecs = m_grid.getAdjacentWallLocations(transform.position, 5);
-        foreach (Vector3 v in vecs)
-        {
-            pillars.Add(Instantiate(m_tempWall, v, Quaternion.identity) as GameObject);
-        }
+	}
+
+	void BuildWalls()
+	{
+		List<Vector3> tempWallPositions = GameObject.Find ("Ground").GetComponent<Grid>().getAdjacentWallLocations(this.gameObject.transform.position, wallRange);
+		
+		foreach (Vector3 center in tempWallPositions)
+		{
+			GameObject newWall = (GameObject)Instantiate(tempWall,center+tempWall.transform.position,gameObject.transform.rotation);
+			newWall.gameObject.transform.LookAt(this.gameObject.transform);
+			tempWalls.Add(newWall);
+		}
 	}
 }
