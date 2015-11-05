@@ -18,6 +18,7 @@ public class Unit : Entity
 		dmgMod=0, // Damage modifier
 		actMod=0, // Action speed modifier (reloading, firing rate, ability activation, etc.)
 		headShotMod=0; // Extra critical damage
+	public bool dying=false;
 
 	//Status effects
 	public bool[] statusEffects = new bool[10];

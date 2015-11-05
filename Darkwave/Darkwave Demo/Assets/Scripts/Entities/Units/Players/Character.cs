@@ -6,7 +6,7 @@ public class Character : Unit
 {
 	public int treasures=0;
 	//Used in healthController()
-	bool inLitArea = true, dying=false;
+	bool inLitArea = true;
 	//Used for MoveController()
 	CharacterController controller;
 	float jumpPower, jumpCounter = 0.0F;
