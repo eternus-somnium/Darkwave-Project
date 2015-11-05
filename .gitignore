@@ -221,6 +221,7 @@ pip-log.txt
 [Bb]uild
 [Ll]ibrary/
 sysinfo.txt
+*.sln
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
