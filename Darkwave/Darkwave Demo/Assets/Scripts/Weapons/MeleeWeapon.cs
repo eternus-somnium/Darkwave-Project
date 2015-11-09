@@ -3,8 +3,7 @@ using System.Collections;
 
 public class MeleeWeapon : Weapon 
 {
-	public AudioClip primaryHit;
-	public AudioClip secondaryHit;
+	
 	// Use this for initialization
 	void Start () 
 	{
@@ -17,36 +16,28 @@ public class MeleeWeapon : Weapon
 		if(mainActionFlag) MainAction();
 		if(secondaryActionFlag) SecondaryAction();
 	}
+	
 	public void MainAction()
 	{
-		if(mainActionFlag)
+		if(Ready && currentEnergy > energyDrain)
 		{
-			if(currentCooldown == 0)
-			{
-				AttackAnimation();
-				currentCooldown=augmentedCooldown;
-			}
+			AttackAnimation();
+			Ready=false;
+			currentCooldown = augmentedCooldown;
+			currentEnergy -= energyDrain;
 		}
+		mainActionFlag = false;
 	}
 	
 	public void SecondaryAction()
 	{
-		if(secondaryActionFlag)
+		if(Ready && currentEnergy > energyDrain)
 		{
-			if(!mainActionFlag)
-			{
-
-				if(currentCooldown == 0)
-				{
-					AttackAnimation();
-					//Weapon swing stub
-
-					currentCooldown = augmentedCooldown;
-					currentEnergy -= energyDrain;
-				}
-			}
+			AttackAnimation();
+			Ready=false;
+			currentCooldown = augmentedCooldown;
+			currentEnergy -= energyDrain;
 		}
+		secondaryActionFlag = false;
 	}
-
-	//if(GetComponent<AudioSource>())PlaySound (primaryHit);
 }

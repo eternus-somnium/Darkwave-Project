@@ -18,9 +18,6 @@ public class Character : Unit
 	//Used in WeaponController()
 	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
 
-	private Vector3 defaultCameraPos;
-	private Quaternion defaultCameraRot;
-	
 	protected void Start()
 	{
 		UnitStart();
@@ -31,9 +28,6 @@ public class Character : Unit
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
-		defaultCameraPos = Camera.main.transform.localPosition;
-		defaultCameraRot = Camera.main.transform.localRotation;
-		
 	}
 	
 	// Called every frame.
