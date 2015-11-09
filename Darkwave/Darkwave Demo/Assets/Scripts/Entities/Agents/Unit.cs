@@ -128,8 +128,8 @@ public class Unit : Entity
 	{
 		if(statusEffects[4]) baseDamage /= 2; //statusEffects[4] is armored
 		if(stun == 0) health -= baseDamage;
-		if (health > 0) PlaySound (painSounds [Random.Range (0, painSounds.Length)]);
-		else if (health <= 0) PlaySound (deathSounds [Random.Range (0, deathSounds.Length)]);
+		if (health > 0 && painSounds.Length > 0) PlaySound (painSounds [Random.Range (0, painSounds.Length)]);
+		else if (health <= 0 && deathSounds.Length > 0) PlaySound (deathSounds [Random.Range (0, deathSounds.Length)]);
 		if(isBurning) EffectsController(3,10);
 	}
 

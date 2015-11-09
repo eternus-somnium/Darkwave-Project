@@ -15,3 +15,4 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+Darkwave/Darkwave[[:space:]]Demo/Assets/Animatii/basic[[:space:]]pack.fbx filter=lfs diff=lfs merge=lfs -text

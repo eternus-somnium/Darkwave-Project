@@ -50,11 +50,11 @@ public class CharacterAnimations : MonoBehaviour
 		}
 	}
 
-	void AnimationController(Vector3 direction, float runSpeed, float speedWithDir, float turn, bool isGrounded)
+	void AnimationController(Vector3 direction, bool isGrounded)
 	{
-		animator.SetFloat("Speed",runSpeed);
-		animator.SetFloat("SpeedWithDir",speedWithDir);
-		animator.SetFloat("Turn", turn);
+		animator.SetFloat("Speed", direction.magnitude / character.baseSpeed);
+		animator.SetFloat("SpeedWithDir",direction.z / character.baseSpeed);
+		animator.SetFloat("Turn", direction.x / character.baseSpeed);
 		animator.SetBool("IsGrounded", isGrounded);
 	}
 
@@ -73,8 +73,8 @@ public class CharacterAnimations : MonoBehaviour
 			character.weapons [character.WeaponChoice].transform.position = rightHand.position + (character.weapons [character.WeaponChoice].transform.position - character.weapons [character.WeaponChoice].transform.Find ("GripPoint").position);
 			character.weapons [character.WeaponChoice].transform.rotation = rightHand.rotation * character.weapons [character.WeaponChoice].transform.Find ("GripPoint").localRotation;
 		}
-		Vector3 withoutGravity = new Vector3(character.MoveDirection.x, 0, character.MoveDirection.z);
-		AnimationController (withoutGravity, withoutGravity.magnitude / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).z / character.baseSpeed, transform.InverseTransformDirection (withoutGravity).x / character.baseSpeed, controller.isGrounded);
+		Vector3 withoutGravity = transform.InverseTransformDirection(new Vector3(character.MoveDirection.x, 0, character.MoveDirection.z));
+		AnimationController (withoutGravity, controller.isGrounded);
 	}
 
 	void CameraController()

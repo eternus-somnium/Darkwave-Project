@@ -41,11 +41,23 @@ public class NonPlayer : Unit
 
 		if(health < 1)
 		{
+			target = null;
 			if(treasure != null)
 				Instantiate(treasure, gameObject.transform.position, gameObject.transform.rotation);
-			Destroy(gameObject);
+			//StartCoroutine("DeathController");
 			//Stub for destruction animation control
+			//Destroy (gameObject);
+			GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+			GetComponent<Rigidbody> ().AddTorque(new Vector3(Random.Range(0.0f,5.0f),Random.Range(0.0f,5.0f),Random.Range(0.0f,0.75f)));
+			Destroy (gameObject,2);
 		}
+	}
+
+	void Death ()
+	{
+		GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+		//GetComponent<Rigidbody> ().AddTorque(new Vector3(Random.Range
+		Destroy (gameObject,5);
 	}
 
 	void ChooseTarget()

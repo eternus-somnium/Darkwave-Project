@@ -26,6 +26,7 @@ public class Walker : NonPlayer
 
 		if(target != null && agent.isActiveAndEnabled)
 			agent.SetDestination (target.transform.position + randomAdd);
+		GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);
 	}
 
 	//Controls the behavior of the npc turret
