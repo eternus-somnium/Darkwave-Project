@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\NonPlayers\TestAI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\..\Projects\AstralClashNew\Astral Clash\Assets\Scripts\CharSelect.cs">
     <Files>
-      <File FileName="Assets\Scripts\Entities\Agents\NonPlayers\TestAI.cs" Line="21" Column="113" />
+      <File FileName="..\..\..\..\..\..\Projects\AstralClashNew\Astral Clash\Assets\Scripts\Menu.cs" Line="40" Column="17" />
+      <File FileName="..\..\..\..\..\..\Projects\AstralClashNew\Astral Clash\Assets\Scripts\CharSelect.cs" Line="40" Column="144" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

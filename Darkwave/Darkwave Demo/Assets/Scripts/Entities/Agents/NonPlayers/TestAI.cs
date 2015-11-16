@@ -44,7 +44,7 @@ public class TestAI : NonPlayer {
 				transform.Rotate(Vector3.zero);
 			}*/
 			
-			//if(inSight && Random.value >= 0.5) WeaponMainAction(WeaponChoice);
+			//if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && hit.transform.gameObject == target.gameObject && Random.value >= 0.5) WeaponMainAction(WeaponChoice);
 
 			acceleration = augmentedSpeed * Time.deltaTime;
 		}
