@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangedWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Wispifier.cs" />
      <Compile Include="Assets\UnitAnimator.cs" />
      <None Include="Assets\Inside Sphere.shader" />
  <Reference Include="UnityEngine.UI">

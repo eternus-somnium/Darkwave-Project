@@ -4,32 +4,35 @@ using System.Collections;
 public class Draugar : NonPlayer {
 
 	private float acceleration;
+	private NavMeshAgent agent;
+	Vector3 goal, randomAdd;
 	private Vector3 targetDir;
-	public bool isWisp;
-	
+	private OffMeshLink[] passZones;
+
 	// Use this for initialization
 	void Start () {
 		NonPlayerStart();
+		agent = gameObject.GetComponent<NavMeshAgent> ();
+		agent.speed = baseSpeed;
+		randomAdd = new Vector3(Random.Range (-1,1),0,Random.Range (-1,1));
+		passZones = FindObjectsOfType<OffMeshLink> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 		NonPlayerUpdate();
-		
-		if (target != null) targetDir = transform.InverseTransformPoint (target.transform.position);
-		//if (target != null) targetDir = Vector3.RotateTowards(transform.forward, target.transform.position - transform.position, 1, 0.0F);
-		//if (target != null) targetDir = transform.position - target.transform.position;
-		//if (target != null) targetDir = new Vector3( Vector3.Angle (transform.position, target.transform.position),0,0);
+
+		UsePassZones ();
+		/*if (target != null) targetDir = transform.InverseTransformPoint (target.transform.position);
 		else return;
 		
 		RaycastHit hit;
 		
-		if(Physics.Raycast(transform.position,transform.forward, out hit, 5) && hit.transform.gameObject.tag != "Shot"  && hit.transform.gameObject.tag != "LitArea" && !isWisp)
+		if(Physics.Raycast(transform.position,transform.forward, out hit, 5) && hit.transform.gameObject.tag != "Shot"  && hit.transform.gameObject.tag != "LitArea" && !weapons[WeaponChoice].GetComponent<Weapon>().mainActionFlag)
 		{
 			Vector3 avoidDir = transform.InverseTransformPoint(hit.point);
 
-			//print (hit.collider.name + ", " + avoidDir);
 			Debug.DrawLine (transform.position, transform.TransformDirection(avoidDir), Color.red);
 			//transform.Rotate(new Vector3(0,-avoidDir.x,0).normalized);
 			if(targetDir.y < 0) transform.Rotate(new Vector3(0,-1,0));
@@ -39,10 +42,10 @@ public class Draugar : NonPlayer {
 		else if(target != null)
 		{
 			transform.Rotate(new Vector3(0,targetDir.x,0).normalized * 1);
-			/*if(Mathf.Abs(Mathf.Atan2(targetDir.x, targetDir.z) * Mathf.Rad2Deg) < 60 * Mathf.Abs(GetComponent<Rigidbody>().angularVelocity.y))
+			if(Mathf.Abs(Mathf.Atan2(targetDir.x, targetDir.z) * Mathf.Rad2Deg) < 60 * Mathf.Abs(GetComponent<Rigidbody>().angularVelocity.y))
 			{
 				transform.Rotate(Vector3.zero);
-			}*/
+			}
 			
 			//if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && hit.transform.gameObject == target.gameObject && Random.value >= 0.5) WeaponMainAction(WeaponChoice);
 			
@@ -50,12 +53,39 @@ public class Draugar : NonPlayer {
 		}
 		
 		transform.Translate(new Vector3(0,0,acceleration));
-		Debug.DrawLine (transform.position, transform.TransformDirection(targetDir), Color.green);
+		Debug.DrawLine (transform.position, transform.TransformDirection(targetDir), Color.green);*/
+		WalkerAI();
+		
+		
+		if(target != null && agent.isActiveAndEnabled)
+			agent.SetDestination (target.transform.position + randomAdd);
+		if(GetComponent<Animator> ()) GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);
+	}
+	
+	//Controls the behavior of the npc turret
+	void WalkerAI()
+	{	
+		//if the player is in sight
+		RaycastHit hit;
+		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && 
+		   (hit.transform.gameObject == target.gameObject || hit.collider.gameObject.layer == 11))
+		{
+			WeaponMainAction(WeaponChoice);
+		}
 	}
 
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.layer == 11 && isWisp)
+		if (col.gameObject.layer == 11 && weapons[WeaponChoice].GetComponent<Weapon>().mainActionFlag)
 			Physics.IgnoreCollision (GetComponent<Collider> (), col.gameObject.GetComponent<Collider> ());
+	}
+
+	void UsePassZones ()
+	{
+		foreach(OffMeshLink zone in passZones)
+		{
+			if(Vector3.Distance(transform.position,zone.transform.position) <= sensorRange && weapons[WeaponChoice].GetComponent<Weapon>().mainActionFlag) zone.activated = true;
+			else zone.activated = false;
+		}
 	}
 }

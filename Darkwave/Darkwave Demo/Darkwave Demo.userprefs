@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\..\Projects\AstralClashNew\Astral Clash\Assets\Scripts\CharSelect.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs">
     <Files>
-      <File FileName="..\..\..\..\..\..\Projects\AstralClashNew\Astral Clash\Assets\Scripts\Menu.cs" Line="40" Column="17" />
-      <File FileName="..\..\..\..\..\..\Projects\AstralClashNew\Astral Clash\Assets\Scripts\CharSelect.cs" Line="40" Column="144" />
+      <File FileName="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs" Line="64" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
