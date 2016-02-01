@@ -14,6 +14,7 @@ public class Shot : Entity
 	public void ShotStart()
 	{
 		EntityStart();
+		touchDamage = Mathf.RoundToInt(maxHealth);
 	}
 
 	public void ShotUpdate()

@@ -7,8 +7,8 @@ using System.Collections.Generic;
 public class Grid : MonoBehaviour 
 {
     public int 
-		row,
-		col;
+		rows,
+		columns;
     public Transform 
 		laserGrid;
 	
@@ -16,7 +16,7 @@ public class Grid : MonoBehaviour
 		squareArea, 
 		width, 
 		depth, 
-		height = 0f;
+		height = .25f;
     private Vector3 
 		start, 
 		placementPos, 
@@ -24,7 +24,7 @@ public class Grid : MonoBehaviour
 		size;
     private List<GameObject> gridLasers;
     private Vector2 lastGridPos;
-    private bool[,] canPlaceArray;
+    private bool[,] openArray;
 
     private GameObject[,] objectsInGrid;
 
@@ -32,21 +32,21 @@ public class Grid : MonoBehaviour
 	void Start () 
     {
         size = gameObject.GetComponent<Renderer>().bounds.size;
-        width = size.x / row;
-        depth = size.z / col;
-        center = new Vector3(gameObject.transform.position.x, height, gameObject.transform.position.z);
-        start = new Vector3(center.x - (size.x / 2), height, center.z - (size.z / 2));
+        width = size.x / rows;
+        depth = size.z / columns;
+        center = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + height, gameObject.transform.position.z);
+		start = new Vector3(center.x - (size.x / 2), gameObject.transform.position.y + height, center.z - (size.z / 2));
         gridLasers = new List<GameObject>();
-        canPlaceArray = new bool[row, col];
-        objectsInGrid = new GameObject[row, col];
+        openArray = new bool[rows, columns];
+        objectsInGrid = new GameObject[rows, columns];
 
-        //sets up canPlace array
-        for (int i = 0; i < row; i++)
-            for (int j = 0; j < col; j++)
-                canPlaceArray[i, j] = true;
+        //sets up occupied array
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++)
+                openArray[i, j] = true;
 
         //Lines along x axis
-        for (int i = 0; i <= row; i++)
+        for (int i = 0; i <= rows; i++)
         {
             Vector3 rowPos = start;
             rowPos.x += width * i;
@@ -55,7 +55,7 @@ public class Grid : MonoBehaviour
         }
 
         //Lines along z axis
-        for (int j = 0; j <= col; j++)
+        for (int j = 0; j <= columns; j++)
         {
             Vector3 colPos = start;
             colPos.z += depth * j;
@@ -87,7 +87,7 @@ public class Grid : MonoBehaviour
         Vector2 gridPos = new Vector2(-1, -1);
 
         //gets row
-        for (int i = 0; i <= row + 1; i++)
+        for (int i = 0; i <= rows + 1; i++)
         {
             if (position.x > start.x + (width * i) && position.x <  start.x + (width * (i + 1)))
             {
@@ -96,7 +96,7 @@ public class Grid : MonoBehaviour
         }
 
         //gets cols
-        for (int j = 0; j <= col + 1; j++)
+        for (int j = 0; j <= columns + 1; j++)
         {
             if (position.z > start.z + (depth * j) && position.z <  start.z + (depth * (j + 1)))
             {
@@ -110,83 +110,54 @@ public class Grid : MonoBehaviour
     //returns the correct vector3(middle of the square) for the grid
     public Vector3 getVector3(Vector3 position)
     {
-        Vector3 gridPos = new Vector3(-1, 0, -1);
+		Vector2 gridPosition = GetGridPosition(position);
+        Vector3 placementPosition = new Vector3(gridPosition.x, 0, gridPosition.y);
 
-        //gets row
-        for (int i = 0; i <= row + 1; i++)
-        {
-            if (position.x > start.x + (width * i) && position.x < start.x + (width * (i + 1)))
-            {
-                gridPos.x = i;
-            }
-        }
+        placementPosition.x = (start.x + (placementPosition.x * width)) + width / 2;
+        placementPosition.z = (start.z + (placementPosition.z * depth)) + depth / 2;
 
-        //gets cols
-        for (int j = 0; j <= col; j++)
-        {
-            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
-            {
-                gridPos.y = j;
-            }
-        }
-
-        gridPos.x = (start.x + (gridPos.x * width)) + width / 2;
-        gridPos.z = (start.z + (gridPos.y * depth)) + depth / 2;
-
-        return gridPos;
+        return placementPosition;
     }
 
-    public List<Vector3> getAdjacentWallLocations(Vector3 position)
+    public List<Vector3> getAdjacentWallLocations(Vector3 position, int range)
     {
-
-        Vector2 gridPos = new Vector2() ;
-        //gets row
-        for (int i = 0; i <= row + 1; i++)
-        {
-            if (position.x > start.x + (width * i) && position.x < start.x + (width * (i + 1)))
-            {
-                gridPos.x = i;
-            }
-        }
-
-        //gets cols
-        for (int j = 0; j <= col; j++)
-        {
-            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
-            {
-                gridPos.y = j;
-            }
-        }
-
+		Vector2 gridPos = GetGridPosition(position);
+       
         List<Vector3> vectors = new List<Vector3>();
 
         int up = 0, down = 0, left = 0, right = 0;
-        for (int i = 1; i < 5; i++)
+        for (int i = 1; i < range; i++)
         {
-            if (gridPos.y + i < row)
+			if (gridPos.y + i < rows)//checks for walls above in range
             {
-                if (up == 0 && objectsInGrid[(int)gridPos.x, (int)gridPos.y + i] != null)//checks for walls above up to 4 spaces away
+                if (up == 0 && 
+				    objectsInGrid[(int)gridPos.x, (int)gridPos.y + i] != null &&
+				    objectsInGrid[(int)gridPos.x, (int)gridPos.y + i].GetComponent<BuildableObject>().isPillar)
                 {
-                    if (objectsInGrid[(int)gridPos.x, (int)gridPos.y + i].tag == "Wall")
                         up = i;
                 }
             }
-            if (gridPos.y - i >= 0)
-                if (down == 0 && objectsInGrid[(int)gridPos.x, (int)gridPos.y - i] != null)//checks for walls below up to 4 spaces away
+			if (gridPos.y - i >= 0)//checks for walls below in range
+                if (down == 0 && 
+				    objectsInGrid[(int)gridPos.x, (int)gridPos.y - i] != null &&
+				    objectsInGrid[(int)gridPos.x, (int)gridPos.y - i].GetComponent<BuildableObject>().isPillar)
                 {
-                    if (objectsInGrid[(int)gridPos.x, (int)gridPos.y - i].tag == "Wall")
                         down = i;
                 }
-            if (gridPos.x + i < col)
-                if (right == 0 && objectsInGrid[(int)gridPos.x + i, (int)gridPos.y] != null)//checks for walls to the right up to 4 spaces away
+			if (gridPos.x + i < columns)//checks for walls to the right in range
+                if (right == 0 && 
+				    objectsInGrid[(int)gridPos.x + i, (int)gridPos.y] != null &&
+				    objectsInGrid[(int)gridPos.x + i, (int)gridPos.y].GetComponent<BuildableObject>().isPillar)
+
                 {
-                    if (objectsInGrid[(int)gridPos.x + i, (int)gridPos.y].tag == "Wall")
                         right = i;
                 }
-            if (gridPos.x - i >= 0)
-                if (left == 0 && objectsInGrid[(int)gridPos.x - i, (int)gridPos.y] != null)//checks for walls to the left up to 4 spaces away
+			if (gridPos.x - i >= 0)//checks for walls to the left in range
+                if (left == 0 && 
+				    objectsInGrid[(int)gridPos.x - i, (int)gridPos.y] != null &&
+				    objectsInGrid[(int)gridPos.x - i, (int)gridPos.y].GetComponent<BuildableObject>().isPillar)
+
                 {
-                    if (objectsInGrid[(int)gridPos.x - i, (int)gridPos.y].tag == "Wall")
                         left = i;
                 }
         }
@@ -218,37 +189,21 @@ public class Grid : MonoBehaviour
         }
         return vectors;
     }
-    
-    public void editGrid(GameObject obj, bool create)
-    //places the reference object in objectsInGrid and updates canPlaceArray
-    {
-        Vector2 gridPos = new Vector3(-1, -1);
-        Vector3 position = obj.transform.position;
-        //gets row
-        for (int i = 0; i <= row + 1; i++)
-        {
-            if (position.x > start.x + (width * i) && position.x < start.x + (width * (i + 1)))
-            {
-                gridPos.x = i;
-            }
-        }
 
-        //gets cols
-        for (int j = 0; j <= col; j++)
-        {
-            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
-            {
-                gridPos.y = j;
-            }
-        }
+	//places the reference object in objectsInGrid and updates occupiedArray
+    public void editGrid(GameObject obj, bool create)
+    {
+        Vector3 position = obj.transform.position;
+		Vector2 gridPos = GetGridPosition(position);
+        
 		if(create)
 		{
-	        canPlaceArray[(int)gridPos.x, (int)gridPos.y] = false;//updates array so that objects cannot be placed on others
+	        openArray[(int)gridPos.x, (int)gridPos.y] = false;//updates array so that objects cannot be placed on others
 	        objectsInGrid[(int)gridPos.x, (int)gridPos.y] = obj;//puts gameobject in reference array
 		}
 		else
 		{
-			canPlaceArray[(int)gridPos.x, (int)gridPos.y] = true;//updates array so that objects cannot be placed on others
+			openArray[(int)gridPos.x, (int)gridPos.y] = true;//updates array so that objects cannot be placed on others
 			objectsInGrid[(int)gridPos.x, (int)gridPos.y] = null;//puts gameobject in reference array
 		}
     }
@@ -261,32 +216,14 @@ public class Grid : MonoBehaviour
         return vec;
     }
 
-    public bool canPlace(Vector3 position)
+    public bool openSpace(Vector3 position)
     {
-        Vector2 gridPos = new Vector2(-1, -1);
-
-        //gets row
-        for (int i = 0; i <= row + 1; i++)
-        {
-            if (position.x > start.x + (width * i) && position.x < start.x + (width * (i + 1)))
-            {
-                gridPos.x = i;
-            }
-        }
-
-        //gets cols
-        for (int j = 0; j <= col; j++)
-        {
-            if (position.z > start.z + (depth * j) && position.z < start.z + (depth * (j + 1)))
-            {
-                gridPos.y = j;
-            }
-        }
+        Vector2 gridPos = GetGridPosition(position);
 
         if (gridPos.x == -1 || gridPos.y == -1)
             return false;
         else
-            return canPlaceArray[(int)gridPos.x, (int)gridPos.y];
+            return openArray[(int)gridPos.x, (int)gridPos.y];
 
     }
 }

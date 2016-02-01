@@ -1,16 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\AstralClashNew\Astral Clash\Assets\Scripts\MatchSettings.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Turn based grid\Assets\CameraControl.cs">
     <Files>
-      <File FileName="..\..\..\AstralClashNew\Astral Clash\Assets\Scripts\MatchSettings.cs" Line="169" Column="3" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ZombieMaster.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs" Line="101" Column="1" />
-      <File FileName="Assets\ZombieMaster.cs" Line="24" Column="14" />
-      <File FileName="Assets\Zombie.cs" Line="24" Column="15" />
->>>>>>> origin/AIExperiment
+      <File FileName="..\..\..\Turn based grid\Assets\CameraControl.cs" Line="38" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

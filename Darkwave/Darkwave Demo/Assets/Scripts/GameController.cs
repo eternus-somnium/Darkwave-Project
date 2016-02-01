@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 	public int sphereStartSize=10, round = 1, roundsInLevel, enemiesPerRound, enemiesLeft;
 	public float roundTimer, timeLeft, sphereScale;
 	public GameObject crystal, litSphere;
-	public GameObject[] allyTargets, enemyTargets;
+	public GameObject[] allyTargets, enemyTargets, allyWalls, enemyWalls;
 
 
 	// Use this for initialization
@@ -56,7 +56,6 @@ public class GameController : MonoBehaviour
 		//Increases the sphere scale in bursts at the end of each round
 		sphereScale = sphereStartSize + (round-1) * roundTimer;
 
-		sphereScale = sphereStartSize + ((round-1) * roundTimer + (roundTimer-timeLeft)) * 0.5f;
 		litSphere.transform.localScale = new Vector3(sphereScale,sphereScale,sphereScale);
 	}
 

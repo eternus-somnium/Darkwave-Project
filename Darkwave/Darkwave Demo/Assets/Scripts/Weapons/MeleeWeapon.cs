@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MeleeWeapon : Weapon 
 {
-	
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -16,12 +16,11 @@ public class MeleeWeapon : Weapon
 		if(mainActionFlag) MainAction();
 		if(secondaryActionFlag) SecondaryAction();
 	}
-	
+
 	public void MainAction()
 	{
 		if(Ready && currentEnergy > energyDrain)
 		{
-			AttackAnimation();
 			Ready=false;
 			currentCooldown = augmentedCooldown;
 			currentEnergy -= energyDrain;
@@ -33,7 +32,6 @@ public class MeleeWeapon : Weapon
 	{
 		if(Ready && currentEnergy > energyDrain)
 		{
-			AttackAnimation();
 			Ready=false;
 			currentCooldown = augmentedCooldown;
 			currentEnergy -= energyDrain;
