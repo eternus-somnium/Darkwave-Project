@@ -9,6 +9,7 @@ public class RangedWeapon : Weapon
 	bool aiming = false;
 	public GameObject[] shot;
 	private GameObject newShot;
+	private Shot newShotScript;
 	private Vector3 bulletSpread;
 
 
@@ -52,11 +53,19 @@ public class RangedWeapon : Weapon
 				0);
 			Quaternion shotSpawnRotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + bulletSpread);
 
+			// Allows modifications to instanced shots.
+			newShot = (GameObject)Instantiate(shot[ammoType], shotSpawnPosition, shotSpawnRotation);
+			newShotScript = newShot.GetComponent<Shot>();
+			newShotScript.touchDamage = Mathf.RoundToInt(newShotScript.touchDamage * (1 + parent.GetComponent<Unit>().dmgMod));
+			newShotScript.criticalMultiplier *= parent.GetComponent<Unit>().headShotMod;
+			newShotScript.parent = parent;
+            /*
 			//Modifies instantiated shots
 			newShot = (GameObject)Instantiate(shot[ammoType], shotSpawnPosition, shotSpawnRotation);
 			newShot.GetComponent<Shot>().parent = parent;
 			newShot.GetComponent<Shot>().touchDamage = Mathf.RoundToInt(baseDamage * parent.GetComponent<Unit>().dmgMod);
 			newShot.GetComponent<Shot>().criticalMultiplier *= parent.GetComponent<Unit>().headShotMod;
+            */
 
 
 			Ready=false;

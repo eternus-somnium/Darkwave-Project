@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /*
  * This code serves as the base for all game assets that will change dynamically during play.
@@ -13,8 +14,9 @@ public class Unit : Entity
 	public float 
 		stun=0,
 		accMod=0, // Accuracy modifier
-		defMod=1, // Defense modifier
-		dmgMod=1, // Damage modifier
+		defMod=0, // Defense modifier
+		dmgMod=0, // Damage modifier
+		actMod=0, // Action speed modifier (reloading, firing rate, ability activation, etc.)
 		headShotMod=0; // Extra critical damage
 	public bool dying=false;
 
@@ -29,6 +31,211 @@ public class Unit : Entity
 		5-focus:		Improves weapon accuracy by one unit.
 		6-haste:		Decreases weapon cooldown to 1/4th.
 	*/
+
+	public Effect tempEff;
+	public Effect longestEmp;
+
+	public List<List<Effect>> effects = new List<List<Effect>>();
+
+	/// <summary>
+	/// Removes expired effects from the effects List.
+	/// </summary>
+	public void ClearExpEffects()
+	{
+		int i, j;
+		string effectName = "";
+		for (i = 0; i < effects.Count; i++)
+		{
+			if (effects[i][0]) effectName = effects[i][0].effectName;
+			for (j = 0; j < effects[i].Count; j++)
+			{
+				if (effects[i][j].duration <= 0)
+				{
+					effects[i].RemoveAt(j);
+				}
+			}
+			if (effects[i].Count == 0)
+			{
+				effects.RemoveAt(i);
+				if (effectName != "") ClearExpEffectsSwitch(effectName);
+			}
+			effectName = "";
+		}
+	}
+
+	/// <summary>
+	/// Sets the correct status effect boolean to false.
+	/// </summary>
+	/// <param name="effectName">Effect name.</param>
+	protected void ClearExpEffectsSwitch(string effectName)
+	{
+		switch (effectName)
+		{
+		case "Empowered":
+		{
+			statusEffects[0] = false;
+			break;
+		}
+		case "Regeneration":
+		{
+			statusEffects[1] = false;
+			break;
+		}
+		case "Degeneration":
+		{
+			statusEffects[2] = false;
+			break;
+		}
+		case "Burning":
+		{
+			statusEffects[3] = false;
+			break;
+		}
+		case "Armored":
+		{
+			statusEffects[4] = false;
+			break;
+		}
+		case "Focused":
+		{
+			statusEffects[5] = false;
+			break;
+		}
+		case "Hasted":
+		{
+			statusEffects[6] = false;
+			break;
+		}
+		default:
+		{
+			Debug.Log("Invalid effect name in ClearExpEffectsBool");
+			break;
+		}
+		}
+	}
+
+	public void NewEffectSwitch(string effectName, int duration, Unit sourceUnit, Unit targetUnit)
+	{
+		Effect newEff = null;
+		switch (effectName)
+		{
+		case "Empowered":
+		{
+			newEff = gameObject.AddComponent<Empowered>();
+			break;
+		}
+		case "Regeneration":
+		{
+			newEff = gameObject.AddComponent<Regeneration>();
+			break;
+		}
+		case "Degeneration":
+		{
+			newEff = gameObject.AddComponent<Degeneration>();
+			break;
+		}
+		case "Burning":
+		{
+			newEff = gameObject.AddComponent<Burning>();
+			break;
+		}
+		case "Armored":
+		{
+			newEff = gameObject.AddComponent<Armored>();
+			break;
+		}
+		case "Focused":
+		{
+			newEff = gameObject.AddComponent<Focused>();
+			break;
+		}
+		case "Hasted":
+		{
+			newEff = gameObject.AddComponent<Hasted>();
+			break;
+		}
+		case "Swiftness":
+		{
+			newEff = gameObject.AddComponent<Swiftness>();
+			break;
+		}
+		case "Crippled":
+		{
+			newEff = gameObject.AddComponent<Crippled>();
+			break;
+		}
+		default:
+		{
+			Debug.Log("ERROR:Invalid effect name in NewEffectSwitch");
+			break;
+		}
+		}
+		
+		if (newEff != null) newEff.EffectStart(duration, sourceUnit, targetUnit);
+		else Debug.Log ("ERROR: newEff is null.");
+		if (this.GetComponent<Character>()) this.GetComponent<Character>().NewEffect(newEff);
+		else NewEffect(newEff);
+	}
+
+	///Called by an ability from a unit that applies an effect to the target unit.
+	///This adds the effect to the Unit's 2D effects List.
+	protected void NewEffect(Effect newEff)
+	{
+		bool noStack = false;
+		int i = 0;
+		int j = 0;
+		int numTypesEffects = effects.Count;
+		longestEmp = null;
+		
+		// Searches for the right effects List to Add the new effect if it exists.
+		while (i < numTypesEffects && noStack == false)
+		{
+			if (effects[i] != null && effects[i][0].effectName == newEff.effectName)
+			{
+				if (!newEff.stackDuration)
+				{
+					effects[i].Add(newEff);
+					newEff.SetHasTrigTrue();
+				}
+				else
+				{
+					effects[i][0].EffectUpdate(newEff.duration, newEff.GetSrcUnit());
+					newEff.EffectStop();
+				}
+				noStack = true;
+			}
+			i++;
+		}
+
+		// If the new effect doesn't have its own List, create one in effects List and Add it.
+		if (i == numTypesEffects && noStack == false)
+		{
+			effects.Add(new List<Effect>());
+			effects[i].Add(newEff);
+			newEff.SetHasTrigTrue();
+		}
+
+		if (noStack == true) i--;
+		// Sets the longest effect.
+		for (j = 0; j < effects[i].Count; j++)
+		{
+			if(effects[i][j].isLongest)
+			{
+				longestEmp = effects[i][j];
+			}
+		}
+		if (!longestEmp)
+		{
+			longestEmp = newEff;
+			longestEmp.isLongest = true;
+		}
+		else if (newEff.duration > longestEmp.duration)
+		{
+			longestEmp.isLongest = false;
+			longestEmp = newEff;
+			longestEmp.isLongest = true;
+		}
+	}
 
 	//Movement variables
 	public float 
@@ -64,56 +271,70 @@ public class Unit : Entity
 		switch(effect)
 		{
 		case 0://empowered
+			/*
 			if(!statusEffects[0])
 				dmgMod += .25f;
 			else
 				CancelInvoke("Empowered");
 			statusEffects[0] = true;
 			Invoke ("Empowered", duration);
+			*/
 			break;
 		case 1://regen
+			/*
 			if(!statusEffects[1])
 				InvokeRepeating("Regen",0,1);
 			else
 				CancelInvoke("StopRegen");
 			statusEffects[1] = true;
 			Invoke ("StopRegen", duration);
+			*/
 			break;
 		case 2://degen
+			/*
 			if(!statusEffects[2])
 				InvokeRepeating("Degen",0,1);
 			else
 				CancelInvoke("StopDegen");
 			statusEffects[2] = true;
 			Invoke ("StopDegen", duration);
+			*/
 			break;
 		case 3://burning
+			/*
 			if(!statusEffects[3])
 				InvokeRepeating("Burning",0,1);
 			else
 				CancelInvoke("StopBurning");
 			statusEffects[3] = true;
 			Invoke ("StopBurning", duration);
+			*/
 			break;
 		case 4://armored
+			/*
 			if(statusEffects[4])
 				CancelInvoke("Armored");
 			statusEffects[4] = true;
 			Invoke ("Armored", duration);
+			*/
 			break;
 		case 5://focus
+			/*
 			if(!statusEffects[5])
 				accMod += 1;
 			else
 				CancelInvoke("Focus");
 			statusEffects[5] = true;
 			Invoke ("Focus", duration);
+			*/
 			break;
 		case 6://haste
+			/*
 			if(statusEffects[6])
 				CancelInvoke("Haste");
 			statusEffects[6] = true;
 			Invoke ("Haste", duration);
+			*/
 			break;
 		}
 			/*.
@@ -122,9 +343,14 @@ public class Unit : Entity
 
 	}
 
-	public void DamageController(int baseDamage, bool isBurning)
+	/// <summary>
+	///  DamageController is called by another function that deals damage to this Unit.
+	/// </summary>
+	/// <param name="baseDamage">Base damage.</param>
+	/// <param name="isBurning">If set to <c>true</c> is burning.</param>
+	public void DamageController(float baseDamage, bool isBurning)
 	{
-		if(statusEffects[4]) baseDamage /= 2; //statusEffects[4] is armored
+		baseDamage *= (1 - defMod); //statusEffects[4] is armored
 		if(stun == 0) health -= baseDamage;
 		if(isBurning) EffectsController(3,10);
 	}
@@ -142,11 +368,13 @@ public class Unit : Entity
 	}
 
 	//Status effects
+	/*
 	void Empowered()
 	{
 		dmgMod-=.25f;
 		statusEffects[0] = false;
 	}
+
 	void Regen()
 	{
 		if(health < maxHealth) 
@@ -167,6 +395,8 @@ public class Unit : Entity
 		CancelInvoke("Degen");
 		statusEffects[2] = false;
 	}
+	*/
+	/*
 	void Burning()
 	{
 		if(health > 0) 
@@ -190,6 +420,7 @@ public class Unit : Entity
 	{
 		statusEffects[6] = false;
 	}
+	*/
 
 	//Function controlling the usage of shot attacks. May eventually be expanded control of melee attacks.
 	//Called by the child function when the conditions have been.

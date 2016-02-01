@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Character : Unit 
 {
@@ -17,6 +18,7 @@ public class Character : Unit
 	Vector3 respawnPoint;
 	//Used in WeaponController()
 	public bool causedHeadShot=false; // True if a headshot was made, then sets itself back to false after use.
+	public CharacterHUD hud;
 
 	protected void Start()
 	{
@@ -28,7 +30,27 @@ public class Character : Unit
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.y,
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
+        
+		tempEff = gameObject.AddComponent<Crippled>();
+		tempEff.EffectStart(10,this,this);
+		NewEffect(tempEff);
 
+		// NewEffectSwitch("Empowered",10,this,this);
+
+		Debug.Log ("The longest duration is " + longestEmp.duration);
+	}
+
+	/*
+	new public void NewEffectSwitch(string effectName, int duration, Unit sourceUnit, Unit targetUnit)
+	{
+		base.NewEffectSwitch(effectName, duration, sourceUnit, targetUnit);
+	}
+	*/
+	/// Additionally runs updateEffectTimers.
+	new protected void NewEffect(Effect newEff)
+	{
+		base.NewEffect(newEff);
+		hud.updateEffectTimers(longestEmp);
 	}
 
 	// Called every frame.
@@ -95,7 +117,7 @@ public class Character : Unit
 		{
 			MoveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 			MoveDirection = transform.TransformDirection(MoveDirection);// makes input directions camera relative
-			MoveDirection *= augmentedSpeed;
+			MoveDirection *= (1 + augmentedSpeed);
 
 			if (controller.isGrounded) 
 			{
