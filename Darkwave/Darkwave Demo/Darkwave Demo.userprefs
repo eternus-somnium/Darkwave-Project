@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\AstralClashNew\Astral Clash\Assets\Scripts\MatchSettings.cs">
     <Files>
-      <File FileName="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs" Line="64" Column="2" />
+      <File FileName="..\..\..\AstralClashNew\Astral Clash\Assets\Scripts\MatchSettings.cs" Line="169" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

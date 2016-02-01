@@ -94,7 +94,6 @@ public class Weapon : MonoBehaviour
 
 	public void PlaySound(AudioClip sound)
 	{
-		print ("Pewwoosh");
 		GetComponent<AudioSource> ().clip = sound;
 		GetComponent<AudioSource> ().Play();
 	}

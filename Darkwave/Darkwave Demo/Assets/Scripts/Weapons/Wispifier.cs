@@ -18,6 +18,14 @@ public class Wispifier: Weapon
 	
 	public void MainAction()
 	{
+		if(Ready && currentEnergy > energyDrain)
+		{	
+			parent.GetComponent<Draugar>().isWisp = true;
+			Ready=false;
+			currentCooldown = augmentedCooldown;
+			currentEnergy -= energyDrain;
+		}
+		mainActionFlag = false;
 
 	}
 }
