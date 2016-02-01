@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\VR-Mumble\Assets\Notes.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Turn based grid\Assets\CameraControl.cs">
     <Files>
-      <File FileName="..\..\..\VR-Mumble\Assets\Notes.cs" Line="89" Column="21" />
+      <File FileName="..\..\..\Turn based grid\Assets\CameraControl.cs" Line="38" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -28,7 +28,11 @@ public class Pillar : BuildableObject
 
 		foreach (Vector3 center in wallPositions)
 		{
-			GameObject newWall = (GameObject)Instantiate(wall,center+wall.transform.position,gameObject.transform.rotation);
+			GameObject newWall = (GameObject)Instantiate(
+				wall,
+				center+new Vector3(0,gameObject.transform.position.y,0),
+				gameObject.transform.rotation);
+
 			newWall.gameObject.transform.LookAt(this.gameObject.transform);
 			walls.Add(newWall);
 		}
