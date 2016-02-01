@@ -24,6 +24,7 @@ public class Draugar : NonPlayer {
 		NonPlayerUpdate();
 
 		UsePassZones ();
+
 		/*if (target != null) targetDir = transform.InverseTransformPoint (target.transform.position);
 		else return;
 		
@@ -84,8 +85,16 @@ public class Draugar : NonPlayer {
 	{
 		foreach(OffMeshLink zone in passZones)
 		{
-			if(Vector3.Distance(transform.position,zone.transform.position) <= sensorRange && weapons[WeaponChoice].GetComponent<Weapon>().mainActionFlag) zone.activated = true;
-			else zone.activated = false;
+			if(Vector3.Distance(transform.position,zone.transform.position) <= sensorRange && weapons[WeaponChoice].GetComponent<Weapon>().mainActionFlag)
+			{
+				zone.activated = true;
+				agent.areaMask = 13;
+			}
+			else
+			{
+				zone.activated = false;
+				agent.areaMask = 5;
+			}
 		}
 	}
 }

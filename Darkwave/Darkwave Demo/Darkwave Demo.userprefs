@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ZombieMaster.cs">
     <Files>
-      <File FileName="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs" Line="64" Column="2" />
+      <File FileName="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs" Line="101" Column="1" />
+      <File FileName="Assets\ZombieMaster.cs" Line="24" Column="14" />
+      <File FileName="Assets\Zombie.cs" Line="24" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
