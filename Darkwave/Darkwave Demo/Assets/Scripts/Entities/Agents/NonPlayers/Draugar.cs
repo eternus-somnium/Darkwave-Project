@@ -23,26 +23,8 @@ public class Draugar : Walker {
 	void Update () {
 		
 		NonPlayerUpdate();
-
-<<<<<<< HEAD
-		//UsePassZones ();
-=======
 		UsePassZones ();
 
-		/*if (target != null) targetDir = transform.InverseTransformPoint (target.transform.position);
-		else return;
-		
-		RaycastHit hit;
-		
-		if(Physics.Raycast(transform.position,transform.forward, out hit, 5) && hit.transform.gameObject.tag != "Shot"  && hit.transform.gameObject.tag != "LitArea" && !weapons[WeaponChoice].GetComponent<Weapon>().mainActionFlag)
-		{
-			Vector3 avoidDir = transform.InverseTransformPoint(hit.point);
->>>>>>> origin/AIExperiment
-
-		if(agent.isOnOffMeshLink) isWisp = false;
-
-		if(!isWisp) WeaponMainAction(WeaponChoice);
-		
 		WalkerAI();
 		
 		
@@ -73,10 +55,6 @@ public class Draugar : Walker {
 	{
 		foreach(OffMeshLink zone in passZones)
 		{
-<<<<<<< HEAD
-			if(Vector3.Distance(transform.position,zone.transform.position) <= sensorRange && isWisp) zone.activated = true;
-			else zone.activated = false;
-=======
 			if(Vector3.Distance(transform.position,zone.transform.position) <= sensorRange && weapons[WeaponChoice].GetComponent<Weapon>().mainActionFlag)
 			{
 				zone.activated = true;
@@ -87,7 +65,6 @@ public class Draugar : Walker {
 				zone.activated = false;
 				agent.areaMask = 5;
 			}
->>>>>>> origin/AIExperiment
 		}
 	}
 }

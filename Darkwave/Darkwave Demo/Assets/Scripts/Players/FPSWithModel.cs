@@ -6,7 +6,6 @@ public class FPSWithModel : Unit
 	public int treasures=0;
 	//Used in healthController()
 	public int inLitArea=0;
-	bool dying=false;
 	//Used for MoveController()
 	float jumpPower, jumpCounter = 0.0F;
 	//Used in CameraController()

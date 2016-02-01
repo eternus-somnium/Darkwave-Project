@@ -21,7 +21,7 @@ public class ZombieMaster : NonPlayer {
 		for (var z = 0; z < 5; z++)
 		{
 			var newZombie = (GameObject)Instantiate (template, transform.position + (transform.forward * (2 + z)), transform.rotation);
-			newZombie.
+			newZombie.GetComponent<Zombie>().leader = GetComponent<ZombieMaster>();
 			squad.Add (newZombie);
 		}
 	}

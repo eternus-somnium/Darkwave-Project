@@ -289,4 +289,13 @@ public class Character : Unit
 			dying = value;
 		}
 	}
+
+	public float JumpCounter {
+		get {
+			return jumpCounter;
+		}
+		set {
+			jumpCounter = value;
+		}
+	}
 }

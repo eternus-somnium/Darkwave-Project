@@ -5,7 +5,7 @@ public class Walker : NonPlayer
 {
 	
 	private NavMeshAgent agent;
-	Vector3 goal, randomAdd;
+	Vector3 randomAdd;
 	
 	// Use this for initialization
 	void Start () 

@@ -1,8 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Turn based grid\Assets\CameraControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Units\Players\Character.cs">
     <Files>
-      <File FileName="..\..\..\Turn based grid\Assets\CameraControl.cs" Line="38" Column="39" />
+      <File FileName="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs" Line="16" Column="22" />
+      <File FileName="Assets\CharacterAnimations.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\Players\Character.cs" Line="53" Column="1" />
+      <File FileName="Assets\ZombieMaster.cs" Line="1" Column="1" />
+      <File FileName="Assets\Zombie.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Players\FPSWithModel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\NonPlayers\Walker.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\NonPlayers\NonPlayer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
