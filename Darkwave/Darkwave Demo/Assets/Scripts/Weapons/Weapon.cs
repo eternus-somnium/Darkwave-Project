@@ -13,8 +13,8 @@ public class Weapon : MonoBehaviour
 		baseDamage;
 	bool ready;
 
-	public AudioClip primarySound;
-	public AudioClip secondarySound;
+	public AudioClip primarySound,
+		secondarySound;  
 	
 	public float 
 		baseCooldown,
@@ -68,10 +68,10 @@ public class Weapon : MonoBehaviour
 		
 		//Controls time between attacks
 		if(currentCooldown <= 0) ready=true;
-		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= 4; //statusEffects[6] is haste
+		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= parent.GetComponent<Unit>().actMod; //statusEffects[6] is haste
 		else currentCooldown--;
 	}
-
+	
 	public void AttackAnimation()
 	{
 		//Trigger animation built into weapon object
@@ -81,7 +81,7 @@ public class Weapon : MonoBehaviour
 			else if(secondaryActionFlag) PlaySound (secondarySound);
 		}
 	}
-
+	
 	public void MainActionController()
 	{
 		mainActionFlag = true;
@@ -89,16 +89,16 @@ public class Weapon : MonoBehaviour
 	
 	public void SecondaryActionController()
 	{
+		
 		secondaryActionFlag = true;
 	}
 
 	public void PlaySound(AudioClip sound)
 	{
-		print ("Pewwoosh");
 		GetComponent<AudioSource> ().clip = sound;
 		GetComponent<AudioSource> ().Play();
 	}
-
+	
 	public Vector3 DefaultPosition {
 		get {
 			return defaultPosition;
