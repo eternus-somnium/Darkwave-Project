@@ -23,6 +23,17 @@ public class Zombie : NonPlayer {
 
 		if (leader) target = leader.target;
 
+		if(inSight)
+		{
+			foreach(GameObject soldier in leader.squad)
+			{
+				soldier.GetComponent<Zombie>().inSight = inSight;
+				if(target != null && agent.isActiveAndEnabled)
+					soldier.GetComponent<Zombie>().agent.SetDestination (target.transform.position + randomAdd);
+			}
+			leader.GetComponent<ZombieMaster>().inSight = inSight;
+		}
+
 		if(target != null && agent.isActiveAndEnabled)
 			agent.SetDestination (target.transform.position + randomAdd);
 		if(GetComponent<Animator> ()) GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);

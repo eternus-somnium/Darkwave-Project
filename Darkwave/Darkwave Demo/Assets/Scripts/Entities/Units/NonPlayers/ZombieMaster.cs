@@ -32,6 +32,12 @@ public class ZombieMaster : NonPlayer {
 		NonPlayerUpdate();
 
 		WalkerAI();
+
+		if (inSight) {
+			foreach (GameObject soldier in squad) {
+				soldier.GetComponent<Zombie> ().inSight = inSight;
+			}
+		}
 		
 		
 		if(target != null && agent.isActiveAndEnabled)

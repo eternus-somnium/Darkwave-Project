@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Draugar : Walker {
+public class Draugar : NonPlayer {
 
 	private float acceleration;
 	private NavMeshAgent agent;
