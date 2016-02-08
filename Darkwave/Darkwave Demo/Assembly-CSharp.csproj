@@ -38,10 +38,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>E:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>E:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -57,8 +57,6 @@
      <Compile Include="Assets\Scripts\Effects\Debuffs\Crippled.cs" />
      <Compile Include="Assets\Scripts\Effects\Debuffs\Degeneration.cs" />
      <Compile Include="Assets\Scripts\Effects\Effect.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\NonPlayers\Draugar.cs" />
-     <Compile Include="Assets\Scripts\Entities\Agents\NonPlayers\TestAI.cs" />
      <Compile Include="Assets\Scripts\Entities\Crystal.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
      <Compile Include="Assets\Scripts\Entities\Shots\Shot.cs" />
@@ -69,8 +67,12 @@
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Pillar.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Turret.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\TurretBehavior.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Draugar.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\NonPlayer.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\TestAI.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Walker.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Zombie.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\ZombieMaster.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\Players\Architect.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\Players\Character.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\Unit.cs" />
@@ -92,20 +94,18 @@
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Wispifier.cs" />
      <Compile Include="Assets\UnitAnimator.cs" />
-     <Compile Include="Assets\Zombie.cs" />
-     <Compile Include="Assets\ZombieMaster.cs" />
      <None Include="Assets\Inside Sphere.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>E:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
- <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
+ <HintPath>E:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>E:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
