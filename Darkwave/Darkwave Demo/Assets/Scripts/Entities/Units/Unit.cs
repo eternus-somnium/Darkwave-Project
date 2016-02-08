@@ -179,7 +179,7 @@ public class Unit : Entity
 
 	///Called by an ability from a unit that applies an effect to the target unit.
 	///This adds the effect to the Unit's 2D effects List.
-	protected void NewEffect(Effect newEff)
+	public void NewEffect(Effect newEff)
 	{
 		bool noStack = false;
 		int i = 0;

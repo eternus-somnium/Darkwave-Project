@@ -47,7 +47,7 @@ public class Character : Unit
 	}
 	*/
 	/// Additionally runs updateEffectTimers.
-	new protected void NewEffect(Effect newEff)
+	new public void NewEffect(Effect newEff)
 	{
 		base.NewEffect(newEff);
 		hud.updateEffectTimers(longestEmp);
