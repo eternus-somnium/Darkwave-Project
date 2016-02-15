@@ -448,7 +448,8 @@ public class Unit : Entity
 		   ((gameObject.layer == 8 && col.gameObject.layer == 9) ||
 		 (gameObject.layer == 9 && col.gameObject.layer == 8)))
 		{
-			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, statusEffects[3]);//statusEffects[3] is burning
+			if(col.gameObject.GetComponent<Unit>()) col.gameObject.GetComponent<Unit>().DamageController(touchDamage, statusEffects[3]);//statusEffects[3] is burning
+			else if(col.transform.root.GetComponent<Unit>()) col.transform.root.GetComponent<Unit>().DamageController(touchDamage, statusEffects[3]);//statusEffects[3] is burning
 		}
 		
 		if(col.gameObject.tag == "Death") 

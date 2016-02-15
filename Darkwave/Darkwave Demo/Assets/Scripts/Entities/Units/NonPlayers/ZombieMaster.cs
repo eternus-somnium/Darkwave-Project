@@ -34,8 +34,9 @@ public class ZombieMaster : NonPlayer {
 		WalkerAI();
 
 		if (inSight) {
-			foreach (GameObject soldier in squad) {
-				soldier.GetComponent<Zombie> ().inSight = inSight;
+			for(int s = 0; s < squad.Count; s++){
+				squad[s].GetComponent<Zombie> ().inSight = inSight;
+				squad[s].GetComponent<Zombie> ().agent.SetDestination(target.transform.position + new Vector3(Mathf.Cos((360 * (s / squad.Count)) * Mathf.Deg2Rad) * 5, Mathf.Sin((360 * (s / squad.Count)) * Mathf.Deg2Rad) * 5,0));
 			}
 		}
 		
@@ -43,17 +44,23 @@ public class ZombieMaster : NonPlayer {
 		if(target != null && agent.isActiveAndEnabled)
 			agent.SetDestination (target.transform.position + randomAdd);
 		if(GetComponent<Animator> ()) GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);
+
+		if (health <= 0) {
+			for (int s = 0; s < squad.Count; s++) {
+				squad [s].GetComponent<Zombie> ().leader = null;
+			}
+		}
 	}
 	
 	//Controls the behavior of the npc turret
 	void WalkerAI()
 	{	
-		/*//if the player is in sight
+		//if the player is in sight
 		RaycastHit hit;
 		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && 
 		   (hit.transform.gameObject == target.gameObject || hit.collider.gameObject.layer == 11))
 		{
 			WeaponMainAction(WeaponChoice);
-		}*/
+		}
 	}
 }

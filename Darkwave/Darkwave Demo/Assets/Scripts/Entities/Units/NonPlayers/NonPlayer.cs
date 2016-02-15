@@ -39,13 +39,6 @@ public class NonPlayer : Unit
 		}
 		else inSight = false;
 
-		if (targetDistance < .25) {
-			if (GetComponent<NavMeshAgent> ())
-				GetComponent<NavMeshAgent> ().enabled = false;
-		}
-		else if (GetComponent<NavMeshAgent> ())
-			GetComponent<NavMeshAgent> ().enabled = true;
-
 		if(health < 1)
 		{
 			this.target = null;
