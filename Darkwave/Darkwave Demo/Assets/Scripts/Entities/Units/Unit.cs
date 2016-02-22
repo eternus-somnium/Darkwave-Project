@@ -34,6 +34,9 @@ public class Unit : Entity
 
 	public Effect tempEff;
 	public Effect longestEmp;
+	
+	public AudioClip[] painSounds;
+	public AudioClip[] deathSounds;
 
 	public List<List<Effect>> effects = new List<List<Effect>>();
 
@@ -448,6 +451,7 @@ public class Unit : Entity
 		   ((gameObject.layer == 8 && col.gameObject.layer == 9) ||
 		 (gameObject.layer == 9 && col.gameObject.layer == 8)))
 		{
+			print (col.gameObject);
 			if(col.gameObject.GetComponent<Unit>()) col.gameObject.GetComponent<Unit>().DamageController(touchDamage, statusEffects[3]);//statusEffects[3] is burning
 			else if(col.transform.root.GetComponent<Unit>()) col.transform.root.GetComponent<Unit>().DamageController(touchDamage, statusEffects[3]);//statusEffects[3] is burning
 		}

@@ -24,14 +24,14 @@ public class Zombie : NonPlayer {
 
 		if (leader) target = leader.target;
 
-		if(inSight && leader != null)
+		/*if(inSight && leader != null)
 		{
 			foreach(GameObject soldier in leader.squad)
 			{
 				soldier.GetComponent<Zombie>().inSight = inSight;
 			}
 			leader.GetComponent<ZombieMaster>().inSight = inSight;
-		}
+		}*/
 
 		if(target != null && agent.isActiveAndEnabled && leader != null)
 			agent.SetDestination (target.transform.position + randomAdd);
@@ -44,7 +44,7 @@ public class Zombie : NonPlayer {
 		//if the player is in sight
 		RaycastHit hit;
 		if(target != null && Physics.Raycast (transform.position, target.transform.position - transform.position, out hit, engagementRange) && 
-		   (hit.transform.gameObject == target.gameObject || hit.collider.gameObject.layer == 11))
+		   hit.transform.gameObject == target.gameObject)
 		{
 			WeaponMainAction(WeaponChoice);
 		}

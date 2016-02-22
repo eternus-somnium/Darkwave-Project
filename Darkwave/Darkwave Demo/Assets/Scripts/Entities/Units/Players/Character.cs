@@ -72,6 +72,18 @@ public class Character : Unit
 		else if(!dying)
 		{
 			dying=true;
+			PlaySound(deathSounds[Random.Range(0,deathSounds.Length)]);
+			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = false;
+			if(GetComponent<CharacterAnimations>())
+			{
+				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
+				{
+					bone.isKinematic = false;
+					Physics.IgnoreCollision(bone.GetComponent<Collider>(), GetComponent<Collider>());
+				}
+				GetComponent<CharacterAnimations>().IKActive = false;
+				GetComponent<CharacterAnimations>().headIK = false;
+			}
 			aggroValue = 0;
 			CancelInvoke("healthRegenController");
 			InvokeRepeating("DeathController",0,1);
@@ -143,6 +155,12 @@ public class Character : Unit
 		}
 		MoveDirection = new Vector3(MoveDirection.x, jumpPower + Physics.gravity.y, MoveDirection.z);
 		controller.Move(MoveDirection * Time.deltaTime);
+	}
+
+	public void PlaySound(AudioClip sound)
+	{
+		GetComponent<AudioSource> ().clip = sound;
+		GetComponent<AudioSource> ().Play();
 	}
 
 	void CameraController()
@@ -237,6 +255,17 @@ public class Character : Unit
 		{
 			respawnTimer = -99;
 			dying=false;
+			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = true;
+			if(GetComponent<CharacterAnimations>())
+			{
+				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
+				{
+					bone.isKinematic = true;
+					Physics.IgnoreCollision(bone.GetComponent<Collider>(), GetComponent<Collider>());
+				}
+				GetComponent<CharacterAnimations>().IKActive = true;
+				GetComponent<CharacterAnimations>().headIK = true;
+			}
 			Debug.Log("someone helped you up");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
@@ -250,6 +279,14 @@ public class Character : Unit
 			treasures = 0;
 			health = maxHealth;
 			dying=false;
+			if(GetComponent<Animator>()) GetComponent<Animator>().enabled = true;
+			if(GetComponent<CharacterAnimations>())
+			{
+				foreach (Rigidbody bone in GetComponent<CharacterAnimations>().Bones)
+					bone.isKinematic = true;
+				GetComponent<CharacterAnimations>().IKActive = true;
+				GetComponent<CharacterAnimations>().headIK = true;
+			}
 			Debug.Log("you got better");
 			InvokeRepeating("healthRegenController",1,1);
 			CancelInvoke("DeathController");
