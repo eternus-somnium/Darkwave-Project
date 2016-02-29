@@ -119,7 +119,7 @@ public class Grid : MonoBehaviour
         return placementPosition;
     }
 
-    public List<Vector3> getAdjacentWallLocations(Vector3 position, int range)
+    /*public List<Vector3> getAdjacentPillarLocations(Vector3 position, int range)
     {
 		Vector2 gridPos = GetGridPosition(position);
        
@@ -189,6 +189,23 @@ public class Grid : MonoBehaviour
         }
         return vectors;
     }
+    */
+
+	public List<GameObject> getPillarsInRange(Vector3 position, int range)
+	{
+		Vector2 gridPos = GetGridPosition(position);
+		int i,j;
+		List<GameObject> pillars = new List<GameObject>();
+
+		for(i=(int)gridPos.x-range;i<=(int)gridPos.x+range;i++)
+			for(j=(int)gridPos.y-((int)Mathf.Abs(gridPos.x-i)); j<=gridPos.y-(Mathf.Abs(gridPos.x-i));j++)
+				if(i>=0 && i<rows && j>=0 && j<columns)
+					if(objectsInGrid[i, j] != null &&
+					   objectsInGrid[i, j].GetComponent<BuildableObject>().isPillar)
+						pillars.Add(objectsInGrid[i,j]);
+
+		return pillars;
+	}
 
 	//places the reference object in objectsInGrid and updates occupiedArray
     public void editGrid(GameObject obj, bool create)

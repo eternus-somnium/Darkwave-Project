@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BuildDevice : Weapon 
 {
-
 	GameObject hitObject;
 	Vector3 m_pos;
 
@@ -75,22 +74,21 @@ public class BuildDevice : Weapon
 	{
 		RaycastHit hit;
 
-		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range)) //If the ray hit something
+		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && //If the ray hit something
+		    hit.transform.gameObject.GetComponent<Grid>() != null) //If the thing the ray hit had a grid component
 		{
-			if (hit.transform.gameObject.GetComponent<Grid>() != null && //If the thing the ray hit had a grid component
-				hit.transform.gameObject.GetComponent<Grid>().openSpace(hit.point))//If the hit.point is unoccupied on grid
+		    if(hit.transform.gameObject.GetComponent<Grid>().openSpace(hit.point))//If the hit.point is unoccupied on grid
 			{
-					#region can place
-					previewObjects[selectedObject].SetActive(true);
-					m_pos = hit.transform.gameObject.GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
-					m_pos.y = hit.point.y + buildableObjects[selectedObject].transform.position.y;
-					previewObjects[selectedObject].transform.position = m_pos;
-					return 1;//On grid and empty
-					#endregion
+				#region can place
+				previewObjects[selectedObject].SetActive(true);
+				m_pos = hit.transform.gameObject.GetComponent<Grid>().getVector3(hit.point);//runs function to find vector to place
+				m_pos.y = hit.point.y + buildableObjects[selectedObject].transform.position.y;
+				previewObjects[selectedObject].transform.position = m_pos;
+				return 1;//On grid and empty
+				#endregion
 			}
-			else if (hit.transform.gameObject.GetComponent<BuildableObject>() != null &&
-			         hit.transform.gameObject.GetComponent<BuildableObject>().canBeStackedOn && 
-			         buildableObjects[selectedObject].GetComponent<BuildableObject>().canStackOn) //If the hit point is occupied but stackable
+			else if (hit.transform.gameObject.GetComponent<BuildableObject>().canBeStackedOn && 
+		         	 buildableObjects[selectedObject].GetComponent<BuildableObject>().canStackOn) //If the hit point is occupied but stackable
 			{
 				#region Wall Turret
 				previewObjects[selectedObject].SetActive(true);
@@ -99,9 +97,7 @@ public class BuildDevice : Weapon
 				previewObjects[selectedObject].transform.position = m_pos;
 				return 2;//On grid and occupied by a wall 
 				#endregion
-				
-			}
-			
+				}
 		}
 
 		previewObjects[selectedObject].SetActive(false);

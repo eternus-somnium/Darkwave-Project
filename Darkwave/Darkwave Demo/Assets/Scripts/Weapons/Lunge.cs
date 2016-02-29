@@ -3,7 +3,10 @@ using System.Collections;
 
 public class Lunge : Weapon 
 {
-	public int distance, lungeSpeedMultiplier;
+	public int 
+		lungeSpeedMultiplier;
+
+	float lungeTimer;
 
 
 	// Use this for initialization
@@ -27,7 +30,8 @@ public class Lunge : Weapon
 			transform.position = Vector3.MoveTowards(transform.position, 
 			                                         parent.GetComponent<NonPlayer>().target.transform.position, 
 			                                         parent.GetComponent<NonPlayer>().baseSpeed*lungeSpeedMultiplier);
-			//transform.Translate((parent.GetComponent<NPC>().target.transform.position)*parent.GetComponent<NPC>().baseSpeed*lungeSpeedMultiplier);
+
+			lungeTimer = 1;
 			Ready=false;
 			currentCooldown = augmentedCooldown;
 			currentEnergy -= energyDrain;
@@ -37,5 +41,18 @@ public class Lunge : Weapon
 	public void SecondaryAction()
 	{
 		
+	}
+
+	void OnTriggerStay(Collider col)
+	{
+		if((gameObject.layer == 8 && col.gameObject.layer == 9) ||
+			(gameObject.layer == 9 && col.gameObject.layer == 8 &&
+			lungeTimer > 0))
+		{
+			col.gameObject.GetComponent<Unit>().DamageController(augmentedDamage, false);
+			lungeTimer = 0;
+		}
+		else if(lungeTimer > 0) lungeTimer -= Time.deltaTime;
+			//Debug.Log (gameObject + " hit " + col.gameObject);
 	}
 }
