@@ -33,7 +33,7 @@ public class Zombie : NonPlayer {
 			leader.GetComponent<ZombieMaster>().inSight = inSight;
 		}*/
 
-		if(target != null && agent.isActiveAndEnabled && leader != null)
+		if(target != null && agent.isActiveAndEnabled && leader == null)
 			agent.SetDestination (target.transform.position + randomAdd);
 		if(GetComponent<Animator> ()) GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);
 	}

@@ -36,13 +36,16 @@ public class ZombieMaster : NonPlayer {
 		if (inSight) {
 			for(int s = 0; s < squad.Count; s++){
 				//squad[s].GetComponent<Zombie> ().inSight = inSight;
-				squad[s].GetComponent<Zombie> ().agent.SetDestination(target.transform.position + new Vector3(Mathf.Cos((360 * (s / squad.Count)) * Mathf.Deg2Rad) * 5, Mathf.Sin((360 * (s / squad.Count)) * Mathf.Deg2Rad) * 5,0));
+				Vector3 surroundOffset = new Vector3(Mathf.Cos((360 * ((s + 1) / (squad.Count + 1.0f))) * Mathf.Deg2Rad) * 2,0,Mathf.Sin((360 * ((s + 1) / (squad.Count + 1.0f))) * Mathf.Deg2Rad) * 2);
+				squad[s].GetComponent<Zombie> ().agent.SetDestination(target.transform.position + surroundOffset);
 			}
 		}
 		
-		
-		if(target != null && agent.isActiveAndEnabled)
-			agent.SetDestination (target.transform.position + randomAdd);
+		if (target != null && agent.isActiveAndEnabled) {
+			Vector3 leaderPlace = new Vector3 (Mathf.Cos (360 * Mathf.Deg2Rad) * 2, 0, Mathf.Sin (360 * Mathf.Deg2Rad) * 2);
+			//agent.SetDestination (target.transform.position + randomAdd);
+			agent.SetDestination (target.transform.position + leaderPlace);
+		}
 		if(GetComponent<Animator> ()) GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);
 
 		if (health <= 0) {

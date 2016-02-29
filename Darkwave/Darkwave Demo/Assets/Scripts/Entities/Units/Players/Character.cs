@@ -170,7 +170,7 @@ public class Character : Unit
 
 		//Rotates Player on "X" Axis Acording to Mouse Input
 		hRotation = (hRotation + horizontalSpeed * Input.GetAxis("Mouse X"))%360;
-		transform.localEulerAngles = new Vector3(0, hRotation, 0);
+		if(health > 0) transform.localEulerAngles = new Vector3(0, hRotation, 0);
 		
 		//Rotates Player on "Y" Axis Acording to Mouse Input
 		vRotation = Mathf.Clamp(vRotation - verticalSpeed * Input.GetAxis("Mouse Y"), -90,90);
