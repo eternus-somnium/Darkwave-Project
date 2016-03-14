@@ -46,7 +46,6 @@ public class AlternateBuildDevice : Weapon
 				obj.GetComponent<Collider>().enabled = true;
 				Ready=false;
 				currentCooldown=baseCooldown;
-
 			}
 			else if(type == 2)
 			{
@@ -98,6 +97,7 @@ public class AlternateBuildDevice : Weapon
 			else if(hit.transform.gameObject.GetComponent<PlacementObject>() != null)
 			{
 				placementObjects[selectedObject].SetActive(false);
+
 				return 2;
 			}
 		}
