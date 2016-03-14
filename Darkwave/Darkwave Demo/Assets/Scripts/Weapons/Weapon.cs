@@ -9,8 +9,6 @@ public class Weapon : MonoBehaviour
 		secondaryActionFlag = false,
 		particleFlag,
 		gridLinesFlag;
-	public int 
-		baseDamage;
 	bool ready;
 
 	public AudioClip primarySound,
@@ -19,6 +17,8 @@ public class Weapon : MonoBehaviour
 	public float 
 		baseCooldown,
 		augmentedCooldown,
+		baseDamage,
+		augmentedDamage,
 		baseEnergy,
 		augmentedEnergy,
 		currentEnergy,
@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour
 	// Use this for initialization
 	public void WeaponStart () 
 	{
+		//Sets parent of object
 		if(this.transform.parent.gameObject.name != "Main Camera")
 		{
 			parent = gameObject.transform.parent.gameObject;
@@ -42,11 +43,13 @@ public class Weapon : MonoBehaviour
 			parent = gameObject.transform.parent.parent.gameObject;
 		}
 		
+		//Determines if a weapon has a particle effect
 		particleFlag = gameObject.GetComponentInChildren<ParticleSystem>() != null;
 		defaultPosition = transform.localPosition;
 		nextPosition=defaultPosition;
 		augmentedEnergy=baseEnergy;
 		augmentedCooldown=baseCooldown;
+		augmentedDamage = baseDamage;
 		currentEnergy = augmentedEnergy;
 		InvokeRepeating("WeaponTime",0,.25f);
 		
