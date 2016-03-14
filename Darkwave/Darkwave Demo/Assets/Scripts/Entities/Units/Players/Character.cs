@@ -31,13 +31,16 @@ public class Character : Unit
 			GameObject.FindGameObjectWithTag("Respawn").transform.position.z+Random.Range(-1,1)*5);
 		InvokeRepeating("healthRegenController",1,1);
         
+		/*
+		Use these three lines for new effects. Swap "Crippled" for any other effect if needed. The number "10" is duration.
 		tempEff = gameObject.AddComponent<Crippled>();
 		tempEff.EffectStart(10,this,this);
 		NewEffect(tempEff);
 
-		// NewEffectSwitch("Empowered",10,this,this);
+		//NewEffectSwitch("Empowered",10,this,this); old; don't use
 
 		Debug.Log ("The longest duration is " + longestEmp.duration);
+		*/
 	}
 
 	/*
@@ -49,8 +52,9 @@ public class Character : Unit
 	/// Additionally runs updateEffectTimers.
 	new public void NewEffect(Effect newEff)
 	{
+		Debug.Log ("NewEffect() is running.");
 		base.NewEffect(newEff);
-		hud.updateEffectTimers(longestEmp);
+		hud.updateEffectTimers(newEff);
 	}
 
 	// Called every frame.

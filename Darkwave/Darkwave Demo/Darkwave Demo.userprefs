@@ -1,8 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\VR-Mumble\Assets\Notes.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Units\Players\Character.cs">
     <Files>
-      <File FileName="..\..\..\VR-Mumble\Assets\Notes.cs" Line="89" Column="21" />
+      <File FileName="Assets\Scripts\Entities\Units\Players\Character.cs" Line="35" Column="118" />
+      <File FileName="Assets\Scripts\Effects\Debuffs\Crippled.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\Unit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HUD\CharacterHUD.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\Players\Architect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Shots\Shot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Shots\StraightShot.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

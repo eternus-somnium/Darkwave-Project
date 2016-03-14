@@ -255,14 +255,14 @@ public class Unit : Entity
 	public void UnitStart()
 	{
 		EntityStart();
-
+		speedMod = 1.0f;
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object
 	public void UnitUpdate()
 	{
 		if(stun > 0) stun--;
-		augmentedSpeed = baseSpeed + speedMod;
+		augmentedSpeed = baseSpeed * speedMod;
 	}
 
 	// Updates current effects on entity.
