@@ -24,13 +24,22 @@ public class Pillar : BuildableObject
 
 	void BuildWalls()
 	{
-		List<Vector3> wallPositions = PlacementGrid.getAdjacentWallLocations(this.gameObject.transform.position, wallRange);
-
-		foreach (Vector3 center in wallPositions)
+		List<GameObject> potentialPillars = PlacementGrid.getPillarsInRange(this.gameObject.transform.position, wallRange);
+		GameObject newWall;
+		foreach (GameObject p in potentialPillars)
 		{
-			GameObject newWall = (GameObject)Instantiate(wall,center+wall.transform.position,gameObject.transform.rotation);
-			newWall.gameObject.transform.LookAt(this.gameObject.transform);
-			walls.Add(newWall);
+			RaycastHit h;
+			Vector3 direction = p.transform.position-gameObject.transform.position;
+			Physics.Raycast(gameObject.transform.position, direction, out h);
+			if(h.collider != null && h.collider.gameObject == p)
+			{
+				newWall = (GameObject)Instantiate(
+					wall,
+					gameObject.transform.position + direction/2,
+					gameObject.transform.rotation);
+
+				newWall.gameObject.transform.LookAt(p.transform);
+			}
 		}
 	}
 
