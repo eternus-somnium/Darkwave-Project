@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Weapon : MonoBehaviour 
 {
-	
+
 	public bool 
 		mainActionFlag = false,
 		secondaryActionFlag = false,
@@ -25,11 +25,11 @@ public class Weapon : MonoBehaviour
 		currentCooldown=0,
 		energyDrain = 0;
 	public GameObject parent; // Entity wielding the weapon.
-	
+
 	Vector3 defaultPosition;
 	public Vector3 secondaryPosition;
 	internal Vector3 nextPosition;
-	
+
 	// Use this for initialization
 	public void WeaponStart () 
 	{
@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
 		{
 			parent = gameObject.transform.parent.parent.gameObject;
 		}
-		
+
 		//Determines if a weapon has a particle effect
 		particleFlag = gameObject.GetComponentInChildren<ParticleSystem>() != null;
 		defaultPosition = transform.localPosition;
@@ -52,9 +52,9 @@ public class Weapon : MonoBehaviour
 		augmentedDamage = baseDamage;
 		currentEnergy = augmentedEnergy;
 		InvokeRepeating("WeaponTime",0,.25f);
-		
+
 	}
-	
+
 	// Controls the weapon's fire rate and recharge
 	protected void WeaponTime()
 	{
@@ -68,13 +68,13 @@ public class Weapon : MonoBehaviour
 		}
 		else if(gameObject.activeSelf && particleFlag && gameObject.GetComponentInChildren<ParticleSystem>().isPlaying) 
 			gameObject.GetComponentInChildren<ParticleSystem>().Stop();
-		
+
 		//Controls time between attacks
 		if(currentCooldown <= 0) ready=true;
 		else if (parent.GetComponent<Unit>().statusEffects[6]) currentCooldown -= parent.GetComponent<Unit>().actMod; //statusEffects[6] is haste
 		else currentCooldown--;
 	}
-	
+
 	public void AttackAnimation()
 	{
 		//Trigger animation built into weapon object
@@ -84,15 +84,15 @@ public class Weapon : MonoBehaviour
 			else if(secondaryActionFlag) PlaySound (secondarySound);
 		}
 	}
-	
+
 	public void MainActionController()
 	{
 		mainActionFlag = true;
 	}
-	
+
 	public void SecondaryActionController()
 	{
-		
+
 		secondaryActionFlag = true;
 	}
 
@@ -110,7 +110,7 @@ public class Weapon : MonoBehaviour
 			defaultPosition = value;
 		}
 	}
-	
+
 	public bool Ready {
 		get {
 			return ready;
