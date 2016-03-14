@@ -33,9 +33,26 @@ public class Zombie : NonPlayer {
 			leader.GetComponent<ZombieMaster>().inSight = inSight;
 		}*/
 
-		if(target != null && agent.isActiveAndEnabled && leader == null)
+		if (target != null && agent.isActiveAndEnabled) {
+			//if(leader == null) agent.SetDestination (target.transform.position + randomAdd);
 			agent.SetDestination (target.transform.position + randomAdd);
+			Vector3 targetAtHeight = new Vector3(target.transform.position.x,transform.position.y,target.transform.position.z);
+			Vector3 finalLookGoal = CappedLerp (transform.forward, targetAtHeight - transform.position);
+			//Vector3 finalLookGoal = Vector3.ClampMagnitude(targetAtHeight - transform.position, agent.angularSpeed);
+			//transform.rotation = Quaternion.LookRotation(finalLookGoal);
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(targetAtHeight) , agent.angularSpeed * Time.deltaTime);
+		}
 		if(GetComponent<Animator> ()) GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);
+	}
+
+	Vector3 CappedLerp (Vector3 startPos, Vector3 endPos)
+	{
+		float cap = 1;
+		for(float i = 0; i < 1.1; i += 0.1f)
+		{
+			if(Mathf.Rad2Deg*Mathf.Atan(Vector3.Distance(startPos,Vector3.Lerp (startPos, endPos, i))) > agent.angularSpeed * Time.deltaTime) cap = (i - 0.1f);
+		}
+		return Vector3.Lerp (startPos, endPos, cap);
 	}
 
 	//Controls the behavior of the npc turret

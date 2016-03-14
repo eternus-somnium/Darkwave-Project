@@ -45,6 +45,8 @@ public class Lunge : Weapon
 
 	void OnTriggerStay(Collider col)
 	{
+		print (col.gameObject);
+
 		if((gameObject.layer == 8 && col.gameObject.layer == 9) ||
 			(gameObject.layer == 9 && col.gameObject.layer == 8 &&
 			lungeTimer > 0))

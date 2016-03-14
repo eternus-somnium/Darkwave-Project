@@ -24,6 +24,7 @@ public class ZombieMaster : NonPlayer {
 			newZombie.GetComponent<Zombie>().leader = GetComponent<ZombieMaster>();
 			squad.Add (newZombie);
 		}
+		transform.position += randomAdd;
 	}
 	
 	// Update is called once per frame
@@ -37,7 +38,7 @@ public class ZombieMaster : NonPlayer {
 			for(int s = 0; s < squad.Count; s++){
 				//squad[s].GetComponent<Zombie> ().inSight = inSight;
 				Vector3 surroundOffset = new Vector3(Mathf.Cos((360 * ((s + 1) / (squad.Count + 1.0f))) * Mathf.Deg2Rad) * 2,0,Mathf.Sin((360 * ((s + 1) / (squad.Count + 1.0f))) * Mathf.Deg2Rad) * 2);
-				squad[s].GetComponent<Zombie> ().agent.SetDestination(target.transform.position + surroundOffset);
+				//squad[s].GetComponent<Zombie> ().agent.SetDestination(target.transform.position + surroundOffset);
 			}
 		}
 		
@@ -45,6 +46,8 @@ public class ZombieMaster : NonPlayer {
 			Vector3 leaderPlace = new Vector3 (Mathf.Cos (360 * Mathf.Deg2Rad) * 2, 0, Mathf.Sin (360 * Mathf.Deg2Rad) * 2);
 			//agent.SetDestination (target.transform.position + randomAdd);
 			agent.SetDestination (target.transform.position + leaderPlace);
+			Vector3 targetAtHeight = new Vector3(target.transform.position.x,transform.position.y,target.transform.position.z);
+			transform.rotation = Quaternion.LookRotation(targetAtHeight - transform.position);
 		}
 		if(GetComponent<Animator> ()) GetComponent<Animator> ().SetFloat ("Speed", augmentedSpeed / baseSpeed);
 

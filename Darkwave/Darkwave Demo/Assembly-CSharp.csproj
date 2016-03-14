@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CharacterAnimations.cs" />
+     <Compile Include="Assets\GridPlacementSquare.cs" />
      <Compile Include="Assets\Scripts\CriticalPoint.cs" />
      <Compile Include="Assets\Scripts\Effects\Buffs\Armored.cs" />
      <Compile Include="Assets\Scripts\Effects\Buffs\Empowered.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\BuildableObject.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\EnergySphere.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Pillar.cs" />
+     <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\PlacementObject.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Turret.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\TurretBehavior.cs" />
      <Compile Include="Assets\Scripts\Entities\Units\NonPlayers\Draugar.cs" />
@@ -87,6 +89,7 @@
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitCriticalFinish.cs" />
      <Compile Include="Assets\Scripts\Traits\ArchitectTraits\TraitHuntersMomemtum.cs" />
      <Compile Include="Assets\Scripts\Traits\Trait.cs" />
+     <Compile Include="Assets\Scripts\Weapons\AlternateBuildDevice.cs" />
      <Compile Include="Assets\Scripts\Weapons\BuildDevice.cs" />
      <Compile Include="Assets\Scripts\Weapons\Lunge.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapon.cs" />
