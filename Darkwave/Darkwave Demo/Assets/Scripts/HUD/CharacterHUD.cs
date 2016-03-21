@@ -19,7 +19,10 @@ public class CharacterHUD : MonoBehaviour
 	public GameObject gameController;
 	public Text timerText;
 	public Text shardsText;
+    public Slider crystalHealthSlider;
+    public Text crystalHealthText;
 
+    protected Crystal crystalScript;
 	protected GameController gameControllerScript;
 	protected Weapon weaponScript;
 
@@ -53,6 +56,8 @@ public class CharacterHUD : MonoBehaviour
 	protected void Start ()
 	{
 		healthSlider.maxValue = characterScript.maxHealth;
+        crystalScript = gameController.GetComponentInChildren<Crystal>();
+        crystalHealthSlider.maxValue = crystalScript.maxHealth;
 		oldCharacterHealth = characterHealth = characterScript.health;
 		gameControllerScript = gameController.GetComponent<GameController>();
 	}
@@ -157,6 +162,9 @@ public class CharacterHUD : MonoBehaviour
 		
 		healthSlider.value = characterHealth;
 		healthText.text = "HP: " + characterHealth.ToString("F2");
+
+        crystalHealthSlider.value = crystalScript.health;
+        crystalHealthText.text = "Crystal HP: " + crystalHealthSlider.value.ToString("F2");
 		
 		buffText.text = "";
 		if (characterEmp > 0) buffText.text += "Emp: " + characterEmp.ToString("F2") + " ";
