@@ -4,6 +4,7 @@ using System.Collections;
 public class PlacementObject : MonoBehaviour 
 {
 	public GameObject actualObject;
+	public Vector3 offsetPosition;
 	public float 
 		buildTime=1,
 		previousBuild=0,

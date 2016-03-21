@@ -86,7 +86,7 @@ public class AlternateBuildDevice : Weapon
 				hit.transform.root.gameObject == GameObject.Find("Terrain")) //Surface is part of the terrain
 			{
 				objectPosition = placementObjects[selectedObject].transform.position = 
-					hit.point + placementObjects[selectedObject].GetComponent<BuildableObject>().offsetPosition;
+					hit.point + placementObjects[selectedObject].GetComponent<PlacementObject>().offsetPosition;
 				objectRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
 				placementObjects[selectedObject].transform.position = objectPosition;

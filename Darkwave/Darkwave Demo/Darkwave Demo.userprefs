@@ -1,20 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Pillar.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\BuildableObject.cs">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\AlternateBuildDevice.cs" Line="47" Column="18" />
+      <File FileName="Assets\Scripts\Weapons\AlternateBuildDevice.cs" Line="88" Column="68" />
       <File FileName="Assets\Scripts\Weapons\BuildDevice.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Lunge.cs" Line="50" Column="20" />
-      <File FileName="Assets\Scripts\Entities\Units\Players\Character.cs" Line="209" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\PlacementObject.cs" Line="6" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Lunge.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\Players\Character.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\PlacementObject.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Shots\Shot.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Shots\StraightShot.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Units\Unit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Crystal.cs" Line="12" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Entity.cs" Line="30" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Pillar.cs" Line="33" Column="119" />
-      <File FileName="Assets\AdjacencySensor.cs" Line="8" Column="40" />
+      <File FileName="Assets\Scripts\Entities\Crystal.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\Pillar.cs" Line="1" Column="1" />
+      <File FileName="Assets\AdjacencySensor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Entities\Units\NonPlayers\Buildable Objects\BuildableObject.cs" Line="15" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
