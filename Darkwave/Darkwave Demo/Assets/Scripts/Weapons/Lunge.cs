@@ -27,9 +27,9 @@ public class Lunge : Weapon
 		if(Ready && currentEnergy > energyDrain)
 		{
 			Debug.Log("Lunging");
-			transform.position = Vector3.MoveTowards(transform.position, 
-			                                         parent.GetComponent<NonPlayer>().target.transform.position, 
-			                                         parent.GetComponent<NonPlayer>().baseSpeed*lungeSpeedMultiplier);
+			parent.GetComponent<Rigidbody>().AddForce 
+				(Vector3.Normalize(parent.GetComponent<NonPlayer>().target.transform.position -  parent.transform.position) * 
+				lungeSpeedMultiplier);
 
 			lungeTimer = 1;
 			Ready=false;
