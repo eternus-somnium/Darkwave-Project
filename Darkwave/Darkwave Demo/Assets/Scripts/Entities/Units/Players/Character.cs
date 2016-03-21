@@ -197,12 +197,6 @@ public class Character : Unit
 			weapons[WeaponChoice].SetActive(true);
 		}
 
-		//Grid controller
-		if(weapons[WeaponChoice].GetComponent<Weapon>().gridLinesFlag) 
-			gameObject.GetComponentInChildren<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GridLines");
-		else 
-			gameObject.GetComponentInChildren<Camera>().cullingMask &=  ~(1 << LayerMask.NameToLayer("GridLines"));
-
 		//Attack controller
 		if(Input.GetButton("Fire1")) weapons[WeaponChoice].SendMessage("MainActionController");
 		
@@ -214,7 +208,7 @@ public class Character : Unit
 	{
 		float counter = (GameObject.Find("Game Controller").GetComponent<GameController>().sphereScale/2)-
 					Vector3.Distance(gameObject.transform.position, 
-			                 GameObject.Find("Game Controller").GetComponentInChildren<Crystal>().transform.position);
+			                 GameObject.Find("Crystal").GetComponentInChildren<Crystal>().transform.position);
 
 		if(counter > 0) inLitArea = true;
 		else inLitArea = false;

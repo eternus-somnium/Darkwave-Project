@@ -28,7 +28,7 @@ public class PlacementObject : MonoBehaviour
 		if(currentBuild >= buildTime)
 		{
 			Instantiate(actualObject, transform.position, transform.rotation);
-			Destroy(this);
+			Destroy(this.gameObject);
 		}
 		else if(previousBuild != currentBuild)
 		{

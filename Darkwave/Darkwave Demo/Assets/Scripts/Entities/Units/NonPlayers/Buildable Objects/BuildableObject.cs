@@ -7,10 +7,12 @@ public class BuildableObject : NonPlayer
 		canStackOn = false, 
 		canBeStackedOn = false,
 		isPillar = false;
+	public Vector3 offsetPosition;
 	Grid placementGrid;
 
 	public void BuildableObjectStart()
 	{
+		offsetPosition = transform.localPosition;
 		NonPlayerStart();
 		placementGrid = GameObject.Find("Ground").GetComponent<Grid>();
 	}

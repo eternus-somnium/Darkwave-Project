@@ -343,17 +343,7 @@ public class Unit : Entity
 
 	}
 
-	/// <summary>
-	///  DamageController is called by another function that deals damage to this Unit.
-	/// </summary>
-	/// <param name="baseDamage">Base damage.</param>
-	/// <param name="isBurning">If set to <c>true</c> is burning.</param>
-	public void DamageController(float baseDamage, bool isBurning)
-	{
-		baseDamage *= (1 - defMod); //statusEffects[4] is armored
-		if(stun == 0) health -= baseDamage;
-		if(isBurning) EffectsController(3,10);
-	}
+
 
 	protected void ResetHeadShot()
 	{
@@ -438,21 +428,6 @@ public class Unit : Entity
 	protected virtual void AnimationController()
 	{
 		//if(stun) this.gameObject.
-	}
-
-	//Controls reactions to collisions
-	void OnCollisionEnter(Collision col)
-	{
-		
-		if(col.gameObject.tag != "Shot" &&
-		   ((gameObject.layer == 8 && col.gameObject.layer == 9) ||
-		 (gameObject.layer == 9 && col.gameObject.layer == 8)))
-		{
-			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, statusEffects[3]);//statusEffects[3] is burning
-		}
-		
-		if(col.gameObject.tag == "Death") 
-			health = 0;
 	}
 
 	public Vector3 MoveDirection {

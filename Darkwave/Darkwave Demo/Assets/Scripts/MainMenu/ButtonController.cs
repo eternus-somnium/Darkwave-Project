@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class ButtonController : MonoBehaviour
 	public void StartDemo()
 	{
 		Debug.Log("Button was pressed.");
-		Application.LoadLevel ("DarkwaveDemo");
+		EditorSceneManager.LoadScene ("DarkwaveDemo");
 	}
 
 	// Closes the game.
