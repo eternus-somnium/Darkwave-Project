@@ -30,11 +30,19 @@ public class Architect : Character
 	 */
 	void AbilityUnlockMinor()
 	{
-		// Sets abilities to true or false depending on how many points each trait line has.
-		if (marksmanship >= 1) traitHuntersMomemtum.enabled = true;
-		else traitHuntersMomemtum.enabled = false;
-		if (marksmanship >= 4) traitCriticalFinish.enabled = true;
-		else traitCriticalFinish.enabled = false;
+        // Sets abilities to true or false depending on how many points each trait line has.
+        if (marksmanship >= 1)
+        {
+            traitHuntersMomemtum.enabled = true;
+            Debug.Log("Trait Hunter's Momentum enabled.");
+        }
+        else traitHuntersMomemtum.enabled = false;
+        if (marksmanship >= 4)
+        {
+            traitCriticalFinish.enabled = true;
+            Debug.Log("Trait Critical Finish enabled.");
+        }
+        else traitCriticalFinish.enabled = false;
 
 		// AbilitySet(); // Activates the trait abilities.
 	}

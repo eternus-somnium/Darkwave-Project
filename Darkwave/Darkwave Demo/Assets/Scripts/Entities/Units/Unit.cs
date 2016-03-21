@@ -179,7 +179,7 @@ public class Unit : Entity
 
 	///Called by an ability from a unit that applies an effect to the target unit.
 	///This adds the effect to the Unit's 2D effects List.
-	protected void NewEffect(Effect newEff)
+	public void NewEffect(Effect newEff)
 	{
 		bool noStack = false;
 		int i = 0;
@@ -255,14 +255,14 @@ public class Unit : Entity
 	public void UnitStart()
 	{
 		EntityStart();
-
+		speedMod = 1.0f;
 	}
 
 	//Function used to update entity status. Called from the fixed update of the child object
 	public void UnitUpdate()
 	{
 		if(stun > 0) stun--;
-		augmentedSpeed = baseSpeed + speedMod;
+		augmentedSpeed = baseSpeed * speedMod;
 	}
 
 	// Updates current effects on entity.
