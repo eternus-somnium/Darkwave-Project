@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AdjacencySensor.cs" />
      <Compile Include="Assets\GridPlacementSquare.cs" />
      <Compile Include="Assets\Scripts\CriticalPoint.cs" />
      <Compile Include="Assets\Scripts\Effects\Buffs\Armored.cs" />

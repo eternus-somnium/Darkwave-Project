@@ -30,7 +30,7 @@ public class StraightShot : Shot
 				if(parent != null && parent.GetComponent<Character>() != null)
 					parent.GetComponent<Character>().causedHeadShot = true;
 			}
-			col.gameObject.GetComponent<Unit>().DamageController(touchDamage, onFire);
+			col.gameObject.GetComponent<Entity>().DamageController(touchDamage);
 			Debug.Log (gameObject + " hit " + col.gameObject);
 		}
 		 Destroy(this.gameObject);

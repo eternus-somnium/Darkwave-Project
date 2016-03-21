@@ -4,7 +4,8 @@ using System.Collections;
 public class AlternateBuildDevice : Weapon 
 {
 	GameObject hitObject;
-	Vector3 objectPosition;
+	Vector3 
+	objectPosition;
 	Quaternion objectRotation;
 	
 	public GameObject[] 
@@ -44,12 +45,11 @@ public class AlternateBuildDevice : Weapon
 			{
 				obj = GameObject.Instantiate(placementObjects[selectedObject], objectPosition, objectRotation) as GameObject;
 				obj.GetComponent<Collider>().enabled = true;
-				Ready=false;
-				currentCooldown=baseCooldown;
+				obj.layer = 8;
 			}
 			else if(type == 2)
 			{
-
+				hitObject.GetComponent<PlacementObject>().currentBuild++;
 			}
 			
 			Ready=false;
@@ -82,10 +82,11 @@ public class AlternateBuildDevice : Weapon
 
 		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range)) //If the ray hit something
 		{
-			if(hit.normal.y > hit.normal.x + hit.normal.z && //Surface is mostly upright
+			if(hit.normal.y >= 0 && // hit.normal.x + hit.normal.z && //Surface is mostly upright
 				hit.transform.root.gameObject == GameObject.Find("Terrain")) //Surface is part of the terrain
 			{
-				objectPosition = placementObjects[selectedObject].transform.position = hit.point;
+				objectPosition = placementObjects[selectedObject].transform.position = 
+					hit.point + placementObjects[selectedObject].GetComponent<BuildableObject>().offsetPosition;
 				objectRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
 				placementObjects[selectedObject].transform.position = objectPosition;
@@ -97,7 +98,7 @@ public class AlternateBuildDevice : Weapon
 			else if(hit.transform.gameObject.GetComponent<PlacementObject>() != null)
 			{
 				placementObjects[selectedObject].SetActive(false);
-
+				hitObject = hit.collider.gameObject;
 				return 2;
 			}
 		}

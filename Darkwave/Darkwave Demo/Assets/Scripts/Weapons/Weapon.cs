@@ -7,8 +7,7 @@ public class Weapon : MonoBehaviour
 	public bool 
 		mainActionFlag = false,
 		secondaryActionFlag = false,
-		particleFlag,
-		gridLinesFlag;
+		particleFlag;
 	bool ready;
 
 	public float 

@@ -24,22 +24,13 @@ public class Pillar : BuildableObject
 
 	void BuildWalls()
 	{
-		List<GameObject> potentialPillars = PlacementGrid.getPillarsInRange(this.gameObject.transform.position, wallRange);
-		GameObject newWall;
-		foreach (GameObject p in potentialPillars)
+		List<SensedAgent> sensedPillars = GetComponentInChildren<AdjacencySensor>().sensedPillars;
+		RaycastHit h;
+		foreach( SensedAgent p in sensedPillars)
 		{
-			RaycastHit h;
-			Vector3 direction = p.transform.position-gameObject.transform.position;
-			Physics.Raycast(gameObject.transform.position, direction, out h);
-			if(h.collider != null && h.collider.gameObject == p)
-			{
-				newWall = (GameObject)Instantiate(
-					wall,
-					gameObject.transform.position + direction/2,
-					gameObject.transform.rotation);
-
-				newWall.gameObject.transform.LookAt(p.transform);
-			}
+			Physics.Raycast(transform.position, Vector3.Normalize(p.agent.transform.position-transform.position), out h);
+			if(h.collider.gameObject == p.agent)
+				Instantiate(wall, p.agent.transform.position-(p.agent.transform.position-transform.position)/2,Quaternion.identity);
 		}
 	}
 
@@ -57,5 +48,4 @@ public class Pillar : BuildableObject
 		}
 		Destroy(gameObject,1);
 	}
-
 }

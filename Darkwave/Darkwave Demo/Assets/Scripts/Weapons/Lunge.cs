@@ -49,10 +49,10 @@ public class Lunge : Weapon
 			(gameObject.layer == 9 && col.gameObject.layer == 8 &&
 			lungeTimer > 0))
 		{
-			col.gameObject.GetComponent<Unit>().DamageController(augmentedDamage, false);
+			col.gameObject.GetComponent<Entity>().DamageController(augmentedDamage);
 			lungeTimer = 0;
 		}
-		else if(lungeTimer > 0) lungeTimer -= Time.deltaTime;
+		else if(lungeTimer > 0) lungeTimer -= Time.fixedDeltaTime;
 			//Debug.Log (gameObject + " hit " + col.gameObject);
 	}
 }
